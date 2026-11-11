@@ -57,7 +57,7 @@ Photos:
 ## How it was identified
 - Title "Itoki Swivel Chair", listed 2025-04-28. Tags: Chairs, Itoki, Office Chair, Swivel chair.
 - SKU `ITK SNA FUL`: Itoki, swivel with no arms, FULgo.
-- Photos: blue fabric, no arms, white/light-gray body and base, Itoki logo.
+- Photos: blue fabric, no arms, white/light-gray body and base. (The "ITOKI" text on the photos is a caption Office Busters adds.)
 - Office Busters' description: "Fabric Material", "Steel Frame", "Height:80cm x Width:50cm".
 
 ## Specs (from the maker)

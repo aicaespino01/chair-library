@@ -55,7 +55,7 @@ Photos:
 ## How it was identified
 - Title "Okamura Swivel Chair", listed 2024-08-26. Tags: Chairs, Okamura, Swivel chair. Variant name: "Blue".
 - SKU `OKA SNA VIL`: Okamura, swivel with no arms, VILlage.
-- Photos: blue fabric back and seat, no arms, black plastic base, Okamura logo.
+- Photos: blue fabric back and seat, no arms, black plastic base. (The "okamura" text on the photos is a caption Office Busters adds.)
 - Google Lens: no Village match (lookalikes only).
 - Office Busters' description: "Foam and Fabric Backrest & Seat", "Solid Plastic Frame", "H70cmxL47cmxW48cm".
 

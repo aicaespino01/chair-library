@@ -1,6 +1,6 @@
 ---
 id: unidentified-ob-kokuyo-swivel-chair-46
-brand: Kokuyo (photo logo, title, tags and SKU)
+brand: Kokuyo (title, tags and SKU)
 model: unknown (SKU hint AGA suggests AGATA, but photos do not match)
 maker_code: unknown
 variant: mid back, black mesh back, lime-green fabric seat, T-shaped arms, black plastic base
@@ -32,7 +32,7 @@ last_checked: 2026-11-11
 
 # Kokuyo mesh-back chair with T arms, lime seat (model not identified yet)
 
-**Identified: Unsure.** Kokuyo brand (logo, title, tags and SKU agree). The SKU hint `AGA` suggests Kokuyo **AGATA** (アガタ), but the photos don't match: AGATA has an aluminium die-cast base and back frame (AOC listing), and this chair has a plain black plastic base. Google Lens found no match. **To identify:** ask Office Busters for a photo of the label under the seat.
+**Identified: Unsure.** Kokuyo brand (title, tags and SKU agree; the brand text on the photos is a caption Office Busters adds). The SKU hint `AGA` suggests Kokuyo **AGATA** (アガタ), but the photos don't match: AGATA has an aluminium die-cast base and back frame (AOC listing), and this chair has a plain black plastic base. Google Lens found no match. **To identify:** ask Office Busters for a photo of the label under the seat.
 
 This is the same listing as the "Kokuyo Swivel Chair (with arm)" in the earlier XPANSE T10 vs Kokuyo report.
 

@@ -1,6 +1,6 @@
 ---
 id: unidentified-ob-kokuyo-swivel-chair-47
-brand: Kokuyo (from photo logo, title, tags and SKU)
+brand: Kokuyo (title, tags and SKU)
 model: unknown
 maker_code: unknown
 variant: mid/low back, fixed loop arms, gray fabric, black plastic base
@@ -32,7 +32,7 @@ last_checked: 2026-11-11
 
 # Kokuyo swivel chair with loop arms (model not identified yet)
 
-**Identified: Unsure.** Kokuyo brand (logo in the photos, title, tags and SKU all agree), but the model isn't known. **To identify:** ask Office Busters for a photo of the label under the seat. Kokuyo chair codes usually start with "CR-".
+**Identified: Unsure.** Kokuyo brand (title, tags and SKU agree; the brand text on the photos is a caption Office Busters adds), but the model isn't known. **To identify:** ask Office Busters for a photo of the label under the seat. Kokuyo chair codes usually start with "CR-".
 
 ## At a glance
 - Gray fabric chair with fixed loop arms and a rounded back.

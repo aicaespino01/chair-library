@@ -1,6 +1,6 @@
 ---
 id: unidentified-ob-plus-swivel-chair
-brand: Plus (title, tags and SKU; no logo in photos)
+brand: Plus (title, tags and SKU)
 model: unknown
 maker_code: unknown
 variant: mid back, red back, black fabric seat, height-adjustable T arms, black plastic base
@@ -32,7 +32,7 @@ last_checked: 2026-11-11
 
 # Plus swivel chair with adjustable arms, red back (model not identified yet)
 
-**Identified: Unsure.** Title, tags and SKU say Plus (a Japanese office-supplies and furniture maker). The photos carry a "JAPAN" caption, not a brand logo, and the photo files are named "Japan". **To identify:** ask Office Busters for a photo of the label under the seat.
+**Identified: Unsure.** Title, tags and SKU say Plus (a Japanese office-supplies and furniture maker). The photos carry Office Busters' "JAPAN" caption (their captions follow the title, not the chair), and the photo files are named "Japan". **To identify:** ask Office Busters for a photo of the label under the seat.
 
 ## At a glance
 - Red back, black seat, **height-adjustable arms** (the only one of the 5 test chairs with adjustable arms).

@@ -26,7 +26,7 @@ weight_limit_kg: "80 (shop listing, LOOKIT)"
 chair_weight_kg: "9.5"
 warranty: "not found; Office Busters 3-day defect exchange"
 price_new: "Japan shops: JPY 29,810 to 38,500 (list JPY 53,570)"
-lowest_price_seen_php: "3000"
+lowest_price_seen_php: "2500 (listing -41, which may be the first LEGNO)"
 last_checked: 2026-11-11
 ---
 
@@ -46,6 +46,7 @@ last_checked: 2026-11-11
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
 | Office Busters PH (SKU KOKSNALEG1489) | https://officebusters.ph/products/kokuyo-swivel-chair-37 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-11 |
+| Office Busters PH, blue, no arms (SKU KOKSNACRG1506): **LEGNO family, maybe the first LEGNO (CR-G200)** | https://officebusters.ph/products/kokuyo-swivel-chair-41 | ₱2,500 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-11 |
 | AOC Japan (new, CR-G210F4) | e-aocinc.com (Google preview) | ¥29,810 | — | New | Japan | Yes | 2026-11-11 |
 | Kagg.jp (new) | kagg.jp (Google preview) | ¥38,500 | ¥53,570 | New | Japan | — | 2026-11-11 |
 
@@ -57,9 +58,10 @@ Photos:
 ## How it was identified
 - Title "Kokuyo Swivel Chair", listed 2025-02-04. Tags: Chairs, Kokuyo, Office Chair, Swivel chair.
 - SKU `KOK SNA LEG`: Kokuyo, swivel with no arms, LEGno.
-- Photos: blue fabric, no arms, back with a narrow "waist", gray shell, gray plastic base, Kokuyo logo.
+- Photos: blue fabric, no arms, back with a narrow "waist", gray shell, gray plastic base. (The "KOKUYO" text on the photos is a caption Office Busters adds.)
 - Kokuyo's LEGNO2 manual lists four heights. 82.0–93.0 cm matches the standard low back.
 - Office Busters' description: "Fabric Material", "Combination of Solid Plastic and Steel Frame", "Height:75cm x Width:50cm".
+- Second listing (`kokuyo-swivel-chair-41`, added in batch 3): blue, no arms, similar back shape. Its SKU hint "CRG" is just Kokuyo's general code prefix (CR-G). Google Lens matched both the first LEGNO (Office Busters Japan "レグノチェア CRS-G200F4HS65N", 無限堂 "レグノチェア CR-G200") and LEGNO2 (Monotaro CR-G210F4HSN65-W). The first LEGNO's sizes may differ: check the label. Listing says "Reclined Adjustment", "Solid Plastic Frame", "Height:80cm x Width:50cm".
 
 ## Specs (from the maker)
 
@@ -126,7 +128,7 @@ Photos:
 3. Recline and warranty: check Kokuyo's LEGNO2 manual (kokuyo.com).
 
 ## Sources
-1. Office Busters listing: https://officebusters.ph/products/kokuyo-swivel-chair-37 (and `.js` data), read 2026-11-11
+1. Office Busters listings: https://officebusters.ph/products/kokuyo-swivel-chair-37 and https://officebusters.ph/products/kokuyo-swivel-chair-41 (and `.js` data), read 2026-11-11
 2. Office Busters storage and exchange policy: https://officebusters.ph/pages/storage-and-exchange-policy
 3. Kokuyo LEGNO2 manual (Google preview of PDF on kokuyo.com), 2026-11-11
 4. Google Lens results for the side photo, 2026-11-11
