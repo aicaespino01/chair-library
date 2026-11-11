@@ -1,0 +1,30 @@
+# Private data and office files: never upload
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.docx
+*.doc
+*.pdf
+*.accdb
+*.mdb
+*.sqlite
+*.db
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+
+# Private working notes (keep on this computer only)
+brief.md
+notes-private/
+
+# Tools and system junk
+node_modules/
+.claude/
+.DS_Store
+Thumbs.db
+desktop.ini
