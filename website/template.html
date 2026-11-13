@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Chair Library</title>
+<style>
+:root {
+  --bg: oklch(1 0 0);
+  --surface: oklch(0.974 0.004 20);
+  --surface-2: oklch(0.948 0.007 20);
+  --line: oklch(0.890 0.008 20);
+  --line-strong: oklch(0.780 0.010 20);
+  --ink: oklch(0.215 0.012 20);
+  --ink-2: oklch(0.430 0.014 20);
+  --primary: oklch(0.470 0.160 22);
+  --primary-hover: oklch(0.405 0.150 22);
+  --primary-ink: oklch(1 0 0);
+  --primary-soft: oklch(0.955 0.024 20);
+  --good: oklch(0.470 0.110 150);
+  --good-soft: oklch(0.960 0.030 150);
+  --ok: oklch(0.500 0.110 65);
+  --ok-soft: oklch(0.965 0.040 85);
+  --bad: oklch(0.460 0.020 20);
+  --unk: oklch(0.500 0.040 250);
+  --unk-soft: oklch(0.960 0.012 250);
+  --tray-bg: oklch(0.215 0.012 20);
+  --tray-ink: oklch(0.985 0 0);
+  --shadow: 0 1px 2px oklch(0.2 0.01 20 / 0.06), 0 4px 16px oklch(0.2 0.01 20 / 0.06);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.2rem;
+  --fs-lg: 1.44rem;
+  --fs-xl: 1.728rem;
+  --fs-2xl: 2.074rem;
+  --z-sticky: 10;
+  --z-tray: 20;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: oklch(0.165 0 0);
+    --surface: oklch(0.205 0.004 20);
+    --surface-2: oklch(0.245 0.006 20);
+    --line: oklch(0.310 0.008 20);
+    --line-strong: oklch(0.420 0.010 20);
+    --ink: oklch(0.945 0.004 20);
+    --ink-2: oklch(0.770 0.010 20);
+    --primary: oklch(0.720 0.140 22);
+    --primary-hover: oklch(0.780 0.120 22);
+    --primary-ink: oklch(0.165 0 0);
+    --primary-soft: oklch(0.270 0.040 20);
+    --good: oklch(0.780 0.120 150);
+    --good-soft: oklch(0.260 0.040 150);
+    --ok: oklch(0.800 0.120 75);
+    --ok-soft: oklch(0.280 0.040 75);
+    --bad: oklch(0.720 0.015 20);
+    --unk: oklch(0.760 0.050 250);
+    --unk-soft: oklch(0.260 0.020 250);
+    --tray-bg: oklch(0.945 0.004 20);
+    --tray-ink: oklch(0.165 0 0);
+    --shadow: 0 1px 2px oklch(0 0 0 / 0.4), 0 4px 16px oklch(0 0 0 / 0.3);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: oklch(0.165 0 0);
+  --surface: oklch(0.205 0.004 20);
+  --surface-2: oklch(0.245 0.006 20);
+  --line: oklch(0.310 0.008 20);
+  --line-strong: oklch(0.420 0.010 20);
+  --ink: oklch(0.945 0.004 20);
+  --ink-2: oklch(0.770 0.010 20);
+  --primary: oklch(0.720 0.140 22);
+  --primary-hover: oklch(0.780 0.120 22);
+  --primary-ink: oklch(0.165 0 0);
+  --primary-soft: oklch(0.270 0.040 20);
+  --good: oklch(0.780 0.120 150);
+  --good-soft: oklch(0.260 0.040 150);
+  --ok: oklch(0.800 0.120 75);
+  --ok-soft: oklch(0.280 0.040 75);
+  --bad: oklch(0.720 0.015 20);
+  --unk: oklch(0.760 0.050 250);
+  --unk-soft: oklch(0.260 0.020 250);
+  --tray-bg: oklch(0.945 0.004 20);
+  --tray-ink: oklch(0.165 0 0);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+body.has-tray { padding-bottom: 88px; }
+h1, h2, h3, h4 { line-height: 1.25; margin: 0; font-weight: 650; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--primary); }
+a:hover { color: var(--primary-hover); }
+img { max-width: 100%; display: block; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+[tabindex="-1"]:focus { outline: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 28px; } }
+.num { font-variant-numeric: tabular-nums; }
+
+/* top bar */
+.topbar { position: sticky; top: 0; z-index: var(--z-sticky); background: var(--bg); border-bottom: 1px solid var(--line); }
+.topbar .wrap { display: flex; align-items: center; gap: 12px 24px; min-height: 60px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: var(--fs-md); color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.brand:hover { color: var(--ink); }
+.brand svg { color: var(--primary); flex: none; }
+.nav { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+.nav a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; color: var(--ink-2); text-decoration: none; font-weight: 550; font-size: var(--fs-sm); transition: background-color 160ms var(--ease), color 160ms var(--ease); }
+.nav a:hover { background: var(--surface-2); color: var(--ink); }
+.nav a[aria-current="page"] { background: var(--primary-soft); color: var(--primary); }
+.nav .count { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--primary); color: var(--primary-ink); font-size: 12px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
+.nav .count:empty { display: none; }
+@media (max-width: 560px) {
+  .nav { margin-left: 0; width: 100%; justify-content: space-between; }
+  .nav a { padding: 8px 10px; }
+}
+
+main { padding: 28px 0 56px; min-height: 60vh; }
+.view { animation: viewIn 200ms var(--ease); }
+@keyframes viewIn { from { opacity: 0.35; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* buttons and form controls */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--bg); color: var(--ink); font-weight: 600; font-size: var(--fs-sm); text-decoration: none; cursor: pointer; transition: background-color 160ms var(--ease), border-color 160ms var(--ease), color 160ms var(--ease), transform 160ms var(--ease); }
+.btn:hover { background: var(--surface-2); color: var(--ink); }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
+.btn.primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: var(--primary-ink); }
+.btn.small { min-height: 34px; padding: 0 12px; font-size: var(--fs-xs); }
+.btn[aria-pressed="true"] { background: var(--primary-soft); border-color: var(--primary); color: var(--primary); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.field { display: flex; flex-direction: column; gap: 6px; font-size: var(--fs-sm); font-weight: 600; color: var(--ink); }
+.field .hint { font-weight: 400; color: var(--ink-2); font-size: var(--fs-xs); }
+.input, .select { width: 100%; min-height: 42px; padding: 8px 12px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--bg); font-weight: 400; font-size: var(--fs-base); transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease); }
+.input::placeholder { color: var(--ink-2); opacity: 1; }
+.input:hover, .select:hover { border-color: var(--ink-2); }
+.input:focus, .select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.check { display: flex; align-items: center; gap: 10px; font-size: var(--fs-sm); cursor: pointer; min-height: 32px; }
+.check input { width: 18px; height: 18px; accent-color: var(--primary); flex: none; margin: 0; }
+
+/* catalogue */
+.intro { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; margin-bottom: 24px; }
+.intro h1 { font-size: var(--fs-2xl); letter-spacing: -0.02em; }
+.lede { color: var(--ink-2); max-width: 62ch; margin-top: 8px; text-wrap: pretty; }
+.controls { display: flex; flex-direction: column; gap: 12px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.control-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.control-row .search { flex: 1 1 260px; }
+.control-row .sort { flex: 1 1 160px; max-width: 260px; }
+.view-toggle { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px; background: var(--bg); }
+.view-toggle button { border: 0; background: transparent; padding: 0 12px; min-height: 34px; border-radius: 999px; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-2); cursor: pointer; transition: background-color 160ms var(--ease), color 160ms var(--ease); }
+.view-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.filters summary { cursor: pointer; font-weight: 600; font-size: var(--fs-sm); list-style: none; display: inline-flex; align-items: center; gap: 8px; min-height: 32px; }
+.filters summary::-webkit-details-marker { display: none; }
+.filters summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform 160ms var(--ease); margin-right: 2px; }
+.filters[open] summary::before { transform: rotate(45deg); }
+.filter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px 16px; margin-top: 12px; align-items: end; }
+.filter-badge { background: var(--primary); color: var(--primary-ink); border-radius: 999px; font-size: 12px; padding: 0 8px; line-height: 20px; }
+.filter-badge:empty { display: none; }
+.result-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 20px 0 14px; color: var(--ink-2); font-size: var(--fs-sm); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.card { position: relative; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); overflow: hidden; transition: border-color 200ms var(--ease), box-shadow 200ms var(--ease); }
+.card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+.card-link { color: inherit; text-decoration: none; display: flex; flex-direction: column; flex: 1; }
+.card-link:hover { color: inherit; }
+.photo { aspect-ratio: 1 / 1; background: var(--surface); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms var(--ease); }
+.card:hover .photo img { transform: scale(1.03); }
+.nophoto { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--ink-2); font-size: var(--fs-xs); padding: 16px; text-align: center; }
+.nophoto svg { opacity: 0.6; }
+.card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.price { font-size: var(--fs-md); font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+.price-note { display: block; font-size: var(--fs-xs); font-weight: 400; color: var(--ink-2); }
+.card-title { font-size: var(--fs-base); font-weight: 650; }
+.card-sub { font-size: var(--fs-sm); color: var(--ink-2); margin-top: -4px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 2px 0 0; list-style: none; }
+.chips li { font-size: var(--fs-xs); padding: 2px 8px; border-radius: 6px; background: var(--surface-2); color: var(--ink); }
+.chips li.hl { background: var(--good-soft); color: var(--good); font-weight: 600; }
+.where { font-size: var(--fs-xs); color: var(--ink-2); margin-top: auto; padding-top: 4px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-xs); font-weight: 600; padding: 2px 8px; border-radius: 999px; width: fit-content; }
+.badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge.confirmed { background: var(--good-soft); color: var(--good); }
+.badge.likely { background: var(--ok-soft); color: var(--ok); }
+.badge.unsure { background: var(--unk-soft); color: var(--unk); }
+.badge.plain { background: var(--surface-2); color: var(--ink-2); }
+.badge.plain::before { display: none; }
+.pick { position: absolute; top: 10px; right: 10px; background: var(--bg); box-shadow: var(--shadow); }
+.empty { text-align: center; padding: 48px 16px; border: 1px dashed var(--line-strong); border-radius: var(--radius); color: var(--ink-2); }
+.empty h2 { color: var(--ink); font-size: var(--fs-md); margin-bottom: 8px; }
+.empty .btn { margin-top: 16px; }
+
+/* data tables */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; font-size: var(--fs-sm); }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+thead th { background: var(--surface); font-weight: 650; color: var(--ink); white-space: nowrap; }
+tbody tr:last-child td { border-bottom: 0; }
+.list-table td { min-width: 110px; }
+.list-table td.chair-cell { min-width: 240px; }
+.list-table tbody tr { cursor: pointer; transition: background-color 120ms var(--ease); }
+.list-table tbody tr:hover { background: var(--surface); }
+.chair-cell { display: flex; gap: 12px; align-items: center; }
+.chair-cell .thumb { width: 52px; height: 52px; border-radius: 8px; flex: none; }
+.chair-cell a { font-weight: 600; color: var(--ink); text-decoration: none; }
+.chair-cell a:hover { color: var(--primary); }
+.thumb { background: var(--surface); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* chair page */
+.crumbs { margin-bottom: 18px; font-size: var(--fs-sm); }
+.crumbs a { text-decoration: none; font-weight: 600; }
+.chair-top { display: grid; gap: 28px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .chair-top { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 40px; } }
+.gallery-main { aspect-ratio: 1 / 1; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.gallery-main img { width: 100%; height: 100%; object-fit: contain; }
+.thumbs { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.thumbs button { width: 64px; height: 64px; padding: 0; border-radius: 8px; border: 2px solid transparent; background: var(--surface); overflow: hidden; cursor: pointer; transition: border-color 160ms var(--ease); }
+.thumbs button[aria-current="true"] { border-color: var(--primary); }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.summary h1 { font-size: var(--fs-xl); letter-spacing: -0.015em; }
+.summary .sub { color: var(--ink-2); margin-top: 6px; font-size: var(--fs-md); }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.big-price { font-size: var(--fs-xl); font-weight: 750; color: var(--primary); margin-top: 18px; font-variant-numeric: tabular-nums; }
+.big-price small { display: block; font-size: var(--fs-xs); font-weight: 400; color: var(--ink-2); }
+.quick { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: 20px 0 0; font-size: var(--fs-sm); padding: 16px; border-radius: var(--radius); background: var(--surface); }
+.quick dt { color: var(--ink-2); }
+.quick dd { margin: 0; font-weight: 550; }
+@media (max-width: 420px) { .quick { grid-template-columns: 1fr; gap: 2px; } .quick dd { margin-bottom: 8px; } }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.stock { margin-top: 16px; font-size: var(--fs-sm); color: var(--ink-2); }
+.stock strong { color: var(--ink); }
+.note-box { margin-top: 32px; padding: 16px 18px; border-radius: var(--radius); background: var(--surface); font-size: var(--fs-sm); max-width: 80ch; }
+.three { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 28px; }
+@media (min-width: 900px) { .three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.panel { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.panel > h2 { font-size: var(--fs-md); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.panel.pros > h2 .mark { color: var(--good); }
+.panel.cons > h2 .mark { color: var(--bad); }
+.section-title { font-size: var(--fs-lg); margin: 44px 0 6px; }
+.section-hint { color: var(--ink-2); font-size: var(--fs-sm); margin-bottom: 16px; }
+.facts-groups { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .facts-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.facts-groups table th { width: 38%; background: var(--surface); font-weight: 600; white-space: normal; }
+.facts-groups caption { text-align: left; font-weight: 650; padding: 12px 12px 8px; font-size: var(--fs-base); }
+.sec { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 10px; background: var(--bg); }
+.sec > summary { list-style: none; cursor: pointer; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 650; }
+.sec > summary::-webkit-details-marker { display: none; }
+.sec > summary::after { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--ink-2); border-bottom: 2px solid var(--ink-2); transform: rotate(45deg); transition: transform 160ms var(--ease); flex: none; }
+.sec[open] > summary::after { transform: rotate(-135deg); }
+.sec > summary:hover { background: var(--surface); border-radius: var(--radius); }
+.sec .md { padding: 0 18px 18px; }
+.file-note { margin-top: 28px; color: var(--ink-2); font-size: var(--fs-xs); }
+
+/* rendered chair-file text */
+.md { font-size: var(--fs-sm); }
+.md > * + * { margin-top: 10px; }
+.md p, .md li { max-width: 80ch; text-wrap: pretty; }
+.md ul, .md ol { padding-left: 20px; margin: 0; }
+.md li + li { margin-top: 4px; }
+.md h3, .md h4 { font-size: var(--fs-base); margin-top: 16px; }
+.md code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 0.92em; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.md a { word-break: break-all; }
+.md .table-wrap { margin-top: 10px; }
+@media (max-width: 640px) {
+  .md table, .md thead, .md tbody, .md tr, .md td { display: block; }
+  .md thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .md tr { padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  .md tbody tr:last-child { border-bottom: 0; }
+  .md td { border: 0; padding: 3px 0; display: grid; grid-template-columns: 7.5em 1fr; gap: 10px; }
+  .md td::before { content: attr(data-label); color: var(--ink-2); font-weight: 600; }
+  .md td[data-label=""] { grid-template-columns: 1fr; }
+  .md td[data-label=""]::before { display: none; }
+  .md .table-wrap { overflow: visible; }
+}
+
+/* find my chair */
+.find-layout { display: grid; gap: 28px; grid-template-columns: 1fr; }
+@media (min-width: 960px) { .find-layout { grid-template-columns: 340px minmax(0, 1fr); align-items: start; } .find-form { position: sticky; top: 84px; } }
+.find-form { display: flex; flex-direction: column; gap: 18px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.find-form fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.find-form legend { font-weight: 700; font-size: var(--fs-base); margin-bottom: 4px; padding: 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.radio-row { display: flex; flex-direction: column; gap: 2px; }
+.guides { padding: 16px 18px; border-radius: var(--radius); background: var(--primary-soft); font-size: var(--fs-sm); display: flex; flex-direction: column; gap: 6px; }
+.guides strong { font-variant-numeric: tabular-nums; }
+.how { margin-top: 12px; border: 1px solid var(--line); border-radius: var(--radius); }
+.how > summary { padding: 12px 16px; cursor: pointer; font-weight: 600; font-size: var(--fs-sm); }
+.how .md { padding: 0 16px 16px; }
+.group-title { font-size: var(--fs-md); margin: 32px 0 4px; }
+.group-hint { color: var(--ink-2); font-size: var(--fs-sm); margin-bottom: 12px; }
+.matches { display: flex; flex-direction: column; gap: 12px; padding: 0; margin: 0; list-style: none; }
+.match { display: grid; grid-template-columns: 34px 84px minmax(0, 1fr); gap: 14px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); transition: border-color 200ms var(--ease), box-shadow 200ms var(--ease); }
+.match.top { border-color: var(--primary); box-shadow: var(--shadow); }
+.match.flash { animation: flash 1600ms var(--ease); }
+@keyframes flash { 0%, 40% { box-shadow: 0 0 0 4px var(--primary-soft); border-color: var(--primary); } }
+.rank { font-size: var(--fs-lg); font-weight: 750; color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: center; padding-top: 2px; }
+.match.top .rank { color: var(--primary); }
+.match .thumb { width: 84px; height: 84px; border-radius: 10px; }
+.match h3 { font-size: var(--fs-base); }
+.match h3 a { color: var(--ink); text-decoration: none; }
+.match h3 a:hover { color: var(--primary); }
+.top-label { display: inline-block; font-size: var(--fs-xs); font-weight: 700; color: var(--primary-ink); background: var(--primary); border-radius: 999px; padding: 1px 10px; margin-bottom: 6px; }
+.match-meta { font-size: var(--fs-sm); color: var(--ink-2); margin-top: 2px; }
+.meter-row { display: flex; align-items: center; gap: 12px; margin: 10px 0 8px; }
+.meter { flex: 1; max-width: 260px; height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.meter span { display: block; height: 100%; background: var(--primary); border-radius: 999px; transform-origin: left; transform: scaleX(var(--v)); transition: transform 300ms var(--ease); }
+.pct { font-weight: 700; font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+.reasons { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; font-size: var(--fs-sm); }
+.reasons li { display: grid; grid-template-columns: 18px 1fr; gap: 6px; }
+.mark { font-weight: 800; text-align: center; }
+.mark.good { color: var(--good); }
+.mark.ok { color: var(--ok); }
+.mark.bad { color: var(--bad); }
+.mark.unk { color: var(--unk); }
+.mark.info { color: var(--ink-2); }
+.advice { margin-top: 10px; font-size: var(--fs-sm); padding: 8px 12px; border-radius: var(--radius-sm); background: var(--ok-soft); color: var(--ink); width: fit-content; }
+@media (max-width: 560px) {
+  .match { grid-template-columns: 64px minmax(0, 1fr); padding: 14px; }
+  .match .rank { display: none; }
+  .match .thumb { width: 64px; height: 64px; }
+  .reasons-wrap { grid-column: 1 / -1; }
+}
+
+/* compare */
+.compare-head { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 20px; }
+.compare-head h1 { font-size: var(--fs-2xl); letter-spacing: -0.02em; }
+.compare-table { table-layout: fixed; }
+.compare-table th[scope="row"] { position: sticky; left: 0; background: var(--surface); width: 150px; min-width: 104px; font-weight: 600; z-index: 1; }
+.compare-table thead th { white-space: normal; vertical-align: top; }
+.compare-table thead th:first-child { position: sticky; left: 0; z-index: 2; width: 150px; }
+.compare-table td { word-wrap: break-word; }
+.compare-table td.best { background: var(--good-soft); }
+.compare-table .best-tag { display: block; font-size: var(--fs-xs); font-weight: 700; color: var(--good); }
+.compare-table .md ul { padding-left: 18px; }
+@media (max-width: 560px) { .compare-table th[scope="row"], .compare-table thead th:first-child { width: 108px; font-size: var(--fs-xs); } }
+.cmp-photo { aspect-ratio: 1 / 1; border-radius: 10px; background: var(--surface); overflow: hidden; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; }
+.cmp-photo img { width: 100%; height: 100%; object-fit: cover; }
+.cmp-name { color: var(--ink); text-decoration: none; display: block; margin-bottom: 8px; }
+.cmp-name:hover { color: var(--primary); }
+.row-group th { background: var(--surface-2) !important; font-size: var(--fs-xs); color: var(--ink-2); }
+
+/* compare tray */
+.tray { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: var(--z-tray); width: min(720px, calc(100% - 24px)); background: var(--tray-bg); color: var(--tray-ink); border-radius: 16px; box-shadow: 0 8px 32px oklch(0 0 0 / 0.25); padding: 10px 10px 10px 16px; display: flex; align-items: center; gap: 12px; animation: trayIn 220ms var(--ease); }
+.tray[hidden] { display: none; }
+@keyframes trayIn { from { transform: translate(-50%, 12px); opacity: 0.4; } }
+.tray-text { flex: 1; min-width: 0; font-size: var(--fs-sm); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tray .btn { border-color: transparent; }
+.tray .btn.clear { background: transparent; color: var(--tray-ink); }
+.tray .btn.clear:hover { background: oklch(0.5 0 0 / 0.2); }
+
+footer { border-top: 1px solid var(--line); padding: 20px 0 32px; color: var(--ink-2); font-size: var(--fs-xs); }
+footer p + p { margin-top: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Chair Library, all chairs">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10v8H7z"/><path d="M5 13h14"/><path d="M12 13v5"/><path d="M7 21l5-3 5 3"/></svg>
+      Chair Library
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#" data-nav="catalogue">All chairs</a>
+      <a href="#find" data-nav="find">Find my chair</a>
+      <a href="#compare" data-nav="compare">Compare <span class="count" id="navCount"></span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="app" class="wrap" tabindex="-1">
+  <noscript><p>This page needs JavaScript turned on to show the chairs.</p></noscript>
+</main>
+
+<div class="tray" id="tray" hidden role="region" aria-label="Chairs picked to compare">
+  <p class="tray-text" id="trayText"></p>
+  <button class="btn small clear" type="button" id="trayClear">Clear</button>
+  <a class="btn small primary" href="#compare" id="trayGo">Compare</a>
+</div>
+
+<footer>
+  <div class="wrap" id="footer"></div>
+</footer>
+
+<script>/*__CHAIR_DATA__*/</script>
+<script>
+(function () {
+  'use strict';
+
+  var DATA = window.CHAIR_DATA;
+  var CHAIRS = DATA.chairs;
+  var byId = {};
+  CHAIRS.forEach(function (c) { byId[c.id] = c; });
+  var app = document.getElementById('app');
+  var MAX_PICK = 3;
+
+  // ---------- helpers ----------
+  var store = {
+    get: function (k, fallback) {
+      try { var v = window.localStorage.getItem('chairlib.' + k); return v ? JSON.parse(v) : fallback; } catch (e) { return fallback; }
+    },
+    set: function (k, v) {
+      try { window.localStorage.setItem('chairlib.' + k, JSON.stringify(v)); } catch (e) { /* storage blocked: fine */ }
+    }
+  };
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (ch) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
+    });
+  }
+  function peso(n) { return '₱' + Number(n).toLocaleString('en-PH', { maximumFractionDigits: 2 }); }
+  function f1(n) { return (Math.round(n * 10) / 10).toFixed(1); }
+  function niceDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
+    if (!m) return iso || '';
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return parseInt(m[3], 10) + ' ' + months[parseInt(m[2], 10) - 1] + ' ' + m[1];
+  }
+  function sized(url, w) { return url + (url.indexOf('?') === -1 ? '?' : '&') + 'width=' + w; }
+  function splitTitle(t) {
+    var i = t.indexOf(': ');
+    return i === -1 ? { name: t, sub: '' } : { name: t.slice(0, i), sub: t.slice(i + 2) };
+  }
+  function beforeParen(s) { var i = (s || '').indexOf(' ('); return i === -1 ? (s || '') : s.slice(0, i); }
+  function noteAfter(raw, lead) { return lead ? (raw || '').slice(lead.length).trim() : ''; }
+  var CHAIR_SVG = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10v8H7z"/><path d="M5 13h14"/><path d="M12 13v5"/><path d="M7 21l5-3 5 3"/></svg>';
+  function noPhoto(text) { return '<div class="nophoto">' + CHAIR_SVG + '<span>' + esc(text || 'No photo in the chair file') + '</span></div>'; }
+  function img(c, w, cls) {
+    if (!c.photos.length) return noPhoto();
+    return '<img src="' + esc(sized(c.photos[0], w)) + '" alt="Photo of ' + esc(splitTitle(c.title).name) + '" loading="lazy" decoding="async"' + (cls ? ' class="' + cls + '"' : '') + '>';
+  }
+  // photos come from the internet: if one does not load, show a plain placeholder
+  document.addEventListener('error', function (e) {
+    var t = e.target;
+    if (t && t.tagName === 'IMG' && !t.dataset.failed) {
+      t.dataset.failed = '1';
+      var holder = document.createElement('div');
+      holder.innerHTML = noPhoto('Photo did not load (needs internet)');
+      t.replaceWith(holder.firstChild);
+    }
+  }, true);
+
+  var ID_LABEL = { confirmed: 'Model confirmed', 'very likely': 'Model very likely', unsure: 'Model not identified yet' };
+  var ID_CLASS = { confirmed: 'confirmed', 'very likely': 'likely', unsure: 'unsure' };
+  function idBadge(c) { return '<span class="badge ' + ID_CLASS[c.d.identified] + '">' + ID_LABEL[c.d.identified] + '</span>'; }
+  function priceHtml(c, cls) {
+    if (c.d.price == null) return '<p class="' + cls + '">Price not known</p>';
+    var note = c.d.priceNote ? '<span class="price-note">' + esc(c.d.priceNote) + '</span>' : '';
+    return '<p class="' + cls + '">' + peso(c.d.price) + note + '</p>';
+  }
+  function armsText(a) { return { yes: 'Armrests', no: 'No armrests', both: 'With or without armrests', unknown: 'Armrests not known' }[a]; }
+  function backText(b) { return { mesh: 'Mesh back', fabric: 'Fabric back', unclear: 'Back: mesh or fabric not clear', unknown: 'Back not known' }[b]; }
+  function placesText(c) { return c.d.places.length ? c.d.places.join(' · ') : 'Shops outside the Philippines only'; }
+
+  // ---------- compare picks ----------
+  var picked = store.get('compare', []).filter(function (id) { return byId[id]; }).slice(0, MAX_PICK);
+  function savePicks() { store.set('compare', picked); updateTray(); }
+  function togglePick(id) {
+    var i = picked.indexOf(id);
+    if (i !== -1) picked.splice(i, 1);
+    else if (picked.length < MAX_PICK) picked.push(id);
+    else { alert('You can compare up to ' + MAX_PICK + ' chairs. Remove one first.'); return; }
+    savePicks();
+    document.querySelectorAll('[data-pick="' + id + '"]').forEach(setPickButton);
+  }
+  function setPickButton(btn) {
+    var on = picked.indexOf(btn.dataset.pick) !== -1;
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '✓ In compare' : (btn.dataset.long ? '+ Add to compare' : '+ Compare');
+  }
+  function pickButton(id, long) {
+    return '<button type="button" class="btn small' + (long ? '' : ' pick') + '" data-pick="' + esc(id) + '"' + (long ? ' data-long="1"' : '') + ' aria-pressed="false">+ Compare</button>';
+  }
+  var currentView = '';
+  function updateTray() {
+    document.getElementById('navCount').textContent = picked.length ? String(picked.length) : '';
+    var tray = document.getElementById('tray');
+    var show = picked.length > 0 && currentView !== 'compare';
+    tray.hidden = !show;
+    document.body.classList.toggle('has-tray', show);
+    document.getElementById('trayText').textContent = picked.length
+      ? picked.length + ' picked: ' + picked.map(function (id) { return splitTitle(byId[id].title).name; }).join(', ')
+      : '';
+  }
+  document.getElementById('trayClear').addEventListener('click', function () {
+    picked = []; savePicks();
+    document.querySelectorAll('[data-pick]').forEach(setPickButton);
+  });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-pick]');
+    if (b) { e.preventDefault(); togglePick(b.dataset.pick); }
+  });
+
+  // ---------- catalogue ----------
+  var FIT = {};
+  var defaults = { q: '', sort: 'fit', brand: '', arms: '', back: '', where: '', maxPrice: '', slide: false, idOnly: false, view: 'grid' };
+  var cat = Object.assign({}, defaults, store.get('catalogue', {}));
+  var catScroll = 0;
+  var ID_RANK = { confirmed: 0, 'very likely': 1, unsure: 2 };
+  function nullsLast(a, b, dir) {
+    if (a == null && b == null) return 0;
+    if (a == null) return 1;
+    if (b == null) return -1;
+    return (a - b) * (dir || 1);
+  }
+  var SORTS = {
+    fit: { label: 'Best fit for me', fn: function (a, b) { return FIT[b.id] - FIT[a.id]; } },
+    identified: { label: 'Best info first', fn: function (a, b) { return ID_RANK[a.d.identified] - ID_RANK[b.d.identified] || nullsLast(a.d.price, b.d.price); } },
+    priceUp: { label: 'Price: low to high', fn: function (a, b) { return nullsLast(a.d.price, b.d.price); } },
+    priceDown: { label: 'Price: high to low', fn: function (a, b) { return nullsLast(a.d.price, b.d.price, -1); } },
+    seatLow: { label: 'Lowest seat first', fn: function (a, b) { return nullsLast(a.d.seatMin, b.d.seatMin); } },
+    depthShort: { label: 'Shortest seat depth first', fn: function (a, b) { return nullsLast(a.d.depthMin, b.d.depthMin); } },
+    weight: { label: 'Highest weight limit first', fn: function (a, b) { return nullsLast(a.d.weightLimit, b.d.weightLimit, -1); } },
+    name: { label: 'Name A to Z', fn: function () { return 0; } }
+  };
+  if (!SORTS[cat.sort]) cat.sort = 'fit';
+
+  function matches(c) {
+    var d = c.d;
+    if (cat.q) {
+      var words = cat.q.toLowerCase().split(/\s+/).filter(Boolean);
+      for (var i = 0; i < words.length; i++) if (c.search.indexOf(words[i]) === -1) return false;
+    }
+    if (cat.brand && d.brand !== cat.brand) return false;
+    if (cat.arms === 'yes' && !(d.arms === 'yes' || d.arms === 'both')) return false;
+    if (cat.arms === 'no' && !(d.arms === 'no' || d.arms === 'both')) return false;
+    if (cat.back && d.back !== cat.back) return false;
+    if (cat.where && d.places.indexOf(cat.where) === -1) return false;
+    if (cat.maxPrice !== '' && cat.maxPrice != null && (d.price == null || d.price > Number(cat.maxPrice))) return false;
+    if (cat.slide && d.depthSlide !== 'yes') return false;
+    if (cat.idOnly && d.identified === 'unsure') return false;
+    return true;
+  }
+  function activeFilterCount() {
+    var n = 0;
+    ['brand', 'arms', 'back', 'where'].forEach(function (k) { if (cat[k]) n++; });
+    if (cat.maxPrice !== '' && cat.maxPrice != null) n++;
+    if (cat.slide) n++;
+    if (cat.idOnly) n++;
+    return n;
+  }
+  function uniq(arr) { return arr.filter(function (v, i) { return arr.indexOf(v) === i; }); }
+  function options(list, current, anyLabel) {
+    return '<option value="">' + anyLabel + '</option>' + list.map(function (v) {
+      return '<option value="' + esc(v.value) + '"' + (v.value === current ? ' selected' : '') + '>' + esc(v.label) + '</option>';
+    }).join('');
+  }
+
+  function chips(c) {
+    var d = c.d, f = c.fields, out = [];
+    out.push('Seat height ' + (d.seatText ? d.seatText + ' cm' : beforeParen(f.seat_height_cm)));
+    out.push('Seat depth ' + (d.depthText ? d.depthText + ' cm' : beforeParen(f.seat_depth_cm)));
+    out.push(armsText(d.arms));
+    out.push(backText(d.back));
+    var html = out.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
+    if (d.depthSlide === 'yes') html += '<li class="hl">Seat-depth slide</li>';
+    return '<ul class="chips">' + html + '</ul>';
+  }
+
+  function cardHtml(c) {
+    var t = splitTitle(c.title);
+    return '<article class="card">' +
+      '<a class="card-link" href="#chair/' + esc(c.id) + '">' +
+        '<div class="photo">' + img(c, 600) + '</div>' +
+        '<div class="card-body">' +
+          '<h2 class="card-title">' + esc(t.name) + '</h2>' +
+          (t.sub ? '<p class="card-sub">' + esc(t.sub) + '</p>' : '') +
+          priceHtml(c, 'price') +
+          idBadge(c) +
+          chips(c) +
+          '<p class="where">' + esc(placesText(c)) + '</p>' +
+        '</div>' +
+      '</a>' +
+      pickButton(c.id, false) +
+    '</article>';
+  }
+
+  function tableHtml(list) {
+    var rows = list.map(function (c) {
+      var f = c.fields, t = splitTitle(c.title);
+      return '<tr data-href="#chair/' + esc(c.id) + '">' +
+        '<td class="chair-cell-td"><div class="chair-cell"><div class="thumb">' + img(c, 120) + '</div><a href="#chair/' + esc(c.id) + '">' + esc(t.name) + '</a></div></td>' +
+        '<td class="num">' + (c.d.price == null ? 'not known' : peso(c.d.price) + (c.d.priceNote ? '<br><small>' + esc(c.d.priceNote) + '</small>' : '')) + '</td>' +
+        '<td>' + esc(f.seat_height_cm) + '</td>' +
+        '<td>' + esc(f.seat_depth_cm) + '</td>' +
+        '<td>' + esc(f.armrests) + '</td>' +
+        '<td>' + esc(f.back) + '</td>' +
+        '<td>' + esc(f.seat_depth_slide) + '</td>' +
+        '<td>' + esc(f.weight_limit_kg) + '</td>' +
+        '<td>' + esc(placesText(c)) + '</td>' +
+        '<td>' + esc(f.identified) + '</td>' +
+      '</tr>';
+    }).join('');
+    return '<div class="table-wrap"><table class="list-table"><thead><tr>' +
+      '<th>Chair</th><th>Lowest price seen</th><th>Seat height (cm)</th><th>Seat depth (cm)</th><th>Armrests</th><th>Back</th><th>Seat-depth slide</th><th>Weight limit (kg)</th><th>Where (Philippines)</th><th>Identified</th>' +
+      '</tr></thead><tbody>' + rows + '</tbody></table></div>';
+  }
+
+  function renderResults() {
+    var list = CHAIRS.filter(matches);
+    var sortFn = SORTS[cat.sort].fn;
+    var fitNote = '';
+    if (cat.sort === 'fit') {
+      FIT = fitScores();
+      var fo = findInputs();
+      fitNote = fo.h ? ' · sorted for your height, ' + f1(fo.h).replace(/\.0$/, '') + ' cm (change it in Find my chair)' : '';
+    }
+    list.sort(function (a, b) { return sortFn(a, b) || a.title.localeCompare(b.title); });
+    document.getElementById('count').textContent = 'Showing ' + list.length + ' of ' + CHAIRS.length + ' chairs' + fitNote;
+    var n = activeFilterCount();
+    document.getElementById('filterCount').textContent = n ? String(n) : '';
+    var box = document.getElementById('results');
+    if (!list.length) {
+      box.innerHTML = '<div class="empty"><h2>No chairs match</h2><p>Try fewer words in the search box, or clear the filters.</p><button type="button" class="btn" id="emptyReset">Clear search and filters</button></div>';
+      document.getElementById('emptyReset').addEventListener('click', resetCatalogue);
+    } else if (cat.view === 'table') {
+      box.innerHTML = tableHtml(list);
+    } else {
+      box.innerHTML = '<div class="grid">' + list.map(cardHtml).join('') + '</div>';
+      box.querySelectorAll('[data-pick]').forEach(setPickButton);
+    }
+    store.set('catalogue', cat);
+  }
+  function resetCatalogue() {
+    var view = cat.view, sort = cat.sort;
+    cat = Object.assign({}, defaults, { view: view, sort: sort });
+    renderCatalogue();
+  }
+
+  function renderCatalogue() {
+    var brands = uniq(CHAIRS.map(function (c) { return c.d.brand; })).sort(function (a, b) {
+      if (a === 'unknown') return 1; if (b === 'unknown') return -1; return a.localeCompare(b);
+    }).map(function (b) { return { value: b, label: b === 'unknown' ? 'Brand unknown' : b }; });
+    var places = uniq([].concat.apply([], CHAIRS.map(function (c) { return c.d.places; }))).sort(function (a, b) {
+      var rank = function (p) { return p.indexOf('Online') === 0 ? 2 : (p.indexOf('not stated') !== -1 ? 1 : 0); };
+      return rank(a) - rank(b) || a.localeCompare(b);
+    }).map(function (p) { return { value: p, label: p }; });
+    var obCount = CHAIRS.filter(function (c) { return c.shops.some(function (s) { return s.isOB; }); }).length;
+    var other = CHAIRS.length - obCount;
+    var checked = DATA.checkedFrom === DATA.checkedTo ? niceDate(DATA.checkedTo) : niceDate(DATA.checkedFrom) + ' to ' + niceDate(DATA.checkedTo);
+
+    app.innerHTML = '<div class="view">' +
+      '<section class="intro">' +
+        '<div><h1 tabindex="-1">All chairs</h1>' +
+        '<p class="lede">' + CHAIRS.length + ' chairs from your Chair Library: ' + obCount + ' used chairs from Office Busters' + (other ? ' and ' + other + ' new chair' + (other > 1 ? 's' : '') + ' from online shops' : '') + '. Facts checked ' + esc(checked) + '. Prices and stock change, so check the shop before you go.</p></div>' +
+        '<a class="btn primary" href="#find">Find my chair</a>' +
+      '</section>' +
+      '<div class="controls">' +
+        '<div class="control-row">' +
+          '<label class="field search">Search<input class="input" type="search" id="q" placeholder="Name, brand, code, branch, color…" value="' + esc(cat.q) + '" autocomplete="off"></label>' +
+          '<label class="field sort">Sort by<select class="select" id="sort">' + Object.keys(SORTS).map(function (k) {
+            return '<option value="' + k + '"' + (k === cat.sort ? ' selected' : '') + '>' + SORTS[k].label + '</option>';
+          }).join('') + '</select></label>' +
+          '<div class="view-toggle" role="group" aria-label="Show as">' +
+            '<button type="button" data-view="grid" aria-pressed="' + (cat.view === 'grid') + '">Photos</button>' +
+            '<button type="button" data-view="table" aria-pressed="' + (cat.view === 'table') + '">Table</button>' +
+          '</div>' +
+        '</div>' +
+        '<details class="filters" id="filters"><summary>Filters <span class="filter-badge" id="filterCount"></span></summary>' +
+          '<div class="filter-grid">' +
+            '<label class="field">Brand<select class="select" id="f-brand">' + options(brands, cat.brand, 'Any brand') + '</select></label>' +
+            '<label class="field">Armrests<select class="select" id="f-arms">' + options([{ value: 'yes', label: 'With armrests' }, { value: 'no', label: 'No armrests' }], cat.arms, 'Any') + '</select></label>' +
+            '<label class="field">Back<select class="select" id="f-back">' + options([{ value: 'mesh', label: 'Mesh (cooler)' }, { value: 'fabric', label: 'Fabric' }], cat.back, 'Any') + '</select></label>' +
+            '<label class="field">Where<select class="select" id="f-where">' + options(places, cat.where, 'Anywhere') + '</select></label>' +
+            '<label class="field">Max price (₱)<input class="input" type="number" inputmode="numeric" min="0" step="100" id="f-max" placeholder="Any" value="' + esc(cat.maxPrice) + '"></label>' +
+            '<div><label class="check"><input type="checkbox" id="f-slide"' + (cat.slide ? ' checked' : '') + '> Seat-depth slide only</label>' +
+            '<label class="check"><input type="checkbox" id="f-id"' + (cat.idOnly ? ' checked' : '') + '> Hide chairs not identified yet</label></div>' +
+            '<div><button type="button" class="btn" id="f-reset">Clear filters</button></div>' +
+          '</div>' +
+        '</details>' +
+      '</div>' +
+      '<div class="result-bar"><p id="count" aria-live="polite"></p></div>' +
+      '<div id="results"></div>' +
+    '</div>';
+
+    var filters = document.getElementById('filters');
+    if (window.matchMedia('(min-width: 720px)').matches || activeFilterCount()) filters.open = true;
+
+    function bind(id, key, ev, conv) {
+      document.getElementById(id).addEventListener(ev, function (e) {
+        cat[key] = conv ? conv(e.target) : e.target.value;
+        renderResults();
+      });
+    }
+    bind('q', 'q', 'input');
+    bind('sort', 'sort', 'change');
+    bind('f-brand', 'brand', 'change');
+    bind('f-arms', 'arms', 'change');
+    bind('f-back', 'back', 'change');
+    bind('f-where', 'where', 'change');
+    bind('f-max', 'maxPrice', 'input', function (t) { return t.value === '' ? '' : t.value; });
+    bind('f-slide', 'slide', 'change', function (t) { return t.checked; });
+    bind('f-id', 'idOnly', 'change', function (t) { return t.checked; });
+    document.getElementById('f-reset').addEventListener('click', function () {
+      ['brand', 'arms', 'back', 'where', 'maxPrice'].forEach(function (k) { cat[k] = ''; });
+      cat.slide = false; cat.idOnly = false;
+      var q = cat.q; cat.q = q;
+      renderCatalogue();
+    });
+    app.querySelectorAll('[data-view]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        cat.view = b.dataset.view;
+        app.querySelectorAll('[data-view]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        renderResults();
+      });
+    });
+    document.getElementById('results').addEventListener('click', function (e) {
+      var tr = e.target.closest('tr[data-href]');
+      if (tr && !e.target.closest('a')) location.hash = tr.dataset.href;
+    });
+    renderResults();
+  }
+
+  // ---------- chair page ----------
+  var GROUPS = [
+    { title: 'What it is', keys: ['brand', 'model', 'maker_code', 'variant', 'chair_type', 'identified', 'condition_seen', 'maker_country'] },
+    { title: 'Sizes', keys: ['seat_height_cm', 'seat_width_cm', 'seat_depth_cm', 'overall_w_d_h_cm', 'base_diameter_cm'] },
+    { title: 'Comfort and adjustments', keys: ['back', 'seat', 'lumbar', 'armrests', 'headrest', 'recline', 'seat_depth_slide'] },
+    { title: 'Build, price and warranty', keys: ['base_and_wheels', 'gas_lift', 'weight_limit_kg', 'chair_weight_kg', 'warranty', 'price_new', 'lowest_price_seen_php', 'last_checked'] }
+  ];
+  var LABELS = {
+    brand: 'Brand', model: 'Model', maker_code: 'Maker code', variant: 'This unit', chair_type: 'Type', identified: 'Identified',
+    condition_seen: 'Condition', maker_country: 'Maker country', seat_height_cm: 'Seat height (cm)', seat_width_cm: 'Seat width (cm)',
+    seat_depth_cm: 'Seat depth (cm)', overall_w_d_h_cm: 'Overall W × D × H (cm)', base_diameter_cm: 'Base diameter (cm)',
+    back: 'Back', seat: 'Seat', lumbar: 'Lower-back support (lumbar)', armrests: 'Armrests', headrest: 'Headrest',
+    recline: 'Recline (leaning back)', seat_depth_slide: 'Seat-depth slide', base_and_wheels: 'Base and wheels', gas_lift: 'Gas lift',
+    weight_limit_kg: 'Weight limit (kg)', chair_weight_kg: 'Chair weight (kg)', warranty: 'Warranty', price_new: 'Price new',
+    lowest_price_seen_php: 'Lowest price seen (₱)', last_checked: 'Last checked'
+  };
+  function label(k) { return LABELS[k] || k.replace(/_/g, ' ').replace(/^./, function (x) { return x.toUpperCase(); }); }
+  function factsTables(c) {
+    var used = { id: true };
+    var html = GROUPS.map(function (g) {
+      var rows = g.keys.filter(function (k) { return k in c.fields; }).map(function (k) {
+        used[k] = true;
+        return '<tr><th scope="row">' + esc(label(k)) + '</th><td>' + esc(c.fields[k]) + '</td></tr>';
+      }).join('');
+      return rows ? '<div class="table-wrap"><table><caption>' + esc(g.title) + '</caption><tbody>' + rows + '</tbody></table></div>' : '';
+    }).join('');
+    var extra = c.order.filter(function (k) { return !used[k]; });
+    if (extra.length) {
+      html += '<div class="table-wrap"><table><caption>Other</caption><tbody>' + extra.map(function (k) {
+        return '<tr><th scope="row">' + esc(label(k)) + '</th><td>' + esc(c.fields[k]) + '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+    }
+    return html;
+  }
+  function sectionByName(c, re) {
+    for (var i = 0; i < c.sections.length; i++) if (re.test(c.sections[i].heading)) return c.sections[i];
+    return null;
+  }
+
+  function renderChair(id) {
+    var c = byId[id];
+    if (!c) {
+      app.innerHTML = '<div class="view empty"><h2 tabindex="-1">Chair not found</h2><p>It may have been renamed. Go back to the list.</p><a class="btn" href="#">All chairs</a></div>';
+      return;
+    }
+    var f = c.fields, t = splitTitle(c.title), d = c.d;
+    var main = c.photos.length
+      ? '<img id="mainPhoto" src="' + esc(sized(c.photos[0], 1000)) + '" alt="Photo 1 of ' + esc(t.name) + '">'
+      : noPhoto();
+    var thumbs = c.photos.length > 1 ? '<div class="thumbs" role="group" aria-label="More photos">' + c.photos.map(function (p, i) {
+      return '<button type="button" data-photo="' + i + '" aria-label="Show photo ' + (i + 1) + '"' + (i === 0 ? ' aria-current="true"' : '') + '><img src="' + esc(sized(p, 160)) + '" alt="" loading="lazy"></button>';
+    }).join('') + '</div>' : '';
+
+    var glance = sectionByName(c, /^at a glance/i);
+    var pros = sectionByName(c, /^pros/i);
+    var cons = sectionByName(c, /^cons/i);
+    var shown = [glance, pros, cons];
+    var rest = c.sections.filter(function (s) { return shown.indexOf(s) === -1; });
+
+    var inStock = c.shops.filter(function (s) { return s.isOB && s.inStock; });
+    var stockLine = inStock.length
+      ? '<p class="stock"><strong>Can sit-test:</strong> ' + esc(uniq(inStock.map(function (s) { return s.place; })).join(', ')) + ' (in stock on ' + esc(niceDate(f.last_checked)) + ')</p>'
+      : '<p class="stock"><strong>Can’t sit-test:</strong> not at an Office Busters branch.</p>';
+
+    var obUrl = (c.shops.filter(function (s) { return s.isOB && s.url; })[0] || {}).url || c.shopUrl;
+
+    app.innerHTML = '<article class="view">' +
+      '<nav class="crumbs" aria-label="Back"><a href="#">← All chairs</a></nav>' +
+      '<div class="chair-top">' +
+        '<div class="gallery"><div class="gallery-main">' + main + '</div>' + thumbs + '</div>' +
+        '<div class="summary">' +
+          '<h1 tabindex="-1">' + esc(t.name) + '</h1>' +
+          (t.sub ? '<p class="sub">' + esc(t.sub) + '</p>' : '') +
+          '<div class="badges">' + idBadge(c) + '<span class="badge plain">Condition: ' + esc(f.condition_seen) + '</span></div>' +
+          '<p class="big-price">' + (d.price == null ? 'Price not known' : peso(d.price)) + '<small>Lowest price seen' + (d.priceNote ? ' ' + esc(d.priceNote) : '') + '</small></p>' +
+          '<dl class="quick">' +
+            '<dt>Seat height (cm)</dt><dd>' + esc(f.seat_height_cm) + '</dd>' +
+            '<dt>Seat depth (cm)</dt><dd>' + esc(f.seat_depth_cm) + '</dd>' +
+            '<dt>Seat-depth slide</dt><dd>' + esc(f.seat_depth_slide) + '</dd>' +
+            '<dt>Armrests</dt><dd>' + esc(f.armrests) + '</dd>' +
+            '<dt>Back</dt><dd>' + esc(f.back) + '</dd>' +
+            '<dt>Weight limit (kg)</dt><dd>' + esc(f.weight_limit_kg) + '</dd>' +
+          '</dl>' +
+          stockLine +
+          '<div class="actions">' +
+            pickButton(c.id, true) +
+            '<a class="btn" href="#find/' + esc(c.id) + '">How it fits me</a>' +
+            (obUrl ? '<a class="btn" href="' + esc(obUrl) + '" target="_blank" rel="noopener">Open shop page ↗</a>' : '') +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      (c.introHtml ? '<div class="note-box md">' + c.introHtml + '</div>' : '') +
+      '<div class="three">' +
+        (glance ? '<section class="panel"><h2>' + esc(glance.heading) + '</h2><div class="md">' + glance.html + '</div></section>' : '') +
+        (pros ? '<section class="panel pros"><h2><span class="mark" aria-hidden="true">✓</span>' + esc(pros.heading) + '</h2><div class="md">' + pros.html + '</div></section>' : '') +
+        (cons ? '<section class="panel cons"><h2><span class="mark" aria-hidden="true">✗</span>' + esc(cons.heading) + '</h2><div class="md">' + cons.html + '</div></section>' : '') +
+      '</div>' +
+      '<h2 class="section-title">All key facts</h2>' +
+      '<p class="section-hint">Copied exactly from the top of the chair file.</p>' +
+      '<div class="facts-groups">' + factsTables(c) + '</div>' +
+      '<h2 class="section-title">Everything else in the chair file</h2>' +
+      '<p class="section-hint">Tap a heading to open it.</p>' +
+      rest.map(function (s) {
+        var open = /^where to buy/i.test(s.heading) ? ' open' : '';
+        return '<details class="sec"' + open + '><summary>' + esc(s.heading) + '</summary><div class="md">' + s.html + '</div></details>';
+      }).join('') +
+      '<p class="file-note">From the file ' + esc(c.file) + ' · last checked ' + esc(niceDate(f.last_checked)) + '</p>' +
+    '</article>';
+
+    app.querySelectorAll('[data-pick]').forEach(setPickButton);
+    app.querySelectorAll('[data-photo]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = Number(b.dataset.photo);
+        var mainImg = document.getElementById('mainPhoto');
+        if (mainImg) { mainImg.src = sized(c.photos[i], 1000); mainImg.alt = 'Photo ' + (i + 1) + ' of ' + t.name; }
+        app.querySelectorAll('[data-photo]').forEach(function (x) { x.removeAttribute('aria-current'); });
+        b.setAttribute('aria-current', 'true');
+      });
+    });
+  }
+
+  // ---------- find my chair ----------
+  var findDefaults = { h: '150', desk: '', budget: '', weight: '', slide: true, mesh: true, arms: 'any' };
+  var inp = Object.assign({}, findDefaults, store.get('find', {}));
+
+  function readNum(v) { var n = parseFloat(v); return isFinite(n) && n > 0 ? n : null; }
+
+  function fitChair(c, o, cheapest) {
+    var d = c.d, f = c.fields, R = [], pts = 0, max = 0;
+    function add(cls, text) { R.push({ cls: cls, text: text }); }
+    var h = o.h;
+    var G = h * 0.25 - 1;
+    var gapDesk = h * 0.55 / 3 - 2.5;
+    var T = o.desk ? o.desk - gapDesk : G;
+    var footrest = null, group = 'ranked';
+
+    // 1. seat height
+    max += 30;
+    if (d.seatMin == null) {
+      add('unk', 'Seat height ' + f.seat_height_cm + ': fit can’t be checked');
+      group = 'noinfo';
+    } else {
+      var S = Math.min(Math.max(T, d.seatMin), d.seatMax);
+      var gap = Math.abs(S - T);
+      pts += Math.max(0, 30 - 4 * gap);
+      var cls = gap <= 1 ? 'good' : (gap <= 4 ? 'ok' : 'bad');
+      var note = noteAfter(f.seat_height_cm, d.seatText);
+      note = note ? ' ' + note : '';
+      if (gap < 0.05) {
+        add('good', o.desk
+          ? 'Seat can be set to ' + f1(T) + ' cm, right for your desk (range ' + d.seatText + ' cm' + note + ')'
+          : 'Seat goes down to ' + f1(G) + ' cm, so your feet rest flat (range ' + d.seatText + ' cm' + note + ')');
+      } else if (S > T) {
+        // without a desk, a seat that is too high is fixed with a footrest, so it is "partly" not "no"
+        add(o.desk ? cls : 'ok', 'Lowest seat ' + f1(d.seatMin) + ' cm' + note + ' is ' + f1(gap) + ' cm higher than ' + (o.desk ? 'your desk needs (' + f1(T) + ' cm)' : 'your ' + f1(G) + ' cm guide'));
+      } else {
+        add(cls, 'Highest seat ' + f1(d.seatMax) + ' cm' + note + ' is ' + f1(gap) + ' cm lower than ' + (o.desk ? 'your desk needs (' + f1(T) + ' cm)' : 'your ' + f1(G) + ' cm guide'));
+      }
+      footrest = S - G > 0.05 ? S - G : 0;
+    }
+
+    // 2. seat depth
+    max += 20;
+    var DG = h * 0.29 - 5;
+    if (d.depthMin == null) {
+      add('unk', 'Seat depth ' + f.seat_depth_cm + ': fit can’t be checked');
+    } else {
+      var over = d.depthMin - DG;
+      pts += Math.max(0, 20 - 4 * Math.max(0, over));
+      var dcls = over <= 1 ? 'good' : (over <= 4 ? 'ok' : 'bad');
+      var dnote = d.depthSlide === 'yes' ? ' at its shortest' : (noteAfter(f.seat_depth_cm, d.depthText) ? ' ' + noteAfter(f.seat_depth_cm, d.depthText) : '');
+      if (over <= 0) add('good', 'Seat depth ' + f1(d.depthMin) + ' cm' + dnote + ' fits (your guide: up to ' + f1(DG) + ' cm)');
+      else add(dcls, 'Seat depth ' + f1(d.depthMin) + ' cm' + dnote + ' is ' + f1(over) + ' cm deeper than your guide (' + f1(DG) + ' cm)');
+    }
+
+    // 3. things you want
+    if (o.slide) {
+      max += 10;
+      if (d.depthSlide === 'yes') { pts += 10; add('good', 'Seat-depth slide: ' + f.seat_depth_slide); }
+      else if (d.depthSlide === 'unknown') add('unk', 'Seat-depth slide: ' + f.seat_depth_slide);
+      else add('bad', 'Seat-depth slide: ' + f.seat_depth_slide);
+    }
+    if (o.mesh) {
+      max += 10;
+      if (d.back === 'mesh') { pts += 10; add('good', 'Mesh back, cooler in hot weather'); }
+      else if (d.back === 'fabric') add('bad', 'Fabric back, warmer than mesh');
+      else add('unk', 'Back: ' + f.back);
+    }
+    if (o.arms === 'want' || o.arms === 'none') {
+      max += 10;
+      var a = d.arms;
+      if (a === 'unknown') add('unk', 'Armrests: ' + f.armrests);
+      else if (o.arms === 'want') {
+        if (a === 'yes' || a === 'both') { pts += 10; add('good', 'Armrests: ' + f.armrests); }
+        else add('bad', 'No armrests: ' + f.armrests);
+      } else {
+        if (a === 'no' || a === 'both') { pts += 10; add('good', 'Armrests: ' + f.armrests); }
+        else add('bad', 'Has armrests: ' + f.armrests);
+      }
+    }
+
+    // 4. how sure we are of the model
+    max += 10;
+    if (d.identified === 'confirmed') { pts += 10; add('good', 'Model confirmed'); }
+    else if (d.identified === 'very likely') { pts += 7; add('ok', 'Model very likely: ask for a photo of the label under the seat'); }
+    else add('bad', 'Model not identified yet, so most sizes are unknown');
+
+    // 5. price
+    max += 10;
+    if (d.price != null) {
+      pts += 10 * cheapest / d.price;
+      add('info', peso(d.price) + ' lowest price seen' + (d.priceNote ? ' ' + d.priceNote : ''));
+      if (o.budget) {
+        if (d.price > o.budget) { add('bad', 'Over your budget of ' + peso(o.budget)); if (group !== 'weight') group = 'over'; }
+        else add('good', 'Within your budget of ' + peso(o.budget));
+      }
+    } else add('unk', 'Price not known');
+
+    // 6. can sit on it first
+    max += 5;
+    if (d.sitTest.length) {
+      pts += 5;
+      var where = d.sitTest.map(function (p) { return p === 'OB (branch not stated)' ? 'Office Busters (ask which branch)' : p; });
+      add('good', 'Can sit on it before paying at ' + where.join(' or '));
+    } else add('bad', 'Can’t try it before buying (online only)');
+
+    // 7. weight
+    if (o.weight) {
+      if (d.weightLimit == null) add('unk', 'Weight limit: ' + f.weight_limit_kg);
+      else if (d.weightLimit < o.weight) { add('bad', 'Weight limit ' + f.weight_limit_kg + ' is below your weight'); group = 'weight'; }
+      else add('good', 'Weight limit ' + f.weight_limit_kg);
+    }
+
+    return { c: c, pts: pts, max: max, pct: Math.round(100 * pts / max), reasons: R, footrest: footrest, group: group };
+  }
+
+  function matchHtml(m, rank, isTop) {
+    var c = m.c, t = splitTitle(c.title);
+    var marks = { good: '✓', ok: '~', bad: '✗', unk: '?', info: '₱' };
+    var words = { good: 'Good: ', ok: 'Partly: ', bad: 'No: ', unk: 'Unknown: ', info: 'Price: ' };
+    return '<li class="match' + (isTop ? ' top' : '') + '" id="m-' + esc(c.id) + '">' +
+      '<div class="rank" aria-hidden="true">' + rank + '</div>' +
+      '<a class="thumb" href="#chair/' + esc(c.id) + '" tabindex="-1" aria-hidden="true">' + img(c, 200) + '</a>' +
+      '<div class="reasons-wrap">' +
+        (isTop ? '<span class="top-label">Best match</span>' : '') +
+        '<h3><a href="#chair/' + esc(c.id) + '">' + esc(t.name) + '</a></h3>' +
+        '<p class="match-meta">' + (c.d.price == null ? 'Price not known' : peso(c.d.price)) + ' · ' + esc(placesText(c)) + '</p>' +
+        '<div class="meter-row"><div class="meter" role="img" aria-label="' + m.pct + ' percent match"><span style="--v:' + (m.pct / 100) + '"></span></div><span class="pct">' + m.pct + '% match</span></div>' +
+        '<ul class="reasons">' + m.reasons.map(function (r) {
+          return '<li><span class="mark ' + r.cls + '" aria-hidden="true">' + marks[r.cls] + '</span><span><span class="sr-only">' + words[r.cls] + '</span>' + esc(r.text) + '</span></li>';
+        }).join('') + '</ul>' +
+        (m.footrest ? '<p class="advice">Footrest: about ' + f1(m.footrest) + ' cm high, so your feet rest flat.</p>' : '') +
+      '</div>' +
+    '</li>';
+  }
+
+  function findInputs() {
+    var h = readNum(inp.h);
+    if (h && (h < 100 || h > 220)) h = null;
+    return { h: h, desk: readNum(inp.desk), budget: readNum(inp.budget), weight: readNum(inp.weight), slide: inp.slide, mesh: inp.mesh, arms: inp.arms };
+  }
+  function cheapestPrice() {
+    var prices = CHAIRS.map(function (c) { return c.d.price; }).filter(function (p) { return p != null; });
+    return Math.min.apply(null, prices);
+  }
+  // used by the "Best fit for me" sort on the All chairs page
+  function fitScores() {
+    var o = findInputs(), map = {};
+    var GROUP_RANK = { ranked: 3, noinfo: 2, over: 1, weight: 0 };
+    var cheapest = cheapestPrice();
+    CHAIRS.forEach(function (c) {
+      if (!o.h) { map[c.id] = 0; return; }
+      var m = fitChair(c, o, cheapest);
+      map[c.id] = GROUP_RANK[m.group] * 1000 + 100 * m.pts / m.max;
+    });
+    return map;
+  }
+
+  function renderFindResults(focusId) {
+    var o = findInputs();
+    store.set('find', inp);
+    var guides = document.getElementById('guides');
+    var box = document.getElementById('findResults');
+    if (!o.h || o.h < 100 || o.h > 220) {
+      guides.innerHTML = '<p>Type your height in centimeters (for example 150) to see the ranking.</p>';
+      box.innerHTML = '';
+      return;
+    }
+    var G = o.h * 0.25 - 1, DG = o.h * 0.29 - 5, gapDesk = o.h * 0.55 / 3 - 2.5;
+    var g = '<p>For <strong>' + f1(o.h).replace(/\.0$/, '') + ' cm</strong>: seat about <strong>' + f1(G) + ' cm</strong> from the floor (feet flat), seat depth up to <strong>' + f1(DG) + ' cm</strong>.</p>';
+    if (o.desk) {
+      var T = o.desk - gapDesk;
+      g += '<p>For your <strong>' + f1(o.desk).replace(/\.0$/, '') + ' cm</strong> desk, set the seat to about <strong>' + f1(T) + ' cm</strong> (desk top about ' + f1(gapDesk) + ' cm above the seat).' +
+        (T > G + 0.05 ? ' That is higher than ' + f1(G) + ' cm, so you need a footrest about ' + f1(T - G) + ' cm with <em>any</em> chair.' : '') + '</p>';
+    } else {
+      g += '<p>Add your desk height for a better answer.</p>';
+    }
+    guides.innerHTML = g;
+
+    var prices = CHAIRS.map(function (c) { return c.d.price; }).filter(function (p) { return p != null; });
+    var cheapest = Math.min.apply(null, prices);
+    var all = CHAIRS.map(function (c) { return fitChair(c, o, cheapest); });
+    all.sort(function (a, b) { return b.pts / b.max - a.pts / a.max || nullsLast(a.c.d.price, b.c.d.price) || a.c.title.localeCompare(b.c.title); });
+    var groups = {
+      ranked: { title: 'Best fit for you', hint: 'Ranked by fit first, then the things you want, then price.', list: [] },
+      noinfo: { title: 'Not enough facts to judge the fit', hint: 'Seat height is not in the chair file yet. A photo of the label under the seat would help.', list: [] },
+      over: { title: 'Over your budget', hint: 'These fit the other rules but cost more than your budget.', list: [] },
+      weight: { title: 'Weight limit below your weight', hint: 'Not safe for you, based on the limit in the chair file.', list: [] }
+    };
+    all.forEach(function (m) { groups[m.group].list.push(m); });
+    var html = '';
+    var rank = 0;
+    ['ranked', 'noinfo', 'over', 'weight'].forEach(function (k) {
+      var gr = groups[k];
+      if (!gr.list.length) return;
+      html += '<h2 class="group-title">' + gr.title + ' <span class="num" style="color:var(--ink-2);font-weight:500">(' + gr.list.length + ')</span></h2><p class="group-hint">' + gr.hint + '</p>';
+      html += '<ol class="matches">' + gr.list.map(function (m, i) {
+        rank++;
+        return matchHtml(m, rank, k === 'ranked' && i === 0);
+      }).join('') + '</ol>';
+    });
+    box.innerHTML = html;
+    if (focusId) {
+      var el = document.getElementById('m-' + focusId);
+      if (el) {
+        el.scrollIntoView({ block: 'center' });
+        el.classList.add('flash');
+      }
+    }
+  }
+
+  function renderFind(focusId) {
+    app.innerHTML = '<div class="view">' +
+      '<section class="intro"><div><h1 tabindex="-1">Find my chair</h1>' +
+      '<p class="lede">Type your height. Every chair is ranked by how well it should fit you, using only the facts in the chair files. Sitting on the chair is still the real test.</p></div></section>' +
+      '<div class="find-layout">' +
+        '<form class="find-form" id="findForm" autocomplete="off" onsubmit="return false">' +
+          '<fieldset><legend>About you</legend>' +
+            '<div class="two">' +
+              '<label class="field">Your height (cm)<input class="input" id="i-h" type="number" inputmode="decimal" min="100" max="220" step="0.5" value="' + esc(inp.h) + '"></label>' +
+              '<label class="field">Desk height (cm)<input class="input" id="i-desk" type="number" inputmode="decimal" min="40" max="120" step="0.5" placeholder="Optional" value="' + esc(inp.desk) + '"></label>' +
+            '</div>' +
+            '<p class="field"><span class="hint">Desk height: floor to the top of the desk. Many desks are 70 to 72 cm.</span></p>' +
+            '<div class="two">' +
+              '<label class="field">Budget up to (₱)<input class="input" id="i-budget" type="number" inputmode="numeric" min="0" step="100" placeholder="Optional" value="' + esc(inp.budget) + '"></label>' +
+              '<label class="field">Your weight (kg)<input class="input" id="i-weight" type="number" inputmode="decimal" min="20" max="250" step="1" placeholder="Optional" value="' + esc(inp.weight) + '"></label>' +
+            '</div>' +
+          '</fieldset>' +
+          '<fieldset><legend>What I want</legend>' +
+            '<label class="check"><input type="checkbox" id="i-slide"' + (inp.slide ? ' checked' : '') + '> Seat-depth slide (seat moves forward and back)</label>' +
+            '<label class="check"><input type="checkbox" id="i-mesh"' + (inp.mesh ? ' checked' : '') + '> Mesh back (cooler in hot weather)</label>' +
+            '<div class="radio-row" role="radiogroup" aria-label="Armrests">' +
+              '<span class="field">Armrests</span>' +
+              ['any:Don’t care', 'want:I want armrests', 'none:No armrests'].map(function (s) {
+                var p = s.split(':');
+                return '<label class="check"><input type="radio" name="arms" value="' + p[0] + '"' + (inp.arms === p[0] ? ' checked' : '') + '> ' + p[1] + '</label>';
+              }).join('') +
+            '</div>' +
+          '</fieldset>' +
+          '<button type="button" class="btn" id="i-reset">Reset</button>' +
+        '</form>' +
+        '<div>' +
+          '<div class="guides" id="guides"></div>' +
+          '<details class="how"><summary>How the ranking works</summary><div class="md">' +
+            '<p><strong>Fit comes first.</strong> These are rules of thumb, not measurements of you.</p>' +
+            '<ul>' +
+              '<li><strong>Seat height:</strong> your height × 0.25 − 1 = the seat height where your feet rest flat (36.5 cm for 150 cm). Same rule as the 11 Nov 2026 best-chair report (source: osusumepc.com). If the lowest seat is higher, use a footrest.</li>' +
+              '<li><strong>Desk (if you type it):</strong> the desk top should be about your height × 0.55 ÷ 3 − 2.5 cm above the seat (Japanese 差尺 rule; 25.0 cm for 150 cm). The seat is set for the desk and a footrest makes up the rest.</li>' +
+              '<li><strong>Seat depth:</strong> your height × 0.29 − 5 (38.5 cm for 150 cm), so the seat edge does not press behind your knees and you can sit all the way back. Shorter is better.</li>' +
+            '</ul>' +
+            '<p><strong>Points:</strong> seat height up to 30 (minus 4 for each cm off), seat depth up to 20 (minus 4 for each cm too deep), 10 for each thing you want, model confirmed 10 / very likely 7 / not identified 0, price up to 10 (the cheapest chair gets 10), can sit on it first at Office Busters 5. Facts that are not in the file get 0 points and show “?”. Match % = points ÷ the most points possible.</p>' +
+          '</div></details>' +
+          '<div id="findResults" aria-live="polite"></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+    function bindInput(id, key) {
+      document.getElementById(id).addEventListener('input', function (e) { inp[key] = e.target.value; renderFindResults(); });
+    }
+    bindInput('i-h', 'h'); bindInput('i-desk', 'desk'); bindInput('i-budget', 'budget'); bindInput('i-weight', 'weight');
+    document.getElementById('i-slide').addEventListener('change', function (e) { inp.slide = e.target.checked; renderFindResults(); });
+    document.getElementById('i-mesh').addEventListener('change', function (e) { inp.mesh = e.target.checked; renderFindResults(); });
+    app.querySelectorAll('input[name="arms"]').forEach(function (r) {
+      r.addEventListener('change', function () { inp.arms = r.value; renderFindResults(); });
+    });
+    document.getElementById('i-reset').addEventListener('click', function () {
+      inp = Object.assign({}, findDefaults);
+      renderFind();
+    });
+    renderFindResults(focusId);
+  }
+
+  // ---------- compare ----------
+  function renderCompare() {
+    var list = picked.map(function (id) { return byId[id]; });
+    var addable = CHAIRS.filter(function (c) { return picked.indexOf(c.id) === -1; })
+      .sort(function (a, b) { return a.title.localeCompare(b.title); });
+    var picker = picked.length < MAX_PICK
+      ? '<label class="field" style="min-width:260px">Add a chair<select class="select" id="addPick"><option value="">Choose…</option>' +
+        addable.map(function (c) { return '<option value="' + esc(c.id) + '">' + esc(splitTitle(c.title).name) + '</option>'; }).join('') + '</select></label>'
+      : '<p class="section-hint">3 chairs picked. Remove one to add another.</p>';
+
+    var head = '<div class="compare-head"><div><h1 tabindex="-1">Compare chairs</h1><p class="lede">Up to 3 chairs side by side. Values are copied exactly from the chair files.</p></div>' + picker + '</div>';
+
+    if (!list.length) {
+      app.innerHTML = '<div class="view">' + head + '<div class="empty"><h2>No chairs picked yet</h2><p>Choose a chair above, or press “+ Compare” on any chair in the list.</p><a class="btn" href="#">Go to all chairs</a></div></div>';
+      bindPicker();
+      return;
+    }
+
+    function bestIdx(getter, dir) {
+      var vals = list.map(getter);
+      var known = vals.filter(function (v) { return v != null; });
+      if (known.length < 2) return -1;
+      var best = dir > 0 ? Math.max.apply(null, known) : Math.min.apply(null, known);
+      var hits = vals.filter(function (v) { return v === best; }).length;
+      return hits === known.length ? -1 : vals.indexOf(best);
+    }
+    var cheap = bestIdx(function (c) { return c.d.price; }, -1);
+    var low = bestIdx(function (c) { return c.d.seatMin; }, -1);
+    var shallow = bestIdx(function (c) { return c.d.depthMin; }, -1);
+    var BEST = { lowest_price_seen_php: [cheap, 'Cheapest'], seat_height_cm: [low, 'Lowest seat'], seat_depth_cm: [shallow, 'Shortest seat'] };
+
+    var cols = list.map(function (c) {
+      var t = splitTitle(c.title);
+      return '<th scope="col"><div class="cmp-photo">' + img(c, 400) + '</div><a class="cmp-name" href="#chair/' + esc(c.id) + '">' + esc(t.name) + '</a>' +
+        '<button type="button" class="btn small" data-remove="' + esc(c.id) + '">Remove</button></th>';
+    }).join('');
+    var body = '';
+    body += '<tr><th scope="row">Where (Philippines)</th>' + list.map(function (c) { return '<td>' + esc(placesText(c)) + '</td>'; }).join('') + '</tr>';
+    GROUPS.forEach(function (g) {
+      body += '<tr class="row-group"><th scope="rowgroup" colspan="' + (list.length + 1) + '">' + esc(g.title) + '</th></tr>';
+      g.keys.forEach(function (k) {
+        body += '<tr><th scope="row">' + esc(label(k)) + '</th>' + list.map(function (c, i) {
+          var b = BEST[k];
+          var isBest = b && b[0] === i;
+          return '<td' + (isBest ? ' class="best"' : '') + '>' + (isBest ? '<span class="best-tag">' + b[1] + '</span>' : '') + esc(c.fields[k] == null ? '' : c.fields[k]) + '</td>';
+        }).join('') + '</tr>';
+      });
+    });
+    ['Pros', 'Cons'].forEach(function (name) {
+      body += '<tr class="row-group"><th scope="rowgroup" colspan="' + (list.length + 1) + '">' + name + '</th></tr>';
+      body += '<tr><th scope="row">' + name + '</th>' + list.map(function (c) {
+        var s = sectionByName(c, new RegExp('^' + name, 'i'));
+        return '<td><div class="md">' + (s ? s.html : '') + '</div></td>';
+      }).join('') + '</tr>';
+    });
+
+    app.innerHTML = '<div class="view">' + head +
+      '<div class="table-wrap"><table class="compare-table" style="min-width:' + (120 + list.length * 190) + 'px"><thead><tr><th scope="col"><span class="sr-only">Fact</span></th>' + cols + '</tr></thead><tbody>' + body + '</tbody></table></div>' +
+    '</div>';
+    bindPicker();
+    app.querySelectorAll('[data-remove]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        picked = picked.filter(function (id) { return id !== b.dataset.remove; });
+        savePicks();
+        renderCompare();
+      });
+    });
+  }
+  function bindPicker() {
+    var sel = document.getElementById('addPick');
+    if (!sel) return;
+    sel.addEventListener('change', function () {
+      if (sel.value && picked.length < MAX_PICK && picked.indexOf(sel.value) === -1) {
+        picked.push(sel.value);
+        savePicks();
+        renderCompare();
+      }
+    });
+  }
+
+  // ---------- footer + routing ----------
+  document.getElementById('footer').innerHTML =
+    '<p>Made from ' + CHAIRS.length + ' chair files in Documents\\Chair Library\\chairs. Website rebuilt ' + esc(niceDate(DATA.builtOn)) + '.</p>' +
+    '<p>When chair files are added or changed, the website is rebuilt so new chairs show up here.</p>';
+
+  function route() {
+    if (currentView === 'catalogue') catScroll = window.scrollY;
+    var h = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
+    var parts = h.split('/');
+    var view = parts[0] || 'catalogue';
+    var arg = parts.slice(1).join('/');
+    if (view === 'chair') renderChair(arg);
+    else if (view === 'find') renderFind(arg);
+    else if (view === 'compare') renderCompare();
+    else { view = 'catalogue'; renderCatalogue(); }
+    var prev = currentView;
+    currentView = view;
+    document.querySelectorAll('[data-nav]').forEach(function (a) {
+      if (a.dataset.nav === view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    updateTray();
+    var titles = { catalogue: 'All chairs', find: 'Find my chair', compare: 'Compare chairs' };
+    document.title = (view === 'chair' && byId[arg] ? splitTitle(byId[arg].title).name : titles[view] || 'Chairs') + ' · Chair Library';
+    if (view === 'find' && arg) return; // renderFind scrolls to the chair
+    window.scrollTo(0, view === 'catalogue' && prev && prev !== 'catalogue' ? catScroll : 0);
+    var h1 = app.querySelector('h1, h2[tabindex]');
+    if (h1 && prev) h1.focus({ preventScroll: true });
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
