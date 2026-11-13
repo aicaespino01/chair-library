@@ -24,6 +24,7 @@ The website is built from the chair files, so never edit it by hand. After addin
 ## Folder
 
 - `Chair Website.html`: the website (built from `chairs/`)
+- `index.html`: opens the website at the online link; `.nojekyll` makes GitHub show the files as they are
 - `website/`: `build.js` and `template.html`, which make the website
 - `index.md`: list of all chair files
 - `template.md`: the layout every chair file follows
@@ -31,4 +32,5 @@ The website is built from the chair files, so never edit it by hand. After addin
 
 ## Online
 
-Private copy on GitHub (once the repository is created).
+- Website: https://aicaespino01.github.io/chair-library/ (updates about a minute after each upload)
+- Files: https://github.com/aicaespino01/chair-library (public: only shop and maker information, no personal or clinic data)
