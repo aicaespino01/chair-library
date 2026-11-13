@@ -1,6 +1,6 @@
 # Chair index
 
-Last updated: 2026-11-11. One row per chair file in `chairs/`. Prices are the lowest seen, with the date in each file.
+Last updated: 2026-11-13. One row per chair file in `chairs/`. Prices are the lowest seen, with the date in each file.
 
 ## Identified
 
@@ -15,6 +15,10 @@ Last updated: 2026-11-11. One row per chair file in `chairs/`. Prices are the lo
 | Itoki fulgo | KF-440 (or KF-430) | Low back, no arms, fabric | Very likely | ₱3,000 (used) | Office Busters Balintawak | [itoki-fulgo-kf-440.md](chairs/itoki-fulgo-kf-440.md) |
 | Itoki torte-R | KZ-246 family | Compact, loop arms, low seat 40.5 cm | Very likely | ₱3,500 (used) | Office Busters Sta. Rosa | [itoki-torte-r-kz-246.md](chairs/itoki-torte-r-kz-246.md) |
 | Uchida EPO | EF2-xxx (to confirm) | Two-tone, no arms | Very likely | ₱3,000 (used) | Office Busters Cainta | [uchida-epo.md](chairs/uchida-epo.md) |
+| Okamura Sylphy | C638XR (to confirm) | High back, cushion back, no arms, hanger, **seat-depth adjust** | Very likely | ₱3,000 (used) | Office Busters Makati | [okamura-sylphy-c638xr.md](chairs/okamura-sylphy-c638xr.md) |
+| Okamura CG-R | CN33ZR | Compact, low back, no arms, fabric | Very likely | ₱3,000 (used) | Office Busters Balintawak | [okamura-cg-r-cn33zr.md](chairs/okamura-cg-r-cn33zr.md) |
+| Itoki Dorsal | KKV-540 family | Low back, no arms, split back; sizes not found | Very likely | ₱3,000 (used) | Office Busters Balintawak | [itoki-dorsal-kkv-540.md](chairs/itoki-dorsal-kkv-540.md) |
+| Itoki Prego | KZ-4xx family | Low back, loop arms, fabric | Very likely | ₱3,000 (used) | Office Busters Balintawak | [itoki-prego-kz-4.md](chairs/itoki-prego-kz-4.md) |
 | Xpanse F7 | F7 Basic / Upgrade | High back, mesh, lumbar, arms, headrest, leg rest | Confirmed | ₱7,039 Lazada (Shopee preview from ₱3,259) | Lazada / Shopee / TikTok Shop | [xpanse-f7.md](chairs/xpanse-f7.md) |
 
 ## Not identified yet (need the label under the seat)
@@ -29,6 +33,7 @@ Last updated: 2026-11-11. One row per chair file in `chairs/`. Prices are the lo
 | Okamura | VSM | Gray high back with hanger, no arms | ₱3,000 | branch not stated | [unidentified-ob-okamura-swivel-chair-39.md](chairs/unidentified-ob-okamura-swivel-chair-39.md) |
 | Brand unknown (INA), 2 listings | SEI | Blue round back, with or without loop arms | ₱2,800 | Office Busters Cainta and Balintawak | [unidentified-ob-ina-sei.md](chairs/unidentified-ob-ina-sei.md) |
 | Plus | PAN | Red back, adjustable arms | ₱3,000 | Office Busters Cainta | [unidentified-ob-plus-swivel-chair.md](chairs/unidentified-ob-plus-swivel-chair.md) |
+| Itoki | PIN | Dark teal, thick padding, no arms | ₱3,000 | Office Busters Balintawak | [unidentified-ob-itoki-swivel-chair-49.md](chairs/unidentified-ob-itoki-swivel-chair-49.md) |
 
 ## Office Busters swivel chairs not done yet
-On 2026-11-11 the "chairs" collection had 106 listings (97 in stock). 44 have "Swivel" in the title, 38 of them in stock. Done so far: 21 of the 44 swivel listings (batch 1: 6, batch 2: 5, batch 3: 10, including one out-of-stock listing with the same SKU). 23 left. Next batch: ask Claude "chair-info: next 5 Office Busters swivel chairs".
+On 2026-11-13 the "chairs" collection had 106 listings. 44 have "Swivel" in the title, 38 of them in stock. Done so far: 26 of the 44 swivel listings (batch 1: 6, batch 2: 5, batch 3: 10, batch 4: 5). 18 left: 12 in stock, 6 sold out. Next batch: ask Claude "chair-info: next 5 Office Busters swivel chairs".
