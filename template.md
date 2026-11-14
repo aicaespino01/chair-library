@@ -25,7 +25,7 @@ gas_lift: ""
 weight_limit_kg: ""            # maker value, or "not published (shop says ...)"
 chair_weight_kg: ""
 warranty: ""
-price_new: ""                  # maker list price + currency, or shop price for new chairs
+price_new: ""                  # NEW price: Japan first in ¥ (website uses it), then country of origin if not Japan (US$...), with source
 lowest_price_seen_php: ""
 last_checked: YYYY-MM-DD
 ---
