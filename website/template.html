@@ -462,7 +462,7 @@ footer p + p { margin-top: 4px; }
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return parseInt(m[3], 10) + ' ' + months[parseInt(m[2], 10) - 1] + ' ' + m[1];
   }
-  function sized(url, w) { return url + (url.indexOf('?') === -1 ? '?' : '&') + 'width=' + w; }
+  function sized(url, w) { if (!/^https?:/.test(url)) return url; return url + (url.indexOf('?') === -1 ? '?' : '&') + 'width=' + w; }
   function splitTitle(t) {
     var i = t.indexOf(': ');
     return i === -1 ? { name: t, sub: '' } : { name: t.slice(0, i), sub: t.slice(i + 2) };

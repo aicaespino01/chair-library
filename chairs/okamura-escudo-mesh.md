@@ -50,6 +50,9 @@ last_checked: 2026-11-14
 | Azumaya (used, C491ZR-FHB4 low back) | officekagu-azumaya.co.jp (Google preview) | ¥15,400 | list ¥118,360 | Used | Japan | — | 2026-11-14 |
 | Azumaya (used, C497ZR-FHB4 high back) | officekagu-azumaya.co.jp (Google preview) | ¥16,500 | list ¥131,780 | Used | Japan | — | 2026-11-14 |
 
+Photos (taken at Office Busters, people cropped out):
+- photos/okamura-escudo-mesh-1.jpg
+
 ## How it was identified
 - Photo of the underside: manual card "ESCUDO mesh SERIES", Office Busters sticker OKASWAESR1527, gray shell, gray mechanism, yellow-green mesh at the edges, arm supports on both sides.
 - Okamura's Escudo page and manual list (pdb.okamura.co.jp) confirm the series name "エスクードメッシュ".

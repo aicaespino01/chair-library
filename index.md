@@ -6,15 +6,17 @@ Last updated: 2026-11-14. One row per chair file in `chairs/`. Prices are the lo
 
 | Chair | Maker code | Type | Identified | Lowest price seen | Where | File |
 |---|---|---|---|---|---|---|
-| Okamura Sulato | C331ZR (also C342BR seen: design arms, hanger, gray shell) | Low back, fabric | Very likely | ₱3,499 (used) | Office Busters Balintawak | [okamura-sulato-c331zr.md](chairs/okamura-sulato-c331zr.md) |
+| Okamura Sulato | C331ZR | Low back, fabric | Very likely | ₱3,499 (used) | Office Busters Balintawak | [okamura-sulato-c331zr.md](chairs/okamura-sulato-c331zr.md) |
+| Okamura Sulato, arms + hanger | C342BR (letter B to confirm) | Low back, fixed design arms, hanger, gray shell | Very likely | seen at Office Busters PH, price not stated | Office Busters PH (branch not stated) | [okamura-sulato-c342br.md](chairs/okamura-sulato-c342br.md) |
 | Okamura Fluent | CB31ZR or CB35ZR | No arms, mesh back, **seat-depth adjust** | Very likely | ₱3,000 (used, pink or green) | Office Busters Sta. Rosa | [okamura-fluent-cb31zr.md](chairs/okamura-fluent-cb31zr.md) |
 | Okamura CG-E | CG14GZ | Compact, no arms, **lowest seat 38.0 cm** | Very likely | ₱2,800 (used) | Office Busters Cainta | [okamura-cg-e-cg14gz.md](chairs/okamura-cg-e-cg14gz.md) |
 | Okamura Carrozza | CK33 or CK35 | No arms, fabric, rocking with lock | Very likely | ₱2,800 (used) | Office Busters Cainta | [okamura-carrozza-ck33.md](chairs/okamura-carrozza-ck33.md) |
 | Okamura Village | probably VC2 (8VC21A) | Low back, no arms, fabric | Very likely (version unsure) | ₱3,500 (used) | Office Busters (branch not stated) | [okamura-village-vc2.md](chairs/okamura-village-vc2.md) |
-| Kokuyo LEGNO2 (and maybe the first LEGNO) | CR-G210 family (label CRS-G210F4VRB4 seen) | Low back, no arms, fabric, **80 kg limit** | Very likely | ₱2,500 (used) | Office Busters Cainta and another branch | [kokuyo-legno2-cr-g210.md](chairs/kokuyo-legno2-cr-g210.md) |
+| Kokuyo LEGNO2 (and maybe the first LEGNO) | CR-G210 family | Low back, no arms, fabric, **80 kg limit** | Very likely | ₱2,500 (used) | Office Busters Cainta and another branch | [kokuyo-legno2-cr-g210.md](chairs/kokuyo-legno2-cr-g210.md) |
+| Kokuyo LEGNO2, gray shell | CRS-G210F4VRB4 | Low back, no arms seen, **80 kg limit** | Confirmed | seen at Office Busters PH, price not stated | Office Busters PH (branch not stated) | [kokuyo-legno2-crs-g210f4vrb4.md](chairs/kokuyo-legno2-crs-g210f4vrb4.md) |
 | Itoki fulgo | KF-440 (or KF-430) | Low back, no arms, fabric | Very likely | ₱3,000 (used) | Office Busters Balintawak | [itoki-fulgo-kf-440.md](chairs/itoki-fulgo-kf-440.md) |
 | Itoki torte-R | KZ-246 family | Compact, loop arms, low seat 40.5 cm | Very likely | ₱3,500 (used) | Office Busters Sta. Rosa | [itoki-torte-r-kz-246.md](chairs/itoki-torte-r-kz-246.md) |
-| Itoki Spina | KE-757GP (label KE-757GPHT1T1SG) | Elastomer rib back, adjustable arms, auto lumbar | Confirmed | not seen in PH online (seen in person) | photo shared 2026-11-14 | [itoki-spina-ke-757gp.md](chairs/itoki-spina-ke-757gp.md) |
+| Itoki Spina | KE-757GP (label KE-757GPHT1T1SG) | Elastomer rib back, adjustable arms, auto lumbar | Confirmed | seen at Office Busters PH, price not stated | Office Busters PH (branch not stated) | [itoki-spina-ke-757gp.md](chairs/itoki-spina-ke-757gp.md) |
 | Okamura Escudo mesh | C491 or C497/C498 (to confirm) | Yellow-green mesh, adjustable arms, **seat-depth adjust** | Very likely (version unsure) | not listed online yet (OB sticker OKASWAESR1527) | Office Busters PH, seen in person | [okamura-escudo-mesh.md](chairs/okamura-escudo-mesh.md) |
 | Uchida EPO | EF2-xxx (to confirm) | Two-tone, no arms | Very likely | ₱3,000 (used) | Office Busters Cainta | [uchida-epo.md](chairs/uchida-epo.md) |
 | Okamura Sylphy | C638XR (to confirm) | High back, cushion back, no arms, hanger, **seat-depth adjust** | Very likely | ₱3,000 (used) | Office Busters Makati | [okamura-sylphy-c638xr.md](chairs/okamura-sylphy-c638xr.md) |

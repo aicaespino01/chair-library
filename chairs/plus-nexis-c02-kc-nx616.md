@@ -50,6 +50,9 @@ last_checked: 2026-11-14
 | ASKUL Japan: C02 no arms, navy × black (KC-NX616SL BL) | askul.co.jp (Google preview) | ¥31,420 | — | New | Japan | Yes | 2026-11-14 |
 | Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 
+Photos (taken at Office Busters, people cropped out):
+- photos/plus-nexis-c02-1.jpg
+
 ## How it was identified
 - Photo: navy textured-fabric back with a rounded top, black fabric seat, chunky black arm pads on posts, black plastic 5-star base.
 - Google image search (photo uploaded as a small copy): one specific match, Amazon Japan "Plus KC-NX616SL ... NEXS/Nexus 616 C02". The rest were lookalikes.

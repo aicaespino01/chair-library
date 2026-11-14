@@ -278,7 +278,8 @@ function readChair(file) {
 
   const wtbSection = sections.find((s) => /^where to buy/i.test(s.heading));
   const shops = wtbSection ? whereToBuy(wtbSection.content) : [];
-  const photos = [...new Set((body.match(/https:\/\/cdn\.shopify\.com\/[^\s)|>]+/g) || []).map((u) => u.replace(/[.,;]+$/, '')))];
+  // shop photos (cdn.shopify.com) and photos saved in the library's photos/ folder
+  const photos = [...new Set((body.match(/https:\/\/cdn\.shopify\.com\/[^\s)|>]+|(?<![\w/.-])photos\/[\w.-]+\.jpg/g) || []).map((u) => u.replace(/[.,;]+$/, '')))];
 
   const seat = range(f.seat_height_cm);
   const depth = range(f.seat_depth_cm);

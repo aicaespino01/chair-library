@@ -48,7 +48,6 @@ last_checked: 2026-11-14
 |---|---|---|---|---|---|---|---|
 | Office Busters PH | https://officebusters.ph/products/okamura-swivel-chair-58 (SKU OKASNASUL1522) | ₱3,499 | ₱6,999 | Used, "Good As New" | OB Balintawak, 1238 North EDSA, Quezon City | Yes | 2026-11-11 |
 | Okamura Japan (new) | https://product.okamura.co.jp/ext/DispProductDetail.do?volumeName=00001&PID=C331ZRFSF1 | ¥71,800 before tax | — | New | Japan only | Regular stock item (常備在庫品) | 2026-11-11 |
-| **Other version, seen in person:** Sulato low back with fixed "design arms" and hanger, gray shell (label reads C342BR) | Photo of the label under the seat, shared 2026-11-14 (shop and branch not stated; not found online at officebusters.ph) | not stated | — | Used | ask the shop | — | 2026-11-14 |
 | office-com.jp (new, C342ZR black shell, design arms, hanger) | https://www.office-com.jp (search "C342ZR"; Google preview) | ¥90,800 | — | New | Japan | Yes | 2026-11-14 |
 
 Office Busters listing photos:
@@ -63,7 +62,7 @@ Office Busters listing photos:
 - Google Lens on the 3/4 photo returned "Okamura Sulato" and an Office Busters Japan Sulato page.
 - Okamura's lineup shows Sulato in high and low back, with adjustable arms, design arms or no arms. The low-back armless code is C331. Shell and base letters: ZR = black shell, plastic base, nylon wheels. JR = black shell, plastic base, rubber wheels.
 
-### Other version seen in person (2026-11-14): C342BR
+### Other version seen in person (2026-11-14): C342BR (own file: okamura-sulato-c342br.md)
 - A photo of the label under the seat shows the Okamura logo, the "sulato" manual card, and product code **C342BR** (small print; the letter after C342 looks like "B"). Year field partly readable, starts "2021".
 - **C342 = Sulato low back with fixed "design arms" and a coat hanger** (Japanese shops: Kagg.jp, office-com.jp, AOC, Rakuten list C342WR, C342ZR, C342GR, C342XR, C342JR, C342CR). "C342BR" itself was not found in any shop. On Okamura's Escudo chairs, "B" is used for a gray shell (Monotaro: "C498BR FHB3 … グレーシェル"), which matches the light gray shell and base in the photo. So: **gray shell, plastic base, probably an older or contract code. Confirmed model, version letter not confirmed.**
 - C342 sizes from shops (not the maker): 58.0 × 57.2 × 85.0–94.2 cm without the hanger, seat height 42.0–51.2 cm, seat width 48.2 cm, back width 45.3 cm, base 66.7 cm (office-com.jp and Rakuten previews; Kagg.jp preview). The seat and base match C331 in this file; the arms make it 58.0 cm wide.

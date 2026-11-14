@@ -26,7 +26,7 @@ weight_limit_kg: "not published by maker"
 chair_weight_kg: "not published"
 warranty: "Itoki (Japan, new chairs): finish 1 year, mechanisms and casters 2 years, structure 3 years; not for used chairs"
 price_new: "JPY 140,200 incl. tax (office-com.jp, KE-757GP-T1T1SG)"
-lowest_price_seen_php: "not seen in PH yet (seen in person, price not stated)"
+lowest_price_seen_php: "seen at Office Busters PH, price not stated"
 last_checked: 2026-11-14
 ---
 
@@ -46,10 +46,14 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Seen in person (label photo shared 2026-11-14) | shop and branch not stated; not found on officebusters.ph | not stated | — | Used | ask | — | 2026-11-14 |
+| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 | office-com.jp (new, KE-757GP-T1T1SG) | https://www.office-com.jp/products/detail.php?product_id=178257 | ¥140,200 incl. tax (¥127,455 before tax) | — | New | Japan | Yes | 2026-11-14 |
 | ASKUL (new, KE-757GP-T…, black, with arms) | askul.co.jp (Google preview) | ¥88,061 incl. tax | — | New | Japan | — | 2026-11-14 |
 | Used in Japan: Office Busters Japan (KE-757GP-Z9T1SG, mirror aluminium base) | officebusters.com (Google preview) | ¥36,300 | — | Used | Kobe Sannomiya store | — | 2026-11-14 |
+
+Photos (taken at Office Busters, people cropped out):
+- photos/itoki-spina-1.jpg
+- photos/itoki-spina-2.jpg
 
 ## How it was identified
 - Label photo: "ITOKI / KE-757GPHT1T1SG / LOT. 090331C0083 / JOIFA602". Lot 090331 probably means made 31 March 2009.

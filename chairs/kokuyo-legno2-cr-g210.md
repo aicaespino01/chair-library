@@ -47,7 +47,6 @@ last_checked: 2026-11-14
 |---|---|---|---|---|---|---|---|
 | Office Busters PH (SKU KOKSNALEG1489) | https://officebusters.ph/products/kokuyo-swivel-chair-37 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-11 |
 | Office Busters PH, blue, no arms (SKU KOKSNACRG1506): **LEGNO family, maybe the first LEGNO (CR-G200)** | https://officebusters.ph/products/kokuyo-swivel-chair-41 | ₱2,500 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-11 |
-| **Seen in person:** gray shell, gray plastic base, label **CRS-G210F4VRB4** | Photo of the label under the seat, shared 2026-11-14 (shop and branch not stated) | not stated | — | Used | ask the shop | — | 2026-11-14 |
 | AOC Japan (new, CR-G210F4) | e-aocinc.com (Google preview) | ¥29,810 | — | New | Japan | Yes | 2026-11-11 |
 | Kagg.jp (new) | kagg.jp (Google preview) | ¥38,500 | ¥53,570 | New | Japan | — | 2026-11-11 |
 
@@ -63,7 +62,7 @@ Photos:
 - Kokuyo's LEGNO2 manual lists four heights. 82.0–93.0 cm matches the standard low back.
 - Office Busters' description: "Fabric Material", "Combination of Solid Plastic and Steel Frame", "Height:75cm x Width:50cm".
 - Second listing (`kokuyo-swivel-chair-41`, added in batch 3): blue, no arms, similar back shape. Its SKU hint "CRG" is just Kokuyo's general code prefix (CR-G). Google Lens matched both the first LEGNO (Office Busters Japan "レグノチェア CRS-G200F4HS65N", 無限堂 "レグノチェア CR-G200") and LEGNO2 (Monotaro CR-G210F4HSN65-W). The first LEGNO's sizes may differ: check the label. Listing says "Reclined Adjustment", "Solid Plastic Frame", "Height:80cm x Width:50cm".
-- **Label seen in person (photo shared 2026-11-14):** "KOKUYO / JOIFA 606 / CRS-G210F4VRB4", lot stamp "090630" (probably made 30 June 2009). Kokuyo manual card in the pocket. Gray seat shell and gray plastic column. This is the **first real maker label seen for this family.** A Rakuten used listing titled "レグノ2" uses the same form, "CRS-G210F4HSN65", with W600 × D600 × H820–930 mm and seat height 405–515 mm, which matches this file. Office Busters Japan used "CRS-G200…" for the first LEGNO. So CRS-G210 = LEGNO2. What "CRS-" (vs "CR-"), "VR" and "B4" mean was not found. The arm plates under the seat looked empty in the photo, so probably no arms.
+- **Label seen in person (photo shared 2026-11-14; own file: kokuyo-legno2-crs-g210f4vrb4.md):** "KOKUYO / JOIFA 606 / CRS-G210F4VRB4", lot stamp "090630" (probably made 30 June 2009). Kokuyo manual card in the pocket. Gray seat shell and gray plastic column. This is the **first real maker label seen for this family.** A Rakuten used listing titled "レグノ2" uses the same form, "CRS-G210F4HSN65", with W600 × D600 × H820–930 mm and seat height 405–515 mm, which matches this file. Office Busters Japan used "CRS-G200…" for the first LEGNO. So CRS-G210 = LEGNO2. What "CRS-" (vs "CR-"), "VR" and "B4" mean was not found. The arm plates under the seat looked empty in the photo, so probably no arms.
 - This also hints that Office Busters' SKU hint "CRS" (on listing `kokuyo-swivel-chair-47`) may come from a Kokuyo "CRS-" label. Not confirmed.
 
 ## Specs (from the maker)
