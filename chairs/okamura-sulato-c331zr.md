@@ -27,7 +27,7 @@ chair_weight_kg: "not published"
 warranty: "Okamura 1/2/3 years in Japan only; excludes used chairs and use outside Japan"
 price_new: "JPY 71,800 before tax (Okamura list price, C331ZR FSF1)"
 lowest_price_seen_php: "3499"
-last_checked: 2026-11-11
+last_checked: 2026-11-14
 ---
 
 # Okamura Sulato (C331ZR): low back, no arms, black
@@ -48,6 +48,8 @@ last_checked: 2026-11-11
 |---|---|---|---|---|---|---|---|
 | Office Busters PH | https://officebusters.ph/products/okamura-swivel-chair-58 (SKU OKASNASUL1522) | ₱3,499 | ₱6,999 | Used, "Good As New" | OB Balintawak, 1238 North EDSA, Quezon City | Yes | 2026-11-11 |
 | Okamura Japan (new) | https://product.okamura.co.jp/ext/DispProductDetail.do?volumeName=00001&PID=C331ZRFSF1 | ¥71,800 before tax | — | New | Japan only | Regular stock item (常備在庫品) | 2026-11-11 |
+| **Other version, seen in person:** Sulato low back with fixed "design arms" and hanger, gray shell (label reads C342BR) | Photo of the label under the seat, shared 2026-11-14 (shop and branch not stated; not found online at officebusters.ph) | not stated | — | Used | ask the shop | — | 2026-11-14 |
+| office-com.jp (new, C342ZR black shell, design arms, hanger) | https://www.office-com.jp (search "C342ZR"; Google preview) | ¥90,800 | — | New | Japan | Yes | 2026-11-14 |
 
 Office Busters listing photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/clipboard_image_8e99c5958f8240669a5748c4e1e28bd5.jpg
@@ -60,6 +62,11 @@ Office Busters listing photos:
 - SKU `OKA SNA SUL 1522`: OKA = Okamura, SNA = swivel with no arms, SUL = Sulato.
 - Google Lens on the 3/4 photo returned "Okamura Sulato" and an Office Busters Japan Sulato page.
 - Okamura's lineup shows Sulato in high and low back, with adjustable arms, design arms or no arms. The low-back armless code is C331. Shell and base letters: ZR = black shell, plastic base, nylon wheels. JR = black shell, plastic base, rubber wheels.
+
+### Other version seen in person (2026-11-14): C342BR
+- A photo of the label under the seat shows the Okamura logo, the "sulato" manual card, and product code **C342BR** (small print; the letter after C342 looks like "B"). Year field partly readable, starts "2021".
+- **C342 = Sulato low back with fixed "design arms" and a coat hanger** (Japanese shops: Kagg.jp, office-com.jp, AOC, Rakuten list C342WR, C342ZR, C342GR, C342XR, C342JR, C342CR). "C342BR" itself was not found in any shop. On Okamura's Escudo chairs, "B" is used for a gray shell (Monotaro: "C498BR FHB3 … グレーシェル"), which matches the light gray shell and base in the photo. So: **gray shell, plastic base, probably an older or contract code. Confirmed model, version letter not confirmed.**
+- C342 sizes from shops (not the maker): 58.0 × 57.2 × 85.0–94.2 cm without the hanger, seat height 42.0–51.2 cm, seat width 48.2 cm, back width 45.3 cm, base 66.7 cm (office-com.jp and Rakuten previews; Kagg.jp preview). The seat and base match C331 in this file; the arms make it 58.0 cm wide.
 
 ## Specs (from the maker)
 
@@ -152,3 +159,5 @@ Office Busters listing photos:
 9. office-com.jp: https://www.office-com.jp/gimon/office-tips/okamura_sulato_review.html, read 2026-11-11
 10. chik-tak.com: https://chik-tak.com/okamura_sulato/, read 2026-11-11
 11. bluhen.co.jp: https://bluhen.co.jp/kagu/okamura-chair/, read 2026-11-11
+12. Label photo of a C342BR Sulato (under the seat), shared 2026-11-14
+13. C342 shop listings (Google previews), read 2026-11-14: office-com.jp C342ZR (¥90,800, 580 × 572 × 850–942 mm without hanger, seat height 420–512 mm, base 667 mm); Rakuten OK-C342 (same sizes); Kagg.jp C342ZR-FSF3 (back width 453 mm, seat width 482 mm); AOC C342WR/ZR/GR/XR/JR/CR; Monotaro C498BR FHB3 Escudo "グレーシェル" (for the "B" letter)
