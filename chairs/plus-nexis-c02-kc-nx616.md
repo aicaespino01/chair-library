@@ -26,13 +26,13 @@ weight_limit_kg: "not published"
 chair_weight_kg: "13 (no arms); 16.1 listed for the Garage arm version"
 warranty: "Japan: structure 3 years (ASKUL listing); Office Busters 3-day defect exchange if bought there"
 price_new: "Japan: JPY 29,800 (Plus Garage, arm version) to JPY 32,780 (with arms); about JPY 27,000 to 31,500 without arms"
-lowest_price_seen_php: "not seen for sale in the Philippines yet"
+lowest_price_seen_php: "seen at Office Busters PH, price not stated"
 last_checked: 2026-11-14
 ---
 
 # Plus NEXIS (ネクシス) C02, KC-NX616: navy back, black seat, adjustable arms
 
-**Identified: Very likely.** From a photo shared on 2026-11-14 (place not given). Google image search on the photo returned Amazon Japan "Plus KC-NX616SL NEXS/Nexus 616 C02". Plus's product photos show the same navy back shape, black seat and black base, and Plus sells an adjust-arm version with the same arms. **To confirm:** look for the label under the seat; it should say "KC-NX616".
+**Identified: Very likely.** From a photo shared on 2026-11-14, taken at Office Busters PH (branch not stated). Google image search on the photo returned Amazon Japan "Plus KC-NX616SL NEXS/Nexus 616 C02". Plus's product photos show the same navy back shape, black seat and black base, and Plus sells an adjust-arm version with the same arms. **To confirm:** look for the label under the seat; it should say "KC-NX616".
 
 ## At a glance
 - Plus's budget office chair, made in Taiwan. Colors: navy × black, green × black, black.
@@ -48,7 +48,7 @@ last_checked: 2026-11-14
 | Plus Garage (Plus's own shop, Japan): NEXIS 616 with adjust arms, black | garage.plus.co.jp (Google preview) | ¥29,800 | — | New | Japan | — | 2026-11-14 |
 | Yahoo Shopping Japan: NEXIS with adjust arms | store.shopping.yahoo.co.jp (Google preview) | ¥32,780 | — | New | Japan | Yes | 2026-11-14 |
 | ASKUL Japan: C02 no arms, navy × black (KC-NX616SL BL) | askul.co.jp (Google preview) | ¥31,420 | — | New | Japan | Yes | 2026-11-14 |
-| Photo shared on 2026-11-14 | — | — | — | Used | Place not given | — | 2026-11-14 |
+| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 
 ## How it was identified
 - Photo: navy textured-fabric back with a rounded top, black fabric seat, chunky black arm pads on posts, black plastic 5-star base.

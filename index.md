@@ -21,7 +21,7 @@ Last updated: 2026-11-14. One row per chair file in `chairs/`. Prices are the lo
 | Okamura CG-R | CN33ZR | Compact, low back, no arms, fabric | Very likely | ₱3,000 (used) | Office Busters Balintawak | [okamura-cg-r-cn33zr.md](chairs/okamura-cg-r-cn33zr.md) |
 | Itoki Dorsal | KKV-540 family | Low back, no arms, split back; sizes not found | Very likely | ₱3,000 (used) | Office Busters Balintawak | [itoki-dorsal-kkv-540.md](chairs/itoki-dorsal-kkv-540.md) |
 | Itoki Prego | KZ-4xx family | Low back, loop arms, fabric | Very likely | ₱3,000 (used) | Office Busters Balintawak | [itoki-prego-kz-4.md](chairs/itoki-prego-kz-4.md) |
-| Plus NEXIS C02 | KC-NX616SL (navy × black) | Navy back, black seat, adjustable arms (add-on) | Very likely | not seen in PH yet (¥29,800 new in Japan) | photo shared 2026-11-14 | [plus-nexis-c02-kc-nx616.md](chairs/plus-nexis-c02-kc-nx616.md) |
+| Plus NEXIS C02 | KC-NX616SL (navy × black) | Navy back, black seat, adjustable arms (add-on) | Very likely | seen at Office Busters PH, price not stated (¥29,800 new in Japan) | Office Busters PH (branch not stated), photo shared 2026-11-14 | [plus-nexis-c02-kc-nx616.md](chairs/plus-nexis-c02-kc-nx616.md) |
 | Xpanse F7 | F7 Basic / Upgrade | High back, mesh, lumbar, arms, headrest, leg rest | Confirmed | ₱7,039 Lazada (Shopee preview from ₱3,259) | Lazada / Shopee / TikTok Shop | [xpanse-f7.md](chairs/xpanse-f7.md) |
 
 ## Not identified yet (need the label under the seat)
