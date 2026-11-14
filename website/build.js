@@ -245,6 +245,10 @@ function readChair(file) {
   const priceMatch = priceText.match(/^(\d[\d,]*(?:\.\d+)?)/);
   const price = priceMatch ? parseFloat(priceMatch[1].replace(/,/g, '')) : null;
   const priceNote = priceMatch ? priceText.slice(priceMatch[0].length).trim() : priceText;
+  // Price new in Japan: the first yen amount written in the price_new line ("JPY 58,200" or "¥58,200").
+  // A line with no yen amount (a Philippine price, "not known") gives no Japan price.
+  const jpMatch = (f.price_new || '').match(/(?:JPY|¥)\s?(\d[\d,]*)/);
+  const priceJP = jpMatch ? parseFloat(jpMatch[1].replace(/,/g, '')) : null;
   const places = [...new Set(shops.filter((s) => s.place).map((s) => s.place))];
   const sitTest = [...new Set(shops.filter((s) => s.isOB && s.inStock).map((s) => s.place))];
 
@@ -272,6 +276,7 @@ function readChair(file) {
       depthText: depth.text,
       price,
       priceNote,
+      priceJP,
       weightLimit: leadNum(f.weight_limit_kg),
       depthSlide: depthSlide(f.seat_depth_slide),
       arms: arms(f.armrests),
@@ -317,7 +322,7 @@ const show = (v) => (v === null || v === undefined ? '-' : String(v));
 for (const c of chairs) {
   const d = c.d;
   console.log(
-    [c.id.padEnd(46), `seat ${show(d.seatMin)}-${show(d.seatMax)}`.padEnd(14), `depth ${show(d.depthMin)}`.padEnd(11), `P${show(d.price)}`.padEnd(7),
+    [c.id.padEnd(46), `seat ${show(d.seatMin)}-${show(d.seatMax)}`.padEnd(14), `depth ${show(d.depthMin)}`.padEnd(11), `P${show(d.price)}`.padEnd(7), `JPY${show(d.priceJP)}`.padEnd(10),
       `wl ${show(d.weightLimit)}`.padEnd(7), `slide ${d.depthSlide}`.padEnd(17), `arms ${d.arms}`.padEnd(12), `back ${d.back}`.padEnd(13),
       d.identified.padEnd(12), `photos ${c.photos.length}`.padEnd(10), d.places.join(' / ')].join(' ')
   );

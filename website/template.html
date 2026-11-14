@@ -186,6 +186,8 @@ main { padding: 28px 0 56px; min-height: 60vh; }
 .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .price { font-size: var(--fs-md); font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
 .price-note { display: block; font-size: var(--fs-xs); font-weight: 400; color: var(--ink-2); }
+.jp-price { font-size: var(--fs-xs); color: var(--ink-2); margin-top: -4px; font-variant-numeric: tabular-nums; }
+.jp-price strong { color: var(--ink); font-weight: 650; }
 .card-title { font-size: var(--fs-base); font-weight: 650; }
 .card-sub { font-size: var(--fs-sm); color: var(--ink-2); margin-top: -4px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 2px 0 0; list-style: none; }
@@ -427,6 +429,7 @@ footer p + p { margin-top: 4px; }
     });
   }
   function peso(n) { return '₱' + Number(n).toLocaleString('en-PH', { maximumFractionDigits: 2 }); }
+  function yen(n) { return '¥' + Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 }); }
   function f1(n) { return (Math.round(n * 10) / 10).toFixed(1); }
   function niceDate(iso) {
     var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
@@ -524,8 +527,10 @@ footer p + p { margin-top: 4px; }
   var SORTS = {
     fit: { label: 'Best fit for me', fn: function (a, b) { return FIT[b.id] - FIT[a.id]; } },
     identified: { label: 'Best info first', fn: function (a, b) { return ID_RANK[a.d.identified] - ID_RANK[b.d.identified] || nullsLast(a.d.price, b.d.price); } },
-    priceUp: { label: 'Price: low to high', fn: function (a, b) { return nullsLast(a.d.price, b.d.price); } },
-    priceDown: { label: 'Price: high to low', fn: function (a, b) { return nullsLast(a.d.price, b.d.price, -1); } },
+    priceUp: { label: 'Price here (₱): low to high', fn: function (a, b) { return nullsLast(a.d.price, b.d.price); } },
+    priceDown: { label: 'Price here (₱): high to low', fn: function (a, b) { return nullsLast(a.d.price, b.d.price, -1); } },
+    jpUp: { label: 'Price new in Japan (¥): low to high', fn: function (a, b) { return nullsLast(a.d.priceJP, b.d.priceJP); } },
+    jpDown: { label: 'Price new in Japan (¥): high to low', fn: function (a, b) { return nullsLast(a.d.priceJP, b.d.priceJP, -1); } },
     seatLow: { label: 'Lowest seat first', fn: function (a, b) { return nullsLast(a.d.seatMin, b.d.seatMin); } },
     depthShort: { label: 'Shortest seat depth first', fn: function (a, b) { return nullsLast(a.d.depthMin, b.d.depthMin); } },
     weight: { label: 'Highest weight limit first', fn: function (a, b) { return nullsLast(a.d.weightLimit, b.d.weightLimit, -1); } },
@@ -584,6 +589,7 @@ footer p + p { margin-top: 4px; }
           '<h2 class="card-title">' + esc(t.name) + '</h2>' +
           (t.sub ? '<p class="card-sub">' + esc(t.sub) + '</p>' : '') +
           priceHtml(c, 'price') +
+          (c.d.priceJP != null ? '<p class="jp-price">New in Japan: <strong>' + yen(c.d.priceJP) + '</strong></p>' : '') +
           idBadge(c) +
           chips(c) +
           '<p class="where">' + esc(placesText(c)) + '</p>' +
@@ -599,6 +605,7 @@ footer p + p { margin-top: 4px; }
       return '<tr data-href="#chair/' + esc(c.id) + '">' +
         '<td class="chair-cell-td"><div class="chair-cell"><div class="thumb">' + img(c, 120) + '</div><a href="#chair/' + esc(c.id) + '">' + esc(t.name) + '</a></div></td>' +
         '<td class="num">' + (c.d.price == null ? 'not known' : peso(c.d.price) + (c.d.priceNote ? '<br><small>' + esc(c.d.priceNote) + '</small>' : '')) + '</td>' +
+        '<td class="num">' + (c.d.priceJP == null ? esc(f.price_new) : yen(c.d.priceJP) + '<br><small>' + esc(f.price_new) + '</small>') + '</td>' +
         '<td>' + esc(f.seat_height_cm) + '</td>' +
         '<td>' + esc(f.seat_depth_cm) + '</td>' +
         '<td>' + esc(f.armrests) + '</td>' +
@@ -610,7 +617,7 @@ footer p + p { margin-top: 4px; }
       '</tr>';
     }).join('');
     return '<div class="table-wrap"><table class="list-table"><thead><tr>' +
-      '<th>Chair</th><th>Lowest price seen</th><th>Seat height (cm)</th><th>Seat depth (cm)</th><th>Armrests</th><th>Back</th><th>Seat-depth slide</th><th>Weight limit (kg)</th><th>Where (Philippines)</th><th>Identified</th>' +
+      '<th>Chair</th><th>Lowest price seen</th><th>Price new in Japan</th><th>Seat height (cm)</th><th>Seat depth (cm)</th><th>Armrests</th><th>Back</th><th>Seat-depth slide</th><th>Weight limit (kg)</th><th>Where (Philippines)</th><th>Identified</th>' +
       '</tr></thead><tbody>' + rows + '</tbody></table></div>';
   }
 
@@ -622,6 +629,10 @@ footer p + p { margin-top: 4px; }
       FIT = fitScores();
       var fo = findInputs();
       fitNote = fo.h ? ' · sorted for your height, ' + f1(fo.h).replace(/\.0$/, '') + ' cm (change it in Find my chair)' : '';
+    }
+    if (cat.sort === 'jpUp' || cat.sort === 'jpDown') {
+      var noJP = list.filter(function (c) { return c.d.priceJP == null; }).length;
+      fitNote = ' · Japan price = price of a new one in Japan, from the chair file' + (noJP ? '; ' + noJP + ' with no Japan price are shown last' : '');
     }
     list.sort(function (a, b) { return sortFn(a, b) || a.title.localeCompare(b.title); });
     document.getElementById('count').textContent = 'Showing ' + list.length + ' of ' + CHAIRS.length + ' chairs' + fitNote;
