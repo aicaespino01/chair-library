@@ -11,6 +11,47 @@ const CHAIRS_DIR = path.join(ROOT, 'chairs');
 const TEMPLATE = path.join(__dirname, 'template.html');
 const OUT = path.join(ROOT, 'Chair Website.html');
 
+// Exchange rate and value rule live in settings.json, so they can be refreshed without touching code.
+const SETTINGS = JSON.parse(fs.readFileSync(path.join(__dirname, 'settings.json'), 'utf8'));
+const RATE = SETTINGS.jpyToPhp;
+const GOOD_MAX = SETTINGS.valueGoodMaxPercent;
+const FAIR_MAX = SETTINGS.valueFairMaxPercent;
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const niceDate = (iso) => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || ''); return m ? `${+m[3]} ${MONTHS[+m[2] - 1]} ${m[1]}` : iso; };
+const RATE_TEXT = `¥1 = ₱${RATE} (${niceDate(SETTINGS.rateDate)})`;
+const whole = (n) => Math.round(n).toLocaleString('en-US');
+const round100 = (n) => (Math.round(n / 100) * 100).toLocaleString('en-US');
+
+// "Value": price here compared with the price of a new one in Japan, converted to pesos.
+function valueOf(f, price, priceNote, priceJP, identifiedLevel) {
+  if (priceJP == null) {
+    return { verdict: 'unknown', pct: null, jpPhp: null,
+      comments: [`Can't judge yet: the chair file has no price for a new one in Japan (Price new: "${f.price_new || 'not given'}").`] };
+  }
+  const jpPhp = priceJP * RATE;
+  if (price == null) {
+    return { verdict: 'unknown', pct: null, jpPhp,
+      comments: [
+        `Can't judge yet: the chair file has no price in the Philippines (Lowest price seen: "${f.lowest_price_seen_php || 'not given'}").`,
+        `New in Japan: ¥${whole(priceJP)} ≈ ₱${round100(jpPhp)} at ${RATE_TEXT}.`,
+      ] };
+  }
+  const pct = (price / jpPhp) * 100;
+  const verdict = pct <= GOOD_MAX ? 'good' : pct <= FAIR_MAX ? 'fair' : 'poor';
+  const label = { good: 'Good value', fair: 'Fair value', poor: 'Not good value' }[verdict];
+  const yenCount = ((f.price_new || '').match(/(?:JPY|¥)\s?\d/g) || []).length;
+  const comments = [
+    `${label}: ₱${whole(price)} here is about ${Math.round(pct)}% of the price of a new one in Japan.`,
+    `New in Japan: ¥${whole(priceJP)} ≈ ₱${round100(jpPhp)} at ${RATE_TEXT}. ₱${whole(price)} ÷ ₱${whole(jpPhp)} = ${pct.toFixed(1)}%.`,
+    `Japan price in the chair file: "${f.price_new}".` + (yenCount > 1 ? ' It lists more than one Japan price; the first one is used.' : ''),
+  ];
+  if (priceNote) comments.push(`The price here is the lowest seen: ₱${whole(price)} ${priceNote}.`);
+  if (/before tax/i.test(f.price_new || '')) comments.push('That Japan price is before Japanese tax, so a new one costs a little more there.');
+  if (/used/i.test(f.condition_seen || '')) comments.push('This is a used chair, so the saving only counts if it is in good shape: check it when you sit on it.');
+  if (identifiedLevel === 'very likely') comments.push('The model is very likely but not confirmed (label under the seat), so the Japan price may be for a slightly different version.');
+  return { verdict, pct, jpPhp, comments };
+}
+
 // ---------- small markdown renderer (only what the chair files use) ----------
 
 function esc(s) {
@@ -249,6 +290,7 @@ function readChair(file) {
   // A line with no yen amount (a Philippine price, "not known") gives no Japan price.
   const jpMatch = (f.price_new || '').match(/(?:JPY|¥)\s?(\d[\d,]*)/);
   const priceJP = jpMatch ? parseFloat(jpMatch[1].replace(/,/g, '')) : null;
+  const value = valueOf(f, price, priceNote, priceJP, identified(f.identified));
   const places = [...new Set(shops.filter((s) => s.place).map((s) => s.place))];
   const sitTest = [...new Set(shops.filter((s) => s.isOB && s.inStock).map((s) => s.place))];
 
@@ -267,6 +309,7 @@ function readChair(file) {
     shops,
     photos,
     shopUrl: firstUrl,
+    valueComments: value.comments,
     d: {
       brand: brandShort,
       seatMin: seat.min,
@@ -277,6 +320,9 @@ function readChair(file) {
       price,
       priceNote,
       priceJP,
+      jpPhp: value.jpPhp,
+      value: value.verdict,
+      valuePct: value.pct,
       weightLimit: leadNum(f.weight_limit_kg),
       depthSlide: depthSlide(f.seat_depth_slide),
       arms: arms(f.armrests),
@@ -301,6 +347,8 @@ const data = {
   builtOn: `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`,
   checkedFrom: checked[0] || null,
   checkedTo: checked[checked.length - 1] || null,
+  rate: { jpyToPhp: RATE, date: SETTINGS.rateDate, source: SETTINGS.rateSource, text: RATE_TEXT },
+  valueRule: { goodMax: GOOD_MAX, fairMax: FAIR_MAX },
   chairs,
 };
 
@@ -322,7 +370,7 @@ const show = (v) => (v === null || v === undefined ? '-' : String(v));
 for (const c of chairs) {
   const d = c.d;
   console.log(
-    [c.id.padEnd(46), `seat ${show(d.seatMin)}-${show(d.seatMax)}`.padEnd(14), `depth ${show(d.depthMin)}`.padEnd(11), `P${show(d.price)}`.padEnd(7), `JPY${show(d.priceJP)}`.padEnd(10),
+    [c.id.padEnd(46), `seat ${show(d.seatMin)}-${show(d.seatMax)}`.padEnd(14), `depth ${show(d.depthMin)}`.padEnd(11), `P${show(d.price)}`.padEnd(7), `JPY${show(d.priceJP)}`.padEnd(10), `value ${d.value}${d.valuePct == null ? '' : ' ' + d.valuePct.toFixed(1) + '%'}`.padEnd(18),
       `wl ${show(d.weightLimit)}`.padEnd(7), `slide ${d.depthSlide}`.padEnd(17), `arms ${d.arms}`.padEnd(12), `back ${d.back}`.padEnd(13),
       d.identified.padEnd(12), `photos ${c.photos.length}`.padEnd(10), d.places.join(' / ')].join(' ')
   );

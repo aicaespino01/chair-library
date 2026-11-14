@@ -201,6 +201,17 @@ main { padding: 28px 0 56px; min-height: 60vh; }
 .badge.unsure { background: var(--unk-soft); color: var(--unk); }
 .badge.plain { background: var(--surface-2); color: var(--ink-2); }
 .badge.plain::before { display: none; }
+.badge.value-good { background: var(--good-soft); color: var(--good); }
+.badge.value-fair { background: var(--ok-soft); color: var(--ok); }
+.badge.value-poor { background: var(--primary-soft); color: var(--primary); }
+.badge.value-unknown { background: var(--surface-2); color: var(--ink-2); }
+.value-box { margin-top: 32px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); max-width: 80ch; }
+.value-box h2 { font-size: var(--fs-md); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+.value-box ul { margin: 0; padding-left: 20px; font-size: var(--fs-sm); }
+.value-box li + li { margin-top: 4px; }
+.value-box .rule { margin-top: 10px; font-size: var(--fs-xs); color: var(--ink-2); }
+.jp-big { margin-top: 6px; font-size: var(--fs-sm); color: var(--ink-2); }
+.jp-big strong { color: var(--ink); }
 .pick { position: absolute; top: 10px; right: 10px; background: var(--bg); box-shadow: var(--shadow); }
 .empty { text-align: center; padding: 48px 16px; border: 1px dashed var(--line-strong); border-radius: var(--radius); color: var(--ink-2); }
 .empty h2 { color: var(--ink); font-size: var(--fs-md); margin-bottom: 8px; }
@@ -430,6 +441,20 @@ footer p + p { margin-top: 4px; }
   }
   function peso(n) { return '₱' + Number(n).toLocaleString('en-PH', { maximumFractionDigits: 2 }); }
   function yen(n) { return '¥' + Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 }); }
+  function peso100(n) { return '₱' + (Math.round(n / 100) * 100).toLocaleString('en-US'); }
+  var VALUE_LABEL = { good: 'Good value', fair: 'Fair value', poor: 'Not good value', unknown: 'Value: can’t judge yet' };
+  function valueBadge(c, withPct) {
+    var d = c.d;
+    var pct = withPct && d.valuePct != null ? ' · ' + Math.round(d.valuePct) + '% of new in Japan' : '';
+    return '<span class="badge value-' + d.value + '">' + VALUE_LABEL[d.value] + pct + '</span>';
+  }
+  function jpLine(c) {
+    return c.d.priceJP == null ? '' : yen(c.d.priceJP) + ' ≈ ' + peso100(c.d.jpPhp);
+  }
+  function valueRuleText() {
+    return 'How value is judged: price here ÷ price of a new one in Japan, changed to pesos at ' + DATA.rate.text + '. ' +
+      DATA.valueRule.goodMax + '% or less = good value; up to ' + DATA.valueRule.fairMax + '% = fair value; more = not good value for a used chair. A rough guide made for this website.';
+  }
   function f1(n) { return (Math.round(n * 10) / 10).toFixed(1); }
   function niceDate(iso) {
     var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
@@ -531,6 +556,7 @@ footer p + p { margin-top: 4px; }
     priceDown: { label: 'Price here (₱): high to low', fn: function (a, b) { return nullsLast(a.d.price, b.d.price, -1); } },
     jpUp: { label: 'Price new in Japan (¥): low to high', fn: function (a, b) { return nullsLast(a.d.priceJP, b.d.priceJP); } },
     jpDown: { label: 'Price new in Japan (¥): high to low', fn: function (a, b) { return nullsLast(a.d.priceJP, b.d.priceJP, -1); } },
+    value: { label: 'Best value first', fn: function (a, b) { return nullsLast(a.d.valuePct, b.d.valuePct); } },
     seatLow: { label: 'Lowest seat first', fn: function (a, b) { return nullsLast(a.d.seatMin, b.d.seatMin); } },
     depthShort: { label: 'Shortest seat depth first', fn: function (a, b) { return nullsLast(a.d.depthMin, b.d.depthMin); } },
     weight: { label: 'Highest weight limit first', fn: function (a, b) { return nullsLast(a.d.weightLimit, b.d.weightLimit, -1); } },
@@ -589,7 +615,8 @@ footer p + p { margin-top: 4px; }
           '<h2 class="card-title">' + esc(t.name) + '</h2>' +
           (t.sub ? '<p class="card-sub">' + esc(t.sub) + '</p>' : '') +
           priceHtml(c, 'price') +
-          (c.d.priceJP != null ? '<p class="jp-price">New in Japan: <strong>' + yen(c.d.priceJP) + '</strong></p>' : '') +
+          (c.d.priceJP != null ? '<p class="jp-price">New in Japan: <strong>' + jpLine(c) + '</strong></p>' : '') +
+          valueBadge(c, true) +
           idBadge(c) +
           chips(c) +
           '<p class="where">' + esc(placesText(c)) + '</p>' +
@@ -605,7 +632,8 @@ footer p + p { margin-top: 4px; }
       return '<tr data-href="#chair/' + esc(c.id) + '">' +
         '<td class="chair-cell-td"><div class="chair-cell"><div class="thumb">' + img(c, 120) + '</div><a href="#chair/' + esc(c.id) + '">' + esc(t.name) + '</a></div></td>' +
         '<td class="num">' + (c.d.price == null ? 'not known' : peso(c.d.price) + (c.d.priceNote ? '<br><small>' + esc(c.d.priceNote) + '</small>' : '')) + '</td>' +
-        '<td class="num">' + (c.d.priceJP == null ? esc(f.price_new) : yen(c.d.priceJP) + '<br><small>' + esc(f.price_new) + '</small>') + '</td>' +
+        '<td class="num">' + (c.d.priceJP == null ? esc(f.price_new) : jpLine(c) + '<br><small>' + esc(f.price_new) + '</small>') + '</td>' +
+        '<td>' + VALUE_LABEL[c.d.value] + (c.d.valuePct != null ? '<br><small>' + Math.round(c.d.valuePct) + '% of new in Japan</small>' : '') + '</td>' +
         '<td>' + esc(f.seat_height_cm) + '</td>' +
         '<td>' + esc(f.seat_depth_cm) + '</td>' +
         '<td>' + esc(f.armrests) + '</td>' +
@@ -617,7 +645,7 @@ footer p + p { margin-top: 4px; }
       '</tr>';
     }).join('');
     return '<div class="table-wrap"><table class="list-table"><thead><tr>' +
-      '<th>Chair</th><th>Lowest price seen</th><th>Price new in Japan</th><th>Seat height (cm)</th><th>Seat depth (cm)</th><th>Armrests</th><th>Back</th><th>Seat-depth slide</th><th>Weight limit (kg)</th><th>Where (Philippines)</th><th>Identified</th>' +
+      '<th>Chair</th><th>Lowest price seen</th><th>Price new in Japan</th><th>Value</th><th>Seat height (cm)</th><th>Seat depth (cm)</th><th>Armrests</th><th>Back</th><th>Seat-depth slide</th><th>Weight limit (kg)</th><th>Where (Philippines)</th><th>Identified</th>' +
       '</tr></thead><tbody>' + rows + '</tbody></table></div>';
   }
 
@@ -633,6 +661,10 @@ footer p + p { margin-top: 4px; }
     if (cat.sort === 'jpUp' || cat.sort === 'jpDown') {
       var noJP = list.filter(function (c) { return c.d.priceJP == null; }).length;
       fitNote = ' · Japan price = price of a new one in Japan, from the chair file' + (noJP ? '; ' + noJP + ' with no Japan price are shown last' : '');
+    }
+    if (cat.sort === 'value') {
+      var noValue = list.filter(function (c) { return c.d.valuePct == null; }).length;
+      fitNote = ' · value = price here as a % of a new one in Japan (lower is better)' + (noValue ? '; ' + noValue + ' that can’t be judged are shown last' : '');
     }
     list.sort(function (a, b) { return sortFn(a, b) || a.title.localeCompare(b.title); });
     document.getElementById('count').textContent = 'Showing ' + list.length + ' of ' + CHAIRS.length + ' chairs' + fitNote;
@@ -815,6 +847,8 @@ footer p + p { margin-top: 4px; }
           (t.sub ? '<p class="sub">' + esc(t.sub) + '</p>' : '') +
           '<div class="badges">' + idBadge(c) + '<span class="badge plain">Condition: ' + esc(f.condition_seen) + '</span></div>' +
           '<p class="big-price">' + (d.price == null ? 'Price not known' : peso(d.price)) + '<small>Lowest price seen' + (d.priceNote ? ' ' + esc(d.priceNote) : '') + '</small></p>' +
+          (d.priceJP != null ? '<p class="jp-big">New in Japan: <strong>' + jpLine(c) + '</strong> (rough peso estimate)</p>' : '') +
+          '<div class="badges">' + valueBadge(c, true) + '</div>' +
           '<dl class="quick">' +
             '<dt>Seat height (cm)</dt><dd>' + esc(f.seat_height_cm) + '</dd>' +
             '<dt>Seat depth (cm)</dt><dd>' + esc(f.seat_depth_cm) + '</dd>' +
@@ -832,6 +866,9 @@ footer p + p { margin-top: 4px; }
         '</div>' +
       '</div>' +
       (c.introHtml ? '<div class="note-box md">' + c.introHtml + '</div>' : '') +
+      '<section class="value-box"><h2>Value ' + valueBadge(c, false) + '</h2><ul>' +
+        c.valueComments.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') +
+        '</ul><p class="rule">' + esc(valueRuleText()) + '</p></section>' +
       '<div class="three">' +
         (glance ? '<section class="panel"><h2>' + esc(glance.heading) + '</h2><div class="md">' + glance.html + '</div></section>' : '') +
         (pros ? '<section class="panel pros"><h2><span class="mark" aria-hidden="true">✓</span>' + esc(pros.heading) + '</h2><div class="md">' + pros.html + '</div></section>' : '') +
@@ -1171,6 +1208,12 @@ footer p + p { margin-top: 4px; }
     }).join('');
     var body = '';
     body += '<tr><th scope="row">Where (Philippines)</th>' + list.map(function (c) { return '<td>' + esc(placesText(c)) + '</td>'; }).join('') + '</tr>';
+    body += '<tr><th scope="row">New in Japan (≈ ₱)</th>' + list.map(function (c) { return '<td>' + (c.d.priceJP == null ? 'not known' : jpLine(c)) + '</td>'; }).join('') + '</tr>';
+    var bestValue = bestIdx(function (c) { return c.d.valuePct; }, -1);
+    body += '<tr><th scope="row">Value</th>' + list.map(function (c, i) {
+      return '<td' + (i === bestValue ? ' class="best"' : '') + '>' + (i === bestValue ? '<span class="best-tag">Best value</span>' : '') + VALUE_LABEL[c.d.value] +
+        (c.d.valuePct != null ? ' (' + Math.round(c.d.valuePct) + '% of new in Japan)' : '') + '</td>';
+    }).join('') + '</tr>';
     GROUPS.forEach(function (g) {
       body += '<tr class="row-group"><th scope="rowgroup" colspan="' + (list.length + 1) + '">' + esc(g.title) + '</th></tr>';
       g.keys.forEach(function (k) {
@@ -1216,6 +1259,7 @@ footer p + p { margin-top: 4px; }
   // ---------- footer + routing ----------
   document.getElementById('footer').innerHTML =
     '<p>Made from ' + CHAIRS.length + ' chair files in Documents\\Chair Library\\chairs. Website rebuilt ' + esc(niceDate(DATA.builtOn)) + '.</p>' +
+    '<p>Peso estimates of Japan prices use ' + esc(DATA.rate.text) + ', ' + esc(DATA.rate.source) + '. Rough guide only.</p>' +
     '<p>When chair files are added or changed, the website is rebuilt so new chairs show up here.</p>';
 
   function route() {
