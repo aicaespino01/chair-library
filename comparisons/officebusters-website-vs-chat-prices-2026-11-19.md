@@ -202,22 +202,22 @@ You are not a buyer who needs a chair any more. You are a customer who already g
 
 **The six moves**
 
-1. **Thank them first, always.** Open with salamat po and one true good thing. Nobody in a Filipino shop gives a better price to someone who starts with a complaint.
-2. **Ask, never accuse.** Never "mas mahal ninyo sa chat". Say "nakita ko po sa website ninyo…" and let them explain it. An accusation makes them defend the price; a question makes them justify it.
+1. **Open warm, every time.** Thanks, plus one true good thing about the chair. Nobody in a Filipino shop gives a better price to someone who starts with a complaint.
+2. **Ask, never accuse.** Never "you charge more in chat". Say "I saw on your website that…" and let them explain it. An accusation makes them defend the price; a question makes them justify it.
 3. **Mention the Sylphy once.** Naming what you already own sets your standard without a single word of bargaining. They now have to beat ₱3,000 for a ¥148,720 chair.
 4. **Let "last 1 pc na po" pass.** Scarcity only works on someone with nothing to sit on. Reply slowly. The price usually moves on its own.
-5. **Give them a way to say yes without losing face.** "Baka po may similar kayo sa website price" lets them lower the price as a favour, not as a defeat.
-6. **Offer to come back.** A suki is worth more to them than one chair. Saying you may buy a second one is the real bargaining chip.
+5. **Give them a way to say yes without losing face.** "Do you have something similar at the website price?" lets them match it as a favour, not as a defeat.
+6. **Offer to come back.** A regular is worth more to them than one chair. Saying you may buy a second one is the real bargaining chip.
 
 **Message you can send**
 
-> Hi po, salamat po sa chair — na-receive ko na po and okay naman po siya.
+> Hi, thanks — the chair arrived and I'm happy with it.
 >
-> Pahingi po ulit ng tulong. Nakita ko po kasi sa website ninyo na ₱3,000 lang po yung Okamura na nakuha ko, tapos yung mga na-offer ninyo sa chat po ay ₱6,000 hanggang ₱12,000. Baka po may similar na available sa website price? Balak ko po kasi bumili ulit ng pangalawa.
+> One question. The Okamura I bought was ₱3,000 on your website, but the chairs offered to me in chat were ₱6,000 to ₱12,000. Do you have anything at the website price? I'm looking for a second chair.
 >
-> Kung meron po, pwede po bang makita yung label sa ilalim (yung model number) at yung seat height sa pinakamababa, in cm? Para po sure ako bago ako mag-decide. Salamat po ulit!
+> If you do, please send the model number from the label under the seat and the lowest seat height in cm. I'll decide from there.
 
-Nothing in it accuses them. It states the two prices as facts, asks them to match the lower one, and gives them a reason to want to.
+Nothing in it accuses them. It states both prices as facts, asks them to match the lower one, and gives them a reason to want to.
 
 **If they say the website price is only for website stock:** fair enough — then ask them to put the chair on the website so you can order it there. If they will not, that tells you where the real price lives.
 
@@ -230,9 +230,9 @@ It already happened once, on 2026-11-17. If it happens again, the aim is not an 
 **Four steps**
 
 1. **Before you type, screenshot the live listing** — the Sylphy page with today's date, the ₱3,000 and "in stock". Save it. You only ever show it if they claim the listing was not there.
-2. **Get the cancellation in writing.** "Pa-confirm na lang po in writing na cancelled and walang na-charge sa akin." That is the only thing you truly need from them.
-3. **Name the replacement yourself.** Never ask "ano po meron kayo" — that is how you end up at ₱6,000. Give the exact chair and SKU at the same ₱3,000.
-4. **Say your price once, then stop typing.** If they counter at ₱6,000: "Sa website po kasi ₱3,000 ang budget ko. Kung wala po, okay lang, hihintayin ko na lang yung next stock." Silence does the rest.
+2. **Get the cancellation in writing.** "Please confirm in writing that the order is cancelled and that I wasn't charged." That is the only thing you truly need from them.
+3. **Name the replacement yourself.** Never ask "what do you have?" — that is how you end up at ₱6,000. Give the exact chair and SKU at the same ₱3,000.
+4. **Say your price once, then stop typing.** If they counter at ₱6,000: "My budget is the website price, ₱3,000. If there's nothing at that price, no problem — I'll wait for the next stock." Silence does the rest.
 
 **Chairs to name — all live on officebusters.ph at ₱3,000 on 2026-11-19**
 
@@ -249,18 +249,18 @@ It already happened once, on 2026-11-17. If it happens again, the aim is not an 
 
 **Message for that day**
 
-> Hi po, naintindihan ko po. Pa-confirm na lang po in writing na cancelled yung order at walang na-charge sa akin.
+> Understood. Please confirm in writing that the order is cancelled and that I wasn't charged.
 >
-> Nakita ko po kasi sa website ninyo na available pa rin yung Okamura Fluent sa ₱3,000 (SKU OKASNAFLU1502 at OKASNAFLU1503, sa Sta. Rosa). Pwede po ba yun na lang yung ipalit sa order ko, same price? Kung hindi po yun available, yung Itoki Prego po (ITKSWAPRG1494) o yung Itoki Dorsal (ITKSNADSL1505), ₱3,000 din po sila sa website.
+> Your website still shows the Okamura Fluent at ₱3,000 — SKU OKASNAFLU1502 and OKASNAFLU1503, Sta. Rosa. Can you swap my order for that one at the same price? If it's gone, the Itoki Prego (ITKSWAPRG1494) and the Itoki Dorsal (ITKSNADSL1505) are also ₱3,000 on your site.
 >
-> Salamat po — handa na po akong mag-proceed agad pag na-confirm ninyo.
+> I'm ready to proceed as soon as you confirm.
 
 **Why this is a negotiation and not a complaint**
 
 - You ask for one thing only: a chair at the printed price. No apology, no compensation, no manager.
 - You bring their own SKUs, their own website, their own price. Nothing there to argue with.
 - You can walk away at no cost — 30 chairs at ₱3,000 in stock, and you already have something to sit on.
-- You stay a customer they want: po, salamat, and a second purchase on the table.
+- You stay a customer they want: a warm opening, and a second purchase on the table.
 - Only if they took money and will not return it does this stop being a negotiation. Then it is a refund request with a date, and DTI is a fair next step. Keep that in your pocket, not in the message.
 
 ---
