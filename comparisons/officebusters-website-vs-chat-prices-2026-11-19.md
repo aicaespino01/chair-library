@@ -170,6 +170,59 @@ Same problem as the chats: most TikTok tiles show the OB logo instead of a photo
 
 ---
 
+## 6. The chair you bought, against everything they offered
+
+You bought the **Okamura Sylphy C638XR at ₱3,000** from the website.
+
+| | |
+|---|---|
+| New in Japan | ¥148,720 (list, AOC Japan) = about ₱59,562 |
+| You paid | **5.0% of the Japan price** |
+| Rank on their website | **Highest Japan price of every chair they list** |
+| Rank in your whole library | Second only to the Steelcase Leap (¥186,980), which they never put on the website |
+
+So every chair still being offered to you is a step down, at two to four times the money:
+
+| What they offered | Price | New in Japan | You would pay |
+|---|---|---|---|
+| **Okamura Sylphy — yours** | **₱3,000** | ¥148,720 | **5.0%** |
+| Okamura Fluent (website, still in stock) | ₱3,000 | ¥76,670 | 9.8% |
+| "Leap-looking" chair, chat, model unconfirmed | ₱9,000 | ¥186,980 at best | 12.0% at best |
+| Itoki Spina, Facebook post | ₱8,500 | ¥140,200 | 15.1% |
+| Uchida swivel chair, TikTok | ₱6,499 | ¥25,850–29,040 | 56–63% |
+| Black chairs, chat, no model given | ₱6,000 / ₱10,000 / ₱12,000 | not known | cannot be worked out |
+
+The Itoki Spina is the clearest one. Their post sells it as "₱60,000 sa Japan, ₱8,500 na lang". It is ¥140,200 at a Japanese shop — **less** than your Sylphy — and they want nearly three times what you paid.
+
+---
+
+## 7. How to deal with them from here
+
+You are not a buyer who needs a chair any more. You are a customer who already got the best thing they stock, at the lowest price they print. Everything below follows from that.
+
+**The six moves**
+
+1. **Thank them first, always.** Open with salamat po and one true good thing. Nobody in a Filipino shop gives a better price to someone who starts with a complaint.
+2. **Ask, never accuse.** Never "mas mahal ninyo sa chat". Say "nakita ko po sa website ninyo…" and let them explain it. An accusation makes them defend the price; a question makes them justify it.
+3. **Mention the Sylphy once.** Naming what you already own sets your standard without a single word of bargaining. They now have to beat ₱3,000 for a ¥148,720 chair.
+4. **Let "last 1 pc na po" pass.** Scarcity only works on someone with nothing to sit on. Reply slowly. The price usually moves on its own.
+5. **Give them a way to say yes without losing face.** "Baka po may similar kayo sa website price" lets them lower the price as a favour, not as a defeat.
+6. **Offer to come back.** A suki is worth more to them than one chair. Saying you may buy a second one is the real bargaining chip.
+
+**Message you can send**
+
+> Hi po, salamat po sa chair — na-receive ko na po and okay naman po siya.
+>
+> Pahingi po ulit ng tulong. Nakita ko po kasi sa website ninyo na ₱3,000 lang po yung Okamura na nakuha ko, tapos yung mga na-offer ninyo sa chat po ay ₱6,000 hanggang ₱12,000. Baka po may similar na available sa website price? Balak ko po kasi bumili ulit ng pangalawa.
+>
+> Kung meron po, pwede po bang makita yung label sa ilalim (yung model number) at yung seat height sa pinakamababa, in cm? Para po sure ako bago ako mag-decide. Salamat po ulit!
+
+Nothing in it accuses them. It states the two prices as facts, asks them to match the lower one, and gives them a reason to want to.
+
+**If they say the website price is only for website stock:** fair enough — then ask them to put the chair on the website so you can order it there. If they will not, that tells you where the real price lives.
+
+---
+
 ## The whole picture in one line each
 
 | Where they sell | Office swivel chair prices |
