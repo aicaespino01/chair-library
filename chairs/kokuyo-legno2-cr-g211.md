@@ -26,7 +26,7 @@ weight_limit_kg: "80 (shop listing for LEGNO2, LOOKIT)"
 chair_weight_kg: "not published in sources read"
 warranty: "not found; Office Busters 3-day defect exchange"
 price_new: "not found for the circle-arm version (see the LEGNO2 CR-G210 file for the no-arm price)"
-lowest_price_seen_php: "seen at Office Busters PH, price not stated"
+lowest_price_seen_php: "Office Busters PH (from the Facebook chat), price not stated"
 last_checked: 2026-11-14
 ---
 
@@ -44,9 +44,9 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH, from photos sent in a Facebook chat (2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 
-Photo (taken at Office Busters):
+Photo (sent by Office Busters in a Facebook chat, 2026-11-14):
 - photos/kokuyo-legno2-cr-g211-1.jpg
 
 ## How it was identified
@@ -111,7 +111,7 @@ Not checked this round: TikTok, Reddit, Lazada, Shopee.
 2. Exact code and year: photo of the label under the seat.
 
 ## Sources
-1. Photo shared 2026-11-14 (saved as photos/kokuyo-legno2-cr-g211-1.jpg)
+1. Photo sent by Office Busters in a Facebook chat 2026-11-14 (saved as photos/kokuyo-legno2-cr-g211-1.jpg)
 2. Google image search "コクヨ レグノ2 サークル肘 グレーシェル ブルー", 2026-11-14 (LOOKIT "オフィスチェア コクヨ レグノ2 ローバック サークル肘")
 3. Kakaku.com CR-G211 list: https://search.kakaku.com/CR-G211/, read 2026-11-14 (W600 × D600 × H820–930 mm; seat 470 × 455 mm, height 405–515 mm; arm height 585–695 mm)
 4. LEGNO2 CR-G210 chair file in this library

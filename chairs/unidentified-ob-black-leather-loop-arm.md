@@ -26,13 +26,13 @@ weight_limit_kg: "not known"
 chair_weight_kg: "not known"
 warranty: "not known; Office Busters 3-day defect exchange"
 price_new: "not known"
-lowest_price_seen_php: "seen at Office Busters PH, price not stated"
+lowest_price_seen_php: "Office Busters PH (from the Facebook chat), price not stated"
 last_checked: 2026-11-14
 ---
 
 # Black leather high-back chair with aluminium loop arms (model not identified yet)
 
-**Identified: Unsure.** Two of these chairs were seen side by side at Office Busters. A second photo (under the seat, shared 2026-11-14) was searched too. Google image search still found only lookalikes; none has the same thick closed loop arms. **No label is visible in the under-seat photo.** **To identify:** a close photo of any sticker or stamp on the underside (seat bottom, metal plate, or under the arm brackets).
+**Identified: Unsure.** Two of these chairs stand side by side in a photo Office Busters sent in a Facebook chat. A second photo (under the seat, sent 2026-11-14) was searched too. Google image search still found only lookalikes; none has the same thick closed loop arms. **No label is visible in the under-seat photo.** **To identify:** a close photo of any sticker or stamp on the underside (seat bottom, metal plate, or under the arm brackets).
 
 ## At a glance
 - Slim, tall black leather-look back and seat; looks like an executive or meeting chair.
@@ -43,9 +43,9 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH, from photos sent in a Facebook chat (2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 
-Photo (taken at Office Busters, person in background cropped out):
+Photo (sent by Office Busters in a Facebook chat, 2026-11-14; person in background cropped out):
 - photos/unidentified-ob-black-leather-loop-arm-1.jpg (front, two chairs)
 - photos/unidentified-ob-black-leather-loop-arm-2.jpg (under the seat: mechanism, gas lift, base)
 
@@ -108,7 +108,7 @@ Not available until the model is known.
 3. Seat height: ask them to measure the lowest and highest seat height.
 
 ## Sources
-1. Photos shared 2026-11-14 (saved as photos/unidentified-ob-black-leather-loop-arm-1.jpg and -2.jpg)
+1. Photos sent by Office Busters in a Facebook chat 2026-11-14 (saved as photos/unidentified-ob-black-leather-loop-arm-1.jpg and -2.jpg)
 2. Google image search on the photo, 2026-11-14
 3. Google image search on photo 2 and on a new crop of photo 1, 2026-11-14; text image searches "Coalesse SW_1 conference chair", "Fritz Hansen Oxford 3293", "Zuo Modern Glider", "オカムラ デルヴ", "中古 ハイバック 革張り アルミ ループ肘", 2026-11-14
 4. Google image searches "ウチダ ECチェア EC220HL", "プラス アルフィーノ チェア 肘付", "オカムラ ヴィスコンテ", "コクヨ アガタ チェア ハイバック", 2026-11-14

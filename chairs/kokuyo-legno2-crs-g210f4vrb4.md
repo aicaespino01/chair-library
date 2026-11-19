@@ -26,11 +26,11 @@ weight_limit_kg: "80 (shop listing, LOOKIT)"
 chair_weight_kg: "9.5"
 warranty: "not found; Office Busters 3-day defect exchange"
 price_new: "Japan shops: JPY 29,810 to 38,500 (list JPY 53,570)"
-lowest_price_seen_php: "seen at Office Busters PH, price not stated"
+lowest_price_seen_php: "Office Busters PH (from the Facebook chat), price not stated"
 last_checked: 2026-11-14
 ---
 
-# Kokuyo LEGNO2 (CRS-G210F4VRB4): gray shell, seen at Office Busters
+# Kokuyo LEGNO2 (CRS-G210F4VRB4): gray shell, from the Office Busters Facebook chat
 
 **Identified: Confirmed.** The label under the seat reads "KOKUYO / JOIFA 606 / CRS-G210F4VRB4", lot stamp 090630 (probably made 30 June 2009). A Rakuten listing titled "レグノ2" uses the same form of code (CRS-G210F4HSN65) with the same sizes. Specs are the same as the other LEGNO2 file (CR-G210).
 
@@ -45,10 +45,10 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH, from photos sent in a Facebook chat (2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 | AOC Japan (new, CR-G210F4) | e-aocinc.com (Google preview) | ¥29,810 | — | New | Japan | Yes | 2026-11-11 |
 
-Photo (taken at Office Busters, people cropped out):
+Photo (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped out):
 - photos/kokuyo-legno2-crs-g210f4vrb4-1.jpg
 
 ## How it was identified
@@ -113,6 +113,6 @@ Photo (taken at Office Busters, people cropped out):
 2. Fabric color: ask for a photo of the front.
 
 ## Sources
-1. Label photo, shared 2026-11-14 (saved as photos/kokuyo-legno2-crs-g210f4vrb4-1.jpg, people cropped out)
+1. Label photo, sent by Office Busters in a Facebook chat 2026-11-14 (saved as photos/kokuyo-legno2-crs-g210f4vrb4-1.jpg, people cropped out)
 2. Rakuten used listing "レグノ2 CRS-G210F4HSN65": https://item.rakuten.co.jp/tokyosyoukai/kchd-1029/, read 2026-11-14
 3. LEGNO2 CR-G210 chair file in this library (Kokuyo manual preview, LOOKIT, ASKUL, AOC, Kagg.jp)

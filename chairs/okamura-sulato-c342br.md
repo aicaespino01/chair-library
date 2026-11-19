@@ -26,7 +26,7 @@ weight_limit_kg: "not published by maker"
 chair_weight_kg: "not published"
 warranty: "Okamura 1/2/3 years in Japan only; excludes used chairs and use outside Japan"
 price_new: "JPY 90,800 (office-com.jp, C342ZR new)"
-lowest_price_seen_php: "seen at Office Busters PH, price not stated"
+lowest_price_seen_php: "Office Busters PH (from the Facebook chat), price not stated"
 last_checked: 2026-11-14
 ---
 
@@ -45,10 +45,10 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH, from photos sent in a Facebook chat (2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 | office-com.jp (new, C342ZR black shell) | https://www.office-com.jp (search "C342ZR"; Google preview) | ¥90,800 | — | New | Japan | Yes | 2026-11-14 |
 
-Photo (taken at Office Busters, people cropped out):
+Photo (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped out):
 - photos/okamura-sulato-c342br-1.jpg
 
 ## How it was identified
@@ -115,7 +115,7 @@ C342 sizes come from Japanese shops that copy Okamura's sizes. The seat matches 
 2. Exact code letter and year: ask for a clear photo of the label.
 
 ## Sources
-1. Label photo, shared 2026-11-14 (saved as photos/okamura-sulato-c342br-1.jpg, people cropped out)
+1. Label photo, sent by Office Busters in a Facebook chat 2026-11-14 (saved as photos/okamura-sulato-c342br-1.jpg, people cropped out)
 2. Okamura Sulato series page: https://product.okamura.co.jp/ext/DispCate.do?volumeName=00001&lv3=スラート, read 2026-11-14
 3. Google search previews, 2026-11-14: office-com.jp C342ZR (¥90,800; 580 × 572 × 850–942 mm without hanger; seat height 420–512 mm; base 667 mm); Rakuten OK-C342 (same sizes); Kagg.jp C342ZR-FSF3 (back width 453 mm, seat width 482 mm); AOC C342WR/ZR/GR/XR/JR/CR; Monotaro C498BR FHB3 (グレーシェル)
 4. Sulato C331ZR chair file in this library (maker manual and catalog facts)

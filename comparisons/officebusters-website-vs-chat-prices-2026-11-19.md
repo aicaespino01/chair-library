@@ -54,9 +54,9 @@ These are the models on the website (from your chair library), with what the sam
 | Kokuyo LEGNO2 CR-G210 | ₱2,500 | ¥29,810–38,500 | ₱11,939–15,419 |
 | Uchida EPO | ₱3,000 | ¥25,850–29,040 | ₱10,353–11,631 |
 
-Now the chairs you only have from photos, which are **not** on the website:
+Now the chairs from the Facebook chat photos, which are **not** on the website:
 
-| Chair from the photos | New in Japan | Same in pesos | Is it a better model than the website ones? |
+| Chair from the Facebook chat | New in Japan | Same in pesos | Is it a better model than the website ones? |
 |---|---|---|---|
 | Steelcase Leap | ¥186,980 | ₱74,885 | Yes, higher class |
 | Itoki Spina KE-757GP | ¥140,200 (shop price) | ₱56,150 | Same class as the Sylphy the website sells at ₱3,000 |
@@ -69,9 +69,9 @@ Now the chairs you only have from photos, which are **not** on the website:
 
 **What this shows:**
 
-1. Four of the eight photo chairs are literally the same model family already sold on the website.
+1. Four of the eight Facebook chat chairs are literally the same model family already sold on the website.
 2. One (Plus NEXIS) is a budget chair, cheaper new in Japan than nearly everything on the website.
-3. Only one (Steelcase Leap) is clearly a higher class than anything on the website.
+3. Only one (Steelcase Leap) is clearly a higher class than anything on the website, and the chat never gave a price for it.
 4. The website's own Okamura Sylphy, at ₱3,000, sits in the same top class as the photo chairs. Its Japan list price is ¥148,720, against ¥118,360–131,780 list for the Escudo mesh and a ¥140,200 shop price for the Spina. (The Spina's own list price was not found, so read this as "same class", not "higher".)
 
 So the website is not the cheap-models shelf. It carries the same Japanese office brands (Okamura, Itoki, Kokuyo, Uchida, Plus), the same model families, and in the Sylphy it has a chair from the same top class as the ones in the photos — for ₱3,000.
@@ -87,6 +87,8 @@ Only one Facebook chat quote is on record so far:
 | Itoki Swivel Chair, 1 pc, minor scratches on the seat pad | ₱3,500 | Lipa | ₱3,500 (listed as available at OB Sta. Rosa) |
 
 That one matches the website exactly. Nothing in the saved chats shows a chair at around twice the website's top price, so the higher prices must be in the Facebook posts and the TikTok listings that are not saved yet.
+
+The eight chairs in the table above also came from this Facebook chat: Office Busters sent the photos on 2026-11-14 and gave **no price for any of them**. So the chat shows the nicer-looking chairs but keeps the prices verbal, while the website shows the prices in writing. Every chair file has been corrected to say the photos came from the Facebook chat (they used to say "seen in person").
 
 **Still needed from you to finish this part:**
 

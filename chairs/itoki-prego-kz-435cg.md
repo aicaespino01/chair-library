@@ -26,7 +26,7 @@ weight_limit_kg: "not published in sources read"
 chair_weight_kg: "14.8"
 warranty: "Itoki (Japan, new): structure 3 years, mechanisms and moving parts 2 years; not for used chairs"
 price_new: "¥64,430 incl. tax (ASKUL, KZ-435GE-W4G7; maker list price ¥73,260 incl. tax; ASKUL sales ended)"
-lowest_price_seen_php: "seen at Office Busters PH, price not stated"
+lowest_price_seen_php: "Office Busters PH (from the Facebook chat), price not stated"
 last_checked: 2026-11-14
 ---
 
@@ -41,18 +41,18 @@ The same label photo was first saved as "Itoki epios KE-450" (2026-11-14). That 
 - Rocking with "Hip Tilt": the rear of the seat tilts with the back. Rocking strength knob.
 - Seat height 41.0–53.0 cm: short users may need a footrest.
 - No seat-depth slide, no lumbar adjustment.
-- Seen at Office Busters PH; price not stated.
+- Office Busters PH has it (seen in the Facebook chat); price not stated.
 
 ## Where to buy
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, seen in person (photos shared 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH, from photos sent in a Facebook chat (2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 | ASKUL (new, KZ-435GE-W4G7, gray × teal green) | https://www.askul.co.jp/p/U072363/ | ¥64,430 incl. tax | ¥73,260 (maker list price) | New; sales ended | Japan | No | 2026-11-14 |
 | Office Busters Japan (used, KZ-435CG-W4E1, green) | https://www.officebusters.com/items/486485 | ¥4,730 incl. tax | — | Used, grade B+ | Shinjuku Satellite, Japan | — | 2026-11-14 |
 | Office Busters Japan (used, KZ-435CG-W4C4, gray) | https://www.officebusters.com/items/143343 | ¥7,150 incl. tax | — | Used, grade A (old listing) | Kinshicho, Japan | — | 2026-11-14 |
 
-Photos (taken at Office Busters PH):
+Photos (sent by Office Busters in a Facebook chat, 2026-11-14):
 - photos/itoki-prego-kz-435cg-1.jpg (whole chair)
 - photos/itoki-prego-kz-435cg-2.jpg (label under the seat)
 
@@ -126,7 +126,7 @@ Not checked this round: TikTok, Reddit, kakaku.com, Lazada, Shopee.
 3. Weight limit: not published in sources read. Ask Office Busters.
 
 ## Sources
-1. Photos of the chair and its label, shared 2026-11-14 (saved as photos/itoki-prego-kz-435cg-1.jpg and -2.jpg)
+1. Photos of the chair and its label, sent by Office Busters in a Facebook chat 2026-11-14 (saved as photos/itoki-prego-kz-435cg-1.jpg and -2.jpg)
 2. ASKUL KZ-435GE-W4G7: https://www.askul.co.jp/p/U072363/, read 2026-11-14 (¥64,430 incl. tax, list ¥73,260; seat width 460, base width 640, seat height 410–530, height 860–980 mm; 14.8 kg; materials; mechanisms; warranty structure 3 years / mechanisms 2 years; sales ended)
 3. Office Busters Japan KZ-435CG-W4E1: https://www.officebusters.com/items/486485, read 2026-11-14 (¥4,730 incl. tax, grade B+, loop arms, photos)
 4. Office Busters Japan KZ-435CG-W4C4: https://www.officebusters.com/items/143343, read 2026-11-14 (¥7,150 incl. tax, grade A, high back, photos)

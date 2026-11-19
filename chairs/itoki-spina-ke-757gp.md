@@ -26,7 +26,7 @@ weight_limit_kg: "not published by maker"
 chair_weight_kg: "not published"
 warranty: "Itoki (Japan, new chairs): finish 1 year, mechanisms and casters 2 years, structure 3 years; not for used chairs"
 price_new: "JPY 140,200 incl. tax (office-com.jp, KE-757GP-T1T1SG)"
-lowest_price_seen_php: "seen at Office Busters PH, price not stated"
+lowest_price_seen_php: "Office Busters PH (from the Facebook chat), price not stated"
 last_checked: 2026-11-14
 ---
 
@@ -46,12 +46,12 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH, from photos sent in a Facebook chat (2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 | office-com.jp (new, KE-757GP-T1T1SG) | https://www.office-com.jp/products/detail.php?product_id=178257 | ¥140,200 incl. tax (¥127,455 before tax) | — | New | Japan | Yes | 2026-11-14 |
 | ASKUL (new, KE-757GP-T…, black, with arms) | askul.co.jp (Google preview) | ¥88,061 incl. tax | — | New | Japan | — | 2026-11-14 |
 | Used in Japan: Office Busters Japan (KE-757GP-Z9T1SG, mirror aluminium base) | officebusters.com (Google preview) | ¥36,300 | — | Used | Kobe Sannomiya store | — | 2026-11-14 |
 
-Photos (taken at Office Busters, people cropped out):
+Photos (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped out):
 - photos/itoki-spina-1.jpg
 - photos/itoki-spina-2.jpg
 
@@ -131,7 +131,7 @@ Not checked this round: TikTok, Reddit (Google previews), Lazada, Shopee, kakaku
 4. Condition: ask for photos of the back ribs (cracks) and test the gas lift and rocking lock.
 
 ## Sources
-1. Label and back photos, shared 2026-11-14.
+1. Label and back photos, sent by Office Busters in a Facebook chat 2026-11-14.
 2. office-com.jp, Itoki Spina elastomer type, black base, adjustable arms, KE-757GP-T1T1SG: https://www.office-com.jp/products/detail.php?product_id=178257, read 2026-11-14
 3. Itoki catalog, Spina series: https://catalog.itoki.jp/series/ShowSeries.action?seriesCode=1896 and feature page https://catalog.itoki.jp/series/ShowSeriesAppealingFeature.action?seriesCode=1896, read 2026-11-14
 4. Google search previews, 2026-11-14: Itoki online shop (KE-757GV-T1T1T1, 2007 Good Design award); ASKUL (KE-757GP, ¥88,061 incl. tax); Office Busters Japan used KE-757GP-Z9T1SG (¥36,300); Rakuten KE-757GP-T1T1 (¥153,200); Kagg.jp KE-757GV-T1T1SG

@@ -46,11 +46,11 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (sticker OKASWAESR1527), seen in person | not on officebusters.ph yet (checked 2026-11-14) | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH (sticker OKASWAESR1527), from photos sent in a Facebook chat (2026-11-14) | not on officebusters.ph yet (checked 2026-11-14) | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 | Azumaya (used, C491ZR-FHB4 low back) | officekagu-azumaya.co.jp (Google preview) | ¥15,400 | list ¥118,360 | Used | Japan | — | 2026-11-14 |
 | Azumaya (used, C497ZR-FHB4 high back) | officekagu-azumaya.co.jp (Google preview) | ¥16,500 | list ¥131,780 | Used | Japan | — | 2026-11-14 |
 
-Photos (taken at Office Busters, people cropped out):
+Photos (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped out):
 - photos/okamura-escudo-mesh-1.jpg
 
 ## How it was identified
@@ -121,7 +121,7 @@ Photos (taken at Office Busters, people cropped out):
 3. Price and branch: ask Office Busters (code OKASWAESR1527).
 
 ## Sources
-1. Underside photo with manual card and sticker, shared 2026-11-14.
+1. Underside photo with manual card and sticker, sent by Office Busters in a Facebook chat 2026-11-14.
 2. Okamura Escudo series page: https://product.okamura.co.jp/ext/DispCate.do?volumeName=00001&lv3=エスクード, read 2026-11-14
 3. Okamura size drawing: https://www.okamura.co.jp/catalog/pdf/ESCUDO_mesh_external_dimensions.pdf (file dated 2021-04-08), read 2026-11-14
 4. Okamura manual list: https://pdb.okamura.co.jp/mnlext/DispDirect.do?volumeName=00003&CID=ESCUDO (Escudo mesh manuals 2011–2021), read 2026-11-14

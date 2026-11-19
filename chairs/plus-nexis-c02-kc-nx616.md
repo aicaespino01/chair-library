@@ -26,13 +26,13 @@ weight_limit_kg: "not published"
 chair_weight_kg: "13 (no arms); 16.1 listed for the Garage arm version"
 warranty: "Japan: structure 3 years (ASKUL listing); Office Busters 3-day defect exchange if bought there"
 price_new: "Japan: JPY 29,800 (Plus Garage, arm version) to JPY 32,780 (with arms); about JPY 27,000 to 31,500 without arms"
-lowest_price_seen_php: "seen at Office Busters PH, price not stated"
+lowest_price_seen_php: "Office Busters PH (from the Facebook chat), price not stated"
 last_checked: 2026-11-14
 ---
 
 # Plus NEXIS (ネクシス) C02, KC-NX616: navy back, black seat, adjustable arms
 
-**Identified: Very likely.** From a photo shared on 2026-11-14, taken at Office Busters PH (branch not stated). Google image search on the photo returned Amazon Japan "Plus KC-NX616SL NEXS/Nexus 616 C02". Plus's product photos show the same navy back shape, black seat and black base, and Plus sells an adjust-arm version with the same arms. **To confirm:** look for the label under the seat; it should say "KC-NX616".
+**Identified: Very likely.** From a photo sent by Office Busters in a Facebook chat on 2026-11-14 (branch not stated). Google image search on the photo returned Amazon Japan "Plus KC-NX616SL NEXS/Nexus 616 C02". Plus's product photos show the same navy back shape, black seat and black base, and Plus sells an adjust-arm version with the same arms. **To confirm:** look for the label under the seat; it should say "KC-NX616".
 
 ## At a glance
 - Plus's budget office chair, made in Taiwan. Colors: navy × black, green × black, black.
@@ -48,9 +48,9 @@ last_checked: 2026-11-14
 | Plus Garage (Plus's own shop, Japan): NEXIS 616 with adjust arms, black | garage.plus.co.jp (Google preview) | ¥29,800 | — | New | Japan | — | 2026-11-14 |
 | Yahoo Shopping Japan: NEXIS with adjust arms | store.shopping.yahoo.co.jp (Google preview) | ¥32,780 | — | New | Japan | Yes | 2026-11-14 |
 | ASKUL Japan: C02 no arms, navy × black (KC-NX616SL BL) | askul.co.jp (Google preview) | ¥31,420 | — | New | Japan | Yes | 2026-11-14 |
-| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH, from photos sent in a Facebook chat (2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 
-Photos (taken at Office Busters, people cropped out):
+Photos (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped out):
 - photos/plus-nexis-c02-1.jpg
 
 ## How it was identified
@@ -126,7 +126,7 @@ Plus's own catalog page wasn't opened; these come from Plus's own shop (Garage) 
 3. Weight limit: not published; ask the seller or check Plus's catalog.
 
 ## Sources
-1. Photo shared on 2026-11-14 (not stored in this library)
+1. Photo sent by Office Busters in a Facebook chat on 2026-11-14 (not stored in this library)
 2. Google image search on the photo, 2026-11-14 (Amazon Japan "Plus KC-NX616SL 851317 NEXS/Nexus 616 C02")
 3. Google image search "プラス ネクシス KC-NX616SL ネイビー", 2026-11-14 (ASKUL and Amazon Japan C02 photos; variation image navy × black, green × black, black)
 4. Shop listings (Google previews), 2026-11-14: Plus Garage garage.plus.co.jp NEXIS 616 adjust; Yahoo Shopping NEXIS adjust arms (kbnx616sl); ASKUL C02 navy × black KC-NX616SL BL and green; Amazon Japan NEXIS 616 C02 navy and black; office-com.jp PB-KC-NX616SL; Rakuten PB-KC-NX616SL; Kakaku.com KC-NX616SL BL

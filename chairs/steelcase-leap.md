@@ -26,11 +26,11 @@ weight_limit_kg: "181 (400 lb, Steelcase)"
 chair_weight_kg: "not published in sources read"
 warranty: "Steelcase Limited Lifetime, 12 years (for new chairs from Steelcase)"
 price_new: "¥186,980 new in Japan (Steelcase Japan official shop, black frame, fabric, no headrest); US$2,167 new in the USA, country of origin (Steelcase US store, on sale for US$1,625 on 2026-11-14); A$1,779 (Steelcase Australia)"
-lowest_price_seen_php: "seen at Office Busters PH, price not stated (Facebook used listing seen at ₱19,500)"
+lowest_price_seen_php: "Office Busters PH (from the Facebook chat), price not stated (Facebook Marketplace used listing seen at ₱19,500)"
 last_checked: 2026-11-14
 ---
 
-# Steelcase Leap: black, 4D arms, seen at Office Busters
+# Steelcase Leap: black, 4D arms, from the Office Busters Facebook chat
 
 **Identified: Very likely.** Google image search on the photo returned many Steelcase Leap matches (Steelcase shop, CubeKing, The Office Crowd, a ₱19,500 used Leap V2 on Facebook). The seat shape, flexible seat edge, 4D arms and black base match. V1 or V2 is not confirmed. **To confirm:** look for the Steelcase label under the seat (it shows the model number and date).
 
@@ -48,14 +48,14 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, seen in person (photo shared 2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
+| Office Busters PH, from photos sent in a Facebook chat (2026-11-14; not listed on officebusters.ph, checked 2026-11-14) | — | not stated | — | Used | branch not stated: ask | — | 2026-11-14 |
 | Facebook Marketplace (used Leap V2, Google image search preview) | facebook.com (Google preview) | ₱19,500 | — | Used | Philippines | — | 2026-11-14 |
 | Steelcase Australia (new) | https://au.steelcase.com/products/steelcase-leap (Google preview) | A$1,779 | — | New | Australia | Yes | 2026-11-14 |
 | Steelcase Japan official shop (new, black frame, fabric, no headrest) | https://jp.steelcase.com/products/steelcase-leap | ¥186,980 (headrest +¥43,000; other versions up to ¥307,980) | — | New | Japan | Yes | 2026-11-14 |
 | Steelcase US store (new, country of origin) | https://store.steelcase.com/seating/office-chairs/leap | US$1,625 (sale) | US$2,167 | New | USA | — | 2026-11-14 |
 | Office Busters Japan (used Leap V2, grade B+) | https://www.officebusters.com/series/leap-v2 (Google preview) | ¥65,890 incl. tax | — | Used | Japan | 10 | 2026-11-14 |
 
-Photo (taken at Office Busters):
+Photo (sent by Office Busters in a Facebook chat, 2026-11-14):
 - photos/steelcase-leap-1.jpg
 
 ## How it was identified
@@ -127,7 +127,7 @@ Not checked this round: TikTok, Lazada, Shopee.
 3. Back condition: ask why the lower back shows slats and mesh.
 
 ## Sources
-1. Photo shared 2026-11-14 (saved as photos/steelcase-leap-1.jpg)
+1. Photo sent by Office Busters in a Facebook chat 2026-11-14 (saved as photos/steelcase-leap-1.jpg)
 2. Google image search on the photo, 2026-11-14 (matches: CubeKing, Steelcase Shop EU, The Office Crowd, RJ Furniture, Facebook ₱19,500 Leap V2)
 3. Steelcase Leap page: https://www.steelcase.com/products/office-chairs/leap/, read 2026-11-14 (400 lb, 12-year warranty, 4D arms, 4 recline stops, lumbar)
 4. Google previews, 2026-11-14: Steelcase Australia https://au.steelcase.com/products/steelcase-leap and Steelcase India https://in.steelcase.com/products/steelcase-leap (H 972–1099 mm, W 686 mm, D 533–629 mm, seat width 489 mm, back height 635 mm, A$1,779); Amazon Leap V2 (seat height 15.5–20.5 in, seat depth 15.75–18.75 in); Manuals+ Leap V2 manual; LatestinTech review; BTOD guide; Reddit r/OfficeChairs
