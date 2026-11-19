@@ -196,36 +196,56 @@ The Itoki Spina is the clearest one. Their post sells it as "₱60,000 sa Japan,
 
 ---
 
-## 7. How to deal with them from here
+## 7. The negotiating playbook
 
-You are not a buyer who needs a chair any more. You are a customer who already got the best thing they stock, at the lowest price they print. Everything below follows from that.
+You are not a buyer who needs a chair. You already own the chair with the highest value they stock, bought at the lowest price they print. Everything below runs on that one fact.
 
-**The six moves**
+**Your position before you say a word**
 
-1. **Open warm, every time.** Thanks, plus one true good thing about the chair. Nobody in a Filipino shop gives a better price to someone who starts with a complaint.
-2. **Ask, never accuse.** Never "you charge more in chat". Say "I saw on your website that…" and let them explain it. An accusation makes them defend the price; a question makes them justify it.
-3. **Mention the Sylphy once.** Naming what you already own sets your standard without a single word of bargaining. They now have to beat ₱3,000 for a ¥148,720 chair.
-4. **Let "last 1 pc na po" pass.** Scarcity only works on someone with nothing to sit on. Reply slowly. The price usually moves on its own.
-5. **Give them a way to say yes without losing face.** "Do you have something similar at the website price?" lets them match it as a favour, not as a defeat.
-6. **Offer to come back.** A regular is worth more to them than one chair. Saying you may buy a second one is the real bargaining chip.
+| | |
+|---|---|
+| Your walk-away | Total. You have a chair, nothing is urgent, and 30 of their chairs sit at ₱3,000 today. |
+| What they need | To keep moving one-off units, and a buyer who comes back is worth more than one sale. |
+| Never reveal | That you are in a hurry. Your real ceiling. That you want one specific chair. |
 
-**Message you can send**
+**The eleven steps, in order**
 
-> Hi, thanks — the chair arrived and I'm happy with it.
+1. **Anchor first.** Never open with "what do you have?" — that hands them the first number, and their first number has been ₱6,000 every time. Open with the chair, the SKU and ₱3,000. Whoever speaks first frames the conversation.
+2. **Accusation audit.** Say their excuse for them, before they reach for it: *"I know these are one-off units and the website isn't always in sync."* Once you have said it, they cannot use it as a wall.
+3. **Calibrated question.** A demand gets a yes or a no, and theirs will be no. Ask *"How can we make the website price work on this one?"* and the problem is on their desk.
+4. **Three equivalent offers.** Name three chairs you would genuinely accept, all ₱3,000, all from their own stock list. One ask can be refused; three options turn it from "yes or no" into "which one", and any answer is a win.
+5. **The pause.** Send the number, then stop typing. No softening, no follow-up an hour later. Whoever breaks the silence negotiates against themselves — and they are slow repliers anyway, so let that work for you.
+6. **Defuse scarcity.** "Last 1 pc na po" is their only pressure, and you are immune: *"No rush on my side — I'm already sitting on a good chair. Message me when the next batch lands."* Said once, it stops working for good.
+7. **Objective standard.** Never say a price is too high; that is your opinion against theirs. Use an outside number: *"The Spina is ¥140,200 new in Japan. The Sylphy I bought from you is ¥148,720 and it was ₱3,000 on your site. At ₱8,500 I'd be paying nearly three times as much for less chair."*
+8. **Trade, never concede.** Every peso you add buys something back: free delivery to Mabini, the footrest included, new casters, a 7-day return in writing, the label photo and a seat-height video. Giving ground for free teaches them to push again.
+9. **Make yes easy.** Close on the smallest concrete action: *"Confirm the SKU and the total with delivery and I'll pay today."*
+10. **The nibble.** After the price is settled and they have mentally made the sale, add one small thing: *"Great — can you include delivery since this is my second one?"* Refusing then costs them the whole deal over something tiny.
+11. **Leave the door open.** If they will not match it: *"No problem at all. I'll check back when the stock updates — thanks for your help."* A pleasant exit keeps the price negotiable next month.
+
+**The opening message**
+
+> Hi, thanks — the Sylphy arrived and I'm really happy with it.
 >
-> One question. The Okamura I bought was ₱3,000 on your website, but the chairs offered to me in chat were ₱6,000 to ₱12,000. Do you have anything at the website price? I'm looking for a second chair.
+> I'm after a second chair now. I know these are one-off units and the website isn't always in sync, so before I pick: the Okamura I bought was ₱3,000 on your site, while the chairs offered to me in chat were ₱6,000 to ₱12,000. How can we make the website price work on the next one?
 >
-> If you do, please send the model number from the label under the seat and the lowest seat height in cm. I'll decide from there.
+> Anything at ₱3,000 works for me — Fluent, Prego or Dorsal are all fine. Send the model number from the label under the seat and the lowest seat height in cm, and I'll decide from there.
 
-Nothing in it accuses them. It states both prices as facts, asks them to match the lower one, and gives them a reason to want to.
+Steps 1 to 4 in four sentences: anchors at ₱3,000, removes their excuse before they use it, asks how rather than whether, and gives them three ways to say yes.
 
-**If they say the website price is only for website stock:** fair enough — then ask them to put the chair on the website so you can order it there. If they will not, that tells you where the real price lives.
+**What never to do**
+
+- **Never say "scam", "bait and switch" or "rip-off".** The moment it becomes an accusation, the conversation stops being about price and starts being about their honour. You lose the discount and the shop.
+- **Never show a deadline.** "I need it this week" is worth about ₱3,000 to them.
+- **Never bid against yourself.** If they go quiet, do not come back with a higher number. Wait, or repeat your last one unchanged.
+- **Never argue about their Facebook prices.** You cannot prove any single chair was priced twice, so that fight is unwinnable. The website price is the only ground you need, and there you are simply right.
+- **Never mention DTI** unless they have taken money and will not return it. As a threat it is weak; as a remedy for an unreturned payment it is strong.
+- **Never fall in love out loud.** The second they know which chair you want, that chair has a new price.
 
 ---
 
 ## 8. If they cancel the Sylphy too
 
-It already happened once, on 2026-11-17. If it happens again, the aim is not an argument about their Facebook prices. The aim is one good chair at ₱3,000, in writing.
+It already happened once, on 2026-11-17. Same playbook as section 7, with one extra move at the front: get the paper trail before you negotiate. The aim is one good chair at ₱3,000, in writing.
 
 **Four steps**
 
@@ -255,13 +275,13 @@ It already happened once, on 2026-11-17. If it happens again, the aim is not an 
 >
 > I'm ready to proceed as soon as you confirm.
 
-**Why this is a negotiation and not a complaint**
+**Why this reads as standing your ground and not as a complaint**
 
-- You ask for one thing only: a chair at the printed price. No apology, no compensation, no manager.
-- You bring their own SKUs, their own website, their own price. Nothing there to argue with.
-- You can walk away at no cost — 30 chairs at ₱3,000 in stock, and you already have something to sit on.
-- You stay a customer they want: a warm opening, and a second purchase on the table.
-- Only if they took money and will not return it does this stop being a negotiation. Then it is a refund request with a date, and DTI is a fair next step. Keep that in your pocket, not in the message.
+- One ask, and it is small: a chair at the price they printed themselves. No apology, no compensation, no manager.
+- Every number is theirs — their SKUs, their website, their price. Nothing in the message for them to dispute.
+- You can leave at no cost: 30 chairs at ₱3,000 in stock, and a Sylphy already under you. That is what makes the calm tone real rather than performed.
+- They still want your next order. Pressure plus a future sale beats pressure alone.
+- The one hard line: if they took money and will not return it, this stops being a negotiation. Then it is a refund request with a date on it, and DTI is a real remedy. Until then it stays out of your messages.
 
 ---
 
