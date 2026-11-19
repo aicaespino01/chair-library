@@ -176,7 +176,7 @@ You bought the **Okamura Sylphy C638XR at ₱3,000** from the website.
 
 | | |
 |---|---|
-| New in Japan | ¥148,720 (list, AOC Japan) = about ₱59,562 |
+| New in Japan | ¥148,720 (list, AOC Japan) ≈ ₱59,600 (rough peso estimate) |
 | You paid | **5.0% of the Japan price** |
 | Rank on their website | **Highest Japan price of every chair they list** |
 | Rank in your whole library | Second only to the Steelcase Leap (¥186,980), which they never put on the website |
@@ -220,6 +220,48 @@ You are not a buyer who needs a chair any more. You are a customer who already g
 Nothing in it accuses them. It states the two prices as facts, asks them to match the lower one, and gives them a reason to want to.
 
 **If they say the website price is only for website stock:** fair enough — then ask them to put the chair on the website so you can order it there. If they will not, that tells you where the real price lives.
+
+---
+
+## 8. If they cancel the Sylphy too
+
+It already happened once, on 2026-11-17. If it happens again, the aim is not an argument about their Facebook prices. The aim is one good chair at ₱3,000, in writing.
+
+**Four steps**
+
+1. **Before you type, screenshot the live listing** — the Sylphy page with today's date, the ₱3,000 and "in stock". Save it. You only ever show it if they claim the listing was not there.
+2. **Get the cancellation in writing.** "Pa-confirm na lang po in writing na cancelled and walang na-charge sa akin." That is the only thing you truly need from them.
+3. **Name the replacement yourself.** Never ask "ano po meron kayo" — that is how you end up at ₱6,000. Give the exact chair and SKU at the same ₱3,000.
+4. **Say your price once, then stop typing.** If they counter at ₱6,000: "Sa website po kasi ₱3,000 ang budget ko. Kung wala po, okay lang, hihintayin ko na lang yung next stock." Silence does the rest.
+
+**Chairs to name — all live on officebusters.ph at ₱3,000 on 2026-11-19**
+
+| Ask for this | SKU to quote | Price | Why it is a fair swap |
+|---|---|---|---|
+| **Okamura Fluent CB31ZR** | OKASNAFLU1502 or OKASNAFLU1503 | ₱3,000 | ¥76,670 new. Mesh back **and the seat-depth slide**, same as the Sylphy. Two units, OB Sta. Rosa. **First choice.** |
+| Itoki Prego KZ-4xx | ITKSWAPRG1494 | ₱3,000 | ¥69,100 new. Loop arms, fabric. |
+| Itoki Dorsal KKV-540 | ITKSNADSL1505 | ₱3,000 | ¥60,000–70,000 list. Split back, no arms. |
+| Itoki fulgo KF-440 | ITKSNAFUL1489 | ₱3,000 | ¥58,200 new. |
+| Okamura CG-R CN33ZR | OKASNACGR1504 | ₱3,000 | ¥53,680 new. Ankle-tilt recline, compact. |
+| Okamura Sulato C331ZR | OKASNASUL1522 | ₱3,499 | ¥71,800 new. Only if you will add ₱499. |
+
+39 swivel chairs were in stock on their site on 2026-11-19, 30 of them at ₱3,000. You are not short of options.
+
+**Message for that day**
+
+> Hi po, naintindihan ko po. Pa-confirm na lang po in writing na cancelled yung order at walang na-charge sa akin.
+>
+> Nakita ko po kasi sa website ninyo na available pa rin yung Okamura Fluent sa ₱3,000 (SKU OKASNAFLU1502 at OKASNAFLU1503, sa Sta. Rosa). Pwede po ba yun na lang yung ipalit sa order ko, same price? Kung hindi po yun available, yung Itoki Prego po (ITKSWAPRG1494) o yung Itoki Dorsal (ITKSNADSL1505), ₱3,000 din po sila sa website.
+>
+> Salamat po — handa na po akong mag-proceed agad pag na-confirm ninyo.
+
+**Why this is a negotiation and not a complaint**
+
+- You ask for one thing only: a chair at the printed price. No apology, no compensation, no manager.
+- You bring their own SKUs, their own website, their own price. Nothing there to argue with.
+- You can walk away at no cost — 30 chairs at ₱3,000 in stock, and you already have something to sit on.
+- You stay a customer they want: po, salamat, and a second purchase on the table.
+- Only if they took money and will not return it does this stop being a negotiation. Then it is a refund request with a date, and DTI is a fair next step. Keep that in your pocket, not in the message.
 
 ---
 
