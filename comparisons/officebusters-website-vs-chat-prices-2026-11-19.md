@@ -71,32 +71,61 @@ Now the chairs from the Facebook chat photos, which are **not** on the website:
 
 1. Four of the eight Facebook chat chairs are literally the same model family already sold on the website.
 2. One (Plus NEXIS) is a budget chair, cheaper new in Japan than nearly everything on the website.
-3. Only one (Steelcase Leap) is clearly a higher class than anything on the website, and the chat never gave a price for it.
+3. Only one (Steelcase Leap) is clearly a higher class than anything on the website. No price was given for the Leap in the photos; separately, a Steelcase was posted at ₱5,000 on one page and a Leap-looking chair quoted at ₱9,000 on the other.
 4. The website's own Okamura Sylphy, at ₱3,000, sits in the same top class as the photo chairs. Its Japan list price is ¥148,720, against ¥118,360–131,780 list for the Escudo mesh and a ¥140,200 shop price for the Spina. (The Spina's own list price was not found, so read this as "same class", not "higher".)
 
 So the website is not the cheap-models shelf. It carries the same Japanese office brands (Okamura, Itoki, Kokuyo, Uchida, Plus), the same model families, and in the Sylphy it has a chair from the same top class as the ones in the photos — for ₱3,000.
 
 ---
 
-## 3. Facebook chat prices
+## 3. What the two Facebook pages actually asked for
 
-Only one Facebook chat quote is on record so far:
+Every price from the two chats and their posts:
 
-| What they quoted | Price | Branch | Same chair on the website |
-|---|---|---|---|
-| Itoki Swivel Chair, 1 pc, minor scratches on the seat pad | ₱3,500 | Lipa | ₱3,500 (listed as available at OB Sta. Rosa) |
+| Where | Chair | Price asked |
+|---|---|---|
+| Page 1 (Balintawak), post | Steelcase chair | ₱5,000 |
+| Page 1 (Balintawak), chat | Black chair, first photo | ₱12,000 |
+| Page 1 (Balintawak), chat | Black chair, second photo | ₱10,000 |
+| Page 2 (Office Busters PH), post | Itoki Spina ("₱60,000 sa Japan, ₱8,500 na lang") | ₱8,500 |
+| Page 2 (Office Busters PH), chat | Leap-looking chair, "last 1 pc na po" | ₱9,000 |
+| Page 2 (Office Busters PH), chat | Black chair with arms, offered after the ₱3,000 website order was cancelled | ₱6,000 |
+| Page 1, chat | Delivery, guessed, not quoted | "I think 1,500 or less" |
+| Lipa branch, chat (2026-11-13) | Itoki Swivel Chair, minor scratches | ₱3,500 |
 
-That one matches the website exactly. Nothing in the saved chats shows a chair at around twice the website's top price, so the higher prices must be in the Facebook posts and the TikTok listings that are not saved yet.
+Against the website on the same days (₱2,500 to ₱3,999, one single listing above ₱3,500):
 
-The eight chairs in the table above also came from this Facebook chat: Office Busters sent the photos on 2026-11-14 and gave **no price for any of them**. So the chat shows the nicer-looking chairs but keeps the prices verbal, while the website shows the prices in writing. Every chair file has been corrected to say the photos came from the Facebook chat (they used to say "seen in person").
+| | |
+|---|---|
+| Cheapest chair quoted in chat | ₱6,000 |
+| Dearest chair on the whole website | ₱3,999 |
+| So the cheapest chat price is | **1.5× the website's dearest chair** |
+| And against the ₱3,000 chair you tried to buy | **2×** |
+| Dearest chair quoted in chat (₱12,000) | **3× the website's dearest chair** |
 
-**Still needed from you to finish this part:**
+**Your reading was right.** Apart from the one Lipa quote of ₱3,500, nothing offered in chat is under ₱6,000, while nothing on the website is over ₱3,999.
 
-1. Screenshot(s) of the Office Busters Facebook post(s) showing chairs with prices.
-2. Screenshot of the TikTok chair listing.
-3. Confirmation that https://www.facebook.com/officebustersph10/ is the Facebook page you mean (and the link of the second page, the Lipa branch one).
+What is proven and what is not:
 
-Once those are in, this section gets the full chat-and-post price table and the comparison against the ₱2,500–₱3,999 website range above.
+- **Proven:** the chat and post prices start at ₱6,000 and go to ₱12,000; the website tops out at ₱3,999 today.
+- **Proven:** the same brand jumps between the two pages — a Steelcase at ₱5,000 in Page 1's post, a Leap-looking chair at ₱9,000 in Page 2's chat.
+- **Not proven:** that any one chair was priced twice. They never gave a model name or a label photo for the chat chairs, so no quoted chair can be matched to a website listing line by line.
+- **Also true:** the website is not reliable on stock. Your 2026-11-17 order was cancelled with "not updated po".
+
+---
+
+## 4. What the earlier reading of these chats got wrong
+
+| The earlier claim | What is actually true |
+|---|---|
+| "The ₱3,000–3,500 Okamura and Itoki listings are plain task chairs with no adjustments" | Wrong. The website's Okamura Fluent (₱3,000) and Okamura Sylphy (₱3,000) both have the **seat-depth slide**, the feature you care most about. Both in stock on 2026-11-19. |
+| "The ₱9,000 Leap-looking chair is the one chair in either chat with the sliding seat you value most" | Wrong. Two chairs on the website have it, at ₱3,000 each. |
+| "The website chairs and the chat chairs are different kinds of chair" | Wrong for half of them. Four of the eight chat chairs are the same model family the website already sells (Sulato, Prego, LEGNO2 twice). |
+| "Not proven that Facebook prices are 2–3× the website" | Now measurable. Cheapest chat quote ₱6,000 against a ₱3,999 website ceiling is 1.5×, and against the ₱3,000 chair you ordered it is 2×. The ₱12,000 quote is 3×. |
+
+One more comparison worth keeping: they advertise the **Itoki Spina at ₱8,500** ("₱60,000 in Japan"). The Spina is ¥140,200 at a Japanese shop. The **Okamura Sylphy on their own website at ₱3,000** has a higher Japan list price than that, ¥148,720. Same class of chair, same seller, a third of the price, in writing.
+
+The eight chair photos in section 2 also came from these chats, sent 2026-11-14, with **no price given for any of them**. So the chat shows the nicer chairs and keeps the prices spoken, while the website shows the prices in writing. Every chair file has been corrected to say the photos came from the Facebook chat; they used to say "seen in person".
 
 ---
 
@@ -105,4 +134,5 @@ Once those are in, this section gets the full chat-and-post price table and the 
 - Website prices, listing counts and stock: officebusters.ph product data, read 2026-11-19 (177 products, 107 of them chairs, 45 swivel chair listings).
 - Models, maker codes and Japan new prices: the chair files in `chairs/`, each one with its own sources.
 - Yen-to-peso rate: `website/settings.json` (¥1 = ₱0.4005, dated 2026-11-13).
-- Facebook chat quote: the Office Busters Lipa reply saved on 2026-11-13.
+- Facebook prices: the two saved chats, Office Busters Balintawak and Office Busters PH, read 2026-11-19, plus the Office Busters Lipa reply saved on 2026-11-13.
+- Still missing: the TikTok listing prices. Nothing in this file uses TikTok.
