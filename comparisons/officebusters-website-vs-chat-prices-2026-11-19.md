@@ -243,7 +243,31 @@ Steps 1 to 4 in four sentences: anchors at ₱3,000, removes their excuse before
 
 ---
 
-## 8. If they cancel the Sylphy too
+## 8. Every move they have already used, and the line that beats it
+
+These are not guesses. Each one is taken from the two saved chats, so you get to answer their whole repertoire cold this time.
+
+| What they say | What it actually is | What you send back |
+|---|---|---|
+| "We don't confirm live stock or prices in chat." | The AI script. It exists so nothing they say is a binding quote. | "No problem — your website has both. The Fluent, SKU OKASNAFLU1502, ₱3,000. Can you hold that one for me?" |
+| "What swivel chair po? What colour? With armrest?" | The funnel. Answer openly and they choose which unit you see — always one they want to move. | "Any of these three at ₱3,000: Fluent OKASNAFLU1502, Prego ITKSWAPRG1494, Dorsal ITKSNADSL1505. Whichever is available." |
+| "Let me find something like that" — then four hours of nothing. | Not a rejection. You are simply not urgent to them. | Nothing, for a day. Then the same number, unchanged: "Still interested in the Fluent at ₱3,000 whenever you're ready." |
+| Seven photos, no labels. "Like the brand?" | Photos cost them nothing. Specs commit them. | "I can't price a chair without a model. Send the label from under the seat and I'll tell you straight away whether I want it." |
+| "Soon po, I'll send the video." | Buying time, hoping you drift. | "No rush. I'll pick between the three once the video's in." |
+| "Last 1 pc na po. 9k mam." | Scarcity and a high anchor in one line. | "Thanks — that's above my budget. I'm set at the website price, ₱3,000. If that one goes, no worries." |
+| "Not available po, website not updated." | Your anchor just disappeared. It may be true — it is also how the switch starts. | "Understood — please confirm in writing it's cancelled and I wasn't charged. Your site still shows the Fluent at ₱3,000, SKU OKASNAFLU1502. Can you swap my order to that?" |
+| "₱6,000 po" for a different chair. | The switch itself. This is where the negotiation is decided. | "What's the model on that one? My budget is the website price. If it's ₱6,000 I'll stay with the ₱3,000 options." |
+| "₱60,000 sa Japan, ₱8,500 na lang." | An anchor built on a number you are not meant to check. | "The Spina is ¥140,200 at Japanese shops, about ₱56,000. The Sylphy you sold me is ¥148,720 and it was ₱3,000. ₱8,500 doesn't work for me." |
+| "That's already our lowest." | The final-offer close. Rarely final, and arguing makes it final. | "Understood. At ₱3,000 I'll take it today — or at your price, if delivery to Mabini is included and I get a 7-day return in writing." |
+| "The website price is for online stock only." | The channel excuse. Easy to test. | "Then let me order it on the website the way I did last time." If they will not put it there, you know where the real price lives. |
+| "Pwede po kayo pumunta sa branch?" | In the showroom, walking away is much harder. | "Happy to, once we've agreed the model and the price in writing." |
+| Days of silence. | Still not a rejection — their replies ran to hours and days all through both chats. | One message a week at most, same number, no emotion. Silence costs you nothing; you have a chair. |
+
+One rule under all of them: **your number repeats, it never rises.** The moment ₱3,000 becomes ₱3,500 unprompted, every later "that's my budget" stops meaning anything.
+
+---
+
+## 9. If they cancel the Sylphy too
 
 It already happened once, on 2026-11-17. Same playbook as section 7, with one extra move at the front: get the paper trail before you negotiate. The aim is one good chair at ₱3,000, in writing.
 
