@@ -121,11 +121,64 @@ What is proven and what is not:
 | "The ₱3,000–3,500 Okamura and Itoki listings are plain task chairs with no adjustments" | Wrong. The website's Okamura Fluent (₱3,000) and Okamura Sylphy (₱3,000) both have the **seat-depth slide**, the feature you care most about. Both in stock on 2026-11-19. |
 | "The ₱9,000 Leap-looking chair is the one chair in either chat with the sliding seat you value most" | Wrong. Two chairs on the website have it, at ₱3,000 each. |
 | "The website chairs and the chat chairs are different kinds of chair" | Wrong for half of them. Four of the eight chat chairs are the same model family the website already sells (Sulato, Prego, LEGNO2 twice). |
-| "Not proven that Facebook prices are 2–3× the website" | Now measurable. Cheapest chat quote ₱6,000 against a ₱3,999 website ceiling is 1.5×, and against the ₱3,000 chair you ordered it is 2×. The ₱12,000 quote is 3×. |
+| "Not proven that Facebook prices are 2–3× the website" | Now measurable. Cheapest chat quote ₱6,000 against a ₱3,999 website ceiling is 1.5×, and against the ₱3,000 chair you ordered it is 2×. The ₱12,000 quote is 3×. TikTok gives a same-brand pair too: see section 5. |
 
 One more comparison worth keeping: they advertise the **Itoki Spina at ₱8,500** ("₱60,000 in Japan"). The Spina is ¥140,200 at a Japanese shop. The **Okamura Sylphy on their own website at ₱3,000** has a higher Japan list price than that, ¥148,720. Same class of chair, same seller, a third of the price, in writing.
 
 The eight chair photos in section 2 also came from these chats, sent 2026-11-14, with **no price given for any of them**. So the chat shows the nicer chairs and keeps the prices spoken, while the website shows the prices in writing. Every chair file has been corrected to say the photos came from the Facebook chat; they used to say "seen in person".
+
+---
+
+## 5. The TikTok shop
+
+From your screenshots of the full OfficeBusters Philippines TikTok shop (it ends with "No more products"), 2026-11-19.
+
+Swivel chairs on TikTok:
+
+| Chair as titled on TikTok | Price |
+|---|---|
+| Swivel Chair – Comfort… | ₱3,000 |
+| OB Swivel Chair Office… (red) | ₱3,300 |
+| OB Swivel Chair Adjust… (blue) | ₱3,300 |
+| Swivel Chair – Comfort… | ₱3,500 |
+| Swivel Chair with Arm… | ₱4,000 |
+| OB Okamura Ergonomi… | ₱4,499 |
+| OB Uchida Swivel Chai… (free shipping) | ₱6,499 |
+
+Now the same categories, website against TikTok:
+
+| Kind of chair | Website today | TikTok today |
+|---|---|---|
+| **Swivel (office) chair** | **₱2,500 – ₱3,999** | **₱3,000 – ₱6,499** |
+| Stackable | ₱1,500 – ₱2,500 | ₱1,650 – ₱2,200 |
+| Folding | ₱1,800 – ₱2,500 | ₱2,200 – ₱3,050 |
+| Meeting | ₱1,500 – ₱3,000 | ₱2,200 – ₱2,750 |
+| Dining | ₱2,000 – ₱2,700 | ₱2,200 – ₱2,500 |
+
+**The mark-up sits on the office chairs.** Stackable, folding, meeting and dining chairs cost about the same in both places. Only the swivel chairs jump: three of the seven on TikTok (₱4,000, ₱4,499, ₱6,499) are above the price of the dearest swivel chair on the whole website.
+
+The clearest single pair:
+
+| | |
+|---|---|
+| Uchida swivel chair on the website (Uchida EPO, SKU UCHSNAEPO1506, in stock) | **₱3,000** |
+| "OB Uchida Swivel Chai…" on TikTok, free shipping | **₱6,499** |
+
+That is **2.2× for the same brand**, and the website has only one Uchida swivel chair, so there is nothing else it could be. Being fair about it: the website price has no delivery, and the seller guessed delivery at "₱1,500 or less". So ₱3,000 plus delivery is about ₱4,500 landed, against ₱6,499 delivered — still around ₱2,000 more on TikTok.
+
+Same problem as the chats: most TikTok tiles show the OB logo instead of a photo of the actual chair, and the titles give no brand or model. You cannot tell which chair you are buying.
+
+---
+
+## The whole picture in one line each
+
+| Where they sell | Office swivel chair prices |
+|---|---|
+| officebusters.ph website | ₱2,500 – ₱3,999 |
+| TikTok shop | ₱3,000 – ₱6,499 |
+| Facebook chat | ₱6,000 – ₱12,000 |
+
+Same shop, same kind of chair. The further you get from the website, the higher the price, and the less you are told about what you are buying.
 
 ---
 
@@ -135,4 +188,4 @@ The eight chair photos in section 2 also came from these chats, sent 2026-11-14,
 - Models, maker codes and Japan new prices: the chair files in `chairs/`, each one with its own sources.
 - Yen-to-peso rate: `website/settings.json` (¥1 = ₱0.4005, dated 2026-11-13).
 - Facebook prices: the two saved chats, Office Busters Balintawak and Office Busters PH, read 2026-11-19, plus the Office Busters Lipa reply saved on 2026-11-13.
-- Still missing: the TikTok listing prices. Nothing in this file uses TikTok.
+- TikTok prices: your screenshots of the whole OfficeBusters Philippines TikTok shop, 2026-11-19.
