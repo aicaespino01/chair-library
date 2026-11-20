@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#8c2f22">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png" type="image/png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Chairs">
 <title>Chair Library</title>
 <style>
 :root {
@@ -382,6 +388,37 @@ footer p + p { margin-top: 4px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
 }
+
+/* in store (phone) */
+.store-head { margin-bottom: 20px; }
+.store-head h1 { font-size: var(--fs-2xl); letter-spacing: -0.02em; }
+.store-box { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 16px; margin-bottom: 20px; }
+.store-box h2 { font-size: var(--fs-md); margin-bottom: 8px; }
+.store-box .muted { color: var(--ink-2); font-size: var(--fs-sm); }
+.store-box .muted:not(:first-child) { margin-top: 8px; }
+.store-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.store-form .wide { grid-column: 1 / -1; }
+.store-form textarea.input { min-height: 76px; padding-top: 10px; resize: vertical; font-family: inherit; }
+.store-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.store-shots { display: grid; gap: 4px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.store-shots .shots-title { font-size: var(--fs-sm); font-weight: 650; margin-bottom: 4px; }
+.store-shots .check { font-weight: 400; }
+.store-hit { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-top: 1px solid var(--line); }
+.store-hit:first-of-type { border-top: 0; padding-top: 0; }
+.store-hit .pic { width: 72px; height: 72px; flex: none; border-radius: var(--radius-sm); overflow: hidden; background: var(--surface-2); }
+.store-hit .pic img, .store-hit .pic svg { width: 100%; height: 100%; object-fit: cover; }
+.store-hit .pic .nophoto { width: 100%; height: 100%; padding: 0; }
+.store-hit .pic .nophoto span { display: none; }
+.store-hit .hit-name { font-weight: 650; }
+.store-hit p { font-size: var(--fs-sm); color: var(--ink-2); margin-top: 3px; }
+.store-hit p.store-deal { color: var(--good); font-weight: 650; }
+.store-note { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; margin-top: 10px; background: var(--bg); }
+.store-note pre { white-space: pre-wrap; word-break: break-word; font: inherit; font-size: var(--fs-sm); margin-bottom: 10px; }
+.store-note .row { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 560px) {
+  .store-form { grid-template-columns: 1fr; }
+  .store-actions .btn { flex: 1 1 140px; }
+}
 </style>
 </head>
 <body>
@@ -394,6 +431,7 @@ footer p + p { margin-top: 4px; }
     <nav class="nav" aria-label="Main">
       <a href="#" data-nav="catalogue">All chairs</a>
       <a href="#find" data-nav="find">Find my chair</a>
+      <a href="#store" data-nav="store">In store</a>
       <a href="#compare" data-nav="compare">Compare <span class="count" id="navCount"></span></a>
     </nav>
   </div>
@@ -1256,6 +1294,298 @@ footer p + p { margin-top: 4px; }
     });
   }
 
+
+  // ---------- in store (phone) ----------
+  var SHOTS = [
+    'Label under the seat (the model code)',
+    'Price tag or sticker',
+    'Whole chair, from the front',
+    'Underside and the levers',
+    'Base and wheels'
+  ];
+  var storeDefaults = { code: '', brand: '', price: '', branch: '', seat: '', notes: '', shots: [] };
+  var storeDraft = Object.assign({}, storeDefaults, store.get('storeDraft', {}));
+  if (!Array.isArray(storeDraft.shots)) storeDraft.shots = [];
+  var storeNotes = store.get('storeNotes', []);
+  if (!Array.isArray(storeNotes)) storeNotes = [];
+  var offlineMsg = '';
+
+  function saveDraft() { store.set('storeDraft', storeDraft); }
+  function saveNotes() { store.set('storeNotes', storeNotes); }
+
+  function allPhotoUrls() {
+    var urls = [];
+    CHAIRS.forEach(function (c) {
+      c.photos.forEach(function (p, i) {
+        [160, 1000].forEach(function (w) { urls.push(sized(p, w)); });
+        if (i === 0) [120, 200, 400, 600].forEach(function (w) { urls.push(sized(p, w)); });
+      });
+    });
+    return urls.filter(function (u, i) { return urls.indexOf(u) === i; });
+  }
+
+  function offlineCardHtml() {
+    var canSave = 'serviceWorker' in navigator && location.protocol !== 'file:';
+    var saved = canSave && navigator.serviceWorker.controller;
+    var n = allPhotoUrls().length;
+    return '<section class="store-box">' +
+      '<h2>Works with no signal</h2>' +
+      '<p class="muted">' + (canSave
+        ? (saved
+          ? 'The website is kept on this phone. It opens inside the shop even with no signal.'
+          : 'Being saved on this phone now. Reload this page once and it is ready.')
+        : 'This browser cannot keep the website on the phone. Open the website online instead.') + '</p>' +
+      (canSave ? '<div class="store-actions">' +
+        '<button type="button" class="btn" id="savePhotos">Keep all ' + n + ' pictures too</button>' +
+        '</div><p class="muted" id="savePhotosMsg" aria-live="polite">' + esc(offlineMsg) + '</p>' : '') +
+      '<p class="muted">Do this at home on wifi. Then tap Share and “Add to Home Screen”, so the library sits on your phone like an app.</p>' +
+      '</section>';
+  }
+
+  function goodDealUpTo(c) {
+    return c.d.jpPhp == null ? null : c.d.jpPhp * (DATA.valueRule.goodMax / 100);
+  }
+
+  function storeHits() {
+    var words = (storeDraft.code + ' ' + storeDraft.brand).toLowerCase().split(/[^a-z0-9]+/).filter(function (w) { return w.length > 1; });
+    if (!words.length) return [];
+    var out = [];
+    CHAIRS.forEach(function (c) {
+      var hits = 0;
+      words.forEach(function (w) { if (c.search.indexOf(w) !== -1) hits += 1; });
+      if (hits) out.push({ c: c, hits: hits });
+    });
+    out.sort(function (a, b) { return b.hits - a.hits || nullsLast(a.c.d.price, b.c.d.price); });
+    return out.slice(0, 4).map(function (r) { return r.c; });
+  }
+
+  function hitsHtml() {
+    var list = storeHits();
+    if (!(storeDraft.code || storeDraft.brand)) {
+      return '<h2>Is it already in the library?</h2><p class="muted">Type the code or the brand above and the matching chairs show up here, with the price we logged.</p>';
+    }
+    if (!list.length) {
+      return '<h2>Is it already in the library?</h2><p class="muted">No chair in the library matches that yet. Take the photos, save the chair below, and it can be researched at home.</p>';
+    }
+    return '<h2>Already in the library</h2>' + list.map(function (c) {
+      var t = splitTitle(c.title);
+      var bits = [];
+      bits.push(c.d.price != null ? 'Lowest seen ' + peso(c.d.price) : 'No price logged yet');
+      if (c.d.seatText) bits.push('seat ' + c.d.seatText + ' cm');
+      if (c.d.places.length) bits.push(c.d.places.join(', '));
+      var deal = goodDealUpTo(c);
+      return '<div class="store-hit">' +
+        '<div class="pic">' + img(c, 200) + '</div>' +
+        '<div><a class="hit-name" href="#chair/' + esc(c.id) + '">' + esc(t.name) + '</a>' +
+        '<p>' + esc(bits.join(' · ')) + '</p>' +
+        (deal != null ? '<p class="store-deal">Still good value up to ' + peso100(deal) + ' (' + DATA.valueRule.goodMax + '% of new in Japan)</p>' : '') +
+        '<p>' + valueBadge(c, true) + '</p>' +
+        '</div></div>';
+    }).join('');
+  }
+
+  function shotsHtml() {
+    return '<p class="shots-title">Photos to take</p>' + SHOTS.map(function (label, i) {
+      return '<label class="check"><input type="checkbox" data-shot="' + i + '"' +
+        (storeDraft.shots.indexOf(i) !== -1 ? ' checked' : '') + '> ' + esc(label) + '</label>';
+    }).join('');
+  }
+
+  function noteText(n) {
+    var lines = ['Chair seen in the shop — ' + niceDate(n.date)];
+    if (n.brand) lines.push('Brand: ' + n.brand);
+    if (n.code) lines.push('Sticker or model code: ' + n.code);
+    if (n.price) lines.push('Price they ask: ' + (isFinite(Number(n.price)) && n.price !== '' ? peso(Number(n.price)) : '₱' + n.price));
+    if (n.branch) lines.push('Branch: ' + n.branch);
+    if (n.seat) lines.push('Lowest seat height measured: ' + n.seat + ' cm');
+    if (n.match) lines.push('In the library already: ' + n.match);
+    if (n.shots && n.shots.length) lines.push('Photos taken: ' + n.shots.join('; '));
+    if (n.notes) lines.push('Notes: ' + n.notes);
+    return lines.join('\n');
+  }
+
+  function notesListHtml() {
+    if (!storeNotes.length) return '<p class="muted">Nothing saved yet. Fill the boxes above and tap “Save this chair”.</p>';
+    return storeNotes.map(function (n, i) {
+      return '<div class="store-note"><pre>' + esc(noteText(n)) + '</pre>' +
+        '<div class="row">' +
+        '<button type="button" class="btn small" data-send="' + i + '">Send this one</button>' +
+        '<button type="button" class="btn small" data-del="' + i + '">Delete</button>' +
+        '</div></div>';
+    }).join('');
+  }
+
+  function shareText(text, msgEl, okWord) {
+    var done = function (m) { if (msgEl) msgEl.textContent = m; };
+    if (navigator.share) {
+      navigator.share({ title: 'Chair seen in the shop', text: text })
+        .then(function () { done('Sent. ' + okWord); })
+        .catch(function () { done(''); });
+      return;
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(function () { done('Copied. Paste it in Mail, Notes or Messages.'); })
+        .catch(function () { done('Could not copy. Select the text above and copy it by hand.'); });
+      return;
+    }
+    done('Select the text above and copy it by hand.');
+  }
+
+  function renderStore() {
+    var places = uniq(CHAIRS.reduce(function (acc, c) { return acc.concat(c.d.places); }, [])).sort();
+    app.innerHTML = '<div class="view">' +
+      '<div class="store-head"><h1 tabindex="-1">In store</h1>' +
+      '<p class="lede">For standing in front of a chair. Type the code from the sticker under the seat: if it is already in the library you see the price and whether it is a good deal. Anything new, save it here and it can be researched properly at home.</p></div>' +
+      offlineCardHtml() +
+      '<section class="store-box"><h2>This chair</h2>' +
+        '<form class="store-form" id="storeForm" autocomplete="off" onsubmit="return false">' +
+          '<label class="field wide">Sticker or model code<input class="input" id="s-code" type="text" autocapitalize="characters" placeholder="C638XR, OKASWA…" value="' + esc(storeDraft.code) + '"></label>' +
+          '<label class="field">Brand<input class="input" id="s-brand" type="text" placeholder="Okamura" value="' + esc(storeDraft.brand) + '"></label>' +
+          '<label class="field">Price they ask (₱)<input class="input" id="s-price" type="number" inputmode="numeric" min="0" step="50" placeholder="6500" value="' + esc(storeDraft.price) + '"></label>' +
+          '<label class="field">Branch<input class="input" id="s-branch" type="text" list="s-branches" placeholder="Balintawak" value="' + esc(storeDraft.branch) + '"></label>' +
+          '<datalist id="s-branches">' + places.map(function (p) { return '<option value="' + esc(p) + '"></option>'; }).join('') + '</datalist>' +
+          '<label class="field">Lowest seat height (cm)<span class="hint">Sit, drop the seat all the way, measure floor to the top of the seat</span><input class="input" id="s-seat" type="number" inputmode="decimal" min="20" max="90" step="0.5" placeholder="42" value="' + esc(storeDraft.seat) + '"></label>' +
+          '<label class="field wide">Notes<textarea class="input" id="s-notes" rows="3" placeholder="Colour, arms, torn seat, noisy wheels, how it felt…">' + esc(storeDraft.notes) + '</textarea></label>' +
+        '</form>' +
+        '<div class="store-shots" id="storeShots">' + shotsHtml() + '</div>' +
+        '<div class="store-actions">' +
+          '<button type="button" class="btn primary" id="s-save">Save this chair</button>' +
+          '<button type="button" class="btn" id="s-send">Send to myself</button>' +
+          '<button type="button" class="btn" id="s-clear">Clear the boxes</button>' +
+        '</div>' +
+        '<p class="muted" id="s-msg" aria-live="polite"></p>' +
+      '</section>' +
+      '<section class="store-box" id="storeHitsBox">' + hitsHtml() + '</section>' +
+      '<section class="store-box"><h2>Saved chairs<span class="muted" id="s-count"></span></h2>' +
+        '<div id="s-list">' + notesListHtml() + '</div>' +
+        '<div class="store-actions"><button type="button" class="btn" id="s-sendall">Send them all to myself</button>' +
+        '<button type="button" class="btn" id="s-clearall">Delete them all</button></div>' +
+        '<p class="muted">Saved on this phone only. Send them to yourself (Mail, Notes or Messages) so nothing is lost.</p>' +
+      '</section>' +
+    '</div>';
+
+    var msg = document.getElementById('s-msg');
+    var hitsBox = document.getElementById('storeHitsBox');
+    var listBox = document.getElementById('s-list');
+    var countEl = document.getElementById('s-count');
+
+    function showCount() { countEl.textContent = storeNotes.length ? ' · ' + storeNotes.length : ''; }
+    showCount();
+
+    [['s-code', 'code'], ['s-brand', 'brand'], ['s-price', 'price'], ['s-branch', 'branch'], ['s-seat', 'seat'], ['s-notes', 'notes']].forEach(function (pair) {
+      var el = document.getElementById(pair[0]);
+      el.addEventListener('input', function (e) {
+        storeDraft[pair[1]] = e.target.value;
+        saveDraft();
+        if (pair[1] === 'code' || pair[1] === 'brand') hitsBox.innerHTML = hitsHtml();
+      });
+    });
+
+    document.getElementById('storeShots').addEventListener('change', function (e) {
+      var i = e.target.getAttribute && e.target.getAttribute('data-shot');
+      if (i == null) return;
+      i = Number(i);
+      var at = storeDraft.shots.indexOf(i);
+      if (e.target.checked && at === -1) storeDraft.shots.push(i);
+      if (!e.target.checked && at !== -1) storeDraft.shots.splice(at, 1);
+      saveDraft();
+    });
+
+    function draftNote() {
+      var hits = storeHits();
+      return {
+        date: new Date().toISOString().slice(0, 10),
+        code: storeDraft.code.trim(),
+        brand: storeDraft.brand.trim(),
+        price: String(storeDraft.price).trim(),
+        branch: storeDraft.branch.trim(),
+        seat: String(storeDraft.seat).trim(),
+        notes: storeDraft.notes.trim(),
+        shots: storeDraft.shots.slice().sort().map(function (i) { return SHOTS[i]; }),
+        match: hits.length ? splitTitle(hits[0].title).name + (hits[0].d.price != null ? ' (lowest seen ' + peso(hits[0].d.price) + ')' : '') : ''
+      };
+    }
+
+    document.getElementById('s-save').addEventListener('click', function () {
+      var n = draftNote();
+      if (!n.code && !n.brand && !n.notes && !n.price) { msg.textContent = 'Write at least the code, the brand or the price first.'; return; }
+      storeNotes.unshift(n);
+      saveNotes();
+      var branch = storeDraft.branch;
+      storeDraft = Object.assign({}, storeDefaults, { branch: branch, shots: [] });
+      saveDraft();
+      renderStore();
+      document.getElementById('s-msg').textContent = 'Saved. The boxes are empty for the next chair.';
+    });
+
+    document.getElementById('s-send').addEventListener('click', function () {
+      shareText(noteText(draftNote()), msg, 'Keep it in Mail or Notes until you are home.');
+    });
+
+    document.getElementById('s-clear').addEventListener('click', function () {
+      var branch = storeDraft.branch;
+      storeDraft = Object.assign({}, storeDefaults, { branch: branch, shots: [] });
+      saveDraft();
+      renderStore();
+    });
+
+    document.getElementById('s-sendall').addEventListener('click', function () {
+      if (!storeNotes.length) { msg.textContent = 'Nothing saved yet.'; return; }
+      shareText(storeNotes.map(noteText).join('\n\n'), msg, 'Keep it in Mail or Notes until you are home.');
+    });
+
+    document.getElementById('s-clearall').addEventListener('click', function () {
+      if (!storeNotes.length) return;
+      if (!window.confirm('Delete all ' + storeNotes.length + ' saved chairs from this phone? This cannot be undone.')) return;
+      storeNotes = [];
+      saveNotes();
+      renderStore();
+    });
+
+    listBox.addEventListener('click', function (e) {
+      var send = e.target.closest('[data-send]');
+      var del = e.target.closest('[data-del]');
+      if (send) { shareText(noteText(storeNotes[Number(send.dataset.send)]), msg, ''); return; }
+      if (del) {
+        storeNotes.splice(Number(del.dataset.del), 1);
+        saveNotes();
+        listBox.innerHTML = notesListHtml();
+        showCount();
+      }
+    });
+
+    var savePhotosBtn = document.getElementById('savePhotos');
+    if (savePhotosBtn) {
+      savePhotosBtn.addEventListener('click', function () {
+        var out = document.getElementById('savePhotosMsg');
+        var worker = navigator.serviceWorker.controller;
+        if (!worker) { offlineMsg = 'Almost ready: reload this page once, then tap again.'; out.textContent = offlineMsg; return; }
+        var urls = allPhotoUrls();
+        offlineMsg = 'Saving ' + urls.length + ' pictures. Stay on this page.';
+        out.textContent = offlineMsg;
+        savePhotosBtn.disabled = true;
+        worker.postMessage({ type: 'save-photos', urls: urls });
+      });
+    }
+  }
+
+  navigator.serviceWorker && navigator.serviceWorker.addEventListener('message', function (e) {
+    var d = e.data || {};
+    var out = document.getElementById('savePhotosMsg');
+    if (!out) return;
+    if (d.type === 'save-photos-progress') {
+      offlineMsg = 'Saved ' + d.done + ' of ' + d.total + ' pictures…';
+      out.textContent = offlineMsg;
+    }
+    if (d.type === 'save-photos-done') {
+      offlineMsg = 'Saved ' + d.done + ' pictures on this phone' + (d.failed ? ' (' + d.failed + ' could not be saved)' : '') + '.';
+      out.textContent = offlineMsg;
+      var btn = document.getElementById('savePhotos');
+      if (btn) btn.disabled = false;
+    }
+  });
+
   // ---------- footer + routing ----------
   document.getElementById('footer').innerHTML =
     '<p>Made from ' + CHAIRS.length + ' chair files in Documents\\Chair Library\\chairs. Website rebuilt ' + esc(niceDate(DATA.builtOn)) + '.</p>' +
@@ -1271,6 +1601,7 @@ footer p + p { margin-top: 4px; }
     if (view === 'chair') renderChair(arg);
     else if (view === 'find') renderFind(arg);
     else if (view === 'compare') renderCompare();
+    else if (view === 'store') renderStore();
     else { view = 'catalogue'; renderCatalogue(); }
     var prev = currentView;
     currentView = view;
@@ -1278,7 +1609,7 @@ footer p + p { margin-top: 4px; }
       if (a.dataset.nav === view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
     updateTray();
-    var titles = { catalogue: 'All chairs', find: 'Find my chair', compare: 'Compare chairs' };
+    var titles = { catalogue: 'All chairs', find: 'Find my chair', compare: 'Compare chairs', store: 'In store' };
     document.title = (view === 'chair' && byId[arg] ? splitTitle(byId[arg].title).name : titles[view] || 'Chairs') + ' · Chair Library';
     if (view === 'find' && arg) return; // renderFind scrolls to the chair
     window.scrollTo(0, view === 'catalogue' && prev && prev !== 'catalogue' ? catScroll : 0);
@@ -1287,6 +1618,13 @@ footer p + p { margin-top: 4px; }
   }
   window.addEventListener('hashchange', route);
   route();
+
+  // keep the website on the phone, so it opens in a shop with no signal
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function () { /* saving offline is not available here */ });
+    });
+  }
 })();
 </script>
 </body>
