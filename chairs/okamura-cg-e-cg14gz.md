@@ -27,7 +27,7 @@ chair_weight_kg: "14.2 (ASKUL listing)"
 warranty: "Okamura warranty in Japan only; Office Busters 3-day defect exchange"
 price_new: "Japan shops: JPY 37,290 to 45,320"
 lowest_price_seen_php: "2800"
-last_checked: 2026-11-11
+last_checked: 2026-11-20
 ---
 
 # Okamura CG-E (CG14GZ): compact, no arms, blue
@@ -45,7 +45,7 @@ last_checked: 2026-11-11
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU OKASNACGE1520) | https://officebusters.ph/products/okamura-swivel-chair-54 | ₱2,800 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-11 |
+| Office Busters PH (SKU OKASNACGE1520) | https://officebusters.ph/products/okamura-swivel-chair-54 | ₱2,800 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-20 |
 | Monotaro Japan (new, CG14GZ FM35) | monotaro.com (Google preview) | ¥42,900 | — | New | Japan | — | 2026-11-11 |
 | Yahoo Shopping Japan (new) | store.shopping.yahoo.co.jp (Google preview) | ¥37,290 | — | New | Japan | — | 2026-11-11 |
 

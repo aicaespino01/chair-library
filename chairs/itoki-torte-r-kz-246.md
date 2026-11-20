@@ -3,7 +3,7 @@ id: itoki-torte-r-kz-246
 brand: Itoki
 model: torte-R (トルテR); older torte and newer torte-U look similar
 maker_code: "KZ-246 family (low back, loop arms) very likely; confirm with label"
-variant: low back, fixed loop arms, black fabric, black body and black plastic base
+variant: "low back, fixed loop arms, black fabric, black body and black plastic base; a second listing is the armless version (blue back, black seat)"
 chair_type: office swivel chair (compact)
 identified: very likely
 condition_seen: used
@@ -16,7 +16,7 @@ base_diameter_cm: "57.0 (base width)"
 back: fabric over cushion on a polypropylene body; back width 45.0 cm
 seat: fabric over molded urethane that spreads pressure around the sit bones
 lumbar: fixed shape
-armrests: fixed loop arms
+armrests: "fixed loop arms on listing -51; none on listing -43 (armless version)"
 headrest: none
 recline: "dual motion" rocking (back tilts and sinks while the seat slides forward); stopper locks the start angle
 seat_depth_slide: "no (seat slides only while rocking)"
@@ -26,8 +26,8 @@ weight_limit_kg: "not published"
 chair_weight_kg: "not found"
 warranty: "not found; Office Busters 3-day defect exchange"
 price_new: "Japan shops: JPY 49,900 to 60,600"
-lowest_price_seen_php: "3500"
-last_checked: 2026-11-11
+lowest_price_seen_php: "3000 (armless listing -43)"
+last_checked: 2026-11-20
 ---
 
 # Itoki torte-R (トルテR) KZ-246: low back, loop arms, black
@@ -47,7 +47,8 @@ Solved in batch 3: this chair was "unidentified" in batch 1 (file `unidentified-
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU ITKSWAKZG1521) | https://officebusters.ph/products/itoki-swivel-chair-51 | ₱3,500 | ₱4,000 | Used, "Good As New" | OB Sta. Rosa | Yes | 2026-11-11 |
+| Office Busters PH, loop arms (SKU ITKSWAKZG1521) | https://officebusters.ph/products/itoki-swivel-chair-51 | ₱3,500 | ₱4,000 | Used, "Good As New" | OB Sta. Rosa | Yes | 2026-11-20 |
+| Office Busters PH, no arms, blue back with black seat (SKU ITKSNATOR1489) | https://officebusters.ph/products/itoki-swivel-chair-43 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-20 |
 | Monotaro Japan (new, KZ-246GB-T1T1) | monotaro.com (Google preview) | ¥60,600 | — | New | Japan | — | 2026-11-11 |
 | Itoki shop on Rakuten (new, torte-R) | item.rakuten.co.jp (Google preview) | ¥49,900 | — | New | Japan | Yes | 2026-11-11 |
 
@@ -56,6 +57,13 @@ Photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/86_Itoki_1.jpg
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/87_Itoki_2.jpg
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/88_Itoki_2.jpg
+
+Photos of the armless listing -43:
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/44_itoki.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/42_itoki.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/43_Itoki.jpg
+
+**Second listing added 2026-11-20 (armless, KZ-240 family).** Office Busters PH listing `itoki-swivel-chair-43`, SKU `ITKSNATOR1489` (Itoki, swivel no arms, hint TOR = torte). Google Lens on its side photo returned Kagg.jp "KZ-240GB-T1T1B2 | イトーキ torte-R" and two Japanese used shops selling the torte-R, so it is the same torte-R family as the chair above, in the armless version. The maker sizes in this file are for the KZ-246 loop-arm version; the armless KZ-240 may differ slightly, so treat them as close, not exact.
 
 ## How it was identified
 - Title "Itoki Swivel Chair", listed 2026-03-04. Tags: Chairs, Itoki, Japan, Office Chair, Swivel chair.

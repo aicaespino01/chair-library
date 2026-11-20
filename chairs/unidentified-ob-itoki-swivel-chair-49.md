@@ -27,7 +27,7 @@ chair_weight_kg: "not known"
 warranty: "maker warranty not known; Office Busters 3-day defect exchange"
 price_new: "not known"
 lowest_price_seen_php: "3000"
-last_checked: 2026-11-13
+last_checked: 2026-11-20
 ---
 
 # Itoki dark teal chair, SKU hint PIN (model not identified yet)
@@ -43,7 +43,7 @@ last_checked: 2026-11-13
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU ITKSNAPIN1407) | https://officebusters.ph/products/itoki-swivel-chair-49 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-13 |
+| Office Busters PH (SKU ITKSNAPIN1407) | https://officebusters.ph/products/itoki-swivel-chair-49 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-20 |
 
 Photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/23_Itoki_4fd792b2-074c-4e97-a27c-59606a295339.jpg

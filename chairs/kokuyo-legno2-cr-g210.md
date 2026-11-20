@@ -27,7 +27,7 @@ chair_weight_kg: "9.5"
 warranty: "not found; Office Busters 3-day defect exchange"
 price_new: "Japan shops: JPY 29,810 to 38,500 (list JPY 53,570)"
 lowest_price_seen_php: "2500 (listing -41, which may be the first LEGNO)"
-last_checked: 2026-11-14
+last_checked: 2026-11-20
 ---
 
 # Kokuyo LEGNO2 (レグノ2) standard type: low back, no arms, blue
@@ -45,8 +45,8 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU KOKSNALEG1489) | https://officebusters.ph/products/kokuyo-swivel-chair-37 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-11 |
-| Office Busters PH, blue, no arms (SKU KOKSNACRG1506): **LEGNO family, maybe the first LEGNO (CR-G200)** | https://officebusters.ph/products/kokuyo-swivel-chair-41 | ₱2,500 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-11 |
+| Office Busters PH (SKU KOKSNALEG1489) | https://officebusters.ph/products/kokuyo-swivel-chair-37 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-20 |
+| Office Busters PH, blue, no arms (SKU KOKSNACRG1506): **LEGNO family, maybe the first LEGNO (CR-G200)** | https://officebusters.ph/products/kokuyo-swivel-chair-41 | ₱2,500 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-20 |
 | AOC Japan (new, CR-G210F4) | e-aocinc.com (Google preview) | ¥29,810 | — | New | Japan | Yes | 2026-11-11 |
 | Kagg.jp (new) | kagg.jp (Google preview) | ¥38,500 | ¥53,570 | New | Japan | — | 2026-11-11 |
 

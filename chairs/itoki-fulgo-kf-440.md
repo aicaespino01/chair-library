@@ -27,7 +27,7 @@ chair_weight_kg: "12.7 (LOOKIT listing)"
 warranty: "not found; Office Busters 3-day defect exchange"
 price_new: "Itoki online shop JPY 58,200; other Japan shops JPY 53,300 to 83,160"
 lowest_price_seen_php: "3000"
-last_checked: 2026-11-11
+last_checked: 2026-11-20
 ---
 
 # Itoki fulgo (フルゴ) KF-440: low back, no arms, blue
@@ -45,7 +45,7 @@ last_checked: 2026-11-11
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU ITKSNAFUL1489) | https://officebusters.ph/products/itoki-swivel-chair-48 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-11 |
+| Office Busters PH (SKU ITKSNAFUL1489) | https://officebusters.ph/products/itoki-swivel-chair-48 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-20 |
 | Itoki online shop (new, low back, no arms) | shop.itoki.jp (Google preview) | ¥58,200 | — | New | Japan | Yes | 2026-11-11 |
 | LOOKIT Japan (new, KF-440CF) | look-it.jp (Google preview) | ¥58,850 | — | New | Japan | Yes | 2026-11-11 |
 

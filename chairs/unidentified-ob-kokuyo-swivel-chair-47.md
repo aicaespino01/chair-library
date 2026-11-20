@@ -26,8 +26,8 @@ weight_limit_kg: "not known"
 chair_weight_kg: "not known"
 warranty: "maker warranty not known; Office Busters 3-day defect exchange"
 price_new: "not known"
-lowest_price_seen_php: "3999"
-last_checked: 2026-11-11
+lowest_price_seen_php: "3500"
+last_checked: 2026-11-20
 ---
 
 # Kokuyo swivel chair with loop arms (model not identified yet)
@@ -36,14 +36,14 @@ last_checked: 2026-11-11
 
 ## At a glance
 - Gray fabric chair with fixed loop arms and a rounded back.
-- ₱3,999 at Office Busters Balintawak, the highest price of the 5 test chairs.
+- ₱3,500 at Office Busters Balintawak. It was ₱3,999 when first checked on 2026-11-11, so the price dropped by ₱499 by 2026-11-20.
 - Specs unknown until the model is known.
 
 ## Where to buy
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU KOKSWACRS1522) | https://officebusters.ph/products/kokuyo-swivel-chair-47 | ₱3,999 | ₱4,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-11 |
+| Office Busters PH (SKU KOKSWACRS1522) | https://officebusters.ph/products/kokuyo-swivel-chair-47 | ₱3,500 (was ₱3,999 on 2026-11-11) | ₱4,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-20 |
 
 Photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/21_Kokuyo.jpg

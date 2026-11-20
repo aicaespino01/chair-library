@@ -27,7 +27,7 @@ chair_weight_kg: "not published"
 warranty: "Okamura 1/2/3 years in Japan only; excludes used chairs and use outside Japan"
 price_new: "JPY 71,800 before tax (Okamura list price, C331ZR FSF1)"
 lowest_price_seen_php: "3499"
-last_checked: 2026-11-14
+last_checked: 2026-11-20
 ---
 
 # Okamura Sulato (C331ZR): low back, no arms, black
@@ -46,7 +46,7 @@ last_checked: 2026-11-14
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH | https://officebusters.ph/products/okamura-swivel-chair-58 (SKU OKASNASUL1522) | ₱3,499 | ₱6,999 | Used, "Good As New" | OB Balintawak, 1238 North EDSA, Quezon City | Yes | 2026-11-11 |
+| Office Busters PH | https://officebusters.ph/products/okamura-swivel-chair-58 (SKU OKASNASUL1522) | ₱3,499 | ₱6,999 | Used, "Good As New" | OB Balintawak, 1238 North EDSA, Quezon City | Yes | 2026-11-20 |
 | Okamura Japan (new) | https://product.okamura.co.jp/ext/DispProductDetail.do?volumeName=00001&PID=C331ZRFSF1 | ¥71,800 before tax | — | New | Japan only | Regular stock item (常備在庫品) | 2026-11-11 |
 | office-com.jp (new, C342ZR black shell, design arms, hanger) | https://www.office-com.jp (search "C342ZR"; Google preview) | ¥90,800 | — | New | Japan | Yes | 2026-11-14 |
 

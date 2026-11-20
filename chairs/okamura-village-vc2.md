@@ -27,7 +27,7 @@ chair_weight_kg: "13.1 (VC2)"
 warranty: "not checked; Office Busters 3-day defect exchange"
 price_new: "VC2 in Japan: JPY 41,500 (Monotaro, discontinued there); JPY 13,860 (ASKUL, one color)"
 lowest_price_seen_php: "3500"
-last_checked: 2026-11-11
+last_checked: 2026-11-20
 ---
 
 # Okamura Village (ビラージュ), probably VC2: low back, no arms, blue
@@ -44,7 +44,7 @@ last_checked: 2026-11-11
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH: Blue (SKU OKASNAVIL1460) | https://officebusters.ph/products/okamura-swivel-chair-26 | ₱3,500 | ₱4,000 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-11 |
+| Office Busters PH: Blue (SKU OKASNAVIL1460) | https://officebusters.ph/products/okamura-swivel-chair-26 | ₱3,500 | ₱4,000 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-20 |
 | Monotaro Japan (new, VC2 8VC21A) | monotaro.com (Google preview) | ¥41,500 | ref ¥45,700 | New | Japan | Discontinued at Monotaro | 2026-11-11 |
 | ASKUL Japan (new, VC2 no arms, sage) | askul.co.jp (Google preview) | ¥13,860 | — | New | Japan | — | 2026-11-11 |
 

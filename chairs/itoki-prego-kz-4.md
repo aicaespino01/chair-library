@@ -3,7 +3,7 @@ id: itoki-prego-kz-4
 brand: Itoki
 model: Prego (プレーゴ)
 maker_code: "KZ-4xx family (Prego, low back, loop arms); Lens matched KZ-445GA-W4G7; exact code to confirm with label"
-variant: low back, teal fabric, round back, gray loop arms, white body and base
+variant: "low back, round back; 4 listings: teal with gray loop arms and white base, blue with a gray shell and no arms, blue with no arms (sold out), black with no arms (sold out)"
 chair_type: office swivel chair
 identified: very likely
 condition_seen: used
@@ -16,7 +16,7 @@ base_diameter_cm: "not found"
 back: teal fabric over a molded back; low back, rounded shape
 seat: teal fabric over a molded seat
 lumbar: fixed shape (3D-molded back)
-armrests: fixed gray loop arms
+armrests: "fixed gray loop arms on listing -46; none on listings -42, -33 and -26"
 headrest: none
 recline: back rocking with "hip tilt" (rear of the seat tilts with the back); rocking tension adjustment
 seat_depth_slide: "not listed"
@@ -26,8 +26,8 @@ weight_limit_kg: "not published"
 chair_weight_kg: "not published"
 warranty: "maker warranty not found; Office Busters 3-day defect exchange"
 price_new: "JPY 69,100 (Monotaro, KZ-455GA-W4T1, seen 2026-11-13)"
-lowest_price_seen_php: "3000"
-last_checked: 2026-11-13
+lowest_price_seen_php: "2500 (the two sold-out armless listings; ₱3,000 for the two in stock)"
+last_checked: 2026-11-20
 ---
 
 # Itoki Prego (プレーゴ) KZ-4xx: low back, loop arms, teal
@@ -38,24 +38,39 @@ last_checked: 2026-11-13
 - Itoki's mid-priced task chair with a 3D-molded back and seat.
 - Fixed loop arms; rocking with "hip tilt" and tension adjustment.
 - Lowest seat 41.0 cm (shop listing for another Prego version).
-- One unit at Office Busters Balintawak, ₱3,000.
+- Four Office Busters listings: two in stock at ₱3,000 (teal with loop arms at Balintawak, blue with no arms) and two sold out at ₱2,500.
 
 ## Where to buy
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, teal (SKU ITKSWAPRG1494) | https://officebusters.ph/products/itoki-swivel-chair-46 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-13 |
+| Office Busters PH, teal, loop arms (SKU ITKSWAPRG1494) | https://officebusters.ph/products/itoki-swivel-chair-46 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-20 |
+| Office Busters PH, blue with a gray shell, no arms (SKU ITKSNAPRO1457) | https://officebusters.ph/products/itoki-swivel-chair-42 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-20 |
+| Office Busters PH, blue, no arms (SKU ITKSNAPRG1457) | https://officebusters.ph/products/itoki-swivel-chair-26 | ₱2,500 | ₱3,000 | Used, "Good As New" | Branch not stated: ask | No (sold out) | 2026-11-20 |
+| Office Busters PH, black, no arms (SKU ITKSNAPRG1401) | https://officebusters.ph/products/itoki-swivel-chair-33 | ₱2,500 | ₱3,000 | Used, "Good As New" | Branch not stated: ask | No (sold out) | 2026-11-20 |
 | Monotaro Japan (new, KZ-455GA-W4T1) | monotaro.com (Google preview) | ¥69,100 | — | New | Japan | — | 2026-11-13 |
 
 Office Busters listing photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/Itoki5_4f5ee7cd-a495-49d3-bccb-2f1bffd4aeb3.jpg
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/Itoki6_c5f5f3cf-141c-4036-9a9a-26ed9e8f0b48.jpg
 
+Photos of the armless listings added 2026-11-20:
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/12_Itoki_1.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/13_Itoki_1.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/14_itoki_1.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/26_4_559497fc-e66c-4381-ad3f-56f2be24be32.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/25_5.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/21_6.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/22_6.jpg
+
 ## How it was identified
 - Office Busters title "Itoki Swivel Chair", listed 2025-04-14. Tags: Chairs, Itoki, Office Chair, Swivel chair.
 - SKU `ITK SWA PRG`: Itoki, swivel with arms, PRG = PReGo.
 - Google Lens (3/4 photo): Kagg.jp "KZ-445GA-W4G7 Prego", Yahoo Shopping "プレーゴ オフィスチェア ローバック".
-- Two sold-out listings carry the same hint without arms: itoki-swivel-chair-33 (`ITKSNAPRG1401`, black) and itoki-swivel-chair-26 (`ITKSNAPRG1457`, blue). Their photos were not compared closely, so they are not added here.
+- **Three more listings added 2026-11-20.**
+  - `itoki-swivel-chair-42` (SKU `ITKSNAPRO1457`, blue with a gray shell, no arms): Google Lens on its side photo returned Office Busters Japan's used "プレーゴチェア KZ-447GA-W4N7" and "KZ-440GA-W4N7" pages, so this is a Prego in the armless version. Note the hint here is `PRO`, not `PRG`: both point to Prego.
+  - `itoki-swivel-chair-26` (SKU `ITKSNAPRG1457`, blue, no arms, sold out): Google Lens returned Itoki Prego shop pages (Yahoo Shopping, Rakuten). Grouped as Prego.
+  - `itoki-swivel-chair-33` (SKU `ITKSNAPRG1401`, black, no arms, sold out): **grouped by the SKU hint only.** Google Lens found no Prego page for it, and its black plastic base looks different from the white and gray bases of the others. Treat this one as the least certain of the four.
 
 ## Specs (from the maker)
 Itoki's own page was not found. Sizes below are from a Japanese shop for another Prego version.

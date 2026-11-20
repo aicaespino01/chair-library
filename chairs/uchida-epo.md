@@ -27,7 +27,7 @@ chair_weight_kg: "not published"
 warranty: "not found; Uchida sells spare parts (parts.uchida.co.jp)"
 price_new: "Japan shops: single-color low back no arms JPY 25,850; two-tone high back no arms JPY 29,040 (AOC, tax incl.)"
 lowest_price_seen_php: "3000"
-last_checked: 2026-11-11
+last_checked: 2026-11-20
 ---
 
 # Uchida EPO (エポ): two-tone, no arms
@@ -45,7 +45,7 @@ last_checked: 2026-11-11
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU UCHSNAEPO1506) | https://officebusters.ph/products/uchida-swivel-chair-15 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-11 |
+| Office Busters PH (SKU UCHSNAEPO1506) | https://officebusters.ph/products/uchida-swivel-chair-15 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-20 |
 | AOC (Japan): single-color low back, no arms | e-aocinc.com (Google preview) | ¥25,850 tax incl. | ¥45,210 | New | Japan | Yes (preview) | 2026-11-11 |
 | AOC (Japan): two-tone high back, no arms | e-aocinc.com (Google preview) | ¥29,040 | — | New | Japan | Yes (preview) | 2026-11-11 |
 

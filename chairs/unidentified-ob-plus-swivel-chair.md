@@ -27,7 +27,7 @@ chair_weight_kg: "not known"
 warranty: "maker warranty not known; Office Busters 3-day defect exchange"
 price_new: "not known"
 lowest_price_seen_php: "3000"
-last_checked: 2026-11-11
+last_checked: 2026-11-20
 ---
 
 # Plus swivel chair with adjustable arms, red back (model not identified yet)
@@ -43,7 +43,7 @@ last_checked: 2026-11-11
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU PLUSWAPAN1497) | https://officebusters.ph/products/plus-swivel-chair | ₱3,000 | ₱3,800 | Used, "Good As New" | OB Cainta | Yes | 2026-11-11 |
+| Office Busters PH (SKU PLUSWAPAN1497) | https://officebusters.ph/products/plus-swivel-chair | ₱3,000 | ₱3,800 | Used, "Good As New" | OB Cainta | Yes | 2026-11-20 |
 
 Photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/2_Japan_2.jpg

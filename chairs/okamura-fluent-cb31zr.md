@@ -26,8 +26,8 @@ weight_limit_kg: "not published"
 chair_weight_kg: "not published"
 warranty: "Okamura 1-3 years in Japan (shop listing); used chairs and use outside Japan most likely excluded (confirmed for Okamura Sulato manual; Fluent manual too large to read)"
 price_new: "JPY 76,670 (Yahoo Shopping Japan, CB31ZR, seen 2026-11-11)"
-lowest_price_seen_php: "3000"
-last_checked: 2026-11-11
+lowest_price_seen_php: "3000 (listing removed from the website on or before 2026-11-20)"
+last_checked: 2026-11-20
 ---
 
 # Okamura Fluent (CB31ZR or CB35ZR): no arms, mesh back, seat-depth adjustment
@@ -39,14 +39,14 @@ last_checked: 2026-11-11
 - **Seat-depth adjustment (4.0 cm)**, which is rare at this price used.
 - Same 42.0–51.2 cm seat height range and 3-firmness foam as the Okamura Sulato, plus a breathable mesh back.
 - No arms, no headrest, no separate lumbar pad.
-- Two units at Office Busters Sta. Rosa: pink and green, ₱3,000 each.
+- **Gone from the website as of 2026-11-20:** the Office Busters PH listing that held the pink and green units now returns "page not found", and no other Fluent listing is on the site. The chair facts below are still good; only the Philippine listing is no longer there.
 
 ## Where to buy
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH: Pink (SKU OKASNAFLU1502) | https://officebusters.ph/products/okamura-swivel-chair-copy | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Sta. Rosa | Yes | 2026-11-11 |
-| Office Busters PH: Green (SKU OKASNAFLU1503) | same listing | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Sta. Rosa | Yes | 2026-11-11 |
+| Office Busters PH: Pink (SKU OKASNAFLU1502) | https://officebusters.ph/products/okamura-swivel-chair-copy | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Sta. Rosa | **No: listing removed (page not found on 2026-11-20)** | 2026-11-20 |
+| Office Busters PH: Green (SKU OKASNAFLU1503) | same listing | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Sta. Rosa | **No: listing removed (page not found on 2026-11-20)** | 2026-11-20 |
 | Yahoo Shopping Japan (new, CB31ZR) | store.shopping.yahoo.co.jp (Google preview) | ¥76,670 | — | New | Japan | Yes (preview) | 2026-11-11 |
 
 Office Busters listing photos (first 3 pink, last 3 green):

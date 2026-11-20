@@ -27,7 +27,7 @@ chair_weight_kg: "14.5 (ASKUL)"
 warranty: "Okamura warranty in Japan; used chairs and use outside Japan most likely excluded (confirmed for Okamura Sulato manual); Office Busters 3-day defect exchange"
 price_new: "JPY 53,680 (ASKUL, CN33ZR lime green, seen 2026-11-13)"
 lowest_price_seen_php: "3000"
-last_checked: 2026-11-13
+last_checked: 2026-11-20
 ---
 
 # Okamura CG-R (CN33ZR): low back, no arms, light gray
@@ -44,7 +44,7 @@ last_checked: 2026-11-13
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, light gray (SKU OKASNACGR1504; titled "Okamura", tagged Kokuyo) | https://officebusters.ph/products/kokuyo-swivel-chair-copy-1 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-13 |
+| Office Busters PH, light gray (SKU OKASNACGR1504; titled "Okamura", tagged Kokuyo) | https://officebusters.ph/products/kokuyo-swivel-chair-copy-1 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-20 |
 | ASKUL Japan (new, CN33ZR lime green) | askul.co.jp (Google preview) | ¥53,680 | — | New | Japan | — | 2026-11-13 |
 
 Office Busters listing photos:

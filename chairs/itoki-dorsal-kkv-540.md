@@ -27,7 +27,7 @@ chair_weight_kg: "not published"
 warranty: "maker warranty not found (old model); Office Busters 3-day defect exchange"
 price_new: "JPY 60,000-70,000 maker list price (Office Busters Japan, Dorsal II KKV-540AC-T2X1 with arms)"
 lowest_price_seen_php: "3000"
-last_checked: 2026-11-13
+last_checked: 2026-11-20
 ---
 
 # Itoki Dorsal (ドーサル) KKV-540 family: low back, no arms, blue
@@ -44,7 +44,7 @@ last_checked: 2026-11-13
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU ITKSNADSL1505) | https://officebusters.ph/products/itoki-swivel-chair-copy-3 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-13 |
+| Office Busters PH (SKU ITKSNADSL1505) | https://officebusters.ph/products/itoki-swivel-chair-copy-3 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Balintawak | Yes | 2026-11-20 |
 
 Office Busters listing photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/41_Itoki_f3a34dd1-5af0-400c-9e97-94cb6d7c9052.jpg

@@ -27,7 +27,7 @@ chair_weight_kg: "not published"
 warranty: "Okamura warranty in Japan; used chairs and use outside Japan most likely excluded (confirmed for Okamura Sulato manual; Sylphy manual not read); Office Busters 3-day defect exchange"
 price_new: "JPY 148,720 incl. tax list price (AOC Japan, C638XR-FS plain fabric, seen 2026-11-13)"
 lowest_price_seen_php: "3000"
-last_checked: 2026-11-13
+last_checked: 2026-11-20
 ---
 
 # Okamura Sylphy (C638XR): high back, cushion back, no arms, hanger, red
@@ -45,7 +45,7 @@ last_checked: 2026-11-13
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH, red (no SKU; titled "Okamura") | https://officebusters.ph/products/itoki-swivel-chair-copy-6 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Makati | Yes | 2026-11-13 |
+| Office Busters PH, red (no SKU; titled "Okamura") | https://officebusters.ph/products/itoki-swivel-chair-copy-6 | ₱3,000 | ₱3,500 | Used, "Good As New" | OB Makati | Yes | 2026-11-20 |
 | AOC Japan (new, C638XR-FS) | e-aocinc.com (Google preview) | ¥99,660 tax incl. | list ¥148,720 | New | Japan | Yes (preview) | 2026-11-13 |
 
 Office Busters listing photos:

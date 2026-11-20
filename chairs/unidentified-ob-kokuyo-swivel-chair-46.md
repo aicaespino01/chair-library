@@ -27,7 +27,7 @@ chair_weight_kg: "not known"
 warranty: "maker warranty not known; Office Busters 3-day defect exchange"
 price_new: "not known"
 lowest_price_seen_php: "3500"
-last_checked: 2026-11-11
+last_checked: 2026-11-20
 ---
 
 # Kokuyo mesh-back chair with T arms, lime seat (model not identified yet)
@@ -45,7 +45,7 @@ This is the same listing as the "Kokuyo Swivel Chair (with arm)" in the earlier 
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU KOKSWAAGA1517) | https://officebusters.ph/products/kokuyo-swivel-chair-46 | ₱3,500 | ₱4,000 | Used, "Good As New" | OB Sta. Rosa | Yes | 2026-11-11 |
+| Office Busters PH (SKU KOKSWAAGA1517) | https://officebusters.ph/products/kokuyo-swivel-chair-46 | ₱3,500 | ₱4,000 | Used, "Good As New" | OB Sta. Rosa | Yes | 2026-11-20 |
 
 Photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/61_Kokuyo.jpg

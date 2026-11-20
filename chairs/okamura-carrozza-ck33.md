@@ -3,7 +3,7 @@ id: okamura-carrozza-ck33
 brand: Okamura
 model: Carrozza (カロッツァ)
 maker_code: "CK33GR (low back, no arms) or CK35 (high back, no arms); fabric probably FS16; confirm with label"
-variant: no arms, brown fabric, gray body and gray plastic base
+variant: "no arms; two listings: brown fabric with a gray body and gray plastic base, and lime green fabric with a black base"
 chair_type: office swivel chair (standard seating)
 identified: very likely
 condition_seen: used
@@ -27,7 +27,7 @@ chair_weight_kg: "15 (CK33GR)"
 warranty: "Okamura warranty in Japan only; Office Busters 3-day defect exchange"
 price_new: "JPY 43,300 (Monotaro, CK33GR)"
 lowest_price_seen_php: "2800"
-last_checked: 2026-11-11
+last_checked: 2026-11-20
 ---
 
 # Okamura Carrozza (カロッツァ), CK33 or CK35: no arms, brown
@@ -45,8 +45,13 @@ last_checked: 2026-11-11
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU OKASNACAR1511) | https://officebusters.ph/products/okamura-swivel-chair-55 | ₱2,800 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-11 |
+| Office Busters PH, brown (SKU OKASNACAR1511) | https://officebusters.ph/products/okamura-swivel-chair-55 | ₱2,800 | ₱3,500 | Used, "Good As New" | OB Cainta | Yes | 2026-11-20 |
+| Office Busters PH, lime green (SKU OKASNACZM1442) | https://officebusters.ph/products/okamura-swivel-chair-37 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-20 |
 | Monotaro Japan (new, CK33GR-FS16) | monotaro.com (Google preview) | ¥43,300 | — | New | Japan | — | 2026-11-11 |
+
+Photos of the lime green listing -37 (added 2026-11-20):
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/13_12.jpg
+- https://cdn.shopify.com/s/files/1/0656/7051/2893/files/14_12.jpg
 
 Photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/18_Okamura_2.jpg
@@ -58,6 +63,7 @@ Photos:
 - Title "Okamura Swivel Chair", listed 2026-02-11. Tags: Chairs, Japanmade, Office Chair, Okamura, Swivel chair.
 - SKU `OKA SNA CAR`: Okamura, swivel with no arms, CARrozza.
 - Photos: brown fabric, no arms, gray back shell, gray plastic base. (The "okamura" text on the photos is a caption Office Busters adds.)
+- **Second listing added 2026-11-20 (lime green).** Office Busters PH listing `okamura-swivel-chair-37`, SKU `OKASNACZM1442`. The hint is `CZM`, not `CAR`, so it was checked on the photos: Google Lens on its 3/4 photo returned Office Busters Japan's used "カロッツァチェア オカムラ/okamura 肘無" page first, and Google Images for "オカムラ カロッツァチェア 肘無 グリーン" shows the same lime green armless Carrozza (ASKUL CK33JR / CK38JR) with the same back shape and black base. Grouped here as a Carrozza in a different colour. **Note:** the shell and base of this one are black, not gray, and the exact version (CK33 or CK35) is unknown for both units.
 - Google Lens: ASKUL CK35CR FS16 (high back, no arms), ASKUL CK33ZR FS16 (low back), Office Busters Japan CK33GR used listings, Kagg.jp CK33GR-FS16.
 - Office Busters' description: "Fabric Material", "Hard Plastic Star Base", "H90CM X W47CM".
 

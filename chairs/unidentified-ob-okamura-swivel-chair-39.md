@@ -27,7 +27,7 @@ chair_weight_kg: "not known"
 warranty: "maker warranty not known; Office Busters 3-day defect exchange"
 price_new: "not known"
 lowest_price_seen_php: "3000"
-last_checked: 2026-11-11
+last_checked: 2026-11-20
 ---
 
 # Okamura gray high-back chair with hanger, SKU hint VSM (model not identified yet)
@@ -42,8 +42,8 @@ last_checked: 2026-11-11
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Office Busters PH (SKU OKASNAVSM1392) | https://officebusters.ph/products/okamura-swivel-chair-39 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-11 |
-| Office Busters PH, same SKU | https://officebusters.ph/products/okamura-swivel-chair-49 | ₱3,000 | ₱3,500 | Used | — | No (out of stock) | 2026-11-11 |
+| Office Busters PH (SKU OKASNAVSM1392) | https://officebusters.ph/products/okamura-swivel-chair-39 | ₱3,000 | ₱3,500 | Used, "Good As New" | Branch not stated: ask | Yes | 2026-11-20 |
+| Office Busters PH, same SKU | https://officebusters.ph/products/okamura-swivel-chair-49 | ₱3,000 | ₱3,500 | Used | — | No (out of stock) | 2026-11-20 |
 
 Photos:
 - https://cdn.shopify.com/s/files/1/0656/7051/2893/files/5_12.jpg
