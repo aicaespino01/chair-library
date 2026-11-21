@@ -61,7 +61,7 @@ Now the chairs from the Facebook chat photos, which are **not** on the website:
 | Steelcase Leap | ¥186,980 | ₱74,885 | Yes, higher class |
 | Itoki Spina KE-757GP | ¥140,200 (shop price) | ₱56,150 | Same class as the Sylphy the website sells at ₱3,000 |
 | Okamura Escudo mesh | ¥118,360–131,780 (list) | ₱47,403–52,778 | Same class as the Sylphy, lower list price |
-| Okamura Sulato C342BR | ¥90,800 | ₱36,365 | **Same model** as the website's Sulato, just the version with arms |
+| Okamura Sulato C342GR (first read as C342BR) | ¥90,800 | ₱36,365 | **Same model** as the website's Sulato, just the version with arms |
 | Itoki Prego KZ-435CG | ¥64,430 | ₱25,804 | **Same model** as the website's Prego, high-back version |
 | Kokuyo LEGNO2 CR-G211 | same family as CR-G210 | — | **Same model** as the website's LEGNO2, circle-arm version |
 | Kokuyo LEGNO2 CRS-G210F4VRB4 | ¥29,810–38,500 | ₱11,939–15,419 | **Same model** as the website's LEGNO2 |
