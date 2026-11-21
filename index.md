@@ -37,6 +37,7 @@ Last updated: 2026-11-21. One row per chair file in `chairs/`. Prices are the lo
 |---|---|---|---|---|---|
 | Kokuyo | CRS | Gray fabric, loop arms | ₱3,500 (was ₱3,999 on 2026-11-11) | Office Busters Balintawak | [unidentified-ob-kokuyo-swivel-chair-47.md](chairs/unidentified-ob-kokuyo-swivel-chair-47.md) |
 | Kokuyo | AGA | Black mesh back, lime seat, T arms | ₱3,500 | Office Busters Sta. Rosa | [unidentified-ob-kokuyo-swivel-chair-46.md](chairs/unidentified-ob-kokuyo-swivel-chair-46.md) |
+| **Kokuyo** (new 2026-11-21) | CRO (sticker KOKSNACRO1531) | Red fabric, no arms, black back shell with KOKUYO logo | not stated (photos only) | Office Busters PH (branch not stated) | [unidentified-ob-kokuyo-cro.md](chairs/unidentified-ob-kokuyo-cro.md) |
 | Kokuyo (2 listings) | SED | Black fabric, with or without loop arms | ₱3,000 | Office Busters Balintawak | [unidentified-ob-kokuyo-sed.md](chairs/unidentified-ob-kokuyo-sed.md) |
 | Kokuyo | CRG (general prefix) | Black fabric, fixed arms | ₱3,000 | branch not stated | [unidentified-ob-kokuyo-swivel-chair-36.md](chairs/unidentified-ob-kokuyo-swivel-chair-36.md) |
 | Kokuyo, maybe PUNTO | CRG (general prefix) | Green fabric, loop arms, aluminium base | ₱3,000 | Office Busters Makati | [unidentified-ob-okamura-swivel-chair-copy-3.md](chairs/unidentified-ob-okamura-swivel-chair-copy-3.md) |
