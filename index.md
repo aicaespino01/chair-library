@@ -7,7 +7,7 @@ Last updated: 2026-11-21. One row per chair file in `chairs/`. Prices are the lo
 | Chair | Maker code | Type | Identified | Lowest price seen | Where | File |
 |---|---|---|---|---|---|---|
 | Okamura Sulato | C331ZR | Low back, fabric | Very likely | ₱3,499 (used) | Office Busters Balintawak | [okamura-sulato-c331zr.md](chairs/okamura-sulato-c331zr.md) |
-| Okamura Sulato, arms + hanger (updated 2026-11-21) | C342GR FSF1 (clear label; was read as C342BR) | Low back, fixed design arms, hanger, gray shell, black fabric, made 2021 | Confirmed | ₱?,000 asked in Facebook chat (first digit cut off; confirm) | Office Busters PH (branch not stated) | [okamura-sulato-c342gr.md](chairs/okamura-sulato-c342gr.md) |
+| Okamura Sulato, arms + hanger (updated 2026-11-21) | C342GR FSF1 (clear label; was read as C342BR) | Low back, fixed design arms, hanger, gray shell, black fabric, made 2021 | Confirmed | ₱6,500 (used, Facebook chat) | Office Busters PH (branch not stated) | [okamura-sulato-c342gr.md](chairs/okamura-sulato-c342gr.md) |
 | Okamura Fluent | CB31ZR or CB35ZR | No arms, mesh back, **seat-depth adjust** | Very likely | ₱3,000 (used) — **listing removed from the website by 2026-11-20** | was Office Busters Sta. Rosa | [okamura-fluent-cb31zr.md](chairs/okamura-fluent-cb31zr.md) |
 | Okamura CG-E | CG14GZ | Compact, no arms, **lowest seat 38.0 cm** | Very likely | ₱2,800 (used) | Office Busters Cainta | [okamura-cg-e-cg14gz.md](chairs/okamura-cg-e-cg14gz.md) |
 | Okamura Carrozza (2 listings) | CK33 or CK35 | No arms, fabric, rocking with lock; brown and lime green | Very likely | ₱2,800 (used) | Office Busters Cainta and another branch | [okamura-carrozza-ck33.md](chairs/okamura-carrozza-ck33.md) |

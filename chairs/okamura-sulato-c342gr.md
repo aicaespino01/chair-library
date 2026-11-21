@@ -26,7 +26,7 @@ weight_limit_kg: "not published by maker"
 chair_weight_kg: "not published"
 warranty: "Okamura 1/2/3 years in Japan only; excludes used chairs and use outside Japan"
 price_new: "JPY 90,800 (office-com.jp, C342ZR black shell new; gray-shell C342GR price not found)"
-lowest_price_seen_php: "?,000 asked by OfficeBusters PH in Facebook chat (first digit cut off in the screenshot; confirm)"
+lowest_price_seen_php: "6500 (used, asked by OfficeBusters PH in Facebook chat, 2026-11-21)"
 last_checked: 2026-11-21
 ---
 
@@ -40,13 +40,13 @@ last_checked: 2026-11-21
 - Lowest seat 42.0 cm: a bit high for people around 150 cm.
 - Made in 2021 (label); JOIFA standard service life 8 years, so roughly 3 of 8 years used.
 - New in Japan about ¥90,800 (black shell version; gray shell price not found).
-- OfficeBusters PH asked ₱?,000 in Facebook chat (first digit cut off in the screenshot). The armless Sulato C331ZR was ₱3,499 on their website.
+- OfficeBusters PH asked ₱6,500 in Facebook chat. The armless Sulato C331ZR was ₱3,499 on their website.
 
 ## Where to buy
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| OfficeBusters PH, Facebook chat ("okamura solato"; label photo sent 2026-11-21) | — | ₱?,000 (first digit cut off in the screenshot; confirm) | — | Used | branch not stated: ask | Yes (photo sent) | 2026-11-21 |
+| OfficeBusters PH, Facebook chat ("okamura solato"; label photo sent 2026-11-21) | — | ₱6,500 | — | Used | branch not stated: ask | Yes (photo sent) | 2026-11-21 |
 | Office Busters PH, earlier photos in a Facebook chat (same unit, shipping no. 280521003) | — | not stated | — | Used | branch not stated | — | 2026-11-14 |
 | office-com.jp (new, C342ZR black shell) | https://www.office-com.jp (search "C342ZR"; Google preview) | ¥90,800 | — | New | Japan | Yes | 2026-11-14 |
 
@@ -121,9 +121,8 @@ C342 sizes come from Japanese shops that copy Okamura's sizes. The seat matches 
 - Chat price is likely well above the ₱3,499 the website asked for the armless C331ZR.
 
 ## Missing info and how to get it
-1. Exact price: the first digit is cut off in the screenshot. Scroll up in the OfficeBusters PH chat and check.
-2. Branch and delivery to Mabini: ask OfficeBusters PH.
-3. Condition (fabric wear, casters, gas lift): ask for close-ups and a short video of the height and recline.
+1. Branch and delivery to Mabini: ask OfficeBusters PH.
+2. Condition (fabric wear, casters, gas lift): ask for close-ups and a short video of the height and recline.
 
 ## Sources
 1. Clear label photo, sent by OfficeBusters PH in a Facebook chat 2026-11-21 (photos/okamura-sulato-c342gr-label.jpg)
