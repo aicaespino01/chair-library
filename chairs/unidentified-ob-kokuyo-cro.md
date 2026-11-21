@@ -1,9 +1,9 @@
 ---
 id: unidentified-ob-kokuyo-cro
-brand: "unclear: Kokuyo logo on the back shell and SKU KOK, but the label sent says Okamura"
+brand: Kokuyo (logo on the back shell; SKU KOK)
 model: unknown (SKU hint CRO)
-maker_code: "C445ZR FFV8 on the Okamura label sent by the shop (2026-11-21); not found in any shop listing"
-variant: red fabric back and seat, no arms, black plastic back shell with a fabric panel low on the back, black plastic 5-star base, chrome gas lift
+maker_code: unknown
+variant: dark navy/black fabric back and seat, no arms, black plastic back shell with a fabric panel low on the back, black plastic 5-star base, chrome gas lift
 chair_type: office swivel chair
 identified: unsure
 condition_seen: used
@@ -13,8 +13,8 @@ seat_width_cm: "not known"
 seat_depth_cm: "not known"
 overall_w_d_h_cm: "not known"
 base_diameter_cm: "not known"
-back: red fabric front; black plastic shell behind, with a textured fabric panel low on the back
-seat: red fabric
+back: dark navy/black fabric front; black plastic shell behind, with a textured fabric panel low on the back
+seat: dark navy/black fabric
 lumbar: not known
 armrests: none
 headrest: none
@@ -30,14 +30,14 @@ lowest_price_seen_php: "not stated (photos only, 2026-11-21)"
 last_checked: 2026-11-21
 ---
 
-# Red fabric chair, no arms, sticker KOKSNACRO1531 (Kokuyo logo, Okamura label C445ZR: not identified yet)
+# Kokuyo dark fabric chair, no arms, SKU hint CRO (model not identified yet)
 
-**Identified: Unsure.** The photos disagree on the brand. The back shell has a moulded **KOKUYO** logo and the Office Busters sticker reads `KOKSNACRO1531` (Kokuyo, swivel, no arms, hint CRO). The maker's label the shop sent with the same front photo is an **Okamura** label: **C445ZR FFV8**, made 2012. C445ZR was not found in any Japanese shop or Okamura listing (searched 2026-11-21). **To settle it:** ask Office Busters whether the Okamura label and the KOKUYO back photo are from the same chair.
+**Identified: Unsure.** The brand is Kokuyo: the KOKUYO logo is moulded on the back shell, and the Office Busters sticker reads `KOKSNACRO1531` (Kokuyo, swivel, no arms, hint CRO). The model isn't known. **To identify:** ask Office Busters for a photo of the maker's label under the seat (Kokuyo codes start with "CR-" or "C0…"), then run chair-info again.
 
 ## At a glance
-- Red fabric back and seat, no arms, black plastic base.
-- Back shell has a textured fabric panel low on the back; it may be part of a lumbar or back-flex design (not confirmed).
-- Okamura label sent by the shop: C445ZR FFV8, made 2012, JOIFA standard service life 8 years (so past it).
+- Dark navy/black fabric back and seat, no arms, black plastic base.
+- Back shell has a textured fabric panel low on the back.
+- Some light marks on the seat fabric in the photo.
 - Price, branch, sizes and adjustments not known yet.
 
 ## Where to buy
@@ -49,15 +49,12 @@ last_checked: 2026-11-21
 Photos (sent 2026-11-21):
 - photos/unidentified-ob-kokuyo-cro-1.jpg (front, in a showroom)
 - photos/unidentified-ob-kokuyo-cro-2.jpg (back shell with KOKUYO logo and the Office Busters sticker)
-- photos/unidentified-ob-kokuyo-cro-label.jpg (Okamura maker label, sent with the same front photo)
 
 ## How it was identified
 - KOKUYO logo moulded in an oval on the back shell.
 - Office Busters sticker `KOKSNACRO1531`: KOK = Kokuyo, SNA = swivel no arms, CRO = model hint (not decoded). Office Busters uses this pattern on its other listings (for example KOKSNALEG = LEGNO, KOKSWACGR = CR-G).
 - No CRO code was found among the other chairs in this library.
-- Okamura label (sent 2026-11-21, faint print): 製品コード (product code) **C445ZR FFV8** (last character faint); 出荷No. (shipping no.) **?60512005** (first digit unclear); 製造年/ロットNo. (year/lot) **2012/310112 12A**; JOIFA標準使用期間 (standard service life) **8 years**.
-- Searched "C445ZR" and "オカムラ C445" on 2026-11-21: no match in Japanese shops or Okamura pages.
-- Not tried yet: officebusters.ph search for the SKU (the page needed approval and none was given, 2026-11-21); Google Lens on the front photo.
+- 2026-11-21: the back photo was first filed with a red chair by mistake; the user confirmed it belongs to this dark chair.
 
 ## Specs (from the maker)
 Not available until the model is known.
@@ -74,8 +71,8 @@ Not available until the model is known.
 
 | Part | Material | Source |
 |---|---|---|
-| Back | Red fabric front; black plastic shell; textured fabric panel low on the back | Photos |
-| Seat | Red fabric | Photo |
+| Back | Dark navy/black fabric front; black plastic shell; textured fabric panel low on the back | Photos |
+| Seat | Dark navy/black fabric | Photo |
 | Base | Black plastic 5-star, black casters | Photo |
 
 ## Warranty and returns
@@ -92,17 +89,14 @@ None looked up: the model isn't known.
 - Fabric, no PU or faux leather seen.
 
 ## Cons
-- Brand unclear: Kokuyo logo on the back, Okamura label sent.
-- If the Okamura label is from this chair: made 2012, past its 8-year standard service life.
-- Model, sizes, adjustments and price unknown.
+- Model, sizes, adjustments, age and price unknown.
+- Light marks on the seat fabric.
 - Fabric: warmer than mesh in a humid area.
 
 ## Missing info and how to get it
-1. Brand: ask Office Busters whether the Okamura label (C445ZR) and the KOKUYO back photo are from the same red chair.
+1. Model and code: ask Office Busters for a photo of the maker's label under the seat.
 2. Price and branch: ask Office Busters.
 3. Lowest seat height: ask them to measure from the floor to the top of the seat at the lowest setting.
 
 ## Sources
 1. Front photo and back-shell photo with sticker KOKSNACRO1531, sent 2026-11-21 (photos/unidentified-ob-kokuyo-cro-1.jpg, -2.jpg)
-2. Okamura label photo, sent 2026-11-21 with the same front photo (photos/unidentified-ob-kokuyo-cro-label.jpg)
-3. Web searches for "C445ZR" and "オカムラ C445", 2026-11-21: no match
