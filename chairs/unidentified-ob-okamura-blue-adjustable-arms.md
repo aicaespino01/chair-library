@@ -50,10 +50,12 @@ Photos (sent 2026-11-22):
 - photos/unidentified-ob-okamura-blue-adjustable-arms-1.jpg (front, in a showroom)
 - photos/unidentified-ob-okamura-blue-adjustable-arms-2.jpg (Okamura nameplate on the back cover)
 - photos/unidentified-ob-okamura-blue-adjustable-arms-label.jpg (JOIFA 308 sticker under the seat)
+- photos/unidentified-ob-okamura-blue-adjustable-arms-manual.jpg (Okamura manual card in the pocket under the seat, sent later on 2026-11-22)
 
 ## How it was identified
 - Okamura nameplate on the black back cover (photo 2).
 - Sticker under the seat: **JOIFA 308**, with a faint handwritten number (reads about "041206"; could be a date, not confirmed). JOIFA stickers show the furniture association mark, not the model.
+- Manual card in the pocket under the seat (photo added later 2026-11-22): standard Okamura card in Japanese saying, in short, thank you for buying an Okamura product, read this manual before use, and keep it in the manual pocket under the seat. The small picture on the card shows a sample manual; its title is too small to read, so it does not give the model. Another "Okamura" confirmation, no model code.
 - No model code seen, so no Japanese shop search was possible.
 
 ## Specs (from the maker)
@@ -96,10 +98,10 @@ None looked up: the model isn't known.
 - Back cover is a textured plastic that looks like leather; check it is plastic, not PU, if that matters.
 
 ## Missing info and how to get it
-1. Model and year made: ask Office Busters for a photo of the white Okamura label under the seat.
+1. Model and year made: ask Office Busters for a photo of the white Okamura label under the seat (not the JOIFA sticker or the manual card). If the manual booklet is still in the pocket, a photo of its cover would also give the model name.
 2. Price and branch: ask Office Busters.
 3. Lowest seat height: ask them to measure from the floor to the top of the seat at the lowest setting.
 4. Arms: ask whether the arms go up and down, and how far.
 
 ## Sources
-1. Front, back nameplate and sticker photos, sent 2026-11-22 (photos/unidentified-ob-okamura-blue-adjustable-arms-1.jpg, -2.jpg, -label.jpg)
+1. Front, back nameplate, sticker and manual card photos, sent 2026-11-22 (photos/unidentified-ob-okamura-blue-adjustable-arms-1.jpg, -2.jpg, -label.jpg, -manual.jpg)
