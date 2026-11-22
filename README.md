@@ -14,7 +14,7 @@ Made to be reused: for chair comparisons, and later for a website. The block at 
 
 Double-click `Chair Website.html` to open it (photos need internet). It works on a phone screen too.
 
-- **All chairs:** search, sort and filter every chair, as photos or as a table.
+- **All chairs:** search, sort and filter every chair, as photos or as a table. "Date modified" sorts by the last time each chair file was changed (from the upload history), newest or oldest first.
 - **Chair page:** one page per chair file, with everything in that file.
 - **Compare:** up to 3 chairs side by side.
 - **Find my chair:** type your height (and desk height, budget, weight if you like); every chair is ranked by fit, with the reasons.

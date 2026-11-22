@@ -341,6 +341,30 @@ function readChair(file) {
 const files = fs.readdirSync(CHAIRS_DIR).filter((f) => f.toLowerCase().endsWith('.md')).sort();
 const chairs = files.map(readChair);
 
+// "Date modified": when each chair file was last changed, for the "Date modified" sort.
+// Taken from the git history (time of the last upload that changed the file). A file with changes not
+// uploaded yet uses the time the file was saved. With no usable history (no git, or a copy downloaded
+// with only the latest upload), it falls back to last_checked, and says so below.
+const { execFileSync } = require('child_process');
+const git = (args) => execFileSync('git', ['-C', ROOT, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+let modifiedSource = 'git';
+try {
+  if (git(['rev-parse', '--is-shallow-repository']) === 'true') modifiedSource = 'last_checked (only the latest upload is here, so no history)';
+} catch (e) { modifiedSource = 'last_checked (no git history found)'; }
+for (const c of chairs) {
+  const rel = c.file;
+  let iso = null;
+  if (modifiedSource === 'git') {
+    try {
+      const pending = git(['status', '--porcelain', '--', rel]);
+      iso = pending ? fs.statSync(path.join(ROOT, rel)).mtime.toISOString() : git(['log', '-1', '--format=%cI', '--', rel]) || null;
+    } catch (e) { iso = null; }
+  }
+  if (!iso && c.fields.last_checked) iso = String(c.fields.last_checked).slice(0, 10) + 'T00:00:00+08:00';
+  c.d.modified = iso;
+  c.d.modifiedMs = iso ? Date.parse(iso) : null;
+}
+
 const checked = chairs.map((c) => c.fields.last_checked).filter(Boolean).sort();
 const pad = (n) => String(n).padStart(2, '0');
 const now = new Date();
@@ -367,6 +391,8 @@ fs.writeFileSync(OUT, html, 'utf8');
 // Summary so the numbers can be checked against the files
 console.log(`Built: ${OUT}`);
 console.log(`Chair files: ${files.length}, chairs on the website: ${chairs.length}`);
+console.log(`Date modified taken from: ${modifiedSource}`);
+if (modifiedSource !== 'git') console.log('  To use the real dates, get the history first: git fetch --depth=1000 origin main, then build again.');
 const show = (v) => (v === null || v === undefined ? '-' : String(v));
 for (const c of chairs) {
   const d = c.d;
