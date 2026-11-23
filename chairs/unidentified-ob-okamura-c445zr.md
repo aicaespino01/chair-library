@@ -34,6 +34,13 @@ last_checked: 2026-11-21
 
 **Identified: Unsure.** The brand is Okamura: the maker's label under the seat reads **C445ZR FFV8**, made 2012. The model name isn't known: C445ZR was not found in any Japanese shop or Okamura listing (searched 2026-11-21). **To identify:** ask Office Busters for the model name, or a clearer label photo.
 
+## How to identify it
+**Already known:** Okamura, made 2012 (maker label under the seat). Product code reads C445ZR FFV8, but the print is faint.
+**Still needed:** the model name.
+1. Ask Office Busters for a **sharp close-up of the product code line** (製品コード) on the white label, in good light. The first characters are hard to read in the photo we have.
+2. Or ask them for the model name: they may have it in their stock list.
+3. With a clear code, a search of Japanese shops for that code gives the model.
+
 ## At a glance
 - Red fabric back and seat, no arms, black frame and base.
 - Made 2012; JOIFA standard service life 8 years, so it is past that.

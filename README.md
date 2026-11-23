@@ -15,7 +15,9 @@ Made to be reused: for chair comparisons, and later for a website. The block at 
 Double-click `Chair Website.html` to open it (photos need internet). It works on a phone screen too.
 
 - **All chairs:** search, sort and filter every chair, as photos or as a table. "Date modified" sorts by the last time each chair file was changed (from the upload history), newest or oldest first.
-- **Chair page:** one page per chair file, with everything in that file.
+- **Chair page:** one page per chair file, with everything in that file. Chairs not confirmed yet show a **How to identify this chair** box near the top: the photo or question that settles the model, written for anyone. It comes from the chair file's "How to identify it" section, or, if the file has none, from the label/model lines of "Missing info".
+- **Sort and filter extras:** "Date added" (first upload of the chair file) and "Date modified" sorts; filter "Only chairs with our own photos (no shop photos)" keeps chairs with photos in `photos/`.
+- **ChairTok:** the switch at the top turns the site into a simple TikTok-style photo feed (swipe up for the next chair, swipe sideways for more photos, double-tap to like, Info for all the facts). It shows only chairs whose model is confirmed and that have our own photos. The switch is remembered on that phone, like day/night mode.
 - **Compare:** up to 3 chairs side by side.
 - **Find my chair:** type your height (and desk height, budget, weight if you like); every chair is ranked by fit, with the reasons.
 - **In store:** for a shop visit, on the phone. Type the code from the sticker under the seat and the matching chairs show up with the price logged and how much is still good value; a chair that is new to the library can be saved there (code, brand, price asked, branch, measured seat height, notes) and sent to yourself. Saved chairs stay on that phone only.

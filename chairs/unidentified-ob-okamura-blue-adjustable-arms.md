@@ -32,11 +32,18 @@ last_checked: 2026-11-23
 
 # Okamura Adfit series: blue fabric chair with adjustable-looking arms (exact version not known)
 
-**Identified: Very likely — Okamura Adfit series.** The nameplate on the back cover reads **okamura**, and the manual booklet with the chair (photo sent 2026-11-23) is titled **okamura オフィスシーティング［アドフィット］シリーズ / ADFIT SERIES — 事務用回転椅子 取扱説明書** ("Office seating, Adfit series — office swivel chair, instruction manual"). The manual covers the whole series: its cover picture is a high-back chair with fixed loop arms, while this chair is mid back with arms on posts, so it is a different version in the same series. The exact product code is still not known. **To confirm:** ask Office Busters for a photo of the white Okamura label under the seat (it shows 製品コード, the product code, and the year made).
+**Identified: Very likely — Okamura Adfit series.** The nameplate on the back cover reads **okamura**, and the manual booklet with the chair (photo sent 2026-11-23) is titled **okamura オフィスシーティング［アドフィット］シリーズ / ADFIT SERIES — 事務用回転椅子 取扱説明書** ("Office seating, Adfit series — office swivel chair, instruction manual"). The manual covers the whole series: its cover picture is a high-back chair with fixed loop arms, while this chair is mid back with arms on posts, so it is a different version in the same series. The exact product code is still not known. **To confirm:** see "How to identify it" below.
+
+## How to identify it
+**Already known:** Okamura (nameplate), Adfit series (manual), made Dec 2006 or Dec 2004 (sticker 041206).
+**Still needed:** the exact version (product code).
+1. Ask Office Busters for **one photo of the whole underside of the seat**, plus a close-up of any sticker or stamped number. Don't ask only for "the white label": this older chair may not have one.
+2. A code starting with **CL** (for example CL94ZS) confirms the Adfit version.
+3. If there is no code anywhere, the series stays "very likely Adfit" from the manual.
 
 ## Should I buy it? Only if the seller confirms 5 things (checked 2026-11-23)
 
-**Not too old to use, judging by age alone.** This unit is probably about **22 years old** (see "How old is it?" below). A chair that age is not automatically dead. The parts that wear out with age are the gas lift, the seat foam and the casters. A seller can check all of them in two minutes, and a gas lift can be replaced. But at 22 years you should expect at least one of them to be worn, so **don't pay ₱3,500 without the checks below.**
+**Not too old to use, judging by age alone.** This unit is probably about **20 years old** (made 2006, possibly 2004) (see "How old is it?" below). A chair that age is not automatically dead. The parts that wear out with age are the gas lift, the seat foam and the casters. A seller can check all of them in two minutes, and a gas lift can be replaced. But at about 20 years you should expect at least one of them to be worn, so **don't pay ₱3,500 without the checks below.**
 
 **Why it is worth asking about:**
 - **₱3,500** is inside the ₱2,000–6,000 band, and about 12% of the ¥72,270 list price new in Japan.
@@ -52,7 +59,8 @@ last_checked: 2026-11-23
 **Decision rule:** Buy at ₱3,500 if checks 1–4 below pass. If check 5 shows a lowest seat height over 44 cm, skip it unless you'll always use it with a footrest. If the gas lift sinks, only buy if they replace it or lower the price enough to cover a new one.
 
 ## How old is it?
-- **This unit: probably made 6 December 2004.** The JOIFA sticker under the seat has a handwritten **041206**. Japanese makers often write dates as YYMMDD, which reads as 2004-12-06. This is likely but not confirmed. The white Okamura label under the seat would show the real production date.
+- **This unit: probably made 4 December 2006 (or 6 December 2004).** The yellow JOIFA 308 sticker under the seat has **041206** printed on it (corrected 2026-11-23: printed, not handwritten). Both Okamura maker labels in this library write dates day-month-year: Sulato C342GR lot 250521 = 25 May 2021, red C445ZR lot 310112 = 31 Jan 2012 ("25" and "31" can't be months). Read the same way, 041206 = **4 Dec 2006** (about 60%). Itoki and Kokuyo labels in this library use year-month-day (090331, 090630), which would make it 6 Dec 2004 (about 25%). Either way about 20 years old and past the 8-year JOIFA service life.
+- **The white label may not exist on this chair.** On the 2012 and 2021 Okamuras, JOIFA 308 is printed inside the white Okamura label together with the product code and date. This chair has a separate small yellow JOIFA sticker on the metal plate instead, an older style. The underside photos show only parts of the seat shell, so ask for a photo of the whole underside, not "the white label".
 - **The model:** No official launch year was found for the Adfit series (searched in Japanese and English, 2026-11-23). It uses Okamura's ankle-tilt recline, which first appeared on the FC-9 chair in 1992, so the Adfit came after 1992. Japanese used shops call it a long-seller, which means many units are still in circulation. A mid-1990s to 2000s range fits.
 - **Usable?** Yes by age alone. The frame and shell of a commercial Okamura chair outlast its wear parts. The gas lift, foam and casters decide whether it is usable, and only a check can tell.
 
@@ -61,7 +69,7 @@ last_checked: 2026-11-23
 - Black arm pads on posts; they look height-adjustable, not confirmed.
 - Black plastic base and casters; Okamura nameplate on the black back cover.
 - Series: Okamura **Adfit** (from the manual booklet); an older line with no maker page or spec sheet found online (searched 2026-11-23).
-- **₱3,500** (used, Office Busters, 2026-11-23). Probably made Dec 2004 (sticker 041206).
+- **₱3,500** (used, Office Busters, 2026-11-23). Probably made Dec 2006, possibly Dec 2004 (printed 041206 on the JOIFA sticker).
 - Same-looking version listed with seat height 42.3–51.5 cm, 45 mm seat slide and ankle-tilt recline. Not checked on this unit.
 
 ## Where to buy
@@ -79,7 +87,7 @@ Photos (sent 2026-11-22):
 
 ## How it was identified
 - Okamura nameplate on the black back cover (photo 2).
-- Sticker under the seat: **JOIFA 308**, with a faint handwritten number (reads about "041206"; could be a date, not confirmed). JOIFA stickers show the furniture association mark, not the model.
+- Sticker under the seat: yellow **JOIFA 308** sticker on the metal plate, with **041206** printed on it (a date; see "How old is it?"). JOIFA stickers show the furniture association mark, not the model.
 - Manual card in the pocket under the seat (photo added later 2026-11-22): standard Okamura card in Japanese saying, in short, thank you for buying an Okamura product, read this manual before use, and keep it in the manual pocket under the seat. The small picture on the card shows a sample manual; its title is too small to read, so it does not give the model. Another "Okamura" confirmation, no model code.
 - **Manual booklet cover (photo sent 2026-11-23):** "okamura / オフィスシーティング［アドフィット］シリーズ / ADFIT SERIES / 事務用回転椅子 取扱説明書" (office swivel chair, instruction manual). This names the series: **Adfit**. The cover drawing (high back, fixed loop arms) is a different version from this chair (mid back, arms on posts); one manual covers the series.
 - Searched in English and Japanese on 2026-11-23 (Okamura sites, Japanese used shops): no maker page, spec sheet or used listing for Adfit found. It looks like an older, discontinued line.
@@ -135,7 +143,7 @@ None found for Okamura Adfit (searched 2026-11-23).
 - Fabric, no PU or faux leather seen on the seat or the front of the back.
 
 ## Cons
-- Probably about 22 years old (sticker 041206): expect a worn gas lift, foam or casters.
+- Probably about 20 years old (made Dec 2006, possibly Dec 2004; sticker 041206): expect a worn gas lift, foam or casters.
 - Lowest listed seat height 42.3 cm, about 2 cm above your popliteal height: you'd need shoes or a footrest.
 - Exact version unknown; specs come from used-shop listings of a same-looking version, not the maker.
 - Older discontinued line: harder to find spare parts.
@@ -151,10 +159,10 @@ Ranked by how much each answer changes the verdict. Ready to paste into Office B
 > 3. Is the seat cushion still firm, or does it feel flat or hard in the middle? Any tears or stains?
 > 4. Does the backrest recline and spring back smoothly with no squeaks? Do the arms move up and down?
 > 5. At the lowest setting, how many cm is it from the floor to the top of the front of the seat?
-> 6. Could you send a photo of the white Okamura label under the seat (not the JOIFA sticker)?
+> 6. Could you send one photo of the whole underside of the seat, plus a close-up of any sticker or stamped number you see?
 > 7. Which branch is it in, and how much is delivery to Mabini, Batangas?
 
-Why: 1–4 decide whether a ~22-year-old unit still works. 5 decides the fit for your height. 6 confirms the model and year. 7 sets the total cost.
+Why: 1–4 decide whether a ~20-year-old unit still works. 5 decides the fit for your height. 6 may show a product code (confirms the version); the year is already on the JOIFA sticker. 7 sets the total cost.
 
 ## Sources
 1. Front, back nameplate, sticker and manual card photos, sent 2026-11-22 (photos/unidentified-ob-okamura-blue-adjustable-arms-1.jpg, -2.jpg, -label.jpg, -manual.jpg)

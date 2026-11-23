@@ -34,6 +34,13 @@ last_checked: YYYY-MM-DD
 
 **Identified:** Confirmed / Very likely / Unsure. One line on how, and how to confirm (label under the seat).
 
+## How to identify it
+Skip this section when Identified is Confirmed. Written so anyone can follow it (no chair knowledge needed).
+**Already known:** what is certain (brand, series, year), and from what.
+**Still needed:** what is missing (model, code, year).
+1. The photo or question that settles it, and who to ask. Ask for one photo of the whole underside of the seat, not only one sticker.
+2. What the answer would mean (for example: code starting CK = Carrozza).
+
 ## At a glance
 - 4 to 6 plain bullets: what it is, best points, biggest weak points.
 

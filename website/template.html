@@ -382,6 +382,103 @@ tbody tr:last-child td { border-bottom: 0; }
 .tray .btn.clear { background: transparent; color: var(--tray-ink); }
 .tray .btn.clear:hover { background: oklch(0.5 0 0 / 0.2); }
 
+/* how to identify */
+.identify-box { margin-top: 28px; padding: 18px 20px; border-radius: var(--radius); border: 2px solid var(--unk); background: var(--unk-soft); max-width: 80ch; }
+.identify-box h2 { font-size: var(--fs-md); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-bottom: 10px; }
+.identify-box .md p { margin: 6px 0; }
+.identify-box .md ol { margin: 8px 0 0; padding-left: 22px; }
+.identify-box .md li { margin: 6px 0; }
+.identify-box .id-tip { margin-top: 12px; font-size: var(--fs-xs); color: var(--ink-2); }
+.id-jump { margin-top: 12px; border-color: var(--unk); color: var(--unk); background: var(--unk-soft); }
+.identify-box { scroll-margin-top: 80px; }
+.card-identify { font-size: var(--fs-xs); color: var(--unk); background: var(--unk-soft); border-radius: var(--radius-sm); padding: 6px 8px; }
+
+/* ChairTok switch (works like a day/night switch) */
+.mode-switch { display: inline-flex; align-items: center; gap: 8px; padding: 3px 12px 3px 3px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); cursor: pointer; font-weight: 650; font-size: var(--fs-sm); color: var(--ink); min-height: 36px; }
+.mode-switch .mode-knob { width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--bg); box-shadow: var(--shadow); font-size: 16px; transition: transform 220ms var(--ease), background-color 220ms var(--ease); }
+.mode-switch:hover { border-color: var(--ink-2); }
+.mode-switch[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
+.mode-switch[aria-pressed="true"] .mode-knob { background: linear-gradient(135deg, #25f4ee, #fe2c55); transform: rotate(-12deg); }
+@media (max-width: 560px) { .mode-switch { order: 1; margin-left: auto; } .nav { order: 2; } }
+
+/* ChairTok: a TikTok-style vertical photo feed */
+body.tok-on { overflow: hidden; }
+body.tok-on .topbar, body.tok-on main, body.tok-on footer, body.tok-on .tray { display: none !important; }
+.tok { position: fixed; inset: 0; background: #000; color: #fff; z-index: 50; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.tok-feed { position: absolute; inset: 0; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; scrollbar-width: none; }
+.tok-feed::-webkit-scrollbar { display: none; }
+.tok-slide { position: relative; height: 100vh; height: 100dvh; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden; display: flex; justify-content: center; }
+.tok-stage { position: relative; width: 100%; max-width: 520px; height: 100%; overflow: hidden; background: #111; }
+.tok-bg { position: absolute; inset: -40px; background-size: cover; background-position: center; filter: blur(28px) brightness(0.55) saturate(1.3); transform: scale(1.1); }
+.tok-photos { position: absolute; inset: 0; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.tok-photos::-webkit-scrollbar { display: none; }
+.tok-photos img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: contain; scroll-snap-align: center; }
+.tok-shade { position: absolute; inset: auto 0 0 0; height: 55%; background: linear-gradient(transparent, rgba(0,0,0,0.75)); pointer-events: none; }
+.tok-shade.top { inset: 0 0 auto 0; height: 120px; background: linear-gradient(rgba(0,0,0,0.55), transparent); }
+.tok-top { position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; align-items: center; justify-content: center; padding: 14px 16px; padding-top: max(14px, env(safe-area-inset-top)); pointer-events: none; }
+.tok-top > * { pointer-events: auto; }
+.tok-exit { position: absolute; left: 12px; top: max(10px, env(safe-area-inset-top)); display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.16); color: #fff; border: 0; border-radius: 999px; padding: 7px 12px; font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; backdrop-filter: blur(8px); }
+.tok-tabs { display: flex; gap: 18px; font-weight: 700; font-size: 16px; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+.tok-tabs span { opacity: 0.6; }
+.tok-tabs .on { opacity: 1; position: relative; }
+.tok-tabs .on::after { content: ""; position: absolute; left: 50%; bottom: -6px; width: 26px; height: 3px; margin-left: -13px; border-radius: 3px; background: #fff; }
+.tok-dots { position: absolute; top: max(56px, calc(env(safe-area-inset-top) + 44px)); left: 0; right: 0; z-index: 3; display: flex; justify-content: center; gap: 5px; }
+.tok-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.45); transition: width 200ms, background-color 200ms; }
+.tok-dots i.on { width: 16px; border-radius: 3px; background: #fff; }
+.tok-rail { position: absolute; right: 10px; bottom: 120px; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.tok-avatar { position: relative; width: 50px; height: 50px; border-radius: 50%; border: 2px solid #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; color: #fff; margin-bottom: 8px; }
+.tok-avatar::after { content: "+"; position: absolute; bottom: -10px; left: 50%; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: #fe2c55; font-size: 15px; line-height: 19px; text-align: center; font-weight: 800; }
+.tok-btn { display: flex; flex-direction: column; align-items: center; gap: 3px; background: none; border: 0; color: #fff; font: inherit; font-size: 12px; font-weight: 650; cursor: pointer; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+.tok-btn .ic { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; background: rgba(0,0,0,0.25); transition: transform 160ms; }
+.tok-btn:active .ic { transform: scale(0.88); }
+.tok-btn.liked .ic { animation: tokPop 360ms; }
+.tok-btn.liked .heart { color: #fe2c55; }
+.tok-btn.picked .ic { background: rgba(37,244,238,0.35); }
+.tok-cap { position: absolute; left: 14px; right: 80px; bottom: 26px; bottom: max(26px, calc(env(safe-area-inset-bottom) + 14px)); z-index: 3; text-shadow: 0 1px 3px rgba(0,0,0,0.7); }
+.tok-handle { font-weight: 750; font-size: 16px; display: flex; align-items: center; gap: 6px; }
+.tok-handle .tick { display: inline-flex; width: 16px; height: 16px; border-radius: 50%; background: #20d5ec; color: #fff; font-size: 11px; align-items: center; justify-content: center; text-shadow: none; }
+.tok-title { font-size: 15px; margin-top: 4px; line-height: 1.35; }
+.tok-price { display: inline-block; margin-top: 8px; background: #fe2c55; color: #fff; font-weight: 800; padding: 3px 10px; border-radius: 6px; font-size: 15px; text-shadow: none; }
+.tok-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tok-chips span { background: rgba(255,255,255,0.18); backdrop-filter: blur(6px); border-radius: 999px; padding: 3px 9px; font-size: 12.5px; font-weight: 600; }
+.tok-tags { margin-top: 8px; font-size: 14px; font-weight: 650; color: #fff; }
+.tok-sound { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13px; overflow: hidden; }
+.tok-sound .marq { white-space: nowrap; overflow: hidden; flex: 1; mask-image: linear-gradient(90deg, #000 85%, transparent); }
+.tok-sound .marq span { display: inline-block; padding-left: 0; animation: tokMarq 9s linear infinite; }
+.tok-disc { position: absolute; right: 14px; bottom: max(28px, calc(env(safe-area-inset-bottom) + 16px)); z-index: 3; width: 46px; height: 46px; border-radius: 50%; background: radial-gradient(circle, #555 0 22%, #222 23% 100%); border: 8px solid #333; display: flex; align-items: center; justify-content: center; font-size: 18px; animation: tokSpin 4s linear infinite; }
+.tok-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; z-index: 4; background: rgba(255,255,255,0.18); }
+.tok-bar i { display: block; height: 100%; width: 0; background: #fff; }
+.tok-pause { position: absolute; top: 50%; left: 50%; z-index: 3; transform: translate(-50%, -50%); font-size: 64px; opacity: 0; transition: opacity 160ms; pointer-events: none; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+.tok-slide.paused .tok-pause { opacity: 0.85; }
+.tok-burst { position: absolute; z-index: 5; font-size: 90px; pointer-events: none; animation: tokBurst 800ms forwards; color: #fe2c55; }
+.tok-sheet-wrap { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,0.45); display: flex; align-items: flex-end; justify-content: center; }
+.tok-sheet { width: 100%; max-width: 520px; max-height: 78vh; overflow-y: auto; background: #fff; color: #161823; border-radius: 16px 16px 0 0; padding: 10px 18px 28px; animation: tokUp 240ms cubic-bezier(0.22, 1, 0.36, 1); }
+.tok-sheet .grab { width: 40px; height: 4px; border-radius: 4px; background: #ccc; margin: 0 auto 12px; }
+.tok-sheet h2 { font-size: 17px; margin-bottom: 4px; }
+.tok-sheet h3 { font-size: 14px; margin: 16px 0 6px; }
+.tok-sheet .sub { color: #555; font-size: 13px; }
+.tok-sheet dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 13.5px; margin: 12px 0 0; }
+.tok-sheet dt { color: #666; }
+.tok-sheet dd { margin: 0; font-weight: 600; }
+.tok-sheet .md { font-size: 13.5px; }
+.tok-sheet .md ul { padding-left: 18px; margin: 4px 0; }
+.tok-sheet .row { display: flex; gap: 10px; margin-top: 18px; }
+.tok-sheet .row button { flex: 1; min-height: 44px; border-radius: 8px; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.tok-sheet .go { background: #fe2c55; color: #fff; }
+.tok-sheet .close { background: #f1f1f2; color: #161823; }
+.tok-end { display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at 30% 20%, #25f4ee33, transparent 50%), radial-gradient(circle at 70% 80%, #fe2c5533, transparent 50%), #000; }
+.tok-end .inner { max-width: 340px; padding: 24px; }
+.tok-end .big { font-size: 64px; }
+.tok-end h2 { font-size: 22px; margin: 10px 0 8px; }
+.tok-end p { color: #ccc; font-size: 14.5px; line-height: 1.5; }
+.tok-end button { margin-top: 18px; background: #fe2c55; color: #fff; border: 0; border-radius: 8px; padding: 12px 18px; font: inherit; font-weight: 700; cursor: pointer; }
+@keyframes tokPop { 0% { transform: scale(1); } 40% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@keyframes tokSpin { to { transform: rotate(360deg); } }
+@keyframes tokMarq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes tokBurst { 0% { transform: translate(-50%, -50%) scale(0.4) rotate(-15deg); opacity: 0; } 25% { transform: translate(-50%, -50%) scale(1.15) rotate(-15deg); opacity: 1; } 100% { transform: translate(-50%, -110%) scale(1) rotate(-15deg); opacity: 0; } }
+@keyframes tokUp { from { transform: translateY(100%); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .tok-disc, .tok-sound .marq span { animation: none; } }
+
 footer { border-top: 1px solid var(--line); padding: 20px 0 32px; color: var(--ink-2); font-size: var(--fs-xs); }
 footer p + p { margin-top: 4px; }
 
@@ -434,6 +531,9 @@ footer p + p { margin-top: 4px; }
       <a href="#store" data-nav="store">In store</a>
       <a href="#compare" data-nav="compare">Compare <span class="count" id="navCount"></span></a>
     </nav>
+    <button type="button" class="mode-switch" id="tokSwitch" aria-pressed="false" title="Switch to ChairTok, the simple photo view">
+      <span class="mode-knob" aria-hidden="true">🪑</span><span class="mode-text">ChairTok</span>
+    </button>
   </div>
 </header>
 
@@ -450,6 +550,8 @@ footer p + p { margin-top: 4px; }
 <footer>
   <div class="wrap" id="footer"></div>
 </footer>
+
+<div id="tok" class="tok" hidden aria-label="ChairTok"></div>
 
 <script>/*__CHAIR_DATA__*/</script>
 <script>
@@ -577,7 +679,7 @@ footer p + p { margin-top: 4px; }
 
   // ---------- catalogue ----------
   var FIT = {};
-  var defaults = { q: '', sort: 'fit', brand: '', arms: '', back: '', where: '', maxPrice: '', slide: false, idOnly: false, view: 'grid' };
+  var defaults = { q: '', sort: 'fit', brand: '', arms: '', back: '', where: '', maxPrice: '', slide: false, idOnly: false, ownOnly: false, view: 'grid' };
   var cat = Object.assign({}, defaults, store.get('catalogue', {}));
   var catScroll = 0;
   var ID_RANK = { confirmed: 0, 'very likely': 1, unsure: 2 };
@@ -598,19 +700,23 @@ footer p + p { margin-top: 4px; }
     seatLow: { label: 'Lowest seat first', fn: function (a, b) { return nullsLast(a.d.seatMin, b.d.seatMin); } },
     depthShort: { label: 'Shortest seat depth first', fn: function (a, b) { return nullsLast(a.d.depthMin, b.d.depthMin); } },
     weight: { label: 'Highest weight limit first', fn: function (a, b) { return nullsLast(a.d.weightLimit, b.d.weightLimit, -1); } },
+    addNew: { label: 'Date added: newest first', fn: function (a, b) { return nullsLast(a.d.addedMs, b.d.addedMs, -1); } },
+    addOld: { label: 'Date added: oldest first', fn: function (a, b) { return nullsLast(a.d.addedMs, b.d.addedMs); } },
     modNew: { label: 'Date modified: newest first', fn: function (a, b) { return nullsLast(a.d.modifiedMs, b.d.modifiedMs, -1); } },
     modOld: { label: 'Date modified: oldest first', fn: function (a, b) { return nullsLast(a.d.modifiedMs, b.d.modifiedMs); } },
     name: { label: 'Name A to Z', fn: function () { return 0; } }
   };
   // "22 Nov 2026, 9:39 PM" in Philippine time
-  function modifiedText(c) {
-    if (c.d.modifiedMs == null) return 'not known';
-    var p = new Date(c.d.modifiedMs + 8 * 3600000);
+  function modifiedText(c, which) {
+    var ms = which === 'added' ? c.d.addedMs : c.d.modifiedMs;
+    if (ms == null) return 'not known';
+    var p = new Date(ms + 8 * 3600000);
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var h = p.getUTCHours(), m = p.getUTCMinutes();
     return p.getUTCDate() + ' ' + months[p.getUTCMonth()] + ' ' + p.getUTCFullYear() + ', ' + (h % 12 || 12) + ':' + (m < 10 ? '0' : '') + m + ' ' + (h < 12 ? 'AM' : 'PM');
   }
   function isModSort() { return cat.sort === 'modNew' || cat.sort === 'modOld'; }
+  function isAddSort() { return cat.sort === 'addNew' || cat.sort === 'addOld'; }
   if (!SORTS[cat.sort]) cat.sort = 'fit';
 
   function matches(c) {
@@ -627,6 +733,7 @@ footer p + p { margin-top: 4px; }
     if (cat.maxPrice !== '' && cat.maxPrice != null && (d.price == null || d.price > Number(cat.maxPrice))) return false;
     if (cat.slide && d.depthSlide !== 'yes') return false;
     if (cat.idOnly && d.identified === 'unsure') return false;
+    if (cat.ownOnly && !c.ownPhotos.length) return false;
     return true;
   }
   function activeFilterCount() {
@@ -635,6 +742,7 @@ footer p + p { margin-top: 4px; }
     if (cat.maxPrice !== '' && cat.maxPrice != null) n++;
     if (cat.slide) n++;
     if (cat.idOnly) n++;
+    if (cat.ownOnly) n++;
     return n;
   }
   function uniq(arr) { return arr.filter(function (v, i) { return arr.indexOf(v) === i; }); }
@@ -670,6 +778,8 @@ footer p + p { margin-top: 4px; }
           chips(c) +
           '<p class="where">' + esc(placesText(c)) + '</p>' +
           (isModSort() ? '<p class="where">Modified: ' + esc(modifiedText(c)) + '</p>' : '') +
+          (isAddSort() ? '<p class="where">Added: ' + esc(modifiedText(c, 'added')) + '</p>' : '') +
+          (c.identify && c.identify.first ? '<p class="card-identify"><strong>To identify:</strong> ' + esc(c.identify.first) + '</p>' : '') +
         '</div>' +
       '</a>' +
       pickButton(c.id, false) +
@@ -778,7 +888,8 @@ footer p + p { margin-top: 4px; }
             '<label class="field">Where<select class="select" id="f-where">' + options(places, cat.where, 'Anywhere') + '</select></label>' +
             '<label class="field">Max price (₱)<input class="input" type="number" inputmode="numeric" min="0" step="100" id="f-max" placeholder="Any" value="' + esc(cat.maxPrice) + '"></label>' +
             '<div><label class="check"><input type="checkbox" id="f-slide"' + (cat.slide ? ' checked' : '') + '> Seat-depth slide only</label>' +
-            '<label class="check"><input type="checkbox" id="f-id"' + (cat.idOnly ? ' checked' : '') + '> Hide chairs not identified yet</label></div>' +
+            '<label class="check"><input type="checkbox" id="f-id"' + (cat.idOnly ? ' checked' : '') + '> Hide chairs not identified yet</label>' +
+            '<label class="check"><input type="checkbox" id="f-own"' + (cat.ownOnly ? ' checked' : '') + '> Only chairs with our own photos (no shop photos)</label></div>' +
             '<div><button type="button" class="btn" id="f-reset">Clear filters</button></div>' +
           '</div>' +
         '</details>' +
@@ -805,9 +916,10 @@ footer p + p { margin-top: 4px; }
     bind('f-max', 'maxPrice', 'input', function (t) { return t.value === '' ? '' : t.value; });
     bind('f-slide', 'slide', 'change', function (t) { return t.checked; });
     bind('f-id', 'idOnly', 'change', function (t) { return t.checked; });
+    bind('f-own', 'ownOnly', 'change', function (t) { return t.checked; });
     document.getElementById('f-reset').addEventListener('click', function () {
       ['brand', 'arms', 'back', 'where', 'maxPrice'].forEach(function (k) { cat[k] = ''; });
-      cat.slide = false; cat.idOnly = false;
+      cat.slide = false; cat.idOnly = false; cat.ownOnly = false;
       var q = cat.q; cat.q = q;
       renderCatalogue();
     });
@@ -864,6 +976,16 @@ footer p + p { margin-top: 4px; }
     return null;
   }
 
+  function identifyBox(c) {
+    if (!c.identify) return '';
+    var body = c.identify.html || '<ol><li>Ask the shop for one photo of the whole underside of the seat, plus a close-up of every sticker or stamped number.</li></ol>';
+    return '<section class="identify-box" aria-labelledby="idHead">' +
+      '<h2 id="idHead"><span class="id-icon" aria-hidden="true">🔍</span> How to identify this chair ' + idBadge(c) + '</h2>' +
+      '<div class="md">' + body + '</div>' +
+      '<p class="id-tip">Tip for any chair: one photo of the whole underside of the seat shows every label and sticker at once.</p>' +
+    '</section>';
+  }
+
   function renderChair(id) {
     var c = byId[id];
     if (!c) {
@@ -899,6 +1021,7 @@ footer p + p { margin-top: 4px; }
           '<h1 tabindex="-1">' + esc(t.name) + '</h1>' +
           (t.sub ? '<p class="sub">' + esc(t.sub) + '</p>' : '') +
           '<div class="badges">' + idBadge(c) + '<span class="badge plain">Condition: ' + esc(f.condition_seen) + '</span></div>' +
+          (c.identify ? '<button type="button" class="btn small id-jump" data-idjump>🔍 How to identify this chair ↓</button>' : '') +
           '<p class="big-price">' + (d.price == null ? 'Price not known' : peso(d.price)) + '<small>Lowest price seen' + (d.priceNote ? ' ' + esc(d.priceNote) : '') + '</small></p>' +
           (d.priceJP != null ? '<p class="jp-big">New in Japan: <strong>' + jpLine(c) + '</strong> (rough peso estimate)</p>' : '') +
           '<div class="badges">' + valueBadge(c, true) + '</div>' +
@@ -918,6 +1041,7 @@ footer p + p { margin-top: 4px; }
           '</div>' +
         '</div>' +
       '</div>' +
+      identifyBox(c) +
       (c.introHtml ? '<div class="note-box md">' + c.introHtml + '</div>' : '') +
       '<section class="value-box"><h2>Value ' + valueBadge(c, false) + '</h2><ul>' +
         c.valueComments.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') +
@@ -940,6 +1064,8 @@ footer p + p { margin-top: 4px; }
     '</article>';
 
     app.querySelectorAll('[data-pick]').forEach(setPickButton);
+    var jump = app.querySelector('[data-idjump]');
+    if (jump) jump.addEventListener('click', function () { var box = app.querySelector('.identify-box'); box.scrollIntoView({ behavior: 'smooth', block: 'start' }); box.setAttribute('tabindex', '-1'); box.focus({ preventScroll: true }); });
     app.querySelectorAll('[data-photo]').forEach(function (b) {
       b.addEventListener('click', function () {
         var i = Number(b.dataset.photo);
@@ -1601,6 +1727,237 @@ footer p + p { margin-top: 4px; }
     }
   });
 
+  // ---------- ChairTok: a simple TikTok-style photo feed, switched on and off like day/night mode ----------
+  // Shows only chairs whose model is confirmed and that have our own photos (photos/ folder, not shop photos).
+  var tokEl = document.getElementById('tok');
+  var tokSwitch = document.getElementById('tokSwitch');
+  var tokLikes = store.get('tokLikes', {});
+  var TOK = CHAIRS.filter(function (c) { return c.d.identified === 'confirmed' && c.ownPhotos.length; })
+    .sort(function (a, b) { return nullsLast(a.d.addedMs, b.d.addedMs, -1) || a.title.localeCompare(b.title); });
+  var BRAND_COLOR = { Okamura: '#e8505b', Kokuyo: '#3d8bfd', Itoki: '#14b8a6', Plus: '#a855f7', Steelcase: '#f59e0b' };
+  var TOK_STEP = 3500;
+  var tokActive = null, tokTimer = null, tokObserver = null, tokOn = false;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function tokChips(c) {
+    var d = c.d, out = [];
+    if (d.seatText) out.push('🪑 Seat ' + d.seatText.replace('-', '–') + ' cm');
+    out.push(d.depthSlide === 'yes' ? '↔️ Seat slides' : d.depthSlide === 'no' ? 'No seat slide' : 'Seat slide ?');
+    out.push(d.arms === 'no' ? 'No arms' : d.arms === 'unknown' ? 'Arms ?' : '💪 Arms');
+    out.push(d.back === 'mesh' ? '🌬️ Mesh back' : d.back === 'fabric' ? '🧵 Fabric back' : 'Back ?');
+    if (d.value === 'good') out.push('💸 Good value');
+    return out.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
+  }
+  function tokTags(c) {
+    var tags = ['#' + c.d.brand.toLowerCase().replace(/[^a-z0-9]/g, ''), '#chairtok', '#officechair'];
+    if (/japan/i.test(c.fields.maker_country || '')) tags.push('#madeinjapan');
+    if (c.d.back === 'mesh' || c.d.back === 'fabric') tags.push('#' + c.d.back);
+    return tags.join(' ');
+  }
+  function tokSlide(c, i) {
+    var t = splitTitle(c.title), color = BRAND_COLOR[c.d.brand] || '#666', liked = !!tokLikes[c.id];
+    var likes = (liked ? 1 : 0);
+    var isPicked = picked.indexOf(c.id) !== -1;
+    var photos = c.ownPhotos.map(function (p, k) {
+      return '<img src="' + esc(p) + '" alt="Photo ' + (k + 1) + ' of ' + esc(t.name) + '"' + (i > 1 ? ' loading="lazy"' : '') + ' decoding="async">';
+    }).join('');
+    var dots = c.ownPhotos.length > 1 ? '<div class="tok-dots" aria-hidden="true">' + c.ownPhotos.map(function (p, k) { return '<i' + (k === 0 ? ' class="on"' : '') + '></i>'; }).join('') + '</div>' : '';
+    return '<section class="tok-slide" data-id="' + esc(c.id) + '" aria-label="' + esc(t.name) + '">' +
+      '<div class="tok-stage">' +
+        '<div class="tok-bg" style="background-image:url(&quot;' + esc(c.ownPhotos[0]) + '&quot;)"></div>' +
+        '<div class="tok-photos" data-photos>' + photos + '</div>' +
+        '<div class="tok-shade top"></div><div class="tok-shade"></div>' +
+        dots +
+        '<div class="tok-pause" aria-hidden="true">▶</div>' +
+        '<div class="tok-rail">' +
+          '<div class="tok-avatar" style="background:' + color + '" aria-hidden="true">' + esc(c.d.brand.charAt(0)) + '</div>' +
+          '<button type="button" class="tok-btn' + (liked ? ' liked' : '') + '" data-tok="like" aria-pressed="' + liked + '" aria-label="Like"><span class="ic"><span class="heart">' + (liked ? '♥' : '♡') + '</span></span><span class="n">' + (likes ? '1' : 'Like') + '</span></button>' +
+          '<button type="button" class="tok-btn" data-tok="info" aria-label="All the info"><span class="ic">💬</span><span>Info</span></button>' +
+          '<button type="button" class="tok-btn' + (isPicked ? ' picked' : '') + '" data-tok="pick" aria-pressed="' + isPicked + '" aria-label="Add to compare"><span class="ic">⚖️</span><span>' + (isPicked ? 'Picked' : 'Compare') + '</span></button>' +
+          '<button type="button" class="tok-btn" data-tok="share" aria-label="Share"><span class="ic">↗️</span><span>Share</span></button>' +
+        '</div>' +
+        '<div class="tok-cap">' +
+          '<div class="tok-handle">@' + esc(c.d.brand.toLowerCase().replace(/[^a-z0-9]/g, '')) + '.chairs <span class="tick" title="Model confirmed">✓</span></div>' +
+          '<div class="tok-title"><strong>' + esc(t.name) + '</strong>' + (t.sub ? ' · ' + esc(t.sub) : '') + '</div>' +
+          (c.d.price != null ? '<span class="tok-price">' + peso(c.d.price) + '</span>' : '<span class="tok-price">Price ?</span>') +
+          '<div class="tok-chips">' + tokChips(c) + '</div>' +
+          '<div class="tok-tags">' + esc(tokTags(c)) + '</div>' +
+          '<div class="tok-sound"><span aria-hidden="true">♫</span><div class="marq"><span>original sound · Chair Library · squeak squeak 🪑&nbsp;&nbsp;&nbsp;original sound · Chair Library · squeak squeak 🪑&nbsp;&nbsp;&nbsp;</span></div></div>' +
+        '</div>' +
+        '<div class="tok-disc" aria-hidden="true">🪑</div>' +
+        '<div class="tok-bar" aria-hidden="true"><i></i></div>' +
+      '</div>' +
+    '</section>';
+  }
+  function tokEnd() {
+    var waiting = CHAIRS.filter(function (c) { return c.d.identified !== 'confirmed'; });
+    var withPics = waiting.filter(function (c) { return c.ownPhotos.length; }).length;
+    return '<section class="tok-slide tok-end"><div class="inner">' +
+      '<div class="big" aria-hidden="true">🪑✨</div>' +
+      '<h2>You’re all caught up!</h2>' +
+      '<p>ChairTok only shows chairs whose model is confirmed and that have our own photos. ' +
+      waiting.length + ' more chairs are waiting to be identified' + (withPics ? ' (' + withPics + ' of them already have our own photos)' : '') + '.</p>' +
+      '<p>Each chair’s page says what photo or question will identify it.</p>' +
+      '<button type="button" data-tok="help">See what to do to identify them</button>' +
+    '</div></section>';
+  }
+  function renderTok() {
+    tokEl.innerHTML =
+      '<div class="tok-feed" id="tokFeed">' + (TOK.length ? TOK.map(tokSlide).join('') : '') + tokEnd() + '</div>' +
+      '<div class="tok-top"><button type="button" class="tok-exit" data-tok="exit" aria-label="Back to the Chair Library">← Library</button>' +
+        '<div class="tok-tabs" aria-hidden="true"><span>Following</span><span class="on">For You</span></div></div>';
+    var feed = document.getElementById('tokFeed');
+    if (tokObserver) tokObserver.disconnect();
+    tokObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting && e.intersectionRatio >= 0.6) tokActivate(e.target); });
+    }, { root: feed, threshold: [0.6] });
+    feed.querySelectorAll('.tok-slide').forEach(function (sl) {
+      tokObserver.observe(sl);
+      var ph = sl.querySelector('[data-photos]');
+      if (!ph) return;
+      var t = null;
+      ph.addEventListener('scroll', function () {
+        clearTimeout(t);
+        t = setTimeout(function () { tokSyncDots(sl); if (sl === tokActive) tokPlay(); }, 120);
+      }, { passive: true });
+      var clickT = null;
+      ph.addEventListener('click', function (ev) {
+        clearTimeout(clickT);
+        clickT = setTimeout(function () { sl.classList.toggle('paused'); if (sl === tokActive) tokPlay(); }, 260);
+      });
+      ph.addEventListener('dblclick', function (ev) {
+        clearTimeout(clickT);
+        tokLike(sl, true);
+        var b = document.createElement('div');
+        b.className = 'tok-burst'; b.textContent = '♥';
+        var r = sl.querySelector('.tok-stage').getBoundingClientRect();
+        b.style.left = (ev.clientX - r.left) + 'px'; b.style.top = (ev.clientY - r.top) + 'px';
+        sl.querySelector('.tok-stage').appendChild(b);
+        setTimeout(function () { b.remove(); }, 820);
+      });
+    });
+    feed.focus && feed.setAttribute('tabindex', '-1');
+    feed.focus({ preventScroll: true });
+  }
+  function tokIndex(sl) {
+    var ph = sl.querySelector('[data-photos]');
+    return ph ? Math.round(ph.scrollLeft / Math.max(1, ph.clientWidth)) : 0;
+  }
+  function tokSyncDots(sl) {
+    var i = tokIndex(sl);
+    sl.querySelectorAll('.tok-dots i').forEach(function (d, k) { d.classList.toggle('on', k === i); });
+    var ph = sl.querySelector('[data-photos]'), img = ph && ph.children[i], bg = sl.querySelector('.tok-bg');
+    if (img && bg) bg.style.backgroundImage = 'url("' + img.getAttribute('src') + '")';
+  }
+  function tokActivate(sl) {
+    if (tokActive === sl) return;
+    tokActive = sl;
+    tokPlay();
+  }
+  // the "video": photos move on by themselves, with a progress bar at the bottom
+  function tokPlay() {
+    clearTimeout(tokTimer);
+    document.querySelectorAll('.tok-bar i').forEach(function (b) { b.style.transition = 'none'; b.style.width = '0'; });
+    var sl = tokActive;
+    if (!sl || !sl.dataset.id || sl.classList.contains('paused') || reduceMotion) return;
+    var bar = sl.querySelector('.tok-bar i');
+    void bar.offsetWidth;
+    bar.style.transition = 'width ' + TOK_STEP + 'ms linear';
+    bar.style.width = '100%';
+    tokTimer = setTimeout(function () {
+      var ph = sl.querySelector('[data-photos]'), n = ph.children.length;
+      if (n > 1) {
+        var next = (tokIndex(sl) + 1) % n;
+        ph.scrollTo({ left: next * ph.clientWidth, behavior: 'smooth' });
+      } else {
+        tokPlay();
+      }
+    }, TOK_STEP);
+  }
+  function tokLike(sl, only) {
+    var id = sl.dataset.id, btn = sl.querySelector('[data-tok="like"]');
+    var on = only ? true : !tokLikes[id];
+    if (on) tokLikes[id] = 1; else delete tokLikes[id];
+    store.set('tokLikes', tokLikes);
+    btn.classList.remove('liked'); void btn.offsetWidth;
+    btn.classList.toggle('liked', on);
+    btn.setAttribute('aria-pressed', String(on));
+    btn.querySelector('.heart').textContent = on ? '♥' : '♡';
+    btn.querySelector('.n').textContent = on ? '1' : 'Like';
+  }
+  function tokSheet(c) {
+    var t = splitTitle(c.title), f = c.fields, d = c.d;
+    var glance = sectionByName(c, /^at a glance/i), pros = sectionByName(c, /^pros/i), cons = sectionByName(c, /^cons/i);
+    var wrap = document.createElement('div');
+    wrap.className = 'tok-sheet-wrap';
+    wrap.innerHTML = '<div class="tok-sheet" role="dialog" aria-modal="true" aria-label="Info about ' + esc(t.name) + '"><div class="grab"></div>' +
+      '<h2>' + esc(t.name) + '</h2>' + (t.sub ? '<p class="sub">' + esc(t.sub) + '</p>' : '') +
+      '<dl>' +
+        '<dt>Price here</dt><dd>' + (d.price == null ? 'not known' : peso(d.price)) + '</dd>' +
+        (d.priceJP != null ? '<dt>New in Japan</dt><dd>' + jpLine(c) + '</dd>' : '') +
+        '<dt>Value</dt><dd>' + esc(VALUE_LABEL[d.value]) + (d.valuePct != null ? ' (' + Math.round(d.valuePct) + '% of new)' : '') + '</dd>' +
+        '<dt>Seat height (cm)</dt><dd>' + esc(f.seat_height_cm) + '</dd>' +
+        '<dt>Seat depth (cm)</dt><dd>' + esc(f.seat_depth_cm) + '</dd>' +
+        '<dt>Seat slide</dt><dd>' + esc(f.seat_depth_slide) + '</dd>' +
+        '<dt>Armrests</dt><dd>' + esc(f.armrests) + '</dd>' +
+        '<dt>Back</dt><dd>' + esc(f.back) + '</dd>' +
+        '<dt>Where</dt><dd>' + esc(placesText(c)) + '</dd>' +
+      '</dl>' +
+      (glance ? '<h3>At a glance</h3><div class="md">' + glance.html + '</div>' : '') +
+      (pros ? '<h3>✓ Pros</h3><div class="md">' + pros.html + '</div>' : '') +
+      (cons ? '<h3>✗ Cons</h3><div class="md">' + cons.html + '</div>' : '') +
+      '<div class="row"><button type="button" class="close" data-x>Close</button><button type="button" class="go" data-go>Full chair page</button></div>' +
+    '</div>';
+    document.body.appendChild(wrap);
+    clearTimeout(tokTimer);
+    function close() { wrap.remove(); tokPlay(); }
+    wrap.addEventListener('click', function (e) {
+      if (e.target === wrap || e.target.closest('[data-x]')) close();
+      if (e.target.closest('[data-go]')) { wrap.remove(); setTok(false); location.hash = '#chair/' + c.id; }
+    });
+    wrap.querySelector('[data-x]').focus();
+  }
+  tokEl.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-tok]');
+    if (!b) return;
+    var what = b.dataset.tok, sl = b.closest('.tok-slide'), c = sl && byId[sl.dataset.id];
+    if (what === 'exit') setTok(false);
+    else if (what === 'help') { setTok(false); cat.idOnly = false; if (location.hash) location.hash = ''; }
+    else if (what === 'like') tokLike(sl);
+    else if (what === 'info' && c) tokSheet(c);
+    else if (what === 'pick' && c) {
+      togglePick(c.id);
+      var on = picked.indexOf(c.id) !== -1;
+      b.classList.toggle('picked', on); b.setAttribute('aria-pressed', String(on));
+      b.lastChild.textContent = on ? 'Picked' : 'Compare';
+    } else if (what === 'share' && c) {
+      var url = location.href.split('#')[0] + '#chair/' + c.id, name = splitTitle(c.title).name;
+      if (navigator.share) navigator.share({ title: name + ' · ChairTok', url: url }).catch(function () {});
+      else if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { b.lastChild.textContent = 'Copied!'; setTimeout(function () { b.lastChild.textContent = 'Share'; }, 1500); });
+    }
+  });
+  function setTok(on) {
+    tokOn = !!on;
+    store.set('tok', tokOn);
+    tokSwitch.setAttribute('aria-pressed', String(tokOn));
+    tokSwitch.title = tokOn ? 'Back to the Chair Library' : 'Switch to ChairTok, the simple photo view';
+    document.body.classList.toggle('tok-on', tokOn);
+    tokEl.hidden = !tokOn;
+    if (tokOn) { renderTok(); document.title = 'ChairTok · Chair Library'; }
+    else {
+      clearTimeout(tokTimer); tokActive = null;
+      if (tokObserver) tokObserver.disconnect();
+      tokEl.innerHTML = '';
+      route();
+    }
+  }
+  tokSwitch.addEventListener('click', function () { setTok(!tokOn); });
+  document.addEventListener('keydown', function (e) {
+    if (!tokOn || e.key !== 'Escape') return;
+    var sheet = document.querySelector('.tok-sheet-wrap');
+    if (sheet) { sheet.remove(); tokPlay(); } else setTok(false);
+  });
+
   // ---------- footer + routing ----------
   document.getElementById('footer').innerHTML =
     '<p>Made from ' + CHAIRS.length + ' chair files in Documents\\Chair Library\\chairs. Website rebuilt ' + esc(niceDate(DATA.builtOn)) + '.</p>' +
@@ -1631,8 +1988,9 @@ footer p + p { margin-top: 4px; }
     var h1 = app.querySelector('h1, h2[tabindex]');
     if (h1 && prev) h1.focus({ preventScroll: true });
   }
-  window.addEventListener('hashchange', route);
+  window.addEventListener('hashchange', function () { if (tokOn) setTok(false); else route(); });
   route();
+  if (store.get('tok', false) && !location.hash) setTok(true);
 
   // keep the website on the phone, so it opens in a shop with no signal
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {

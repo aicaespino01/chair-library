@@ -281,6 +281,31 @@ function readChair(file) {
   // shop photos (cdn.shopify.com) and photos saved in the library's photos/ folder
   const photos = [...new Set((body.match(/https:\/\/cdn\.shopify\.com\/[^\s)|>]+|(?<![\w/.-])photos\/[\w.-]+\.jpg/g) || []).map((u) => u.replace(/[.,;]+$/, '')))];
 
+  // "How to identify it": the chair file's own section if it has one; otherwise the lines from
+  // "Missing info and how to get it" that are about the label, model, code or brand (copied as written).
+  const idLevel = identified(f.identified);
+  const idSection = sections.find((s) => /^how to identify/i.test(s.heading));
+  let identify = null;
+  if (idLevel !== 'confirmed') {
+    if (idSection) {
+      identify = { source: 'file', html: md(idSection.content) };
+    } else {
+      const missing = sections.find((s) => /^missing info/i.test(s.heading));
+      const steps = missing
+        ? missing.content.split('\n').filter((l) => LIST_RE.test(l)).map((l) => l.replace(LIST_RE, '').trim())
+            .filter((l) => /label|model|code|brand|identif|version|same model|\bV1\b|year made/i.test(l))
+        : [];
+      identify = { source: steps.length ? 'missing' : 'none', html: steps.length ? '<ol>' + steps.map((x) => `<li>${inline(x)}</li>`).join('') + '</ol>' : '' };
+    }
+    const firstLine = idSection
+      ? (idSection.content.split('\n').find((l) => LIST_RE.test(l)) || '')
+      : ((sections.find((s) => /^missing info/i.test(s.heading)) || { content: '' }).content.split('\n')
+          .find((l) => LIST_RE.test(l) && /label|model|code|brand|identif|version|same model|\bV1\b|year made/i.test(l)) || '');
+    const firstStep = firstLine.replace(LIST_RE, '');
+    identify.first = firstStep.replace(/\*\*/g, '').split(/(?<=\.)\s/)[0].trim() || null;
+  }
+  const ownPhotos = photos.filter((u) => u.startsWith('photos/'));
+
   const seat = range(f.seat_height_cm);
   const depth = range(f.seat_depth_cm);
   const priceText = f.lowest_price_seen_php || '';
@@ -306,7 +331,9 @@ function readChair(file) {
     fields: f,
     order,
     introHtml: md(intro),
-    sections: sections.map((s) => ({ heading: s.heading, html: md(s.content) })),
+    sections: sections.filter((s) => !/^how to identify/i.test(s.heading)).map((s) => ({ heading: s.heading, html: md(s.content) })),
+    identify,
+    ownPhotos,
     shops,
     photos,
     shopUrl: firstUrl,
@@ -363,6 +390,16 @@ for (const c of chairs) {
   if (!iso && c.fields.last_checked) iso = String(c.fields.last_checked).slice(0, 10) + 'T00:00:00+08:00';
   c.d.modified = iso;
   c.d.modifiedMs = iso ? Date.parse(iso) : null;
+  // "Date added": the first upload of the file (following renames). Falls back to the modified date.
+  let added = null;
+  if (modifiedSource === 'git') {
+    try {
+      const log = git(['log', '--follow', '--diff-filter=A', '--format=%cI', '--', rel]).split('\n').filter(Boolean);
+      added = log[log.length - 1] || null;
+    } catch (e) { added = null; }
+  }
+  c.d.added = added || iso;
+  c.d.addedMs = c.d.added ? Date.parse(c.d.added) : null;
 }
 
 const checked = chairs.map((c) => c.fields.last_checked).filter(Boolean).sort();
@@ -399,6 +436,6 @@ for (const c of chairs) {
   console.log(
     [c.id.padEnd(46), `seat ${show(d.seatMin)}-${show(d.seatMax)}`.padEnd(14), `depth ${show(d.depthMin)}`.padEnd(11), `P${show(d.price)}`.padEnd(7), `JPY${show(d.priceJP)}`.padEnd(10), `value ${d.value}${d.valuePct == null ? '' : ' ' + d.valuePct.toFixed(1) + '%'}`.padEnd(18),
       `wl ${show(d.weightLimit)}`.padEnd(7), `slide ${d.depthSlide}`.padEnd(17), `arms ${d.arms}`.padEnd(12), `back ${d.back}`.padEnd(13),
-      d.identified.padEnd(12), `photos ${c.photos.length}`.padEnd(10), d.places.join(' / ')].join(' ')
+      d.identified.padEnd(12), `photos ${c.photos.length}/${c.ownPhotos.length} own`.padEnd(16), `added ${(d.added || '-').slice(0, 10)}`, `id-steps ${c.identify ? c.identify.source : '-'}`, d.places.join(' / ')].join(' ')
   );
 }

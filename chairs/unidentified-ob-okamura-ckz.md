@@ -32,7 +32,14 @@ last_checked: 2026-11-23
 
 # Okamura black fabric chair with loop arms (sticker OKASWACKZ1531), possibly Carrozza CK44/CK45
 
-**Identified: Unsure (possible Carrozza).** The brand is Okamura: the nameplate on the back cover reads **okamura**. The Office Busters sticker reads **OKASWACKZ1531** (OKA = Okamura, SWA = swivel with arms, CKZ = model hint). Best candidate: **Okamura Carrozza with fixed arms** (CK44 low back or CK45 high back, black body). Not confirmed: no side-by-side photo check and no label yet. **To confirm:** ask Office Busters for a photo of the white Okamura label under the seat. A code starting with CK44 or CK45 means Carrozza.
+**Identified: Unsure (possible Carrozza).** The brand is Okamura: the nameplate on the back cover reads **okamura**. The Office Busters sticker reads **OKASWACKZ1531** (OKA = Okamura, SWA = swivel with arms, CKZ = model hint). Best candidate: **Okamura Carrozza with fixed arms** (CK44 low back or CK45 high back, black body). Not confirmed: no side-by-side photo check and no label yet. **To confirm:** see "How to identify it" below.
+
+## How to identify it
+**Already known:** Okamura (nameplate on the back). Office Busters code OKASWACKZ1531.
+**Still needed:** the model and the year made.
+1. Ask Office Busters for **one photo of the whole underside of the seat**, plus a close-up of any sticker or stamped number. The photo we have shows only the back edge of the seat with the Office Busters sticker, not the underside.
+2. A white Okamura label with a code starting **CK44** or **CK45** means Carrozza with arms. A code starting **CL** means Adfit (like the blue chair).
+3. If there is no white label, only a small yellow JOIFA 308 sticker with a number, it is probably the same older style as the blue Adfit (2004–2006), so Adfit becomes more likely.
 
 ## At a glance
 - Black fabric back and seat, mid back, square upholstered back.
@@ -54,7 +61,7 @@ Photos (sent 2026-11-22):
 
 ## How it was identified
 - Okamura nameplate on the black back cover (photo 2).
-- Office Busters sticker **OKASWACKZ1531**. Same pattern as the Escudo sticker OKASWAESR1527 (OKA = Okamura, SWA = swivel with arms). The "CKZ" hint was not matched to a model. It could point to an Okamura code starting with CK (Carrozza is CK33/CK35), but this chair does not look like a Carrozza, so this is not assumed.
+- Office Busters sticker **OKASWACKZ1531**. Same pattern as the Escudo sticker OKASWAESR1527 (OKA = Okamura, SWA = swivel with arms). The "CKZ" hint was not matched to a model. It could point to an Okamura code starting with CK (Carrozza is CK33/CK35; see the Carrozza check below).
 - **Carrozza check (2026-11-23).** The earlier note said this chair "does not look like a Carrozza". That was only compared with the two armless Carrozzas in this library (brown with a gray body, lime green), so it was not a real reason and has been dropped. Carrozza was also sold with fixed arms and a black body: ASKUL "オカムラ カロッツァチェア ローバック肘付ゴム CK44CR/CK44GR"; ASKUL "CK45ZR FS11 ハイバック肘付双輪 ブラック"; Office Busters Japan used "カロッツァチェア CK44ZR-FS11 / CK44ZR-FS16 肘付ローバックチェア"; Azumaya "カロッツァ OAチェア〔ローバック、ブラックシェル、ハンガー・固定肘付、ブラック〕" (ハンガー = coat hanger on the back, 固定肘 = fixed arms).
 - **"CKZ" hint.** In Okamura codes the letter after the number looks like the body colour (Z = black, as in CK44ZR, CK45ZR, CK33ZR). "CKZ" could be shorthand for a code like CK44ZR. Not certain: Office Busters' hints are not consistent (the lime green Carrozza was tagged "CZM").
 - **Not done yet:** Google Lens on the back photo (no browser available on 2026-11-23), and no side-by-side comparison with photos of the black armed Carrozza.
