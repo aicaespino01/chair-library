@@ -14,6 +14,9 @@ const OUT = path.join(ROOT, 'Chair Website.html');
 // Exchange rate and value rule live in settings.json, so they can be refreshed without touching code.
 const SETTINGS = JSON.parse(fs.readFileSync(path.join(__dirname, 'settings.json'), 'utf8'));
 const RATE = SETTINGS.jpyToPhp;
+// ChairTok feed order and video formats (written by website/make_videos.py)
+const FEED_FILE = path.join(ROOT, 'videos', 'feed.json');
+const FEED = fs.existsSync(FEED_FILE) ? JSON.parse(fs.readFileSync(FEED_FILE, 'utf8')) : [];
 const GOOD_MAX = SETTINGS.valueGoodMaxPercent;
 const FAIR_MAX = SETTINGS.valueFairMaxPercent;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -307,7 +310,9 @@ function readChair(file) {
   const ownPhotos = photos.filter((u) => u.startsWith('photos/'));
   // ChairTok video made by website/make_videos.py (videos/<id>.mp4 with a poster videos/<id>.jpg)
   const vid = `videos/${f.id || file.replace(/\.md$/, '')}`;
-  const video = fs.existsSync(path.join(ROOT, vid + '.mp4')) ? { src: vid + '.mp4', poster: fs.existsSync(path.join(ROOT, vid + '.jpg')) ? vid + '.jpg' : null } : null;
+  const feedEntry = FEED.findIndex((e) => e.id === (f.id || file.replace(/\.md$/, '')));
+  const video = fs.existsSync(path.join(ROOT, vid + '.mp4')) ? { src: vid + '.mp4', poster: fs.existsSync(path.join(ROOT, vid + '.jpg')) ? vid + '.jpg' : null,
+    order: feedEntry === -1 ? 999 : feedEntry, style: feedEntry === -1 ? null : FEED[feedEntry].style } : null;
 
   const seat = range(f.seat_height_cm);
   const depth = range(f.seat_depth_cm);

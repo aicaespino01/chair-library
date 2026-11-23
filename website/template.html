@@ -439,6 +439,7 @@ body.tok-on .topbar, body.tok-on main, body.tok-on footer, body.tok-on .tray { d
 .tok-cap { position: absolute; left: 14px; right: 80px; bottom: 26px; bottom: max(26px, calc(env(safe-area-inset-bottom) + 14px)); z-index: 3; text-shadow: 0 1px 3px rgba(0,0,0,0.7); }
 .tok-handle { font-weight: 750; font-size: 16px; display: flex; align-items: center; gap: 6px; }
 .tok-handle .tick { display: inline-flex; width: 16px; height: 16px; border-radius: 50%; background: #20d5ec; color: #fff; font-size: 11px; align-items: center; justify-content: center; text-shadow: none; }
+.tok-idnote { display: inline-block; margin-top: 4px; font-size: 12.5px; font-weight: 650; background: rgba(0,0,0,0.45); padding: 2px 8px; border-radius: 6px; }
 .tok-title { font-size: 15px; margin-top: 4px; line-height: 1.35; }
 .tok-price { display: inline-block; margin-top: 8px; background: #fe2c55; color: #fff; font-weight: 800; padding: 3px 10px; border-radius: 6px; font-size: 15px; text-shadow: none; }
 .tok-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
@@ -1734,8 +1735,11 @@ footer p + p { margin-top: 4px; }
   var tokEl = document.getElementById('tok');
   var tokSwitch = document.getElementById('tokSwitch');
   var tokLikes = store.get('tokLikes', {});
-  var TOK = CHAIRS.filter(function (c) { return c.d.identified === 'confirmed' && (c.video || c.ownPhotos.length); })
-    .sort(function (a, b) { return nullsLast(a.d.addedMs, b.d.addedMs, -1) || a.title.localeCompare(b.title); });
+  // Chairs with a ChairTok video, in the feed order; then confirmed chairs with our own photos but no video yet.
+  var TOK = CHAIRS.filter(function (c) { return c.video || (c.d.identified === 'confirmed' && c.ownPhotos.length); })
+    .sort(function (a, b) { return (a.video ? a.video.order : 1000) - (b.video ? b.video.order : 1000) || nullsLast(a.d.addedMs, b.d.addedMs, -1); });
+  var STYLE_TAG = { salesman: '#salesman', mystery: '#whosthatchair', brainrot: '#brainrot', documentary: '#naturedoc', nervous: '#pleasebuy',
+    aislop: '#aislop', spin: '#360', news: '#breakingnews', pov: '#pov', dating: '#datingapp', jokes: '#dadjokes' };
   var BRAND_COLOR = { Okamura: '#e8505b', Kokuyo: '#3d8bfd', Itoki: '#14b8a6', Plus: '#a855f7', Steelcase: '#f59e0b' };
   var TOK_STEP = 3500;
   var tokActive = null, tokTimer = null, tokObserver = null, tokOn = false, tokRaf = null, tokMuted = true;
@@ -1751,7 +1755,8 @@ footer p + p { margin-top: 4px; }
     return out.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
   }
   function tokTags(c) {
-    var tags = ['#' + c.d.brand.toLowerCase().replace(/[^a-z0-9]/g, ''), '#chairtok', '#officechair'];
+    var tags = ['#' + c.d.brand.toLowerCase().replace(/[^a-z0-9]/g, ''), '#chairtok'];
+    if (c.video && STYLE_TAG[c.video.style]) tags.push(STYLE_TAG[c.video.style]);
     if (/japan/i.test(c.fields.maker_country || '')) tags.push('#madeinjapan');
     if (c.d.back === 'mesh' || c.d.back === 'fabric') tags.push('#' + c.d.back);
     return tags.join(' ');
@@ -1784,7 +1789,8 @@ footer p + p { margin-top: 4px; }
           '<button type="button" class="tok-btn" data-tok="share" aria-label="Share"><span class="ic">↗️</span><span>Share</span></button>' +
         '</div>' +
         '<div class="tok-cap">' +
-          '<div class="tok-handle">@' + esc(c.d.brand.toLowerCase().replace(/[^a-z0-9]/g, '')) + '.chairs <span class="tick" title="Model confirmed">✓</span></div>' +
+          '<div class="tok-handle">@' + esc(c.d.brand.toLowerCase().replace(/[^a-z0-9]/g, '')) + '.chairs' + (c.d.identified === 'confirmed' ? ' <span class="tick" title="Model confirmed">✓</span>' : '') + '</div>' +
+          (c.d.identified !== 'confirmed' ? '<div class="tok-idnote">' + (c.d.identified === 'unsure' ? '🔍 Model not identified yet: tap Info for what to ask' : '🔍 Model very likely, not confirmed') + '</div>' : '') +
           '<div class="tok-title"><strong>' + esc(t.name) + '</strong>' + (t.sub && !c.video ? ' · ' + esc(t.sub) : '') + '</div>' +
           (c.video ? '' : (c.d.price != null ? '<span class="tok-price">' + peso(c.d.price) + '</span>' : '<span class="tok-price">Price ?</span>') +
           '<div class="tok-chips">' + tokChips(c) + '</div>') +
@@ -1798,12 +1804,13 @@ footer p + p { margin-top: 4px; }
   }
   function tokEnd() {
     var waiting = CHAIRS.filter(function (c) { return c.d.identified !== 'confirmed'; });
+    var noVideo = CHAIRS.length - TOK.length;
     var withPics = waiting.filter(function (c) { return c.ownPhotos.length; }).length;
     return '<section class="tok-slide tok-end"><div class="inner">' +
       '<div class="big" aria-hidden="true">🪑✨</div>' +
       '<h2>You’re all caught up!</h2>' +
-      '<p>ChairTok only shows chairs whose model is confirmed and that have our own photos. ' +
-      waiting.length + ' more chairs are waiting to be identified' + (withPics ? ' (' + withPics + ' of them already have our own photos)' : '') + '.</p>' +
+      '<p>That was all ' + TOK.length + ' ChairToks. ' + noVideo + ' more chairs in the library have no video yet, and ' +
+      waiting.length + ' chairs are still waiting to be identified' + (withPics ? ' (' + withPics + ' of them already have our own photos)' : '') + '.</p>' +
       '<p>Each chair’s page says what photo or question will identify it.</p>' +
       '<button type="button" data-tok="help">See what to do to identify them</button>' +
     '</div></section>';
@@ -1935,6 +1942,7 @@ footer p + p { margin-top: 4px; }
         '<dt>Back</dt><dd>' + esc(f.back) + '</dd>' +
         '<dt>Where</dt><dd>' + esc(placesText(c)) + '</dd>' +
       '</dl>' +
+      (c.identify ? '<h3>🔍 How to identify it</h3><div class="md">' + (c.identify.html || '<p>Ask for one photo of the whole underside of the seat.</p>') + '</div>' : '') +
       (glance ? '<h3>At a glance</h3><div class="md">' + glance.html + '</div>' : '') +
       (pros ? '<h3>✓ Pros</h3><div class="md">' + pros.html + '</div>' : '') +
       (cons ? '<h3>✗ Cons</h3><div class="md">' + cons.html + '</div>' : '') +
