@@ -1943,7 +1943,7 @@ footer p + p { margin-top: 4px; }
     tokSwitch.title = tokOn ? 'Back to the Chair Library' : 'Switch to ChairTok, the simple photo view';
     document.body.classList.toggle('tok-on', tokOn);
     tokEl.hidden = !tokOn;
-    if (tokOn) { renderTok(); document.title = 'ChairTok · Chair Library'; }
+    if (tokOn) { if (isTokHash()) history.replaceState(null, '', location.pathname + location.search); renderTok(); document.title = 'ChairTok · Chair Library'; }
     else {
       clearTimeout(tokTimer); tokActive = null;
       if (tokObserver) tokObserver.disconnect();
@@ -1988,9 +1988,10 @@ footer p + p { margin-top: 4px; }
     var h1 = app.querySelector('h1, h2[tabindex]');
     if (h1 && prev) h1.focus({ preventScroll: true });
   }
-  window.addEventListener('hashchange', function () { if (tokOn) setTok(false); else route(); });
-  route();
-  if (store.get('tok', false) && !location.hash) setTok(true);
+  function isTokHash() { return /^#\/?chairtok$/i.test(location.hash); }
+  window.addEventListener('hashchange', function () { if (isTokHash()) setTok(true); else if (tokOn) setTok(false); else route(); });
+  if (isTokHash()) { history.replaceState(null, '', location.pathname + location.search); setTok(true); }
+  else { route(); if (store.get('tok', false) && !location.hash) setTok(true); }
 
   // keep the website on the phone, so it opens in a shop with no signal
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
