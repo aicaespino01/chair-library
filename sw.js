@@ -40,6 +40,8 @@ function isPhoto(request) {
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   if (request.method !== 'GET') return;
+  /* Videos stream in pieces (range requests), which the cache can't store: leave them to the browser. */
+  if (/\.mp4$/i.test(new URL(request.url).pathname)) return;
 
   /* Photos: show the saved copy at once, then quietly refresh it. */
   if (isPhoto(request)) {

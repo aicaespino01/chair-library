@@ -422,6 +422,8 @@ body.tok-on .topbar, body.tok-on main, body.tok-on footer, body.tok-on .tray { d
 .tok-tabs span { opacity: 0.6; }
 .tok-tabs .on { opacity: 1; position: relative; }
 .tok-tabs .on::after { content: ""; position: absolute; left: 50%; bottom: -6px; width: 26px; height: 3px; margin-left: -13px; border-radius: 3px; background: #fff; }
+.tok-video { flex: 0 0 100%; width: 100%; height: 100%; object-fit: contain; background: transparent; }
+.tok-unmute { position: absolute; z-index: 4; top: max(64px, calc(env(safe-area-inset-top) + 52px)); left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: #fff; border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 8px 16px; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; animation: tokPop 1.6s 1s 2; }
 .tok-dots { position: absolute; top: max(56px, calc(env(safe-area-inset-top) + 44px)); left: 0; right: 0; z-index: 3; display: flex; justify-content: center; gap: 5px; }
 .tok-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.45); transition: width 200ms, background-color 200ms; }
 .tok-dots i.on { width: 16px; border-radius: 3px; background: #fff; }
@@ -1732,11 +1734,11 @@ footer p + p { margin-top: 4px; }
   var tokEl = document.getElementById('tok');
   var tokSwitch = document.getElementById('tokSwitch');
   var tokLikes = store.get('tokLikes', {});
-  var TOK = CHAIRS.filter(function (c) { return c.d.identified === 'confirmed' && c.ownPhotos.length; })
+  var TOK = CHAIRS.filter(function (c) { return c.d.identified === 'confirmed' && (c.video || c.ownPhotos.length); })
     .sort(function (a, b) { return nullsLast(a.d.addedMs, b.d.addedMs, -1) || a.title.localeCompare(b.title); });
   var BRAND_COLOR = { Okamura: '#e8505b', Kokuyo: '#3d8bfd', Itoki: '#14b8a6', Plus: '#a855f7', Steelcase: '#f59e0b' };
   var TOK_STEP = 3500;
-  var tokActive = null, tokTimer = null, tokObserver = null, tokOn = false;
+  var tokActive = null, tokTimer = null, tokObserver = null, tokOn = false, tokRaf = null, tokMuted = true;
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function tokChips(c) {
@@ -1761,26 +1763,31 @@ footer p + p { margin-top: 4px; }
     var photos = c.ownPhotos.map(function (p, k) {
       return '<img src="' + esc(p) + '" alt="Photo ' + (k + 1) + ' of ' + esc(t.name) + '"' + (i > 1 ? ' loading="lazy"' : '') + ' decoding="async">';
     }).join('');
-    var dots = c.ownPhotos.length > 1 ? '<div class="tok-dots" aria-hidden="true">' + c.ownPhotos.map(function (p, k) { return '<i' + (k === 0 ? ' class="on"' : '') + '></i>'; }).join('') + '</div>' : '';
+    if (c.video) {
+      photos = '<video class="tok-video" src="' + esc(c.video.src) + '"' + (c.video.poster ? ' poster="' + esc(c.video.poster) + '"' : '') + ' muted playsinline loop preload="' + (i === 0 ? 'auto' : 'metadata') + '" aria-label="Video about ' + esc(t.name) + '"></video>';
+    }
+    var dots = !c.video && c.ownPhotos.length > 1 ? '<div class="tok-dots" aria-hidden="true">' + c.ownPhotos.map(function (p, k) { return '<i' + (k === 0 ? ' class="on"' : '') + '></i>'; }).join('') + '</div>' : '';
     return '<section class="tok-slide" data-id="' + esc(c.id) + '" aria-label="' + esc(t.name) + '">' +
       '<div class="tok-stage">' +
-        '<div class="tok-bg" style="background-image:url(&quot;' + esc(c.ownPhotos[0]) + '&quot;)"></div>' +
+        '<div class="tok-bg" style="background-image:url(&quot;' + esc(c.video && c.video.poster ? c.video.poster : c.ownPhotos[0]) + '&quot;)"></div>' +
         '<div class="tok-photos" data-photos>' + photos + '</div>' +
         '<div class="tok-shade top"></div><div class="tok-shade"></div>' +
         dots +
         '<div class="tok-pause" aria-hidden="true">▶</div>' +
+        (c.video && i === 0 ? '<button type="button" class="tok-unmute" data-tok="sound">🔇 Tap for sound</button>' : '') +
         '<div class="tok-rail">' +
           '<div class="tok-avatar" style="background:' + color + '" aria-hidden="true">' + esc(c.d.brand.charAt(0)) + '</div>' +
           '<button type="button" class="tok-btn' + (liked ? ' liked' : '') + '" data-tok="like" aria-pressed="' + liked + '" aria-label="Like"><span class="ic"><span class="heart">' + (liked ? '♥' : '♡') + '</span></span><span class="n">' + (likes ? '1' : 'Like') + '</span></button>' +
+          (c.video ? '<button type="button" class="tok-btn" data-tok="sound" aria-pressed="false" aria-label="Sound on or off"><span class="ic">' + (tokMuted ? '🔇' : '🔊') + '</span><span>' + (tokMuted ? 'Sound' : 'Mute') + '</span></button>' : '') +
           '<button type="button" class="tok-btn" data-tok="info" aria-label="All the info"><span class="ic">💬</span><span>Info</span></button>' +
           '<button type="button" class="tok-btn' + (isPicked ? ' picked' : '') + '" data-tok="pick" aria-pressed="' + isPicked + '" aria-label="Add to compare"><span class="ic">⚖️</span><span>' + (isPicked ? 'Picked' : 'Compare') + '</span></button>' +
           '<button type="button" class="tok-btn" data-tok="share" aria-label="Share"><span class="ic">↗️</span><span>Share</span></button>' +
         '</div>' +
         '<div class="tok-cap">' +
           '<div class="tok-handle">@' + esc(c.d.brand.toLowerCase().replace(/[^a-z0-9]/g, '')) + '.chairs <span class="tick" title="Model confirmed">✓</span></div>' +
-          '<div class="tok-title"><strong>' + esc(t.name) + '</strong>' + (t.sub ? ' · ' + esc(t.sub) : '') + '</div>' +
-          (c.d.price != null ? '<span class="tok-price">' + peso(c.d.price) + '</span>' : '<span class="tok-price">Price ?</span>') +
-          '<div class="tok-chips">' + tokChips(c) + '</div>' +
+          '<div class="tok-title"><strong>' + esc(t.name) + '</strong>' + (t.sub && !c.video ? ' · ' + esc(t.sub) : '') + '</div>' +
+          (c.video ? '' : (c.d.price != null ? '<span class="tok-price">' + peso(c.d.price) + '</span>' : '<span class="tok-price">Price ?</span>') +
+          '<div class="tok-chips">' + tokChips(c) + '</div>') +
           '<div class="tok-tags">' + esc(tokTags(c)) + '</div>' +
           '<div class="tok-sound"><span aria-hidden="true">♫</span><div class="marq"><span>original sound · Chair Library · squeak squeak 🪑&nbsp;&nbsp;&nbsp;original sound · Chair Library · squeak squeak 🪑&nbsp;&nbsp;&nbsp;</span></div></div>' +
         '</div>' +
@@ -1815,6 +1822,8 @@ footer p + p { margin-top: 4px; }
       tokObserver.observe(sl);
       var ph = sl.querySelector('[data-photos]');
       if (!ph) return;
+      var vv = ph.querySelector('.tok-video');
+      if (vv) vv.addEventListener('ended', function () { if (sl === tokActive) tokPlay(); });
       var t = null;
       ph.addEventListener('scroll', function () {
         clearTimeout(t);
@@ -1857,8 +1866,23 @@ footer p + p { margin-top: 4px; }
   // the "video": photos move on by themselves, with a progress bar at the bottom
   function tokPlay() {
     clearTimeout(tokTimer);
+    cancelAnimationFrame(tokRaf);
     document.querySelectorAll('.tok-bar i').forEach(function (b) { b.style.transition = 'none'; b.style.width = '0'; });
     var sl = tokActive;
+    document.querySelectorAll('.tok-video').forEach(function (v) { if (!sl || !sl.contains(v)) v.pause(); });
+    var vid = sl && sl.querySelector('.tok-video');
+    if (vid) {
+      vid.muted = tokMuted;
+      if (sl.classList.contains('paused')) { vid.pause(); return; }
+      var pr = vid.play();
+      if (pr && pr.catch) pr.catch(function () { vid.muted = true; tokMuted = true; tokSoundButtons(); vid.play().catch(function () { sl.classList.add('paused'); }); });
+      var bar = sl.querySelector('.tok-bar i');
+      (function tick() {
+        if (vid.duration) bar.style.width = (100 * vid.currentTime / vid.duration) + '%';
+        tokRaf = requestAnimationFrame(tick);
+      })();
+      return;
+    }
     if (!sl || !sl.dataset.id || sl.classList.contains('paused') || reduceMotion) return;
     var bar = sl.querySelector('.tok-bar i');
     void bar.offsetWidth;
@@ -1873,6 +1897,14 @@ footer p + p { margin-top: 4px; }
         tokPlay();
       }
     }, TOK_STEP);
+  }
+  function tokSoundButtons() {
+    tokEl.querySelectorAll('[data-tok="sound"].tok-btn').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(!tokMuted));
+      b.querySelector('.ic').textContent = tokMuted ? '🔇' : '🔊';
+      b.lastChild.textContent = tokMuted ? 'Sound' : 'Mute';
+    });
+    if (!tokMuted) tokEl.querySelectorAll('.tok-unmute').forEach(function (b) { b.remove(); });
   }
   function tokLike(sl, only) {
     var id = sl.dataset.id, btn = sl.querySelector('[data-tok="like"]');
@@ -1924,6 +1956,11 @@ footer p + p { margin-top: 4px; }
     if (what === 'exit') setTok(false);
     else if (what === 'help') { setTok(false); cat.idOnly = false; if (location.hash) location.hash = ''; }
     else if (what === 'like') tokLike(sl);
+    else if (what === 'sound') {
+      tokMuted = !tokMuted; tokSoundButtons();
+      var v = sl && sl.querySelector('.tok-video');
+      if (v) { v.muted = tokMuted; if (v.paused && !sl.classList.contains('paused')) v.play().catch(function () {}); }
+    }
     else if (what === 'info' && c) tokSheet(c);
     else if (what === 'pick' && c) {
       togglePick(c.id);
@@ -1945,7 +1982,8 @@ footer p + p { margin-top: 4px; }
     tokEl.hidden = !tokOn;
     if (tokOn) { if (isTokHash()) history.replaceState(null, '', location.pathname + location.search); renderTok(); document.title = 'ChairTok · Chair Library'; }
     else {
-      clearTimeout(tokTimer); tokActive = null;
+      clearTimeout(tokTimer); cancelAnimationFrame(tokRaf); tokActive = null;
+      tokEl.querySelectorAll('.tok-video').forEach(function (v) { v.pause(); });
       if (tokObserver) tokObserver.disconnect();
       tokEl.innerHTML = '';
       route();
@@ -1991,7 +2029,7 @@ footer p + p { margin-top: 4px; }
   function isTokHash() { return /^#\/?chairtok$/i.test(location.hash); }
   window.addEventListener('hashchange', function () { if (isTokHash()) setTok(true); else if (tokOn) setTok(false); else route(); });
   if (isTokHash()) { history.replaceState(null, '', location.pathname + location.search); setTok(true); }
-  else { route(); if (store.get('tok', false) && !location.hash) setTok(true); }
+  else { route(); if (store.get('tok', true) && !location.hash) setTok(true); }
 
   // keep the website on the phone, so it opens in a shop with no signal
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {

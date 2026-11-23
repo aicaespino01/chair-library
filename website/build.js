@@ -305,6 +305,9 @@ function readChair(file) {
     identify.first = firstStep.replace(/\*\*/g, '').split(/(?<=\.)\s/)[0].trim() || null;
   }
   const ownPhotos = photos.filter((u) => u.startsWith('photos/'));
+  // ChairTok video made by website/make_videos.py (videos/<id>.mp4 with a poster videos/<id>.jpg)
+  const vid = `videos/${f.id || file.replace(/\.md$/, '')}`;
+  const video = fs.existsSync(path.join(ROOT, vid + '.mp4')) ? { src: vid + '.mp4', poster: fs.existsSync(path.join(ROOT, vid + '.jpg')) ? vid + '.jpg' : null } : null;
 
   const seat = range(f.seat_height_cm);
   const depth = range(f.seat_depth_cm);
@@ -334,6 +337,7 @@ function readChair(file) {
     sections: sections.filter((s) => !/^how to identify/i.test(s.heading)).map((s) => ({ heading: s.heading, html: md(s.content) })),
     identify,
     ownPhotos,
+    video,
     shops,
     photos,
     shopUrl: firstUrl,
