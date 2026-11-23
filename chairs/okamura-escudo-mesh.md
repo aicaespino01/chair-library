@@ -2,8 +2,8 @@
 id: okamura-escudo-mesh
 brand: Okamura
 model: Escudo mesh (エスクード メッシュ)
-maker_code: "C491 (low back) or C497/C498 (high back), adjustable arms, gray shell; mesh color FHB6 (yellow-green). Exact code to confirm"
-variant: lime/yellow-green mesh, adjustable arms, gray shell and gray plastic base
+maker_code: "probably C491 (low back; the 2026-11-23 photos show no tall back), adjustable arms, gray shell; mesh color FHB6 (yellow-green). Exact code to confirm"
+variant: lime/yellow-green mesh back and fabric seat, adjustable arms, gray shell and gray plastic base, no headrest; back height looks like the low back
 chair_type: office swivel chair (Okamura "standard model, one rank up")
 identified: very likely
 condition_seen: used
@@ -14,7 +14,7 @@ seat_depth_cm: "40.8-45.8 (seat slide)"
 overall_w_d_h_cm: "61.3 x 60.7 x 93.4-102.6 (maker drawing); high back C497ZR: 61.3 x 59.8-64.8 x 102.0-111.2 (shop)"
 base_diameter_cm: "66.7"
 back: 3D-stretched mesh over a flexing resin shell grid; back width 48.0 cm
-seat: not stated in sources read (cushion seat in photos)
+seat: "cushion seat covered in yellow-green fabric (photos); foam not stated"
 lumbar: none listed
 armrests: adjustable: up/down 100 mm (11 steps), swivel 30 degrees, front/back 50 mm
 headrest: none
@@ -27,12 +27,12 @@ chair_weight_kg: "20.6 (C497GR high back, shop listing)"
 warranty: "Okamura warranty is Japan only; not for used chairs"
 price_new: "list JPY 118,360 (C491ZR low back) / JPY 131,780 (C497ZR high back), per Azumaya"
 lowest_price_seen_php: "not seen online yet (Office Busters PH sticker OKASWAESR1527)"
-last_checked: 2026-11-14
+last_checked: 2026-11-23
 ---
 
 # Okamura Escudo mesh: adjustable arms, yellow-green mesh, gray shell
 
-**Identified: Very likely.** The manual card under the seat says "ESCUDO mesh SERIES" (エスクードメッシュシリーズ). An Office Busters PH sticker reads **OKASWAESR1527** (OKA = Okamura, SWA = swivel with arms, ESR = Escudo). The exact version (low or high back) is not known. **To confirm:** photo of the Okamura label under the seat (product code), and a photo of the whole chair.
+**Identified: Very likely.** The manual card under the seat says "ESCUDO mesh SERIES" (エスクードメッシュシリーズ). An Office Busters PH sticker reads **OKASWAESR1527** (OKA = Okamura, SWA = swivel with arms, ESR = Escudo). Whole-chair photos (2026-11-23) show the same sticker and a back that looks like the low back (C491), not the high back. **To confirm:** photo of the Okamura label under the seat (product code), or measure the overall height (low back about 93–103 cm, high back about 102–111 cm).
 
 ## At a glance
 - Okamura's better standard chair, sold about 2010 to 2021 (manual dates).
@@ -50,14 +50,25 @@ last_checked: 2026-11-14
 | Azumaya (used, C491ZR-FHB4 low back) | officekagu-azumaya.co.jp (Google preview) | ¥15,400 | list ¥118,360 | Used | Japan | — | 2026-11-14 |
 | Azumaya (used, C497ZR-FHB4 high back) | officekagu-azumaya.co.jp (Google preview) | ¥16,500 | list ¥131,780 | Used | Japan | — | 2026-11-14 |
 
-Photos (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped out):
-- photos/okamura-escudo-mesh-1.jpg
+Photos:
+- photos/okamura-escudo-mesh-2.jpg (front of the whole chair, 2026-11-23; person cropped out)
+- photos/okamura-escudo-mesh-3.jpg (back of the chair with the okamura badge, 2026-11-23)
+- photos/okamura-escudo-mesh-sticker.jpg (under the seat: Office Busters sticker OKASWAESR1527, 2026-11-23)
+- photos/okamura-escudo-mesh-manual.jpg (manual card "okamura / ESCUDO mesh SERIES", 2026-11-23)
+- photos/okamura-escudo-mesh-1.jpg (underside, sent by Office Busters in a Facebook chat, 2026-11-14; people cropped out)
 
 ## How it was identified
 - Photo of the underside: manual card "ESCUDO mesh SERIES", Office Busters sticker OKASWAESR1527, gray shell, gray mechanism, yellow-green mesh at the edges, arm supports on both sides.
 - Okamura's Escudo page and manual list (pdb.okamura.co.jp) confirm the series name "エスクードメッシュ".
 - Shop codes for Escudo mesh with adjustable arms: C491 (low back), C497 and C498 (high back). Mesh color FHB6 = イエローグリーン (yellow-green) on ASKUL's C491ZS FHB6, which matches the photo. Gray-shell codes seen: C497GR, C498BR, C498GS.
-- Back height can't be seen in the underside photo.
+- Whole-chair photos (2026-11-23): same sticker OKASWAESR1527, okamura badge on the back of the shell, gray loop arms with adjustable pads, no headrest. The back looks like the low back (top about mid-back height, not shoulder height), but this is judged from photos only.
+
+## Condition seen (photos, 2026-11-23)
+- Seat fabric: several small dark spots and stains across the seat, mostly toward the front edge.
+- Back mesh: looks intact, no tears seen; light marks only.
+- Shell and frame: scuffs on the gray back shell; a worn or chipped edge on the lower right of the back frame.
+- Arms, base and casters: look complete; normal wear.
+- Not checked from photos: whether the height, recline lock, seat slide and arm adjustments all work. Test each lever before paying.
 
 ## Specs (from the maker)
 
@@ -88,7 +99,7 @@ Photos (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped ou
 | Part | Material | Source |
 |---|---|---|
 | Back | 3D-stretched mesh | Okamura Escudo page |
-| Seat | not stated in sources read | — |
+| Seat | Cushion covered in yellow-green fabric | Photos 2026-11-23 |
 | Base | Plastic (gray in photo); 60 mm nylon twin casters | Photo; Okamura Escudo page |
 
 ## Warranty and returns
@@ -117,7 +128,8 @@ Photos (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped ou
 
 ## Missing info and how to get it
 1. Exact code and year: ask Office Busters for a photo of the Okamura label under the seat.
-2. Low or high back: ask for a front photo of the whole chair.
+2. Low or high back: photos suggest low back (C491). Confirm by asking for the overall height (low back about 93–103 cm, high back about 102–111 cm).
+4. Condition: ask if the seat stains can be cleaned, and ask them to show every lever working (height, recline lock, seat slide, arms).
 3. Price and branch: ask Office Busters (code OKASWAESR1527).
 
 ## Sources
@@ -127,3 +139,4 @@ Photos (sent by Office Busters in a Facebook chat, 2026-11-14; people cropped ou
 4. Okamura manual list: https://pdb.okamura.co.jp/mnlext/DispDirect.do?volumeName=00003&CID=ESCUDO (Escudo mesh manuals 2011–2021), read 2026-11-14
 5. Google search previews, 2026-11-14: ASKUL C488JR FHB3 and C491ZS FHB6 (イエローグリーン); Monotaro C498BR FHB3 (グレーシェル, ¥128,000) and C498ZS FHB1; Azumaya C491ZR-FHB4 (list ¥118,360) and C497ZR-FHB4 (list ¥131,780, H1020–1112 W613 D598–648); Rakuten C497GR FHB6 (20.6 kg) and C498GS FHB5
 6. officebusters.ph products.json, checked 2026-11-14: no listing with SKU OKASWAESR1527
+7. Four photos of the chair (front, back, under-seat sticker OKASWAESR1527, manual card), sent 2026-11-23
