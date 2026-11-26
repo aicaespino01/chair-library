@@ -4,7 +4,7 @@ brand: Okamura
 model: Escudo mesh (エスクード メッシュ)
 maker_code: "probably C491 (low back; the 2026-11-23 photos show no tall back), adjustable arms, gray shell; mesh color FHB6 (yellow-green). Exact code to confirm"
 variant: lime/yellow-green mesh back and fabric seat, adjustable arms, gray shell and gray plastic base, no headrest; back height looks like the low back
-chair_type: office swivel chair (Okamura "standard model, one rank up": top of the standard range, one tier below the middle-class Feego; see tiers/okamura.md)
+chair_type: office swivel chair (Okamura "middle class" at launch in 2009, same class as the Feego; product page today: "standard model, one rank up"; see tiers/okamura.md)
 identified: very likely
 condition_seen: used
 maker_country: Japan

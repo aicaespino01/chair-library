@@ -4,7 +4,7 @@ brand: ""
 model: ""                      # start with the series name as the maker writes it (e.g. "Escudo mesh (エスクード メッシュ)"): the model tier is matched on it
 maker_code: ""                 # exact maker product code, or "unknown"
 variant: ""                    # e.g. "low back, no arms, black shell, plastic base"
-chair_type: ""                 # e.g. "office swivel chair". The model tier is NOT written here: it comes from tiers/<brand>.md by the model line
+chair_type: ""                 # e.g. "office swivel chair". The model tier is NOT written here: it comes from tiers/<brand>.md (scale in tiers/scale.md) by the model line
 identified: ""                 # confirmed | very likely | unsure
 condition_seen: ""             # new | used | both
 maker_country: ""

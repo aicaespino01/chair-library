@@ -3,7 +3,7 @@
    Bump CACHE when the shell files change. */
 'use strict';
 
-const CACHE = 'chair-library-v2';
+const CACHE = 'chair-library-v3';
 
 /* The pages and icons the site needs to open at all. */
 const SHELL = [
