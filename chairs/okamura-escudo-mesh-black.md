@@ -24,7 +24,7 @@ base_and_wheels: black plastic 5-star base with slim legs, black twin-wheel cast
 gas_lift: "gas spring, 92 mm stroke, stepless (series); class not published"
 weight_limit_kg: "not published by maker"
 chair_weight_kg: "not known"
-warranty: "Okamura warranty is Japan only; not for used chairs"
+warranty: "Okamura warranty is Japan only; not for used chairs. Shipped 8 Jan 2013 (from the shipping No.): the JOIFA standard use period (8 years) ended about Jan 2021, so this chair is about 5 years 10 months past it (Nov 2026)"
 price_new: "not found for the fixed-arm version; adjustable-arm low back C491ZR list JPY 118,360 (Azumaya), so expect less"
 lowest_price_seen_php: "not stated (photos only, 2026-11-26)"
 last_checked: 2026-11-26
@@ -41,6 +41,7 @@ last_checked: 2026-11-26
 - **Left armrest pad is missing:** bare plastic ribs show. Ask for a replacement or a lower price.
 - Marks on the top of the mesh back, white lint or specks on the seat.
 - Lowest seat 42.2 cm: a bit high for short users without a footrest.
+- **Shipped 8 January 2013** (read from the shipping No.): about 13 years 10 months old, about **5 years 10 months past** the 8-year JOIFA standard use period.
 
 ## Where to buy
 
@@ -56,7 +57,7 @@ Photos (sent 2026-11-26):
 ## How it was identified
 - Manual card tucked in its holder under the seat: "okamura", "オフィスシーティング [エスクードメッシュ] シリーズ", "ESCUDO mesh SERIES". The drawing on the card shows the adjustable-arm version (the card is the same for the whole series).
 - Under the seat: black shell, a lever rod with a hooked cap, a piece of yellow tape.
-- Okamura label (second underside photo, 2026-11-26): "okamura", JOIFA 308 mark, 製品コード (product code) **C447ZR FHB1**, 出荷No. (shipping No.) **080113003**. The 2nd character of the code prints like an A (CA47ZR), but Escudo codes start C4.. (C491, C495, C497, C498), so it is read as C447. A pen mark crosses the end of "FHB1". FHB is the Escudo mesh color code family (FHB6 = yellow-green on the other file), so FHB1 fits; black is likely but not confirmed by a listing. ZR also appears on other Escudo codes (C491ZR, C497ZR). The shipping No. may start with a date (08-01-13), but the Escudo mesh manuals found run 2011–2021, so this is not assumed.
+- Okamura label (second underside photo, 2026-11-26): "okamura", JOIFA 308 mark, 製品コード (product code) **C447ZR FHB1**, 出荷No. (shipping No.) **080113003**. The 2nd character of the code prints like an A (CA47ZR), but Escudo codes start C4.. (C491, C495, C497, C498), so it is read as C447. A pen mark crosses the end of "FHB1". FHB is the Escudo mesh color code family (FHB6 = yellow-green on the other file), so FHB1 fits; black is likely but not confirmed by a listing. ZR also appears on other Escudo codes (C491ZR, C497ZR). The bottom strip of the label (year made / lot No. / JOIFA standard use period) is worn off, but the shipping No. gives the date: on every Okamura label in the library where both are printed, the first six digits are the day, month and year (Sulato C342GR 280521003 = 28 May 2021, printed 2021; Feego CJ51BR 300316100 = 30 Mar 2016, printed 2016; C445ZR ?60512005 = May 2012, printed 2012). So 080113003 = **shipped 8 January 2013**, which fits the Escudo mesh being sold from December 2011.
 - Front photo: black mesh back on a black frame, black mesh-fabric seat, fixed black loop arms with moulded pads (left pad missing), black plastic 5-star base with twin-wheel casters.
 - Sizes and adjustments below are for the Escudo mesh series (same sources as the yellow-green file); the fixed-arm version may differ in width and arm height.
 
@@ -65,6 +66,7 @@ Photos (sent 2026-11-26):
 - Marks on the top of the mesh back; white lint or specks on the seat.
 - Base and casters look complete.
 - Not checked from photos: whether the height, recline lock and seat slide work. Test each lever before paying.
+- Age: shipped 8 January 2013, so about 5 years 10 months past the 8-year JOIFA standard use period (a guide for about 8 hours a day of use, not an expiry date). The gas lift and recline are the parts most likely to be worn.
 
 ## Specs (from the maker)
 
@@ -119,10 +121,11 @@ Photos (sent 2026-11-26):
 - Fixed arms (no height adjust); may stop the chair sliding fully under a desk.
 - Lowest seat 42.2 cm: short users may need a footrest.
 - Needs cleaning.
+- Shipped January 2013: about 5 years 10 months past the 8-year JOIFA standard use period, 3 years older than the Feego CJ51BR in the library.
 
 ## Missing info and how to get it
 1. Code check: the label reads C447ZR FHB1, but no shop listing for C447 was found yet. Search the code again, or ask the shop to read the label (first characters and the last character after FHB).
-2. Year: not on the label in plain form; ask the shop if they know.
+2. Year: the year strip on the label is worn off; the shipping No. dates it to 8 January 2013 (see How it was identified). For another unit, read its shipping No. the same way (first six digits = day, month, year).
 3. Seat slide: ask them to show the lever working (front left under the seat).
 4. Armrest: ask if a replacement pad is available, or a discount.
 5. Shop, branch and price: ask the person who sent the photos or the shop.

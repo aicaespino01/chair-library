@@ -24,7 +24,7 @@ base_and_wheels: polished aluminium die-cast 5-star base, 60 mm twin-wheel caste
 gas_lift: "yes, gas spring, lever at lower left of the seat; stroke about 90 mm (used shop seat-height range)"
 weight_limit_kg: "not published by maker"
 chair_weight_kg: "25.5 (ASKUL, CJ51BR FDM1)"
-warranty: "Okamura warranty is Japan only; not for used chairs. Made 2016: JOIFA standard use period (8 years) has passed"
+warranty: "Okamura warranty is Japan only; not for used chairs. Made 22 Feb 2016 (lot No.), shipped 30 Mar 2016: the JOIFA standard use period (8 years) ended Feb 2024, so this chair is about 2 years 9 months past it (Nov 2026)"
 price_new: "¥132,220 incl. tax maker list price (ASKUL, CJ51BR FDM1 black; ASKUL sold it at ¥92,620). Series discontinued"
 lowest_price_seen_php: "not stated (photos only, 2026-11-26)"
 last_checked: 2026-11-26
@@ -40,7 +40,7 @@ last_checked: 2026-11-26
 - Polished aluminium base and polished arms; breathable mesh back; no PU or faux leather.
 - Arms are fixed (no height adjust).
 - Lowest seat about 40 cm (used shop measure, not the maker): close to her 40.6 cm popliteal height.
-- **Made 2016**: past its 8-year JOIFA standard use period, so check the gas lift and recline carefully.
+- **Made 22 February 2016** (lot No. 220216…; shipped 30 March 2016): about 10 years 9 months old, about **2 years 9 months past** the 8-year JOIFA standard use period. Check the gas lift and recline carefully.
 
 ## Where to buy
 
@@ -117,7 +117,7 @@ No maker size drawing was found online; sizes below are from shop listings of th
 - Used price in Japan is low (about ¥16,500–27,000), so the PH price should be modest too.
 
 ## Cons
-- Made 2016, past its 8-year JOIFA standard use period.
+- Made February 2016: about 2 years 9 months past its 8-year JOIFA standard use period (still about 3 years younger than the Escudo mesh C447ZR in the library).
 - Fixed arms (no height adjust); may stop it sliding fully under a desk.
 - No adjustable lumbar.
 - Heavy (25.5 kg).
