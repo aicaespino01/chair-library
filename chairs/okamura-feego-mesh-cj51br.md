@@ -26,7 +26,7 @@ weight_limit_kg: "not published by maker"
 chair_weight_kg: "25.5 (ASKUL, CJ51BR FDM1)"
 warranty: "Okamura warranty is Japan only; not for used chairs. Made 22 Feb 2016 (lot No.), shipped 30 Mar 2016: the JOIFA standard use period (8 years) ended Feb 2024, so this chair is about 2 years 9 months past it (Nov 2026)"
 price_new: "¥132,220 incl. tax maker list price (ASKUL, CJ51BR FDM1 black; ASKUL sold it at ¥92,620). Series discontinued"
-lowest_price_seen_php: "not stated (photos only, 2026-11-26)"
+lowest_price_seen_php: "5,000 (the price you are getting it for, per you 2026-11-26)"
 last_checked: 2026-11-26
 ---
 
@@ -46,7 +46,7 @@ last_checked: 2026-11-26
 
 | Shop | Link | Price | Was | Condition | Branch / ships from | In stock | Seen on |
 |---|---|---|---|---|---|---|---|
-| Photos sent 2026-11-26 (shop not stated; warehouse with used Japanese chairs) | — | not stated | — | Used | ask | — | 2026-11-26 |
+| Photos sent 2026-11-26 (shop not stated; warehouse with used Japanese chairs) | — | ₱5,000 (per you) | — | Used | ask | Yes (several units) | 2026-11-26 |
 
 Photos (sent 2026-11-26):
 - photos/okamura-feego-mesh-cj51br-1.jpg (front of the chair)

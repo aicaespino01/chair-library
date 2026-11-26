@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ChairTok videos: 20 chairs, 9 different TikTok formats, each with its own look and its own music.
+"""ChairTok videos: 21 chairs, 12 different TikTok formats (incl. "we have X at home"), each with its own look and its own music.
 
 Run from the library folder, after `node website/build.js`:
     python3 website/make_videos.py              # all videos in PLAN
@@ -27,6 +27,7 @@ POPLITEAL = 40.6  # the buyer's popliteal height in cm (from the chair search br
 
 # which chair gets which format (formats are spread out so neighbours in the feed differ)
 PLAN = [
+    ('okamura-feego-mesh-cj51br', 'athome'),
     ('okamura-sulato-c342gr', 'salesman'),
     ('unidentified-ob-okamura-ckz', 'mystery'),
     ('okamura-sylphy-c638xr', 'brainrot'),
@@ -51,6 +52,7 @@ PLAN = [
 
 BRAND_COL = {'Okamura': (232, 80, 91), 'Kokuyo': (61, 139, 253), 'Itoki': (20, 184, 166), 'Plus': (168, 85, 247),
              'Steelcase': (245, 158, 11), 'Uchida': (236, 72, 153), 'XPANSE': (99, 102, 241)}
+ALL_DATA = {}  # every chair, for formats that show a second chair
 PINK, CYAN, YEL, GRN = (254, 44, 85), (37, 244, 238), (255, 214, 10), (34, 197, 94)
 
 # ======================================================================
@@ -822,7 +824,89 @@ def fmt_nervous(F, rnd):
         return m
     return dur, draw, music
 
-FORMATS = {'brainrot': fmt_brainrot, 'nervous': fmt_nervous, 'salesman': fmt_salesman, 'jokes': fmt_jokes, 'aislop': fmt_aislop, 'spin': fmt_spin, 'documentary': fmt_documentary,
+
+def fmt_athome(F, rnd):
+    """'We have Steelcase Leap at home.' The one that got away vs the one you got. Sad on purpose."""
+    L = facts(ALL_DATA['steelcase-leap'])
+    dur = 26.0
+    gray = lambda im: ImageOps.grayscale(im.convert('RGB')).convert('RGBA')
+    leap = hero_image(L); feego = hero_image(F)
+    leap_gray = gray(leap)
+    leap_card = rounded(cover(load_photo(L['photos'][0]), 280, 330).convert('RGBA'), 22) if L['photos'] else mascot((245, 158, 11), 280)
+    feego_card = rounded(cover(load_photo(F['photos'][0]), 280, 330).convert('RGBA'), 22) if F['photos'] else mascot((232, 80, 91), 280)
+    leap_card_g = gray(leap_card); leap_card_g.putalpha(leap_card.getchannel('A'))
+    big = lambda s, sz=54, fg=(255, 255, 255): label(s, font('Black', sz), fg, None, 600, pad=(6, 4), stroke=5)
+    mom_me = big('me: mom can we get a Steelcase Leap? 🥺', 50)
+    price_tag = label('₱9,000 · Tier 1 Flagship', font('Black', 40), (20, 20, 20), (255, 214, 10, 255), 560, pad=(20, 10), r=14)
+    mom = label('mom:', font('Bold', 40), (200, 200, 210), None, 600, pad=(0, 0))
+    mom_says = label('we have Steelcase Leap at home.', font('Black', 58, SERIF_B), (255, 255, 255), None, 600, pad=(0, 0))
+    at_home = big('Steelcase Leap at home:', 58)
+    at_home_sub = label('Okamura Feego mesh · ₱5,000', font('Bold', 36), (255, 255, 255), (0, 0, 0, 170), 560, pad=(18, 8), r=12)
+    head_l = label('what could have been', font('Black', 30), (255, 214, 10), None, 280, pad=(0, 0))
+    head_r = label('what you have now', font('Black', 30), (200, 200, 210), None, 280, pad=(0, 0))
+    leap_seat = f'{L["seat"][0]:g} cm' if L['seat'] else '?'
+    rows = [('Tier 1 · Flagship', 'Tier 2 · Middle'),
+            ('4D arms, move every way', 'fixed arms. forever.'),
+            ('LiveBack back + lower-back firmness dial', 'fixed gray lumbar band'),
+            ('new in Japan ¥186,980', 'new in Japan ¥132,220'),
+            (f'seat goes down to {leap_seat}', 'made 2016. 2 yrs 9 mos past its 8-year JOIFA period'),
+            ('V2? we’ll never know now', 'confirmed. very confirmed.'),
+            ('₱9,000', '₱5,000')]
+    rimgs = [(label(a, font('Bold', 27), (255, 230, 150), None, 280, pad=(0, 0), align='left'),
+              label(b, font('Bold', 27), (225, 225, 232), None, 280, pad=(0, 0), align='left')) for a, b in rows]
+    t_rows = 13.0; per = 1.35
+    end1 = big('it was ₱4,000 away.', 60)
+    end2 = label('#LeapAtHome #WhatCouldHaveBeen 🥀', font('Bold', 32), (230, 230, 240), None, 600, pad=(0, 0))
+    rng = random.Random(rnd); drops = [(rng.random() * W, rng.random() * H, 18 + rng.random() * 30, 900 + rng.random() * 700) for _ in range(140)]
+    def rain(fr, t, a=110):
+        d = ImageDraw.Draw(fr)
+        for x0, y0, ln, sp in drops:
+            y = (y0 + t * sp) % (H + 60) - 60; x = x0 - (y - y0) * 0.12
+            d.line([(x, y), (x - 4, y + ln)], fill=(200, 210, 230, a), width=2)
+    def blue(fr, a=70):
+        fr.alpha_composite(Image.new('RGBA', (W, H), (20, 40, 80, a)))
+    def draw(t):
+        if t < 3.6:   # the dream: the Leap, in colour
+            fr = kenburns(leap, t, 3.6, 1.0, 1.08); shade(fr, 420, 360, 170)
+            pop(fr, mom_me, CX, 230, t, 0.15, dur=0.3); pop(fr, price_tag, CX, 1080, t, 1.2, dur=0.3)
+            return fr
+        if t < 6.8:   # mom
+            fr = Image.new('RGBA', (W, H), (8, 8, 12, 255))
+            slide_in(fr, mom, CX, 520, t, 3.75, dur=0.4); slide_in(fr, mom_says, CX, 620, t, 4.4, dur=0.6)
+            return fr
+        if t < 11.2:  # the Leap at home
+            fr = kenburns(feego, t - 6.8, 4.4, 1.0, 1.25); shade(fr, 380, 300, 180)
+            sx, sy = shake(t, 10, 7.4)
+            pop(fr, at_home, CX + sx, 220 + sy, t, 6.85, dur=0.25); pop(fr, at_home_sub, CX, 1090, t, 8.0, dur=0.3)
+            return fr
+        if t < 22.0:  # side by side
+            fr = gradient((18, 22, 34), (6, 8, 14)); blue(fr, 30)
+            paste(fr, leap_card_g if t > 20.5 else leap_card, 180, 270, 1); paste(fr, feego_card, 500, 270, 1)
+            paste(fr, head_l, 180, 470, 1); paste(fr, head_r, 500, 470, 1)
+            d = ImageDraw.Draw(fr); d.line([(340, 160), (340, 1230)], fill=(70, 75, 90), width=2)
+            y = 530
+            for k, (a, b) in enumerate(rimgs):
+                st = t_rows - 1.8 + k * per
+                if t >= st:
+                    al = min(1, (t - st) / 0.4)
+                    paste(fr, a, 40, y, al, anchor='tl'); paste(fr, b, 360, y, al, anchor='tl')
+                y += max(a.height, b.height) + 26
+            rain(fr, t, 60)
+            return fr
+        # the end: the Leap fades to grey in the rain
+        k = min(1, (t - 22.0) / 1.5)
+        fr = Image.blend(kenburns(leap, t - 22, 4, 1.08, 1.0).convert('RGB'), kenburns(leap_gray, t - 22, 4, 1.08, 1.0).convert('RGB'), k).convert('RGBA')
+        blue(fr, int(60 + 60 * k)); shade(fr, 300, 420, 190); rain(fr, t, 140)
+        slide_in(fr, end1, CX, 560, t, 22.6, dur=0.8); slide_in(fr, end2, CX, 700, t, 23.8, dur=0.8)
+        return fr
+    def music(sec):
+        m = beat_track(sec, 66, style='sad', key=-3, seed=rnd, vol=0.9)
+        sfx_wahwah(m, 6.9)
+        for k in range(len(rows)): sfx_ding(m, t_rows - 1.8 + k * per, 660)
+        return m
+    return dur, draw, music
+
+FORMATS = {'athome': fmt_athome, 'brainrot': fmt_brainrot, 'nervous': fmt_nervous, 'salesman': fmt_salesman, 'jokes': fmt_jokes, 'aislop': fmt_aislop, 'spin': fmt_spin, 'documentary': fmt_documentary,
            'mystery': fmt_mystery, 'dating': fmt_dating, 'news': fmt_news, 'pov': fmt_pov}
 
 # ======================================================================
@@ -866,11 +950,11 @@ PROGS = {'pop': [(0, 4, 7), (-5, -1, 2), (-3, 0, 4), (-7, -3, 0)], 'major': [(0,
 
 def beat_track(sec, bpm, style='budots', key=0, seed=0, vol=1.0, start=0.0):
     """An original backing track. Styles: budots (bouncy Filipino dance-craze feel), techno, lofi, jazz,
-    corporate, strings, news, gameshow."""
+    corporate, strings, news, gameshow, sad."""
     n = int(sec * SR); buf = np.zeros(n); rng = np.random.default_rng(seed)
     b = 60 / bpm; root = 48 + key
     prog = {'budots': 'pop', 'techno': 'minor', 'lofi': 'jazz', 'jazz': 'jazz', 'corporate': 'pop', 'strings': 'major',
-            'news': 'minor', 'gameshow': 'major'}[style]
+            'news': 'minor', 'gameshow': 'major', 'sad': 'minor'}[style]
     P = PROGS[prog]
     scale = [0, 2, 4, 7, 9, 12, 14, 16] if prog != 'minor' else [0, 3, 5, 7, 10, 12, 15]
     hook = [scale[int(x)] for x in rng.integers(0, len(scale), 8)]
@@ -919,6 +1003,14 @@ def beat_track(sec, bpm, style='budots', key=0, seed=0, vol=1.0, start=0.0):
                     for x in ch: add(buf, tb, tone(hz(root + x), b * 4, 'sine', 0.8), 0.04)
                 if q in (0, 2): add(buf, tb, kick(), 0.4)
                 if q in (1, 3): add(buf, tb, clap(), 0.15)
+            elif style == 'sad':   # slow piano arpeggios over soft strings, no drums
+                add(buf, tb, tone(hz(root + 12 + ch[q % 3] + (12 if q == 3 else 0)), b * 1.6, 'pluck', 2.2), 0.07)
+                if q == 0:
+                    add(buf, tb, tone(hz(root - 12 + ch[0]), b * 4, 'sine', 0.7), 0.10)
+                    for x in ch:
+                        for det in (-0.1, 0.1):
+                            s_ = tone(hz(root + x + det), b * 4.2, 'saw', 0.4); s_ *= np.minimum(1, np.arange(len(s_)) / (SR * 1.2))
+                            add(buf, tb, s_, 0.008)
             elif style == 'strings':
                 if q == 0:
                     for x in ch:
@@ -993,6 +1085,7 @@ if __name__ == '__main__':
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     frames = '--frames' in sys.argv
     data = site_data()
+    ALL_DATA.update(data)
     plan = [(c, s) for c, s in PLAN if not args or c in args or s in args]
     if not frames:  # feed order and format for the website
         os.makedirs(OUT, exist_ok=True)
