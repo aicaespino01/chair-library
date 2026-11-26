@@ -4,7 +4,7 @@ brand: Okamura
 model: Escudo mesh (エスクード メッシュ), black, fixed loop arms
 maker_code: "C447ZR FHB1 (Okamura label under the seat; the 2nd character prints like an A, so it may read CA47ZR; last character of FHB1 partly covered by a pen mark)"
 variant: black mesh back on a black frame, black fabric seat, black fixed loop arms (left pad missing), black shell, black plastic 5-star base, no headrest
-chair_type: office swivel chair (Okamura "standard model, one rank up")
+chair_type: office swivel chair (Okamura "standard model, one rank up": top of the standard range, one tier below the middle-class Feego; see tiers/okamura.md)
 identified: confirmed
 condition_seen: used
 maker_country: Japan

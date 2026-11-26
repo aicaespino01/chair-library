@@ -211,6 +211,40 @@ main { padding: 28px 0 56px; min-height: 60vh; }
 .badge.value-fair { background: var(--ok-soft); color: var(--ok); }
 .badge.value-poor { background: var(--primary-soft); color: var(--primary); }
 .badge.value-unknown { background: var(--surface-2); color: var(--ink-2); }
+.badge.tier { background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); text-decoration: none; }
+.badge.tier::before { display: none; }
+.badge.tier.none { color: var(--ink-2); font-weight: 500; }
+a.badge.tier:hover { border-color: currentColor; }
+.tier-bars { display: inline-flex; gap: 2px; align-items: flex-end; }
+.tier-bars i { width: 3px; border-radius: 1px; background: var(--line); }
+.tier-bars i:nth-child(1) { height: 5px; } .tier-bars i:nth-child(2) { height: 6px; } .tier-bars i:nth-child(3) { height: 7px; }
+.tier-bars i:nth-child(4) { height: 8px; } .tier-bars i:nth-child(5) { height: 9px; } .tier-bars i:nth-child(6) { height: 10px; }
+.tier-bars i.on { background: currentColor; }
+.tier-prov { font-weight: 500; color: var(--ink-2); }
+.tier-box { margin-top: 32px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); max-width: 80ch; font-size: var(--fs-sm); }
+.tier-box h2 { font-size: var(--fs-md); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
+.tier-box p + p { margin-top: 6px; }
+.tier-box .rule { font-size: var(--fs-xs); color: var(--ink-2); }
+.ladder { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 18px; }
+.rung { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+.rung-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+.rung-head h2 { font-size: var(--fs-lg); }
+.rung-num { font-variant-numeric: tabular-nums; font-weight: 700; font-size: var(--fs-xs); padding: 2px 8px; border-radius: 999px; background: var(--ink); color: var(--bg); }
+.rung-meaning { color: var(--ink-2); font-size: var(--fs-sm); margin-top: 4px; max-width: 75ch; }
+.rung-empty { color: var(--ink-2); font-size: var(--fs-sm); margin-top: 10px; font-style: italic; }
+.series { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.series h3 { font-size: var(--fs-md); display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.series dl { display: grid; grid-template-columns: minmax(110px, 160px) 1fr; gap: 4px 14px; margin: 10px 0 0; font-size: var(--fs-sm); }
+.series dt { color: var(--ink-2); }
+.series dd { margin: 0; overflow-wrap: anywhere; }
+.series-chairs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.series-chair { display: flex; align-items: center; gap: 8px; padding: 6px 10px 6px 6px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--ink); font-size: var(--fs-xs); max-width: 280px; }
+.series-chair:hover { border-color: var(--ink-2); }
+.series-chair .thumb { width: 44px; height: 44px; flex: none; border-radius: 6px; overflow: hidden; background: var(--surface-2); }
+.series-chair .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.series-chair .thumb .nophoto svg { width: 20px; height: 20px; }
+.series-chair .thumb .nophoto span { display: none; }
+@media (max-width: 560px) { .series dl { grid-template-columns: 1fr; } .series dt { margin-top: 6px; } }
 .value-box { margin-top: 32px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); max-width: 80ch; }
 .value-box h2 { font-size: var(--fs-md); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
 .value-box ul { margin: 0; padding-left: 20px; font-size: var(--fs-sm); }
@@ -346,7 +380,7 @@ tbody tr:last-child td { border-bottom: 0; }
 .mark.ok { color: var(--ok); }
 .mark.bad { color: var(--bad); }
 .mark.unk { color: var(--unk); }
-.mark.info { color: var(--ink-2); }
+.mark.info, .mark.tier { color: var(--ink-2); }
 .advice { margin-top: 10px; font-size: var(--fs-sm); padding: 8px 12px; border-radius: var(--radius-sm); background: var(--ok-soft); color: var(--ink); width: fit-content; }
 @media (max-width: 560px) {
   .match { grid-template-columns: 64px minmax(0, 1fr); padding: 14px; }
@@ -400,6 +434,12 @@ tbody tr:last-child td { border-bottom: 0; }
 .mode-switch[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
 .mode-switch[aria-pressed="true"] .mode-knob { background: linear-gradient(135deg, #25f4ee, #fe2c55); transform: rotate(-12deg); }
 @media (max-width: 560px) { .mode-switch { order: 1; margin-left: auto; } .nav { order: 2; } }
+/* phones: keep the 5 nav links on one line (swipe sideways if a very narrow phone can't fit them) */
+@media (max-width: 560px) {
+  .nav { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0; justify-content: space-between; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { padding: 8px 5px; font-size: 13px; white-space: nowrap; flex: none; gap: 4px; }
+}
 
 /* ChairTok: a TikTok-style vertical photo feed */
 body.tok-on { overflow: hidden; }
@@ -532,6 +572,7 @@ footer p + p { margin-top: 4px; }
       <a href="#" data-nav="catalogue">All chairs</a>
       <a href="#find" data-nav="find">Find my chair</a>
       <a href="#store" data-nav="store">In store</a>
+      <a href="#tiers" data-nav="tiers">Tiers</a>
       <a href="#compare" data-nav="compare">Compare <span class="count" id="navCount"></span></a>
     </nav>
     <button type="button" class="mode-switch" id="tokSwitch" aria-pressed="false" title="Switch to ChairTok, the simple photo view">
@@ -596,7 +637,7 @@ footer p + p { margin-top: 4px; }
   }
   function valueRuleText() {
     return 'How value is judged: price here ÷ price of a new one in Japan, changed to pesos at ' + DATA.rate.text + '. ' +
-      DATA.valueRule.goodMax + '% or less = good value; up to ' + DATA.valueRule.fairMax + '% = fair value; more = not good value for a used chair. A rough guide made for this website.';
+      DATA.valueRule.goodMax + '% or less = good value; up to ' + DATA.valueRule.fairMax + '% = fair value; more = not good value for a used chair. A rough guide made for this website. Value is about the price only, not how good the model is: that is the model tier.';
   }
   function f1(n) { return (Math.round(n * 10) / 10).toFixed(1); }
   function niceDate(iso) {
@@ -632,6 +673,35 @@ footer p + p { margin-top: 4px; }
   var ID_LABEL = { confirmed: 'Model confirmed', 'very likely': 'Model very likely', unsure: 'Model not identified yet' };
   var ID_CLASS = { confirmed: 'confirmed', 'very likely': 'likely', unsure: 'unsure' };
   function idBadge(c) { return '<span class="badge ' + ID_CLASS[c.d.identified] + '">' + ID_LABEL[c.d.identified] + '</span>'; }
+
+  // ---------- model tiers (from tiers/<brand>.md) ----------
+  var TIERS = DATA.tiers || [];
+  function tierList(brand) { for (var i = 0; i < TIERS.length; i++) if (TIERS[i].brand === brand) return TIERS[i]; return null; }
+  function tierSlug(brand) { return String(brand || '').toLowerCase().replace(/[^a-z0-9]+/g, '-'); }
+  function tierBars(n) {
+    var h = '';
+    for (var i = 1; i <= 6; i++) h += '<i' + (i <= 7 - n ? ' class="on"' : '') + '></i>';
+    return '<span class="tier-bars" aria-hidden="true">' + h + '</span>';
+  }
+  function tierText(c) {
+    var t = c.d.tier;
+    if (t) return 'Tier ' + t.n + ' · ' + t.name + (t.status === 'provisional' ? ' (provisional)' : '');
+    if (c.d.tierBrand) return 'Tier unknown (model not known yet)';
+    return 'No tier list for this brand yet';
+  }
+  // link: true makes the badge open the brand's tier ladder
+  function tierBadge(c, link) {
+    var t = c.d.tier;
+    if (!t && !c.d.tierBrand) return '';
+    var inner = t
+      ? tierBars(t.n) + 'Tier ' + t.n + ' · ' + esc(t.name) + (t.status === 'provisional' ? '<span class="tier-prov">(provisional)</span>' : '')
+      : 'Tier unknown';
+    var cls = 'badge tier' + (t ? '' : ' none');
+    var title = t ? esc(t.series) + ': model tier in ' + esc(c.d.tierBrand) + '’s range (not condition, not price)' : 'Model not identified yet, so no tier';
+    return link
+      ? '<a class="' + cls + '" href="#tiers/' + tierSlug(c.d.tierBrand) + '" title="' + title + '">' + inner + '</a>'
+      : '<span class="' + cls + '" title="' + title + '">' + inner + '</span>';
+  }
   function priceHtml(c, cls) {
     if (c.d.price == null) return '<p class="' + cls + '">Price not known</p>';
     var note = c.d.priceNote ? '<span class="price-note">' + esc(c.d.priceNote) + '</span>' : '';
@@ -682,7 +752,7 @@ footer p + p { margin-top: 4px; }
 
   // ---------- catalogue ----------
   var FIT = {};
-  var defaults = { q: '', sort: 'fit', brand: '', arms: '', back: '', where: '', maxPrice: '', slide: false, idOnly: false, ownOnly: false, view: 'grid' };
+  var defaults = { q: '', sort: 'fit', brand: '', arms: '', back: '', where: '', tier: '', maxPrice: '', slide: false, idOnly: false, ownOnly: false, view: 'grid' };
   var cat = Object.assign({}, defaults, store.get('catalogue', {}));
   var catScroll = 0;
   var ID_RANK = { confirmed: 0, 'very likely': 1, unsure: 2 };
@@ -700,6 +770,7 @@ footer p + p { margin-top: 4px; }
     jpUp: { label: 'Price new in Japan (¥): low to high', fn: function (a, b) { return nullsLast(a.d.priceJP, b.d.priceJP); } },
     jpDown: { label: 'Price new in Japan (¥): high to low', fn: function (a, b) { return nullsLast(a.d.priceJP, b.d.priceJP, -1); } },
     value: { label: 'Best value first', fn: function (a, b) { return nullsLast(a.d.valuePct, b.d.valuePct); } },
+    tier: { label: 'Model tier: highest first', fn: function (a, b) { return nullsLast(a.d.tierNum, b.d.tierNum) || nullsLast(a.d.price, b.d.price); } },
     seatLow: { label: 'Lowest seat first', fn: function (a, b) { return nullsLast(a.d.seatMin, b.d.seatMin); } },
     depthShort: { label: 'Shortest seat depth first', fn: function (a, b) { return nullsLast(a.d.depthMin, b.d.depthMin); } },
     weight: { label: 'Highest weight limit first', fn: function (a, b) { return nullsLast(a.d.weightLimit, b.d.weightLimit, -1); } },
@@ -733,6 +804,9 @@ footer p + p { margin-top: 4px; }
     if (cat.arms === 'no' && !(d.arms === 'no' || d.arms === 'both')) return false;
     if (cat.back && d.back !== cat.back) return false;
     if (cat.where && d.places.indexOf(cat.where) === -1) return false;
+    if (cat.tier === 'none' && d.tier) return false;
+    if (cat.tier && cat.tier.indexOf('max') === 0 && !(d.tier && d.tier.n <= Number(cat.tier.slice(3)))) return false;
+    if (/^\d$/.test(cat.tier || '') && !(d.tier && d.tier.n === Number(cat.tier))) return false;
     if (cat.maxPrice !== '' && cat.maxPrice != null && (d.price == null || d.price > Number(cat.maxPrice))) return false;
     if (cat.slide && d.depthSlide !== 'yes') return false;
     if (cat.idOnly && d.identified === 'unsure') return false;
@@ -741,7 +815,7 @@ footer p + p { margin-top: 4px; }
   }
   function activeFilterCount() {
     var n = 0;
-    ['brand', 'arms', 'back', 'where'].forEach(function (k) { if (cat[k]) n++; });
+    ['brand', 'arms', 'back', 'where', 'tier'].forEach(function (k) { if (cat[k]) n++; });
     if (cat.maxPrice !== '' && cat.maxPrice != null) n++;
     if (cat.slide) n++;
     if (cat.idOnly) n++;
@@ -749,6 +823,16 @@ footer p + p { margin-top: 4px; }
     return n;
   }
   function uniq(arr) { return arr.filter(function (v, i) { return arr.indexOf(v) === i; }); }
+  // tier filter choices: each tier on its own, "tier N or higher", and "no tier yet"
+  function tierOptions() {
+    var scale = [];
+    TIERS.forEach(function (t) { t.scale.forEach(function (s) { if (!scale.some(function (x) { return x.n === s.n; })) scale.push(s); }); });
+    scale.sort(function (a, b) { return a.n - b.n; });
+    var out = scale.map(function (s) { return { value: String(s.n), label: 'Tier ' + s.n + ' · ' + s.name }; });
+    scale.slice(1, -1).forEach(function (s) { out.push({ value: 'max' + s.n, label: 'Tier ' + s.n + ' or higher' }); });
+    out.push({ value: 'none', label: 'No tier yet' });
+    return out;
+  }
   function options(list, current, anyLabel) {
     return '<option value="">' + anyLabel + '</option>' + list.map(function (v) {
       return '<option value="' + esc(v.value) + '"' + (v.value === current ? ' selected' : '') + '>' + esc(v.label) + '</option>';
@@ -778,6 +862,7 @@ footer p + p { margin-top: 4px; }
           (c.d.priceJP != null ? '<p class="jp-price">New in Japan: <strong>' + jpLine(c) + '</strong></p>' : '') +
           valueBadge(c, true) +
           idBadge(c) +
+          tierBadge(c, false) +
           chips(c) +
           '<p class="where">' + esc(placesText(c)) + '</p>' +
           (isModSort() ? '<p class="where">Modified: ' + esc(modifiedText(c)) + '</p>' : '') +
@@ -797,6 +882,7 @@ footer p + p { margin-top: 4px; }
         '<td class="num">' + (c.d.price == null ? 'not known' : peso(c.d.price) + (c.d.priceNote ? '<br><small>' + esc(c.d.priceNote) + '</small>' : '')) + '</td>' +
         '<td class="num">' + (c.d.priceJP == null ? esc(f.price_new) : jpLine(c) + '<br><small>' + esc(f.price_new) + '</small>') + '</td>' +
         '<td>' + VALUE_LABEL[c.d.value] + (c.d.valuePct != null ? '<br><small>' + Math.round(c.d.valuePct) + '% of new in Japan</small>' : '') + '</td>' +
+        '<td>' + (c.d.tier ? 'Tier ' + c.d.tier.n + ' · ' + esc(c.d.tier.name) + '<br><small>' + esc(c.d.tier.series) + (c.d.tier.status === 'provisional' ? ', provisional' : '') + '</small>' : '<small>' + esc(c.d.tierBrand ? 'unknown (model not known)' : 'no tier list') + '</small>') + '</td>' +
         '<td>' + esc(f.seat_height_cm) + '</td>' +
         '<td>' + esc(f.seat_depth_cm) + '</td>' +
         '<td>' + esc(f.armrests) + '</td>' +
@@ -808,7 +894,7 @@ footer p + p { margin-top: 4px; }
       '</tr>';
     }).join('');
     return '<div class="table-wrap"><table class="list-table"><thead><tr>' +
-      '<th>Chair</th><th>Lowest price seen</th><th>Price new in Japan</th><th>Value</th><th>Seat height (cm)</th><th>Seat depth (cm)</th><th>Armrests</th><th>Back</th><th>Seat-depth slide</th><th>Weight limit (kg)</th><th>Where (Philippines)</th><th>Identified</th>' +
+      '<th>Chair</th><th>Lowest price seen</th><th>Price new in Japan</th><th>Value</th><th>Model tier</th><th>Seat height (cm)</th><th>Seat depth (cm)</th><th>Armrests</th><th>Back</th><th>Seat-depth slide</th><th>Weight limit (kg)</th><th>Where (Philippines)</th><th>Identified</th>' +
       '</tr></thead><tbody>' + rows + '</tbody></table></div>';
   }
 
@@ -831,6 +917,10 @@ footer p + p { margin-top: 4px; }
     }
     if (isModSort()) {
       fitNote = ' · date modified = last time the chair file was changed';
+    }
+    if (cat.sort === 'tier') {
+      var noTier = list.filter(function (c) { return c.d.tierNum == null; }).length;
+      fitNote = ' · tier = how high the model sits in its maker’s range (1 = top); same tier: cheaper first' + (noTier ? '; ' + noTier + ' with no tier are shown last' : '');
     }
     list.sort(function (a, b) { return sortFn(a, b) || a.title.localeCompare(b.title); });
     document.getElementById('count').textContent = 'Showing ' + list.length + ' of ' + CHAIRS.length + ' chairs' + fitNote;
@@ -889,6 +979,7 @@ footer p + p { margin-top: 4px; }
             '<label class="field">Armrests<select class="select" id="f-arms">' + options([{ value: 'yes', label: 'With armrests' }, { value: 'no', label: 'No armrests' }], cat.arms, 'Any') + '</select></label>' +
             '<label class="field">Back<select class="select" id="f-back">' + options([{ value: 'mesh', label: 'Mesh (cooler)' }, { value: 'fabric', label: 'Fabric' }], cat.back, 'Any') + '</select></label>' +
             '<label class="field">Where<select class="select" id="f-where">' + options(places, cat.where, 'Anywhere') + '</select></label>' +
+            '<label class="field">Model tier<select class="select" id="f-tier">' + options(tierOptions(), cat.tier, 'Any tier') + '</select></label>' +
             '<label class="field">Max price (₱)<input class="input" type="number" inputmode="numeric" min="0" step="100" id="f-max" placeholder="Any" value="' + esc(cat.maxPrice) + '"></label>' +
             '<div><label class="check"><input type="checkbox" id="f-slide"' + (cat.slide ? ' checked' : '') + '> Seat-depth slide only</label>' +
             '<label class="check"><input type="checkbox" id="f-id"' + (cat.idOnly ? ' checked' : '') + '> Hide chairs not identified yet</label>' +
@@ -916,12 +1007,13 @@ footer p + p { margin-top: 4px; }
     bind('f-arms', 'arms', 'change');
     bind('f-back', 'back', 'change');
     bind('f-where', 'where', 'change');
+    bind('f-tier', 'tier', 'change');
     bind('f-max', 'maxPrice', 'input', function (t) { return t.value === '' ? '' : t.value; });
     bind('f-slide', 'slide', 'change', function (t) { return t.checked; });
     bind('f-id', 'idOnly', 'change', function (t) { return t.checked; });
     bind('f-own', 'ownOnly', 'change', function (t) { return t.checked; });
     document.getElementById('f-reset').addEventListener('click', function () {
-      ['brand', 'arms', 'back', 'where', 'maxPrice'].forEach(function (k) { cat[k] = ''; });
+      ['brand', 'arms', 'back', 'where', 'tier', 'maxPrice'].forEach(function (k) { cat[k] = ''; });
       cat.slide = false; cat.idOnly = false; cat.ownOnly = false;
       var q = cat.q; cat.q = q;
       renderCatalogue();
@@ -989,6 +1081,28 @@ footer p + p { margin-top: 4px; }
     '</section>';
   }
 
+  function tierSeries(c) {
+    var list = c.d.tier && tierList(c.d.tierBrand);
+    if (!list) return null;
+    for (var i = 0; i < list.series.length; i++) if (list.series[i].name === c.d.tier.series) return list.series[i];
+    return null;
+  }
+  function tierBox(c) {
+    if (!c.d.tierBrand) return '';
+    var link = '<a href="#tiers/' + tierSlug(c.d.tierBrand) + '">See the whole ' + esc(c.d.tierBrand) + ' tier ladder</a>';
+    var rule = '<p class="rule">The tier rates the model in ' + esc(c.d.tierBrand) + '’s own range (1 = top). This chair’s condition, age and price don’t change it; the value rating above covers price.</p>';
+    if (!c.d.tier) {
+      return '<section class="tier-box"><h2>Model tier ' + tierBadge(c, false) + '</h2>' +
+        '<p>No tier until the model is known: the tier comes from the series (see “How to identify this chair”).</p><p>' + link + '</p>' + rule + '</section>';
+    }
+    var s = tierSeries(c), t = c.d.tier;
+    return '<section class="tier-box"><h2>Model tier ' + tierBadge(c, true) + '</h2>' +
+      '<p><strong>' + esc(t.series) + '</strong>: ' + (t.status === 'confirmed' ? 'confirmed by ' + esc(c.d.tierBrand) + '’s own wording.' : 'provisional, placed by list price and features (no maker wording found yet).') + '</p>' +
+      (s && s.words && !/^not found/i.test(s.words) ? '<p>' + esc(c.d.tierBrand) + '’s words: ' + s.wordsHtml + '</p>' : '') +
+      (s ? '<p>List price new: ' + s.priceHtml + '</p>' : '') +
+      '<p>' + link + '</p>' + rule + '</section>';
+  }
+
   function renderChair(id) {
     var c = byId[id];
     if (!c) {
@@ -1023,7 +1137,7 @@ footer p + p { margin-top: 4px; }
         '<div class="summary">' +
           '<h1 tabindex="-1">' + esc(t.name) + '</h1>' +
           (t.sub ? '<p class="sub">' + esc(t.sub) + '</p>' : '') +
-          '<div class="badges">' + idBadge(c) + '<span class="badge plain">Condition: ' + esc(f.condition_seen) + '</span></div>' +
+          '<div class="badges">' + idBadge(c) + tierBadge(c, true) + '<span class="badge plain">Condition: ' + esc(f.condition_seen) + '</span></div>' +
           (c.identify ? '<button type="button" class="btn small id-jump" data-idjump>🔍 How to identify this chair ↓</button>' : '') +
           '<p class="big-price">' + (d.price == null ? 'Price not known' : peso(d.price)) + '<small>Lowest price seen' + (d.priceNote ? ' ' + esc(d.priceNote) : '') + '</small></p>' +
           (d.priceJP != null ? '<p class="jp-big">New in Japan: <strong>' + jpLine(c) + '</strong> (rough peso estimate)</p>' : '') +
@@ -1049,6 +1163,7 @@ footer p + p { margin-top: 4px; }
       '<section class="value-box"><h2>Value ' + valueBadge(c, false) + '</h2><ul>' +
         c.valueComments.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') +
         '</ul><p class="rule">' + esc(valueRuleText()) + '</p></section>' +
+      tierBox(c) +
       '<div class="three">' +
         (glance ? '<section class="panel"><h2>' + esc(glance.heading) + '</h2><div class="md">' + glance.html + '</div></section>' : '') +
         (pros ? '<section class="panel pros"><h2><span class="mark" aria-hidden="true">✓</span>' + esc(pros.heading) + '</h2><div class="md">' + pros.html + '</div></section>' : '') +
@@ -1192,13 +1307,17 @@ footer p + p { margin-top: 4px; }
       else add('good', 'Weight limit ' + f.weight_limit_kg);
     }
 
+    // 8. model tier: shown, and used only to order chairs with the same match % (see "How the ranking works")
+    if (d.tier) add('tier', 'Tier ' + d.tier.n + ' · ' + d.tier.name + ' (' + d.tier.series + (d.tier.status === 'provisional' ? ', provisional' : '') + '): breaks ties between equal matches');
+    else if (d.tierBrand) add('tier', 'Tier unknown until the model is known');
+
     return { c: c, pts: pts, max: max, pct: Math.round(100 * pts / max), reasons: R, footrest: footrest, group: group };
   }
 
   function matchHtml(m, rank, isTop) {
     var c = m.c, t = splitTitle(c.title);
-    var marks = { good: '✓', ok: '~', bad: '✗', unk: '?', info: '₱' };
-    var words = { good: 'Good: ', ok: 'Partly: ', bad: 'No: ', unk: 'Unknown: ', info: 'Price: ' };
+    var marks = { good: '✓', ok: '~', bad: '✗', unk: '?', info: '₱', tier: '▲' };
+    var words = { good: 'Good: ', ok: 'Partly: ', bad: 'No: ', unk: 'Unknown: ', info: 'Price: ', tier: 'Model tier: ' };
     return '<li class="match' + (isTop ? ' top' : '') + '" id="m-' + esc(c.id) + '">' +
       '<div class="rank" aria-hidden="true">' + rank + '</div>' +
       '<a class="thumb" href="#chair/' + esc(c.id) + '" tabindex="-1" aria-hidden="true">' + img(c, 200) + '</a>' +
@@ -1215,6 +1334,8 @@ footer p + p { margin-top: 4px; }
     '</li>';
   }
 
+  // for breaking ties only: a chair with no tier (brand with no tier list, or model not known) counts as the middle of the scale
+  function tierForTies(c) { return c.d.tierNum == null ? 3.5 : c.d.tierNum; }
   function findInputs() {
     var h = readNum(inp.h);
     if (h && (h < 100 || h > 220)) h = null;
@@ -1232,7 +1353,8 @@ footer p + p { margin-top: 4px; }
     CHAIRS.forEach(function (c) {
       if (!o.h) { map[c.id] = 0; return; }
       var m = fitChair(c, o, cheapest);
-      map[c.id] = GROUP_RANK[m.group] * 1000 + 100 * m.pts / m.max;
+      // same match % → higher model tier first (no tier counts as the middle, 3.5), then exact points
+      map[c.id] = GROUP_RANK[m.group] * 1000 + m.pct + (7 - tierForTies(c)) / 10 + m.pts / m.max / 100;
     });
     return map;
   }
@@ -1261,9 +1383,10 @@ footer p + p { margin-top: 4px; }
     var prices = CHAIRS.map(function (c) { return c.d.price; }).filter(function (p) { return p != null; });
     var cheapest = Math.min.apply(null, prices);
     var all = CHAIRS.map(function (c) { return fitChair(c, o, cheapest); });
-    all.sort(function (a, b) { return b.pts / b.max - a.pts / a.max || nullsLast(a.c.d.price, b.c.d.price) || a.c.title.localeCompare(b.c.title); });
+    // match % first; equal match % → higher model tier, then exact points, then cheaper
+    all.sort(function (a, b) { return b.pct - a.pct || tierForTies(a.c) - tierForTies(b.c) || b.pts / b.max - a.pts / a.max || nullsLast(a.c.d.price, b.c.d.price) || a.c.title.localeCompare(b.c.title); });
     var groups = {
-      ranked: { title: 'Best fit for you', hint: 'Ranked by fit first, then the things you want, then price.', list: [] },
+      ranked: { title: 'Best fit for you', hint: 'Ranked by fit first, then the things you want, then price. Equal match %: higher model tier first.', list: [] },
       noinfo: { title: 'Not enough facts to judge the fit', hint: 'Seat height is not in the chair file yet. A photo of the label under the seat would help.', list: [] },
       over: { title: 'Over your budget', hint: 'These fit the other rules but cost more than your budget.', list: [] },
       weight: { title: 'Weight limit below your weight', hint: 'Not safe for you, based on the limit in the chair file.', list: [] }
@@ -1330,6 +1453,7 @@ footer p + p { margin-top: 4px; }
               '<li><strong>Seat depth:</strong> your height × 0.29 − 5 (38.5 cm for 150 cm), so the seat edge does not press behind your knees and you can sit all the way back. Shorter is better.</li>' +
             '</ul>' +
             '<p><strong>Points:</strong> seat height up to 30 (minus 4 for each cm off), seat depth up to 20 (minus 4 for each cm too deep), 10 for each thing you want, model confirmed 10 / very likely 7 / not identified 0, price up to 10 (the cheapest chair gets 10), can sit on it first at Office Busters 5. Facts that are not in the file get 0 points and show “?”. Match % = points ÷ the most points possible.</p>' +
+            '<p><strong>Model tier breaks ties:</strong> when two chairs have the same match %, the one with the higher model tier (1 = top of the maker’s range) comes first. It adds no points, so it never lifts a chair above a better fit. A chair with no tier (its brand has no tier list yet, or the model isn’t known) counts as the middle of the scale, between tier 3 and tier 4, so it isn’t pushed down for missing information. <a href="#tiers">How tiers are decided</a>.</p>' +
           '</div></details>' +
           '<div id="findResults" aria-live="polite"></div>' +
         '</div>' +
@@ -1396,6 +1520,11 @@ footer p + p { margin-top: 4px; }
       return '<td' + (i === bestValue ? ' class="best"' : '') + '>' + (i === bestValue ? '<span class="best-tag">Best value</span>' : '') + VALUE_LABEL[c.d.value] +
         (c.d.valuePct != null ? ' (' + Math.round(c.d.valuePct) + '% of new in Japan)' : '') + '</td>';
     }).join('') + '</tr>';
+    var bestTier = bestIdx(function (c) { return c.d.tierNum; }, -1);
+    body += '<tr><th scope="row">Model tier</th>' + list.map(function (c, i) {
+      return '<td' + (i === bestTier ? ' class="best"' : '') + '>' + (i === bestTier ? '<span class="best-tag">Highest tier</span>' : '') + esc(tierText(c)) +
+        (c.d.tier ? '<br><small>' + esc(c.d.tier.series) + '</small>' : '') + '</td>';
+    }).join('') + '</tr>';
     GROUPS.forEach(function (g) {
       body += '<tr class="row-group"><th scope="rowgroup" colspan="' + (list.length + 1) + '">' + esc(g.title) + '</th></tr>';
       g.keys.forEach(function (k) {
@@ -1438,6 +1567,60 @@ footer p + p { margin-top: 4px; }
     });
   }
 
+
+  // ---------- tiers ----------
+  function seriesChip(c) {
+    var t = splitTitle(c.title);
+    return '<a class="series-chair" href="#chair/' + esc(c.id) + '"><span class="thumb">' + img(c, 120) + '</span><span>' + esc(t.name) +
+      (c.d.price != null ? '<br><small>' + peso(c.d.price) + '</small>' : '') + '</span></a>';
+  }
+  function renderTiers(arg) {
+    if (!TIERS.length) {
+      app.innerHTML = '<div class="view empty"><h1 tabindex="-1">Model tiers</h1><p>No tier lists yet. Add a file to the tiers folder.</p></div>';
+      return;
+    }
+    var list = TIERS.filter(function (t) { return tierSlug(t.brand) === arg; })[0] || TIERS[0];
+    var others = TIERS.filter(function (t) { return t !== list; });
+    var rungs = list.scale.map(function (s) {
+      var series = list.series.filter(function (x) { return x.n === s.n; });
+      return '<li class="rung" id="tier-' + s.n + '">' +
+        '<div class="rung-head"><span class="rung-num">Tier ' + s.n + '</span><h2>' + esc(s.name) + '</h2>' + tierBars(s.n) + '</div>' +
+        '<p class="rung-meaning">' + esc(s.meaning) + '</p>' +
+        (series.length ? series.map(function (x) {
+          var chairs = x.chairs.map(function (id) { return byId[id]; }).filter(Boolean);
+          return '<div class="series">' +
+            '<h3>' + esc(x.name) + ' <span class="badge ' + (x.status === 'confirmed' ? 'confirmed">Confirmed' : 'likely">Provisional') + '</span></h3>' +
+            '<dl>' +
+              '<dt>' + esc(list.brand) + '’s own words</dt><dd>' + x.wordsHtml + '</dd>' +
+              '<dt>List price new</dt><dd>' + x.priceHtml + '</dd>' +
+              '<dt>Recline and features</dt><dd>' + x.featuresHtml + '</dd>' +
+              '<dt>Sources</dt><dd>' + x.sourcesHtml + '</dd>' +
+            '</dl>' +
+            (chairs.length ? '<div class="series-chairs">' + chairs.map(seriesChip).join('') + '</div>' : '<p class="rung-empty">No chair of this series in the library yet (shown to set the scale).</p>') +
+          '</div>';
+        }).join('') : '<p class="rung-empty">No series placed here yet.</p>') +
+      '</li>';
+    }).join('');
+    var unplaced = CHAIRS.filter(function (c) { return c.d.tierBrand === list.brand && !c.d.tier; });
+    app.innerHTML = '<div class="view">' +
+      '<section class="intro"><div><h1 tabindex="-1">' + esc(list.title) + '</h1>' +
+      '<p class="lede">Which models are higher in ' + esc(list.brand) + '’s own range, from the top (tier 1) down. Tap a chair to open it. From the file ' + esc(list.file) + ', checked ' + esc(niceDate(list.lastChecked)) + '.</p>' +
+      (others.length ? '<p class="lede">Other brands: ' + others.map(function (t) { return '<a href="#tiers/' + tierSlug(t.brand) + '">' + esc(t.brand) + '</a>'; }).join(' · ') + '</p>' : '') +
+      '</div></section>' +
+      '<div class="note-box md">' + list.introHtml + '</div>' +
+      list.sections.map(function (s) {
+        return /^notes/i.test(s.heading) ? '' : '<details class="sec"' + (/^how a tier/i.test(s.heading) ? ' open' : '') + '><summary>' + esc(s.heading) + '</summary><div class="md">' + s.html + '</div></details>';
+      }).join('') +
+      (list.ladderNote ? '<div class="md section-hint" style="margin-top:20px">' + list.ladderNote + '</div>' : '') +
+      '<ol class="ladder">' + rungs + '</ol>' +
+      (unplaced.length ? '<h2 class="section-title">' + esc(list.brand) + ' chairs with no tier yet (' + unplaced.length + ')</h2>' +
+        '<p class="section-hint">The model isn’t identified yet, so the series (and tier) isn’t known. Each chair page says what photo or question will identify it.</p>' +
+        '<div class="series-chairs">' + unplaced.map(seriesChip).join('') + '</div>' : '') +
+      list.sections.map(function (s) {
+        return /^notes/i.test(s.heading) ? '<h2 class="section-title">' + esc(s.heading) + '</h2><div class="md note-box" style="margin-top:12px">' + s.html + '</div>' : '';
+      }).join('') +
+    '</div>';
+  }
 
   // ---------- in store (phone) ----------
   var SHOTS = [
@@ -1752,6 +1935,7 @@ footer p + p { margin-top: 4px; }
     out.push(d.arms === 'no' ? 'No arms' : d.arms === 'unknown' ? 'Arms ?' : '💪 Arms');
     out.push(d.back === 'mesh' ? '🌬️ Mesh back' : d.back === 'fabric' ? '🧵 Fabric back' : 'Back ?');
     if (d.value === 'good') out.push('💸 Good value');
+    if (d.tier) out.push('🏅 Tier ' + d.tier.n + ' · ' + d.tier.name);
     return out.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
   }
   function tokTags(c) {
@@ -1935,6 +2119,7 @@ footer p + p { margin-top: 4px; }
         '<dt>Price here</dt><dd>' + (d.price == null ? 'not known' : peso(d.price)) + '</dd>' +
         (d.priceJP != null ? '<dt>New in Japan</dt><dd>' + jpLine(c) + '</dd>' : '') +
         '<dt>Value</dt><dd>' + esc(VALUE_LABEL[d.value]) + (d.valuePct != null ? ' (' + Math.round(d.valuePct) + '% of new)' : '') + '</dd>' +
+        (d.tierBrand ? '<dt>Model tier</dt><dd>' + esc(tierText(c)) + (d.tier ? ' · ' + esc(d.tier.series) : '') + '</dd>' : '') +
         '<dt>Seat height (cm)</dt><dd>' + esc(f.seat_height_cm) + '</dd>' +
         '<dt>Seat depth (cm)</dt><dd>' + esc(f.seat_depth_cm) + '</dd>' +
         '<dt>Seat slide</dt><dd>' + esc(f.seat_depth_slide) + '</dd>' +
@@ -2020,6 +2205,7 @@ footer p + p { margin-top: 4px; }
     else if (view === 'find') renderFind(arg);
     else if (view === 'compare') renderCompare();
     else if (view === 'store') renderStore();
+    else if (view === 'tiers') renderTiers(arg);
     else { view = 'catalogue'; renderCatalogue(); }
     var prev = currentView;
     currentView = view;
@@ -2027,7 +2213,7 @@ footer p + p { margin-top: 4px; }
       if (a.dataset.nav === view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
     updateTray();
-    var titles = { catalogue: 'All chairs', find: 'Find my chair', compare: 'Compare chairs', store: 'In store' };
+    var titles = { catalogue: 'All chairs', find: 'Find my chair', compare: 'Compare chairs', store: 'In store', tiers: 'Model tiers' };
     document.title = (view === 'chair' && byId[arg] ? splitTitle(byId[arg].title).name : titles[view] || 'Chairs') + ' · Chair Library';
     if (view === 'find' && arg) return; // renderFind scrolls to the chair
     window.scrollTo(0, view === 'catalogue' && prev && prev !== 'catalogue' ? catScroll : 0);

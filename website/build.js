@@ -411,6 +411,75 @@ for (const c of chairs) {
   c.d.addedMs = c.d.added ? Date.parse(c.d.added) : null;
 }
 
+// ---------- model tiers (tiers/<brand>.md) ----------
+// One file per brand with a "Tier scale" table and a "Ladder" table (one row per series).
+// A chair gets the tier of the series whose "Matches" name its model line starts with,
+// only when the brand matches and the model is confirmed or very likely. The tier is never copied into chair files.
+const TIERS_DIR = path.join(ROOT, 'tiers');
+function tableRows(sectionMd) {
+  const rows = sectionMd.split('\n').filter((l) => /^\s*\|/.test(l));
+  if (rows.length < 2) return [];
+  const head = splitRow(rows[0]).map((h) => h.toLowerCase());
+  return rows.slice(1).filter((r) => !isSepRow(r)).map((r) => {
+    const c = splitRow(r), o = {};
+    head.forEach((h, i) => { o[h] = c[i] || ''; });
+    return o;
+  });
+}
+function readTiers(file) {
+  const raw = fs.readFileSync(path.join(TIERS_DIR, file), 'utf8').replace(/\r\n/g, '\n');
+  const m = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  if (!m) throw new Error(`tiers/${file}: no top block between --- lines`);
+  const { fields } = parseTopBlock(`tiers/${file}`, m[1]);
+  const body = m[2];
+  const titleMatch = body.match(/^# (.+)$/m);
+  const after = titleMatch ? body.slice(body.indexOf(titleMatch[0]) + titleMatch[0].length) : body;
+  const parts = after.split(/^## /m);
+  const intro = parts.shift();
+  const secs = parts.map((p) => { const nl = p.indexOf('\n'); return { heading: p.slice(0, nl).trim(), content: p.slice(nl + 1) }; });
+  const find = (re) => { const s = secs.find((x) => re.test(x.heading.toLowerCase())); return s ? s.content : ''; };
+  const scaleMd = find(/^tier scale/);
+  const ladderMd = find(/^ladder/);
+  const scale = tableRows(scaleMd).map((r) => ({ n: parseInt(r.tier, 10), name: r.name, meaning: r['what it means'] }));
+  const series = tableRows(ladderMd).map((r) => ({
+    n: parseInt(r.tier, 10),
+    name: r.series,
+    matches: r.matches.split(',').map((x) => x.trim().toLowerCase()).filter(Boolean),
+    status: /^confirmed/i.test(r.status) ? 'confirmed' : 'provisional',
+    words: r["okamura's own words"] || r['maker words'] || r["maker's own words"] || '',
+    wordsHtml: inline(r["okamura's own words"] || r['maker words'] || r["maker's own words"] || ''),
+    priceHtml: inline(r[Object.keys(r).find((k) => /^list price/.test(k))] || ''),
+    featuresHtml: inline(r[Object.keys(r).find((k) => /^recline/.test(k))] || ''),
+    sourcesHtml: inline(r.sources || ''),
+  }));
+  for (const s of series) {
+    if (!scale.some((t) => t.n === s.n)) throw new Error(`tiers/${file}: series ${s.name} has tier ${s.n}, which is not in the Tier scale table`);
+  }
+  // a tier file's other sections (rules, notes) are shown on the Tiers page as written
+  const otherHtml = secs.filter((s) => !/^tier scale|^ladder/i.test(s.heading)).map((s) => ({ heading: s.heading, html: md(s.content) }));
+  const ladderNote = md(ladderMd.split('\n').filter((l) => !/^\s*\|/.test(l)).join('\n'));
+  return { brand: fields.brand, lastChecked: fields.last_checked, file: `tiers/${file}`, title: titleMatch ? titleMatch[1].trim() : fields.brand + ' tiers',
+    introHtml: md(intro), ladderNote, sections: otherHtml, scale, series };
+}
+const tierLists = fs.existsSync(TIERS_DIR) ? fs.readdirSync(TIERS_DIR).filter((f) => f.endsWith('.md')).sort().map(readTiers) : [];
+for (const c of chairs) {
+  c.d.tier = null;
+  c.d.tierNum = null;
+  const list = tierLists.find((t) => (c.d.brand || '').toLowerCase() === (t.brand || '').toLowerCase());
+  if (!list) continue;
+  c.d.tierBrand = list.brand;
+  if (c.d.identified === 'unsure') continue;
+  const model = (c.fields.model || '').replace(/^["']/, '').trim().toLowerCase();
+  const s = list.series.find((x) => x.matches.some((mm) => model.startsWith(mm)));
+  if (!s) continue;
+  const t = list.scale.find((x) => x.n === s.n);
+  c.d.tier = { n: s.n, name: t.name, series: s.name, status: s.status };
+  c.d.tierNum = s.n;
+}
+for (const t of tierLists) for (const s of t.series) {
+  s.chairs = chairs.filter((c) => c.d.tier && c.d.tierBrand === t.brand && c.d.tier.series === s.name).map((c) => c.id);
+}
+
 const checked = chairs.map((c) => c.fields.last_checked).filter(Boolean).sort();
 const pad = (n) => String(n).padStart(2, '0');
 const now = new Date();
@@ -420,6 +489,7 @@ const data = {
   checkedTo: checked[checked.length - 1] || null,
   rate: { jpyToPhp: RATE, date: SETTINGS.rateDate, source: SETTINGS.rateSource, text: RATE_TEXT },
   valueRule: { goodMax: GOOD_MAX, fairMax: FAIR_MAX },
+  tiers: tierLists,
   chairs,
 };
 
@@ -439,6 +509,12 @@ console.log(`Built: ${OUT}`);
 console.log(`Chair files: ${files.length}, chairs on the website: ${chairs.length}`);
 console.log(`Date modified taken from: ${modifiedSource}`);
 if (modifiedSource !== 'git') console.log('  To use the real dates, get the history first: git fetch --depth=1000 origin main, then build again.');
+for (const t of tierLists) {
+  console.log(`Tiers: ${t.file}, ${t.series.length} series`);
+  for (const s of t.series) console.log(`  tier ${s.n} ${s.status.padEnd(11)} ${s.name.padEnd(32)} chairs: ${s.chairs.join(', ') || '-'}`);
+  const none = chairs.filter((c) => c.d.tierBrand === t.brand && !c.d.tier).map((c) => c.id);
+  console.log(`  ${t.brand} chairs with no tier (model not known or series not listed): ${none.join(', ') || '-'}`);
+}
 const show = (v) => (v === null || v === undefined ? '-' : String(v));
 for (const c of chairs) {
   const d = c.d;

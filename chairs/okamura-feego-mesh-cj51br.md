@@ -4,7 +4,7 @@ brand: Okamura
 model: Feego mesh (フィーゴメッシュ), fixed polished design arms
 maker_code: "CJ51BR FDM2 (Okamura label under the seat)"
 variant: black mesh back with a light-gray mesh band at the lumbar, black fabric seat, fixed polished design arms, polished aluminium 5-star base, no hanger, no headrest; made 2016
-chair_type: office swivel chair (task chair)
+chair_type: office swivel chair (Okamura "middle class" task chair; see tiers/okamura.md)
 identified: confirmed
 condition_seen: used
 maker_country: Japan
@@ -35,7 +35,7 @@ last_checked: 2026-11-26
 **Identified: Confirmed.** The white Okamura label under the seat (photo sent 2026-11-26) gives product code **CJ51BR FDM2**, made **2016**, lot 22021612A. Japanese shops list CJ51BR as the **Feego mesh (フィーゴメッシュ) with polished design arms**. The manual card under the seat (photo sent earlier the same day) is the matching Okamura card. This file was first added as "Okamura black mesh chair, model not identified" and renamed once the label came in.
 
 ## At a glance
-- Okamura Feego mesh: a mid-to-upper Okamura task chair (list price about ¥132,000 new), sold through the 2010s; now discontinued.
+- Okamura Feego mesh: what Okamura itself calls a "middle class" (ミドルクラス) mesh chair, one tier above the Escudo (list price about ¥132,000 new); sold from 2008 through the 2010s; now discontinued.
 - **Seat-depth slide: yes**, 45 mm in 4 steps (maker manual). Ankle-tilt recline that locks, with tension knob.
 - Polished aluminium base and polished arms; breathable mesh back; no PU or faux leather.
 - Arms are fixed (no height adjust).
