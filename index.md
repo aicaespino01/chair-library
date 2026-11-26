@@ -1,6 +1,6 @@
 # Chair index
 
-Last updated: 2026-11-23. One row per chair file in `chairs/`. Prices are the lowest seen, with the date in each file.
+Last updated: 2026-11-26. One row per chair file in `chairs/`. Prices are the lowest seen, with the date in each file.
 
 ## Identified
 
@@ -58,6 +58,7 @@ Last updated: 2026-11-23. One row per chair file in `chairs/`. Prices are the lo
 | **Brand unknown** (new 2026-11-20) | POF BAL | Gray, low back, no arms, black base; titled Okamura | ₱3,000 | branch not stated | [unidentified-ob-pof-bal.md](chairs/unidentified-ob-pof-bal.md) |
 | **Brand unknown, sold out** (new 2026-11-20) | NCF BAL | All black, low back, no arms | ₱3,000 | Office Busters Balintawak | [unidentified-ob-ncf-bal.md](chairs/unidentified-ob-ncf-bal.md) |
 | **Brand unknown, sold out** (new 2026-11-20) | none (no SKU) | Gray, low back, black loop arms | ₱3,000 | Office Busters Cainta | [unidentified-ob-japan-swivel-chair-38.md](chairs/unidentified-ob-japan-swivel-chair-38.md) |
+| **Brand unknown** (new 2026-11-26) | none seen | Black mesh back, black fabric seat, fixed loop arms (left pad missing), black base | not stated (photo only) | shop not stated | [unidentified-black-mesh-back-loop-arm.md](chairs/unidentified-black-mesh-back-loop-arm.md) |
 | Brand unknown (2 matching chairs) | none | Black leather-look high back, aluminium loop arms | Facebook chat, price not stated | Office Busters PH (branch not stated) | [unidentified-ob-black-leather-loop-arm.md](chairs/unidentified-ob-black-leather-loop-arm.md) |
 
 ## Office Busters swivel chairs: all done
